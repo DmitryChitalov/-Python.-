@@ -13,3 +13,16 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+NUMBER = int(input('Введите трехзначное число: '))
+
+HUNDREDS = NUMBER // 100
+DOZENS = (NUMBER // 10) % 10
+UNITS = NUMBER % 10
+
+SUM_OF_UNITS = HUNDREDS + DOZENS + UNITS
+MULTIPLY_OF_UNITS = HUNDREDS * DOZENS * UNITS
+
+print(f'Сумма цифр введенного вами числа {NUMBER} = {SUM_OF_UNITS}')
+print(
+    f'Произведение цифр введенного вами числа {NUMBER} = {MULTIPLY_OF_UNITS}')

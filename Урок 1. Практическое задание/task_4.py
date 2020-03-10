@@ -14,3 +14,20 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+from random import random
+
+LEFT = int(input("Минимальная граница: "))
+RIGHT = int(input("Максимальная граница: "))
+NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+print(f'Случайное целое число из вашего диапазона: {NUMB}')
+
+LEFT = float(input("Минимальная граница: "))
+RIGHT = float(input("Максимальная граница: "))
+NUMB = random() * (RIGHT - LEFT) + LEFT
+print(f'Случайное вещественное число из вашего диапазона:{round(NUMB, 3)}')
+
+LEFT = ord(input('Первый символ: '))
+RIGHT = ord(input('Последний символ: '))
+SYMBOL = int(random() * (RIGHT - LEFT + 1)) + LEFT
+print(f'Случайный символ из вашего диапазона: {chr(SYMBOL)}')

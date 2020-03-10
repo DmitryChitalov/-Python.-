@@ -4,3 +4,16 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+
+NUM_1 = int(input('Введите 1-ое число: '))
+NUM_2 = int(input('Введите 2-ое число: '))
+NUM_3 = int(input('Введите 3-ое число: '))
+
+if NUM_1 == NUM_2 == NUM_3 or NUM_1 == NUM_2 or NUM_2 == NUM_3 or NUM_1 == NUM_3:
+    print('Числа равны')
+elif NUM_2 < NUM_1 < NUM_3 or NUM_3 < NUM_1 < NUM_2:
+    print('Среднее:', NUM_1)
+elif NUM_1 < NUM_2 < NUM_3 or NUM_3 < NUM_2 < NUM_1:
+    print('Среднее:', NUM_2)
+else:
+    print('Среднее:', NUM_3)

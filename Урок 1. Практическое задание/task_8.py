@@ -16,3 +16,13 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+
+USER_YEAR = int(input('Введите год: '))
+
+if (USER_YEAR % 4 == 0 and USER_YEAR % 100 != 0) or USER_YEAR % 400 == 0:
+    print('Високосный')
+else:
+    print('Не високосный')
+
+res = 'Високосный' if (USER_YEAR % 4 == 0 and USER_YEAR % 100 != 0) or USER_YEAR % 400 == 0 else 'Не високосный'
+print(res)
