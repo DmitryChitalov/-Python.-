@@ -8,3 +8,10 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+while True:
+    try:
+        VAL = int(input('Введите номер буквы: '))
+        print(f'Введёному номеру соответствует буква: {chr(ord("a") + (VAL - 1))} ')
+        break
+    except ValueError:
+        print(f'Ошибка ввода')
