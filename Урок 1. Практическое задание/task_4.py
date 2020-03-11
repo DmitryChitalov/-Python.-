@@ -14,3 +14,27 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+
+try:
+    LEFT = float(input('Минимальная граница :'))
+    RIGHT = float(input('Максимальная граница :'))
+
+    # случайное целое число
+    NUMBER_INT = int((random() * (RIGHT - LEFT + 1)) + LEFT)
+    print(f'Случайное целое число {NUMBER_INT}')
+
+    # случайное вещественное число
+    NUMBER_FLOAT = float(random() * (RIGHT - LEFT + 1)) + LEFT
+    print(f'Случайное вещественное число {NUMBER_FLOAT:.2f}')
+except ValueError:
+    print(f'Некорректное значение.Введите число.')
+
+    # случайный символ
+try:
+    L = ord(input('Минимальная граница : '))
+    R = ord(input('Максимальная граница : '))
+    LETTER = int(random() * (R - L + 1)) + L
+    print(f'Случайный символ : {chr(LETTER)}')
+except TypeError:
+    print('Некорректное значение.Введите буквы латинского алфавита.')
