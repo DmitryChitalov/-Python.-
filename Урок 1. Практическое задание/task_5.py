@@ -10,3 +10,17 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+try:
+    L1 = input('Введите первую букву : ').lower()
+    L2 = input('Введите вторую букву : ').lower()
+    if L1.isalpha() and L2.isalpha():
+        FIRST = (ord(L1)-96)
+        SECOND = (ord(L2)-96)
+        LETTERS = abs(SECOND-FIRST) - 1
+        print(f'Количество символов между указанными : {LETTERS}')
+        print(f'Номер первой буквы : {FIRST}')
+        print(f'Номер второй буквы : {SECOND}')
+    else:
+        raise ValueError
+except ValueError:
+    print('Некорректное значение.Введите буквы латинского алфавита.')
