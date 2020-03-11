@@ -13,3 +13,20 @@ k – угловой коэффициент (действительное чис
 X1_VAL = 2, Y1_VAL = 3, X2_VAL = 4, Y2_VAL = 5
 Уравнение прямой, проходящей через эти точки: y = 1.0x + 1.0
 """
+X1_VAL = int(input('координата 1й точки по оси абсцисс: '))
+Y1_VAL = int(input('координата 1й точки по оси ординат: '))
+X2_VAL = int(input('координата 2й точки по оси абсцисс: '))
+Y2_VAL = int(input('координата 2й точки по оси ординат: '))
+
+if X1_VAL == X2_VAL and Y1_VAL == Y2_VAL:
+    print('точки совпадают, уравнение не может быть получено')
+elif X1_VAL == X2_VAL:
+    b = (X2_VAL * Y1_VAL - X1_VAL * Y2_VAL) / (Y1_VAL - Y2_VAL)
+    print(f'частный случай прямой: x = {b}')
+elif Y1_VAL == Y2_VAL:
+    b = (X2_VAL * Y1_VAL - X1_VAL * Y2_VAL) / (X2_VAL - X1_VAL)
+    print(f'частный случай прямой: y = {b}')
+else:
+    k = (Y2_VAL - Y1_VAL) / (X2_VAL - X1_VAL)
+    b = (X2_VAL * Y1_VAL - X1_VAL * Y2_VAL) / (X2_VAL - X1_VAL)
+    print(f'Уравнение прямой, проходящей через эти точки: y = {k}x + {b}')
