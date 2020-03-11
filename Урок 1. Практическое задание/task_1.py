@@ -13,3 +13,17 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+try:
+    NUMBER = int(input("Введите целое трехзначное число\n"))
+
+    FIRST_DIGIT = NUMBER % 10
+    SECOND_DIGIT = (NUMBER // 10) % 10
+    THIRD_DIGIT = NUMBER // 100
+
+    SUM = FIRST_DIGIT + SECOND_DIGIT + THIRD_DIGIT
+    MULTIPLY = FIRST_DIGIT * SECOND_DIGIT * THIRD_DIGIT
+
+    print(f"Сумма = {SUM} , Произведение = {MULTIPLY}\n")
+except ValueError:
+    print("Нужно ввести целое число")

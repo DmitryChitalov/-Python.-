@@ -16,3 +16,28 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+
+
+def year_check(year):
+    if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+        return "високосный"
+    return " не високосный"
+
+
+def year_check_tern(year):
+    return "високосный" if (year % 4 == 0 and year % 100 != 0) or \
+        year % 400 == 0 else "не високосный"
+
+
+try:
+    YEAR = int(input("Введите год\n"))
+
+    if YEAR < 0:
+        print("Такого года нету")
+    else:
+        RESULT = year_check(YEAR)
+        RESULT_TERN = year_check_tern(YEAR)
+        print(f"1 метод: год {YEAR} - {RESULT}")
+        print(f"2 метод: год {YEAR} - {RESULT_TERN}")
+except ValueError:
+    print("Введите челое число")

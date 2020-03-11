@@ -8,3 +8,15 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+try:
+    NUMBER = int(input("Введите челое число\n"))
+
+    if NUMBER <= 0 or NUMBER > 26:
+        print("Такой буквы нету в алфавите")
+    else:
+        CHAR_CODE = ord('a') + NUMBER - 1
+        CHAR = chr(CHAR_CODE)
+        print(f"Введёному номеру соответствует буква: {CHAR}")
+except ValueError:
+    print("Нужно ввести челое число")
