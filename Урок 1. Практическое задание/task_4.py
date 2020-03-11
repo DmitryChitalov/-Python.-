@@ -14,3 +14,20 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+from random import random
+
+LEFT = int(input("Минимальная граница: "))
+RIGHT = int(input("Максимальная граница: "))
+NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+print(NUMB)
+
+LEFT = float(input("Минимальная граница: "))
+RIGHT = float(input("Максимальная граница: "))
+NUMB = random() * (RIGHT - LEFT) + LEFT
+print(round(NUMB, 3))
+
+LEFT = input('Левая буква (a-z): ')
+RIGHT = input('Правая буква (a-z): ')
+LETTER = chr(int(random() * (ord(RIGHT) - ord(LEFT)+ 1) + ord(LEFT)))
+print(LETTER)
