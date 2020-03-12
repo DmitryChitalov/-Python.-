@@ -10,3 +10,18 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+LETTER1 = input("Введите букву латинского алфавита: ")
+LETTER2 = input("Введите букву латинского алфавита: ")
+ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+POSITION1 = ALPHABET.find(LETTER1)
+POSITION2 = ALPHABET.find(LETTER2)
+if POSITION1 == -1 or POSITION2 == -1:
+    print('Некорректный формат ввода')
+else:
+    print(f'позици первой буквы: {POSITION1 + 1}')
+    print(f'позици второй буквы: {POSITION2 + 1}')
+    if POSITION1 <= POSITION2:
+        print(f'колличество букв между: {POSITION2 - POSITION1 - 1}')
+    else:
+        print(f'колличество букв между: {POSITION1 - POSITION2 - 1}')
