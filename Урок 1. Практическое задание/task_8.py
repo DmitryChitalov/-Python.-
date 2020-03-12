@@ -16,3 +16,20 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+
+
+try:
+    YEAR = int(input("Input year: "))
+    if (YEAR % 4) == 0:
+        if (YEAR % 100) == 0:
+            if (YEAR % 400) == 0:
+                print(f"{YEAR} is a leap year")
+            else:
+                print(f"{YEAR} is not a leap year")
+        else:
+                print(f"{YEAR} is a leap year")
+    else:
+        print(f"{YEAR} is not a leap year")
+
+except ValueError:
+    print('Incorrect')

@@ -13,3 +13,12 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+try:
+    NUMB = int(input('Input integer: '))
+    SUM = (NUMB // 100) + ((NUMB // 10) % 10) + (NUMB % 10)
+    MULT = (NUMB // 100) * ((NUMB // 10) % 10) * (NUMB % 10)
+    print(SUM)
+    print(MULT)
+except ValueError:
+    print('Incorrect')

@@ -8,3 +8,10 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+
+try:
+    NUMB = int(input("First number of letter: "))
+    print(f"The numbers corresponds to the letter: {chr(NUMB+96)}")
+except ValueError:
+    print('Incorrect')

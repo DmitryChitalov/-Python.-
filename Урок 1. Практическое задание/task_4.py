@@ -14,3 +14,26 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+
+from random import random, choice
+import string
+
+try:
+    LEFT = int(input("Min value of positive integer: "))
+    RIGHT = int(input("Max value of positive integer: "))
+    NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+    print(NUMB)
+
+    LEFT = float(input("Min value of real number: "))
+    RIGHT = float(input("Max value of real number: "))
+    NUMB = random() * (RIGHT - LEFT) + LEFT
+    print(NUMB)
+
+    LEFT = ord(input("First letter: "))
+    RIGHT = ord(input("Second letter: "))
+    NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+    print(chr(NUMB))
+
+except ValueError:
+    print('Incorrect')

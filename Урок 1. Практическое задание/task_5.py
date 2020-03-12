@@ -10,3 +10,13 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+import string
+
+try:
+    LEFT = ord(input("First letter: ")) - ord('a') + 1
+    RIGHT = ord(input("Second letter: ")) - ord('a') + 1
+    print(f"Quantity of symbols between two letters: {abs(LEFT - RIGHT) - 1}")
+
+except ValueError:
+    print('Incorrect')
