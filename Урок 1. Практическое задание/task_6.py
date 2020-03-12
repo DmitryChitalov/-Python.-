@@ -8,3 +8,12 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+try:
+    ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+    LETTER = int(input("Введите номер буквы в алфавите "))
+    if LETTER > 26:
+        print('В алфавите всего 26 букв, введите число < или равно 26')
+    else:
+        print(ALPHABET[LETTER - 1])
+except ValueError:
+    print('Некорректный формат ввода')
