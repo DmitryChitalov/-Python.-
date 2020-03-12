@@ -13,3 +13,16 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+
+user_number = int(input("Type the number - "))
+
+first_num = user_number // 100
+second_num = (user_number // 10) % 10
+third_num = user_number % 10
+
+sum = first_num + second_num + third_num
+mult = first_num * second_num * third_num
+
+print(f"Summary - {sum}")
+print(f"Multiplication - {mult}")
