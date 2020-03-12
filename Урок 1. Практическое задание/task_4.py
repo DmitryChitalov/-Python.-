@@ -1,3 +1,5 @@
+from random import random
+
 """
 Задание 4. Написать программу, которая генерирует в указанных пользователем границах:
     случайное целое число;
@@ -14,3 +16,44 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+try:
+    choice = int(input('Выберите пункт:\n'
+                       '1. Cлучайное целое число\n'
+                       '2. Cлучайное вещественное число\n'
+                       '3. случайный символ.\n'
+                       '---------------------\n'
+                       'Ваш выбор:'))
+    if choice == 1:
+        LEFT = int(input("Введите целое число, левую границу диапазона: "))
+        RIGHT = int(input("Введите целое число, правую границу диапазона:"))
+        if LEFT >= RIGHT:
+            print('Значения введены некорректно LEFT должно быть меньше RIGHT')
+        else:
+            NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+            print(NUMB)
+    elif choice == 2:
+        LEFT = float(input("Введите вещественное число, левую границу диапазона: "))
+        RIGHT = float(input("Введите вещественное число, правую границу диапазона: "))
+        if LEFT >= RIGHT:
+            print('Значения введены некорректно LEFT должно быть меньше RIGHT')
+        else:
+            NUMB = random() * (RIGHT - LEFT) + LEFT
+            print(round(NUMB, 3))
+    elif choice == 3:
+        LEFT_LET = input("Введите букву латинского алфавита, левую границу диапазона: ")
+        RIGHT_LET = input("Введите букву латинского алфавита, правую границу диапазона:")
+        ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+        LEFT = ALPHABET.find(LEFT_LET)
+        RIGHT = ALPHABET.find(RIGHT_LET)
+        if LEFT == -1 or RIGHT == -1:
+            print('Некорректный формат ввода')
+        elif LEFT >= RIGHT:
+            print('Значения введены некорректно LEFT_LET должно быть ранее по алфавиту чем RIGHT_LET')
+        else:
+            NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+            print(ALPHABET[NUMB])
+    else:
+        print('К сожалению такого варианта нет')
+except ValueError:
+    print('Некорректный формат ввода')
