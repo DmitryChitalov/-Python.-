@@ -14,3 +14,26 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+from random import random
+
+try:
+    FIRST_INT = int(input("Введите минимальную границу для целого числа: "))
+    SECOND_INT = int(input("Введите максимальную границу для целого числа: "))
+    NUMB_INT = int(random() * (SECOND_INT - FIRST_INT + 1)) + FIRST_INT
+    print(f'Рандомное целое число в диапазоне от {FIRST_INT} до {SECOND_INT}: {NUMB_INT}')
+    FIRST_FLOAT = float(
+        input("Введите минимальную границу для вещественного числа: "))
+    SECOND_FLOAT = float(
+        input("Введите максимальную границу для вещественного числа: "))
+    NUMB_FLOAT = random() * (SECOND_FLOAT - FIRST_FLOAT) + FIRST_FLOAT
+    print(f'Рандомное вещественное число в диапазоне от {FIRST_FLOAT} до {SECOND_FLOAT}: \
+{       NUMB_FLOAT}')
+    FIRST_CHAR = ord(input("Введите минимальную границу для символов: "))
+    SECOND_CHAR = ord(input("Введите максимальную границу для символов: "))
+    NUMB_STR = int(random() * (SECOND_CHAR - FIRST_CHAR + 1)) + FIRST_CHAR
+    print(f'Рандомный символ в диапазоне от {chr(FIRST_CHAR)} до {chr(SECOND_CHAR)}: \
+        {chr(NUMB_STR)}')
+
+except ValueError:
+    print("Введите корректное значение")

@@ -13,3 +13,15 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+try:
+    NUMB = int(input("Введите число: "))
+    HUNDRED = NUMB // 100
+    DOZEN = (NUMB // 10) % 10
+    UNIT = NUMB % 10
+    SUM = HUNDRED + DOZEN + UNIT
+    MULTIPLICATION = HUNDRED * DOZEN * UNIT
+    print(f'Сумма равна: {SUM} \nПроизведение равно: {MULTIPLICATION}\n')
+
+except ValueError:
+    print("Введите корректное значение.")

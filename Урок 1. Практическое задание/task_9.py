@@ -4,3 +4,18 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+try:
+    A = int(input("Введите первое число: "))
+    B = int(input("Введите второе число: "))
+    C = int(input("Введите третье число: "))
+
+    if A < B < C or C < B < A:
+        print(B)
+    elif B < A < C or C < A < B:
+        print(A)
+    elif A < C < B or B < C < A:
+        print(C)
+    else:
+        print("Введены одинаковые значения")
+except ValueError:
+    print("Введите корректное значение")

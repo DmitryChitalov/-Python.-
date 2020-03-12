@@ -8,3 +8,7 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+CHAR = int(input('Введите номер буквы в алфавите: '))
+FIN_CHAR = ord('a') + CHAR - 1
+print(f'{CHAR} - это буква "{chr(FIN_CHAR)}"')

@@ -10,3 +10,11 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+FIRST_CHAR = ord(input("Введите первую букву: "))
+SECOND_CHAR = ord(input("Введите вторую букву: "))
+
+FIRST_CHAR_POS = FIRST_CHAR - ord('a') + 1
+SECOND_CHAR_POS = SECOND_CHAR - ord('a') + 1
+print(f'{chr(FIRST_CHAR)} - {FIRST_CHAR_POS}, {chr(SECOND_CHAR)} - {SECOND_CHAR_POS}')
+print(f'Символов между буквами: {abs(FIRST_CHAR - SECOND_CHAR) - 1}')
