@@ -4,3 +4,17 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+try:
+    A = float(input("Введите число A: "))
+    B = float(input("Введите число B: "))
+    C = float(input("Введите число C: "))
+    if A == B or B == C or C ==A:
+        print('Невозможно определить среднее число')
+    elif (A > B and A < C) or (A < B and A > C):
+        print(f'Среднее число A = {A}')
+    elif (B > A and B < C) or (B > C and B < A):
+        print(f'Среднее число B = {B}')
+    else:
+        print(f'Среднее число C = {C}')
+except ValueError:
+    print('Некорректный ввод данных.')
