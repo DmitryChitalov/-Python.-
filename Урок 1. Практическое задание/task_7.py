@@ -4,3 +4,33 @@
 составленного из этих отрезков. Если такой треугольник существует,
 то определить, является ли он разносторонним, равнобедренным или равносторонним.
 """
+
+
+def check_triangle() -> None:
+    """ Проверка возможности существования треугольника и
+        определение его типа
+    """
+    try:
+        side_a = float(input('Ведите длину первого отрезка: ').strip())
+        side_b = float(input('Ведите длину второго отрезка: ').strip())
+        side_c = float(input('Ведите длину третьего отрезка: ').strip())
+
+        if side_a + side_b <= side_c or \
+                side_b + side_c <= side_a or \
+                side_a + side_c <= side_b:
+            print('Треугольник не существует')
+        else:
+            if side_a == side_b == side_c:
+                print('Треугольник существует и он равносторонний')
+            elif side_a != side_b and side_b != side_c and side_a != side_c:
+                print('Треугольник существует и он разносторонний')
+            else:
+                print('Треугольник существует и он равнобедренный')
+
+    except ValueError as err:
+        print('Введённое Вами значение некорректно')
+        print('Ошибка: ', err)
+
+
+if __name__ == "__main__":
+    check_triangle()

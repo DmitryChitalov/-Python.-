@@ -13,3 +13,24 @@ k – угловой коэффициент (действительное чис
 X1_VAL = 2, Y1_VAL = 3, X2_VAL = 4, Y2_VAL = 5
 Уравнение прямой, проходящей через эти точки: y = 1.0x + 1.0
 """
+
+
+def line_function() -> None:
+    """ Поиск уравнения прямой """
+    try:
+        x1_val = float(input('Введите координаты X первой точки: ').strip())
+        y1_val = float(input('Введите координаты Y первой точки: ').strip())
+        x2_val = float(input('Введите координаты X втрой точки: ').strip())
+        y2_val = float(input('Введите координаты Y второй точки: ').strip())
+
+        k_arg = round(((y2_val - y1_val) / (x2_val - x1_val)), 3)
+        b_arg = round(((x1_val * (y1_val - y2_val)) / (x2_val - x1_val) + y1_val), 3)
+        print(f'Уравнение прямой, проходящей через эти точки: y = {k_arg}x + {b_arg}')
+
+    except ValueError as err:
+        print('Введенное Вами значение не является корректным числом')
+        print('Ошибка: ', err)
+
+
+if __name__ == "__main__":
+    line_function()

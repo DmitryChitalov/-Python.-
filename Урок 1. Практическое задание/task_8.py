@@ -16,3 +16,33 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+
+import calendar
+
+
+def check_year_if(year) -> bool:
+    """ Проверка условием if """
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    return False
+
+
+def check_year_tern(year) -> bool:
+    """ Проверка тернарным оператором """
+    return True if (year % 4 == 0 and year % 100 != 0) or \
+                   (year % 400 == 0) else False
+
+
+if __name__ == "__main__":
+    try:
+        YEAR = int(input('Введите год: '))
+
+        print(f'Проверка Python. Год {YEAR} високосный?',
+              calendar.isleap(YEAR))
+        print(f'Проверка if. Год {YEAR} високосный?', check_year_if(YEAR))
+        print(f'Проверка тернарным оператором. Год {YEAR} високосный?',
+              check_year_tern(YEAR))
+
+    except ValueError as err:
+        print('Введённое Вами значение некорректно')
+        print('Ошибка: ', err)

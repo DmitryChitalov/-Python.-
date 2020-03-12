@@ -8,3 +8,21 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+
+def get_char_by_num() -> None:
+    """ Определяет букву по введённому номеру в алфавите """
+    try:
+        char_num = int(input('Введите номер буквы: ').strip())
+
+        if 1 <= char_num <= 26:
+            print(f'На {char_num} месте находится буква "{chr(char_num + 96)}"')
+        else:
+            print(f'Введенный номер буквы {char_num} некорректен')
+    except ValueError as err:
+        print('Введенное Вами значение не является корректным символом')
+        print('Ошибка: ', err)
+
+
+if __name__ == "__main__":
+    get_char_by_num()
