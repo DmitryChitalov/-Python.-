@@ -8,3 +8,12 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+try:
+    OFFSET = 96  # оффсет от начала нумерации ASCII символов
+    NUMB = int(input('Введите номер буквы: '))
+    if not 1 <= NUMB <= 26:
+        raise ValueError('Число должно быть от 1 до 26')
+    print(f'Введёному номеру соответствует буква: "{chr(NUMB + OFFSET)}"')
+except ValueError as err:
+    print(f'Некорректный ввод! Ошибка: {err}')

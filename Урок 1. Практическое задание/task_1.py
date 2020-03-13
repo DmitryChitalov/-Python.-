@@ -13,3 +13,17 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+try:
+    NUMB = int(input('Введите трехзначное положиельное целое число: '))
+    if not 100 <= abs(NUMB) <= 999:
+        raise ValueError('Должно быть введено число из трех цифр!')
+    FIRST = NUMB // 100
+    SECOND = (NUMB // 10) % 10
+    THIRD = NUMB % 10
+    SUMM = FIRST + SECOND + THIRD
+    MULT = FIRST * SECOND * THIRD
+    print(f'Сумма = {SUMM}')
+    print(f'Произведение = {MULT}')
+except ValueError as err:
+    print(f'Некорректный ввод! Текст ошибки: {err}')

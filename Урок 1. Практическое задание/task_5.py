@@ -10,3 +10,17 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+try:
+    OFFSET = 96
+    LETTER_1 = ord(input('Введите букву латинского алфавита: '))
+    LETTER_2 = ord(input('Введите букву латинского алфавита: '))
+    if not (97 <= LETTER_1 <= 122 and 97 <= LETTER_2 <= 122):
+        raise ValueError('Буквы должны быть от "a" до "z"')
+    print(f'Порядковый номер "{chr(LETTER_1)}" - {LETTER_1-OFFSET}\n'
+          f'Порядковый номер "{chr(LETTER_2)}" - {LETTER_2-OFFSET}\n'
+          f'Между буквами находится {abs(LETTER_2-LETTER_1)-1} букв(-а/-ы)')
+except ValueError as err:
+    print(f'Некорректный ввод! Ошибка: {err}')
+except TypeError as err:
+    print(f'Некорректный ввод! Ошибка: {err}')
