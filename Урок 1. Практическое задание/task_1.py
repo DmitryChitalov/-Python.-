@@ -13,3 +13,17 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+while 1:
+    print("Введите трехзначное число, чтобы получить сумму и произведение цифр:")
+    NUMBER = int(input())
+
+    LEN = len(str(NUMBER))
+    if (LEN != 3):
+        continue
+
+    NUMBER1 = NUMBER // 100
+    NUMBER2 = (NUMBER - NUMBER1 * 100) // 10
+    NUMBER3 = NUMBER - (NUMBER1 * 100 + NUMBER2 * 10)
+
+    print(f"Сумма всех чисел: {NUMBER1 + NUMBER2 + NUMBER3}, произведение всех чисел: {NUMBER1 * NUMBER2 * NUMBER3}")
