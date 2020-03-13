@@ -10,3 +10,15 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+first_char = ord(input("First char - "))
+second_char = ord(input("Second char - "))
+
+first_char_place = first_char - ord('a') + 1
+second_char_place = second_char - ord('a') + 1
+
+dif = abs(first_char_place - second_char_place) - 1
+
+print(f"Place of first char - {first_char_place}")
+print(f"Place of second char - {second_char_place}")
+print(f"Number chars between - {dif}")

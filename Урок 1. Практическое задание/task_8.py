@@ -8,7 +8,7 @@
 
 Попробуйте решить задачу двумя способами:
 1. Обычное ветвление
-2. Тернарный оператор
+
 
 П.С. - Тернарные операторы, также известные как условные выражения,
 представляют собой операторы, которые оценивают что-либо на основе условия,
@@ -16,3 +16,21 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+
+user_year = int(input("Please type the year - "))
+
+# 1. Обычное ветвление
+if (user_year % 4 == 0 and not user_year % 100 == 0) or user_year % 400 == 0:
+    is_leap = True
+else:
+    is_leap = False
+
+# 2. Тернарный оператор
+is_leap = True if \
+    (user_year % 4 == 0 and not user_year % 100 == 0) or user_year % 400 == 0\
+    else False
+
+if is_leap is True:
+    print("Year is leap")
+else:
+    print("Year isn't leap.")
