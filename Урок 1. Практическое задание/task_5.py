@@ -28,9 +28,9 @@ else:
     # меняем местами буквы, если левая пограничная буква больше правой
     if FIRST_LETTER > SECOND_LETTER:
         FIRST_LETTER, SECOND_LETTER = SECOND_LETTER, FIRST_LETTER
-        print(f'''Место в алфавите первой буквы: {SECOND_LETTER - LATIN_ALPHABET}
-        Место в алфавите второй буквы {FIRST_LETTER - LATIN_ALPHABET}
-        Между этими буквами {FIRST_LETTER - SECOND_LETTER - 1}''')
+        print(f'''Место в алфавите первой буквы: {FIRST_LETTER - LATIN_ALPHABET}
+        Место в алфавите второй буквы {SECOND_LETTER - LATIN_ALPHABET}
+        Между этими буквами {SECOND_LETTER - FIRST_LETTER - 1}''')
     else:
         print(f'''Место в алфавите первой буквы: {FIRST_LETTER - LATIN_ALPHABET}
 Место в алфавите второй буквы {SECOND_LETTER - LATIN_ALPHABET}
