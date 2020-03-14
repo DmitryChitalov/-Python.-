@@ -8,3 +8,16 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+LATIN_ALPHABET = 96
+try:
+    USER_ANSWER = int(input('Введите номер буквы: '))
+    if USER_ANSWER > 26:
+        print('В английском алфивите 26 букв!')
+    elif USER_ANSWER < 1:
+        print('Буквы с таким номером не существует в английском алфавите')
+    else:
+        LETTER = chr(LATIN_ALPHABET + USER_ANSWER)
+        print(f'Введёному номеру соответствует буква: {LETTER}')
+except ValueError:
+    print('Необходимо вводить цифру!')
