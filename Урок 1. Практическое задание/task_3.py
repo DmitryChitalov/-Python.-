@@ -13,3 +13,28 @@ k – угловой коэффициент (действительное чис
 X1_VAL = 2, Y1_VAL = 3, X2_VAL = 4, Y2_VAL = 5
 Уравнение прямой, проходящей через эти точки: y = 1.0x + 1.0
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено корректно
+def input_float(string):
+    while True:
+        try:
+            number = input(f"Введите число {string}\n")
+            number = float(number)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return number
+
+
+x1 = input_float("X1")
+y1 = input_float("Y1")
+x2 = input_float("X2")
+y2 = input_float("Y2")
+# Учтем, что координаты Х могут совпасть
+if x2 == x1:
+    print(f"Уравнение прямой x = {x1}")
+else:
+    k = (y2 - y1) / (x2 - x1)
+    b = y1 - k * x1
+    print(f"Уравнение прямой y = {k}x + {b}")

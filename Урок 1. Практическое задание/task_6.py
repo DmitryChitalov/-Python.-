@@ -8,3 +8,23 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+
+# Ожидает на ввод номер буквы в алфавите. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            number = input("Введите номер буквы в алфавите\n")
+            number = int(number)
+            if 0 <= abs(number) < 26:
+                break
+            else:
+                print("Введено некорректное число")
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return number
+
+
+char_pos = input_number()
+char = chr(char_pos + ord('a'))
+print(f"Номер {char_pos} соответствует букве '{char}'")

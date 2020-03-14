@@ -13,3 +13,28 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+
+# Ожидает на ввод трехзначное число, учитывает отрицательные. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            num = input("Введите трехзначное число\n")
+            num = int(num)
+            if 99 < abs(num) < 1000:
+                break
+            else:
+                print("Введено некорректное число")
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+number = input_number()
+tmp_number = abs(number)
+ones = tmp_number % 10
+tens = tmp_number // 10 % 10
+hundreds = tmp_number // 10 // 10
+sum = ones + tens + hundreds
+multiply = ones * tens * hundreds
+print(f"Сумма цифр числа {number} равна {sum}, произведение {multiply}")

@@ -16,3 +16,26 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено корректно
+def input_number():
+    while True:
+        try:
+            number = input(f"Введите год\n")
+            number = int(number)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return number
+
+
+year = input_number()
+# Через условия
+if year % 4 or not year % 100 and year % 400:
+    print(f"Год {year} не является високосным")
+else:
+    print(f"Год {year} является високосным")
+# Тернарный оператор
+result = "не високосный" if year % 4 or not year % 100 and year % 400 else "високосный"
+print(f"{year} - {result}")
