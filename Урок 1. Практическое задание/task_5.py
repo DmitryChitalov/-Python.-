@@ -10,3 +10,31 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+
+ALPHABET = "abcdefghijklmnopqrstuvwxyz" # Не делал импорт т.к. пользуюсь минимумом
+
+
+LETTER_1 = input("Введите первую букву диапазона: ")
+LETTER_2 = input("Введите вторую букву диапазона: ")
+LETTER_1_POSITION = 0
+LETTER_2_POSITION = 0
+
+
+i = 0
+while i < len(ALPHABET):
+    if ALPHABET[i] == LETTER_1:
+        LETTER_1_POSITION = i + 1
+    i = i + 1
+# Не стал писать функцию. Т.к. на вебинаре вы сказали пользоваться тем что проходили
+
+
+i = 0
+while i < len(ALPHABET):
+    if ALPHABET[i] == LETTER_2:
+        LETTER_2_POSITION = i + 1
+    i = i + 1
+
+print(f"Буква \"{LETTER_1}\" находится на {LETTER_1_POSITION} позиции в алфавите. \n"
+      f"Буква \"{LETTER_2}\" находится на {LETTER_2_POSITION} позиции в алфавите. \n"
+      f"Между буквами {abs(LETTER_1_POSITION - LETTER_2_POSITION) - 1} букв(а)")

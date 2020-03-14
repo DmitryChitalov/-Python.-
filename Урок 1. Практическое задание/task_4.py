@@ -14,3 +14,20 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+from random import random
+
+DIGIT_FROM = int(input("Введите начала диапазона целых чисел: "))
+DIGIT_TO = int(input("Введите конец диапазона целых чисел: "))
+DIGIT_2_FROM = float(input("Введите начало диапазона вещественных чисел: "))
+DIGIT_2_TO = float(input("Введите конец диапазона вещественных чисел: "))
+CHAR_FROM = input("Введите начало диапазона букв латинского алфавита: ")
+CHAR_TO = input("Введите конец диапазона букв латинского алфавита: ")
+
+print("Ваше случайное целое число из диапазона: ", round((random()
+                                                          * (DIGIT_TO - DIGIT_FROM) + DIGIT_FROM)))
+print("Ваше случайное целое число из диапазона: ", (random()
+                                                    * (DIGIT_2_TO - DIGIT_2_FROM) + DIGIT_2_FROM))
+print("Случайная буква: ",
+      chr(round((random() * (ord(CHAR_TO.lower())
+                             - ord(CHAR_FROM.lower())) + ord(CHAR_FROM.lower())))))

@@ -13,3 +13,12 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+USER_NUMBER = int(input("Введите трёхзначное число: "))
+
+FIRST_PART = USER_NUMBER // 100
+SECOND_PART = (USER_NUMBER // 10) % 10
+THIRD_PART = USER_NUMBER % 10
+
+print(f"Сумма всех цифр числа равна: {FIRST_PART+SECOND_PART+THIRD_PART} \n"
+      f"Произведение цифр числа равно: {FIRST_PART*SECOND_PART*THIRD_PART}")
