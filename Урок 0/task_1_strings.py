@@ -1,19 +1,21 @@
-str = "Привет я строка"
-print(str)
+"""
+Substitution into the strings
+"""
 
-template = "Привет я шаблон первый=%d & второй=%d | третий=%d"
-print(template)
-result = template % (1,2,3)
-print(result)
+ST = "Привет я строка"
+print(ST)
+
+TEMPLATE = "Привет я шаблон первый=%d & второй=%d | третий=%d"
+print(TEMPLATE)
+RESULT = TEMPLATE % (1, 2, 3)
+print(RESULT)
 
 print("Или коротко %d %d" % (1, 2))
-
-
 
 A = 1
 B = 2
 C = A + B
-template = "result = %d"
-result = template % C
+TEMPLATE = "result = %d"
+RESULT = TEMPLATE % C
 
-result = "result = %d" % (A + B)
+RESULT = "result = %d" % (A + B)
