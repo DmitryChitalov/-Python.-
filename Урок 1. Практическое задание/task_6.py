@@ -9,9 +9,13 @@
 Подсказка: используйте ф-ции chr() и ord()
 """
 
-user_char = chr(
-                int(
-                    input("Please type the number of your char - ")
-                ) + ord("a") - 1
-            )
-print(f"Your char is {user_char}.")
+
+try:
+    user_char = chr(
+                    int(
+                        input("Please type the number of your char - ")
+                    ) + ord("a") - 1
+                )
+    print(f"Your char is {user_char}.")
+except ValueError:
+    print("You entered an incorrect value.")

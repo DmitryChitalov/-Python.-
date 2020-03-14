@@ -17,20 +17,33 @@
 заменяя многострочное if-else, делая код компактным.
 """
 
-user_year = int(input("Please type the year - "))
 
 # 1. Обычное ветвление
-if (user_year % 4 == 0 and not user_year % 100 == 0) or user_year % 400 == 0:
-    is_leap = True
-else:
-    is_leap = False
+try:
+    user_year = int(input("Please type the year - "))
+    if (user_year % 4 == 0 and not user_year % 100 == 0) or user_year % 400 == 0:
+        is_leap = True
+    else:
+        is_leap = False
+
+    if is_leap is True:
+        print("Year is leap")
+    else:
+        print("Year isn't leap.")
+except ValueError:
+    print("You entered an incorrect value.")
+
 
 # 2. Тернарный оператор
-is_leap = True if \
-    (user_year % 4 == 0 and not user_year % 100 == 0) or user_year % 400 == 0\
-    else False
+try:
+    user_year = int(input("Please type the year - "))
+    is_leap = True if \
+        (user_year % 4 == 0 and not user_year % 100 == 0) or user_year % 400 == 0 \
+        else False
 
-if is_leap is True:
-    print("Year is leap")
-else:
-    print("Year isn't leap.")
+    if is_leap is True:
+        print("Year is leap")
+    else:
+        print("Year isn't leap.")
+except ValueError:
+    print("You entered an incorrect value.")
