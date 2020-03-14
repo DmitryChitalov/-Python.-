@@ -16,3 +16,19 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+user_answer = int(input('введите год: '))
+
+if user_answer % 100 != 0:
+    if user_answer % 4 == 0:
+        print(f'{user_answer} - високосный год')
+    else:
+        if user_answer % 400 == 0:
+            print('год високосный')
+        else:
+            print('год не високосный')
+
+
+# if user_answer % 4 == 0 and user_answer % 100 != 0:
+#     print(f'{user_answer} - високосный год')
+# else:
+#     print('год не високосный')

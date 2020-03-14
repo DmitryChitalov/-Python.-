@@ -13,3 +13,14 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+userInt = int(input('Введите трехзначное число: '))
+firstUserInt = userInt // 100
+secondUserInt = (userInt // 10) % 10
+thirdUserInt = userInt % 10
+sumUserInt = firstUserInt + secondUserInt + thirdUserInt
+mulUserInt = firstUserInt * secondUserInt * thirdUserInt
+print(
+    f'Сумма цифр введенного числа: {firstUserInt} + {secondUserInt} + {thirdUserInt} = {sumUserInt}')
+print(
+    f'Произведение цифр введенного числа: {firstUserInt} * {secondUserInt} * {thirdUserInt} = {mulUserInt}')

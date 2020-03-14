@@ -14,3 +14,20 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+
+left_int = int(input('введите минимальное целое число: '))
+right_int = int(input('введите максимальное целое число'))
+if left_int != right_int:
+    rand_int = int(random() * (right_int - left_int + 1)) + left_int
+    print(f'случайное целое число в заданном диапазоне {rand_int}')
+else:
+    print('Вы ввели одинаковые числа!')
+
+left = float(input('введите минимальное вещественное число: '))
+right = float(input('введите максимальное вещественное число: '))
+if left != right:
+    rand = random() * (right - left) + left
+    print(f'случайное вещественное число в заданном диапазоне {rand}')
+else:
+    print('Вы ввели одинаковые числа!')
