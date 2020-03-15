@@ -8,3 +8,9 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+
+a = "abcdefghijklmnopqrstuvwxyz"
+searchuser = int(input()) - 1
+userletter = a[searchuser]
+print(userletter)
