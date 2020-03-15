@@ -13,3 +13,18 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+
+nubmeruser1 = str(input("Введите 3-х значное число "))
+if len(nubmeruser1) == 3:
+    try:
+        nubmeruser = int(nubmeruser1)
+        a = nubmeruser // 100
+        b = (nubmeruser // 10) % 10
+        c = nubmeruser % 10
+        print("сумма чисел =", a + b + c)
+        print("произведение чисел =", a * b * c)
+    except:
+        print("вы ввели что то не то")
+else:
+    print("вы ввели не то что просили")
