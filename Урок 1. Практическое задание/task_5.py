@@ -10,3 +10,21 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+
+searchlen1 = str(input())
+searchlen2 = str(input())
+a = "abcdefghijklmnopqrstuvwxyz"
+v = 0
+
+r1 = a.find(searchlen1) + 1
+r2 = a.find(searchlen2) + 1
+
+if r1 > r2:
+    lenuser = r1 - r2 - 1
+else:
+    lenuser = r2 - r1 - 1
+
+print(lenuser)
+print(r1, r2)
+
