@@ -8,3 +8,14 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+
+try:
+    NUM = int(input("Введите номер буквы: ")) + 96
+except ValueError:
+    print("Неверно введено значение")
+
+if ord('a') <= NUM <= ord('z'):
+    print(chr(NUM))
+else:
+    print("Нет такой буквы")

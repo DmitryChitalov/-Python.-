@@ -14,3 +14,23 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+
+from random import random
+
+
+LEFT = input("Минимальная граница: ")
+RIGHT = input("Максимальная граница: ")
+if LEFT.isdigit() and RIGHT.isdigit():
+    NUMB = int(random() * (int(RIGHT) - int(LEFT) + 1)) + int(LEFT)
+    print(NUMB)
+
+elif LEFT.isalpha() and RIGHT.isalpha():
+    if (len(LEFT) == 1) and (len(RIGHT) == 1):
+        N = int(random() * (ord(RIGHT) - ord(LEFT) + 1)) + ord(LEFT)
+        print(chr(N))
+    else:
+        print("Неверный ввод")
+else:
+    NUMB = random() * (float(RIGHT) - float(LEFT)) + float(LEFT)
+    print(round(NUMB, 3))

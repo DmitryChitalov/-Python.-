@@ -10,3 +10,14 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+
+NUM_1 = input("Ведите первую букву: ")
+NUM_2 = input("Ведите вторую букву: ")
+if (NUM_1.isalpha() and NUM_2.isalpha()) and (
+        len(NUM_1) == 1 and len(NUM_2) == 1):
+    print(f'{NUM_1} = {ord(NUM_1) - 96}')
+    print(f'{NUM_2} = {ord(NUM_2) - 96}')
+    print(f'{abs(ord(NUM_2) - ord(NUM_1)) - 1}')
+else:
+    print('Неверный ввод')
