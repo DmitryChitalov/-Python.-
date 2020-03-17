@@ -12,3 +12,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def cycle() -> None:
+    """ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ """
+    try:
+        count = abs(int(input('Сколько будет чисел? : ')))
+        number = abs(int(input('Какую цифру считать? : ')))
+        quantity = 0
+        for i in range(count):
+            user_input = abs(int(input(f'Число {i + 1}: ')))
+            while user_input > 0:
+                if user_input % 10 == number:
+                    quantity += 1
+                user_input = user_input // 10
+
+        print(f'Было введено {quantity} цифр "{number}"')
+    except ValueError:
+        print('Недопустимое значение. Выходим')
+
+
+if __name__ == "__main__":
+    cycle()

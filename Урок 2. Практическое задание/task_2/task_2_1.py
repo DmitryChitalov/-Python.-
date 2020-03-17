@@ -12,3 +12,35 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def cycle_counter() -> None:
+    """ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ """
+
+    try:
+        value = int(input('Введите число: ').strip())
+        count, evens, odds = 0, 0, 0
+        user_input = value
+
+        if value <= 0:
+            print('Недопустимое значение. Выходим')
+        else:
+            while value > 0:
+                count += 1
+                number = value % 10
+                if number % 2 == 0:
+                    evens += 1
+                else:
+                    odds += 1
+                value = value // 10
+
+            print(
+                f'В числе {user_input} всего {count} цифр, '
+                f'из которых {evens} чётных и {odds} нечётных'
+            )
+    except ValueError:
+        print('Недопустимое значение. Выходим')
+
+
+if __name__ == "__main__":
+    cycle_counter()

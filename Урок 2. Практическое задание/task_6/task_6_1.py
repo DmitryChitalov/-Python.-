@@ -7,3 +7,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+from random import randint
+
+
+def cycle_generator() -> None:
+    """ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ """
+    random_number = randint(0, 100)
+    print('Загадано целое число от 0 до 100')
+    for i in range(10):
+        try:
+            user_input = int(input(f'Попытка {i+1}. Введите Ваш ответ: ').strip())
+            if user_input == random_number:
+                print('Вы угадали!')
+                break
+            if user_input > random_number:
+                print('Загаданное число меньше.')
+            else:
+                print('Загаданное число больше.')
+        except ValueError:
+            print('Недопустимое значение.')
+    print(f'Было загадано число {random_number}')
+
+
+if __name__ == "__main__":
+    cycle_generator()

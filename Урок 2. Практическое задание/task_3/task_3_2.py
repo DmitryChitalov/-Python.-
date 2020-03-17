@@ -14,3 +14,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion_reverse() -> None:
+    """ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ """
+
+    def recursion(r_value) -> str:
+
+        if r_value <= 0:
+            return 'Недопустимое значение.'
+        if 1 <= r_value <= 9:
+            return r_value
+        return str((r_value % 10)) + str(recursion(r_value // 10))
+
+    try:
+        value = int(input('Введите число: ').strip())
+        invert_value = recursion(value)
+        print(f'Перевернутое число: {invert_value}')
+
+    except ValueError:
+        print('Недопустимое значение. Выходим')
+
+
+if __name__ == "__main__":
+    recursion_reverse()

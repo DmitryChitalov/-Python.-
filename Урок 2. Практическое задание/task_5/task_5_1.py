@@ -1,5 +1,4 @@
-"""
-5.	Вывести на экран коды и символы таблицы ASCII, начиная с символа
+""" 5.	Вывести на экран коды и символы таблицы ASCII, начиная с символа
 под номером 32 и заканчивая 127-м включительно.
 Вывод выполнить в табличной форме: по десять пар "код-символ" в каждой строке.
 
@@ -17,3 +16,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def cycle_ascii() -> None:
+    """ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ """
+    ascii_start = 32
+    ascii_stop = 127
+    cursor = ascii_start
+    while cursor <= ascii_stop:
+        if (cursor - ascii_start + 1) % 10 == 0:
+            print(f'{cursor} - {chr(cursor)}', end='\n')
+        else:
+            print(f'{cursor} - {chr(cursor)}', end=' ')
+        cursor += 1
+
+
+if __name__ == "__main__":
+    cycle_ascii()

@@ -17,3 +17,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion_ascii(start, stop) -> str:
+    """ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ """
+
+    if start == stop:
+        return f'{start} - {chr(start)}'
+    if (start - 32 + 1) % 10 == 0:
+        return f'{start} - {chr(start)} \n{recursion_ascii(start + 1, stop)}'
+    return f'{start} - {chr(start)} {recursion_ascii(start + 1, stop)}'
+
+
+if __name__ == "__main__":
+    ASCII_START = 32
+    ASCII_STOP = 127
+    print(recursion_ascii(ASCII_START, ASCII_STOP))

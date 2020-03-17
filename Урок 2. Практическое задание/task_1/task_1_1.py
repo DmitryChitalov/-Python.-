@@ -32,3 +32,38 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def cycle_calculator() -> None:
+    """ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ """
+    while True:
+        sign = input(
+            'Введите операцию (+, -, *, / или 0 для выхода): ').strip()
+        if sign == '0':
+            print('Выходим')
+            break
+        if sign not in ['+', '-', '*', '/']:
+            print('Неверная операция. Повторите ввод')
+            continue
+        try:
+            var_1 = float(input('Введите первое число: ').strip())
+            var_2 = float(input('Введите второе число: ').strip())
+            if var_2 == 0 and sign == '/':
+                print('Деление на 0 невозможно. Повторите ввод')
+                continue
+        except ValueError:
+            print('Недопустимое значение. Повторите ввод')
+            continue
+        if sign == '+':
+            result = var_1 + var_2
+        elif sign == '-':
+            result = var_1 - var_2
+        elif sign == '*':
+            result = var_1 * var_2
+        else:
+            result = var_1 / var_2
+        print(f'Результат {var_1} {sign} {var_2} = {result}')
+
+
+if __name__ == "__main__":
+    cycle_calculator()
