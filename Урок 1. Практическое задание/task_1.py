@@ -15,15 +15,29 @@
 """
 
 while 1:
-    print("Введите трехзначное число, чтобы получить сумму и произведение цифр:")
-    NUMBER = int(input())
+    FIRST_STEP = input("Для запуска программы введите 's', для выхода любой другой символ:")
 
-    LEN = len(str(NUMBER))
-    if (LEN != 3):
-        continue
+    if (FIRST_STEP.lower() != "s"):
+        break
 
-    NUMBER1 = NUMBER // 100
-    NUMBER2 = (NUMBER - NUMBER1 * 100) // 10
-    NUMBER3 = NUMBER - (NUMBER1 * 100 + NUMBER2 * 10)
+    while 1:
+        try:
+            VAR = int(input("Введите трехзначное челое число, чтобы получить сумму и произведение цифр:"))
+        except ValueError:
+            print("Вы ввели не число, попробуйте еще раз")
+            continue
+        else:
+            LEN = len(str(VAR))
+            if LEN != 3:
+                print("Вы ввели не трехзначное число, попробуйте еще раз")
+                continue
 
-    print(f"Сумма всех чисел: {NUMBER1 + NUMBER2 + NUMBER3}, произведение всех чисел: {NUMBER1 * NUMBER2 * NUMBER3}")
+            NUMBER1 = VAR // 100
+            NUMBER2 = (VAR - NUMBER1 * 100) // 10
+            NUMBER3 = VAR - (NUMBER1 * 100 + NUMBER2 * 10)
+
+            print(
+                f"Сумма всех чисел: {NUMBER1 + NUMBER2 + NUMBER3}, произведение всех чисел: {NUMBER1 * NUMBER2 * NUMBER3}"
+                "Удачи!"
+            )
+            break

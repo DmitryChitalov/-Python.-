@@ -14,14 +14,35 @@ X1_VAL = 2, Y1_VAL = 3, X2_VAL = 4, Y2_VAL = 5
 Уравнение прямой, проходящей через эти точки: y = 1.0x + 1.0
 """
 
-print("Введите X кординату первой точки прямой:")
-X1 = int(input())
-print("Введите Y кординату первой точки прямой:")
-Y1 = int(input())
+from re import sub
 
-print("Введите X кординату второй точки прямой:")
-X2 = int(input())
-print("Введите Y кординату второй точки прямой:")
-Y2 = int(input())
+while True:
+    START = sub(r"[\s,]", "", input("Для запуска нажмите 1, для выхода q:"))
 
-# Дальше магия)
+    if START == "q":
+        break
+    elif START == "1":
+        while 1:
+            try:
+                X1, Y1, X2, Y2 = list(
+                    map(
+                        float,
+                        input("Введите координаты двух точек прямой в формате X1,Y1,X2,Y2:").replace(" ", "").split(",") or 1
+                    )
+                )
+            except ValueError:
+                print("Вы ввели недопустимое значение одной из точек, попробуйте еще раз")
+                break
+
+            K_VAL = (Y1 - Y2) / (X1 - X2)
+            B_VAL = Y1 - K_VAL * X1
+
+            if B_VAL != 0:
+                print(f'Уравнение прямой: y= {K_VAL} * x + {B_VAL}')
+            else:
+                print(f'Уравнение прямой: y= {K_VAL} * x')
+
+            break
+    else:
+        print("Вы выбрали неправлиьное действие, попробуйте снова")
+        break
