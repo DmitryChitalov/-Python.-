@@ -12,3 +12,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+a = str(input("введите число---"))
+o = 0
+evennumber = 0
+unevennumber = 0
+for r in a:
+    if int(a[o]) % 2 == 0:
+        evennumber += 1
+        o += 1
+    else:
+        unevennumber += 1
+        o += 1
+print(f"в числе {a},{evennumber} четных и {unevennumber} нечетных чисел" )
+
