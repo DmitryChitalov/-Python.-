@@ -33,3 +33,51 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def num_enter(message):
+    num = input(message)
+    if not num.isdigit():
+        print("Invalid number. Repeat entry.")
+        num = num_enter(message)
+    return int(num)
+
+
+def operation_enter():
+    operation = input("Enter the operation (+, -, *, / or 0 to exit): ")
+    if operation == '0':
+        return None
+    # elif operation not in ('+', '-', '*', '/'):
+    elif operation != '+' and operation != '-' and operation != '*' and operation != '/':
+        print("Invalid operation. Repeat entry.")
+        operation = operation_enter()
+    return operation
+
+
+def result(num_1st, num_2nd, operation):
+    if operation == '+':
+        res = num_1st + num_2nd
+    elif operation == '-':
+        res = num_1st - num_2nd
+    elif operation == '*':
+        res = num_1st * num_2nd
+    elif operation == '/':
+        res = round(num_1st / num_2nd, 10)
+
+    print(f"Result:\n"
+          f"{num_1st} {operation} {num_2nd} = {res}")
+
+
+def calc():
+    operation = operation_enter()
+    if operation is None:
+        return None
+
+    num_1st = num_enter("Enter the first number: ")
+    num_2nd = num_enter("Enter the second number: ")
+    result(num_1st, num_2nd, operation)
+
+    calc()
+
+
+calc()

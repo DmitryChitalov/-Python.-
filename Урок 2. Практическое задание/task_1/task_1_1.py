@@ -32,3 +32,47 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def num_enter(message):
+    while True:
+        num = input(message)
+        if num.isdigit():
+            return int(num)
+        else:
+            print("Invalid number. Repeat entry.")
+
+
+def result(num_1st, num_2nd, operation):
+    if operation == '+':
+        res = num_1st + num_2nd
+    elif operation == '-':
+        res = num_1st - num_2nd
+    elif operation == '*':
+        res = num_1st * num_2nd
+    elif operation == '/':
+        res = round(num_1st / num_2nd, 10)
+
+    print(f"Result:\n"
+          f"{num_1st} {operation} {num_2nd} = {res}")
+
+
+while True:
+    break_point = False
+    while True:
+        operation = input("Enter the operation (+, -, *, / or 0 to exit): ")
+        if operation == '0':
+            break_point = True
+            break
+        # elif operation not in ('+', '-', '*', '/'):
+        elif operation != '+' and operation != '-' and operation != '*' and operation != '/':
+            print("Invalid operation. Repeat entry.")
+        else:
+            break
+    if break_point:
+        break
+
+    num_1st = num_enter("Enter the first number: ")
+    num_2nd = num_enter("Enter the second number: ")
+
+    result(num_1st, num_2nd, operation)
