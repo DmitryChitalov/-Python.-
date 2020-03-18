@@ -14,3 +14,27 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+try:
+    A_NUM = int(input("Введите нижнюю границу: "))
+    B_NUM = int(input("Введите верхнюю границу: "))
+    C_NUMB = int(random() * (B_NUM - A_NUM + 1)) + A_NUM
+    print(C_NUMB)
+except ValueError:
+    print("Вы ввели неккоректные данные")
+
+try:
+    A_NUM = float(input("Введите нижнюю границу: "))
+    B_NUM = float(input("Введите верхнюю границу: "))
+    C_NUMB = float(random() * (B_NUM - A_NUM + 1)) + A_NUM
+    print(C_NUMB)
+except ValueError:
+    print("Вы ввели неккоректные данные")
+
+try:
+    A_SIN = ord(input("Введите нижнюю границу: "))
+    B_SIN = ord(input("Введите верхнюю границу: "))
+    C_SIN = int(random() * (B_SIN - A_SIN + 1)) + A_SIN
+    print(chr(C_SIN))
+except ValueError:
+    print("Вы ввели неккоректные данные")
