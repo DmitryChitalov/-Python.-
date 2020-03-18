@@ -48,7 +48,8 @@ def operation_enter():
     if operation == '0':
         return None
     # elif operation not in ('+', '-', '*', '/'):
-    elif operation != '+' and operation != '-' and operation != '*' and operation != '/':
+    elif operation != '+' and operation != '-' \
+            and operation != '*' and operation != '/':
         print("Invalid operation. Repeat entry.")
         operation = operation_enter()
     return operation

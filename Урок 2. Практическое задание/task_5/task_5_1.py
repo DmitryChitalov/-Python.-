@@ -17,3 +17,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+start_num = 32
+end_num = 127
+
+for i in range(start_num, end_num + 1):
+    print("i - {ord(i)}".ljust())
+

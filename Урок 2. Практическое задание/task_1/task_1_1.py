@@ -65,7 +65,8 @@ while True:
             break_point = True
             break
         # elif operation not in ('+', '-', '*', '/'):
-        elif operation != '+' and operation != '-' and operation != '*' and operation != '/':
+        elif operation != '+' and operation != '-' \
+                and operation != '*' and operation != '/':
             print("Invalid operation. Repeat entry.")
         else:
             break
