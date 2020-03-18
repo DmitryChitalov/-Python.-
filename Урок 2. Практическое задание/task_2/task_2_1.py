@@ -12,3 +12,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+EVEN_COUNT = 0
+ODD_COUNT = 0
+
+try:
+    VALUE = int(input("Введите натуральное число\n"))
+    if VALUE < 0:
+        print("Натуральное число больше нуля")
+    else:
+        while VALUE > 0:
+
+            TMP = VALUE % 10
+            VALUE = VALUE // 10
+            if TMP % 2 == 0:
+                EVEN_COUNT += 1
+            else:
+                ODD_COUNT += 1
+
+        print(
+            f"В данном числе {EVEN_COUNT} четных и {ODD_COUNT} нечетных цифр")
+
+except ValueError:
+    print("Нужно ввести число")

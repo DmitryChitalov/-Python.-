@@ -8,3 +8,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def calculation(n):
+
+    result = 1
+    output = f"Количество элементов - {n}"
+    while n > 1:
+        result += pow(-1.0, n+1) * 1/pow(2, n-1)
+        n -= 1
+
+    print(f"{output} , и их сумма - {result}")
+
+
+try:
+    N = int(input("Введите количество элементов числового ряда n\n"))
+
+    if N > 0:
+        calculation(N)
+    else:
+        print("n не может быть отрицательным")
+except ValueError:
+    print("Нужно ввести число")

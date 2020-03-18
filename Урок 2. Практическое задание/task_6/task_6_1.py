@@ -7,3 +7,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+from random import randint
+
+TRY_COUNT = 10
+RANDOM_NUMBER = randint(0, 100)
+
+while TRY_COUNT > 0:
+
+    ANSWER = int(input("Введите число от 0 до 100\n"))
+
+    if ANSWER == RANDOM_NUMBER:
+        print(f"Вы выйграли\nОтвет - {ANSWER}")
+        break
+    elif ANSWER > RANDOM_NUMBER:
+        print("Вы ввели слишком большое число\nПопробуйте ещё раз")
+        TRY_COUNT -= 1
+    else:
+        print("Вы ввели слишком маленькое число\nПопробуйте ещё раз")
+        TRY_COUNT -= 1
+
+if TRY_COUNT == 0:
+    print(f"Вы проиграли\nПравильный ответ - {RANDOM_NUMBER}")
+

@@ -15,3 +15,28 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursive_count(value, even_count=0, odd_count=0):
+
+    if value != 0:
+        tmp = value % 10
+        if tmp % 2 == 0:
+            recursive_count(value // 10, even_count + 1, odd_count)
+        else:
+            recursive_count(value // 10, even_count, odd_count + 1)
+    else:
+        print(
+            f"В данном числе {even_count} четных и {odd_count} нечетных цифр")
+
+
+try:
+    VALUE = int(input("Введите натуральное число\n"))
+
+    if VALUE < 0:
+        print("Натуральное число больше нуля")
+    else:
+        recursive_count(VALUE)
+
+except ValueError:
+    print("Нужно ввести число")

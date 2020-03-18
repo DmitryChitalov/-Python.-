@@ -12,3 +12,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NEW_VALUE = 0
+try:
+    VALUE = int(input("Введите положительное число\n"))
+
+    if VALUE < 0:
+        print("Число должно быть больше нуля")
+
+    else:
+        while VALUE > 0:
+
+            NEW_VALUE = NEW_VALUE * 10 + VALUE % 10
+            VALUE = VALUE // 10
+
+        print(f"Обратное число равно {NEW_VALUE}")
+
+except ValueError:
+    print("Нужно ввести число")

@@ -33,3 +33,38 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def result(number_1, number_2, operation):
+
+    if operation == '+':
+        return f"Результат {number_1} + {number_2} = {number_1 + number_2}"
+    elif operation == '-':
+        return f"Результат {number_1} - {number_2} = {number_1 - number_2}"
+    elif operation == '/':
+        if number_2 == 0:
+            return "Делить на ноль нельзя"
+        return f"Результат {number_1} / {number_2} = {number_1 / number_2}"
+    elif operation == '*':
+        return f"Результат {number_1} * {number_2} = {number_1 * number_2}"
+    return "Неверная операция. Повторите ввод"
+
+
+def recursive_execute():
+
+    operation = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+
+    if operation != '0':
+
+        try:
+            number_1 = int(input("Введите первое число: "))
+            number_2 = int(input("Введите второе число: "))
+        except ValueError:
+            print("Нужно ввести число")
+            recursive_execute()
+        else:
+            print(result(number_1 , number_2 , operation))
+            recursive_execute()
+
+
+recursive_execute()

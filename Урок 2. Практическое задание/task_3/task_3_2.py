@@ -14,3 +14,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursive_reverse(value, new_value=0):
+
+    if value != 0:
+        recursive_reverse(value // 10, new_value*10 + value % 10)
+    else:
+        print(f"Обратное число равно {new_value}")
+
+
+try:
+    VALUE = int(input("Введите положительное число\n"))
+
+    if VALUE < 0:
+        print("Число должно быть больше нуля")
+
+    else:
+        recursive_reverse(VALUE)
+except ValueError:
+    print("Нужно ввести число")

@@ -17,3 +17,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursive_output(start, end=128):
+
+    if start != end:
+        if (start - 32) % 10 != 0:
+            print(f"{start} - {chr(start)}", end='\t')
+        else:
+            print(f"\n{start} - {chr(start)}", end='\t')
+        recursive_output(start+1, end)
+
+
+recursive_output(32)

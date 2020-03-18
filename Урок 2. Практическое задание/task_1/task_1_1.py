@@ -32,3 +32,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def execute(operation):
+
+    try:
+        number_1 = int(input("Введите первое число: "))
+        number_2 = int(input("Введите второе число: "))
+    except ValueError:
+        return "Нужно ввести число"
+
+    if operation == '+':
+        return f"Результат {number_1} + {number_2} = {number_1 + number_2}"
+    elif operation == '-':
+        return f"Результат {number_1} - {number_2} = {number_1 - number_2}"
+    elif operation == '/':
+        if number_2 == 0:
+            return "Делить на ноль нельзя"
+        return f"Результат {number_1} / {number_2} = {number_1 / number_2}"
+    elif operation == '*':
+        return f"Результат {number_1} * {number_2} = {number_1 * number_2}"
+    return "Неверная операция. Повторите ввод"
+
+
+while True:
+    OPERATION = input("Введите операцию (+ , - , * , / или 0 для выхода): ")
+    if OPERATION == '0':
+        break
+    print(execute(OPERATION))
