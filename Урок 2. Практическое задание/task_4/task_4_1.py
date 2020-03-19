@@ -8,3 +8,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+SUM = 0
+ITEM = 1
+
+try:
+	NUM = int(input('Введите число: '))
+	while NUM > 0:
+		print(ITEM, end = ' ')
+		SUM = SUM + ITEM
+		ITEM = ITEM / (-2)
+		NUM = NUM - 1
+	print('\n', f'Сумма последовательности равна: {SUM}')
+except ValueError:
+	print('Ошибка, нужно ввести целое число!')
+	

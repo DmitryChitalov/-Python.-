@@ -10,3 +10,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+	NUM_COUNT = int(input("Введите количество чисел: "))
+	MAX_NUM = 0
+	MAX_SUM = 0
+	for i in range(1, NUM_COUNT + 1):
+		num = int(input("Введите очередное число: "))
+		tmp = num       # временная переменная чтобы num не изменялся
+		sum_num = 0
+		while tmp > 0:
+			sum_num = sum_num + tmp % 10
+			tmp = tmp // 10
+		if sum_num > MAX_SUM:
+			MAX_SUM = sum_num
+			MAX_NUM = num
+	print(f"Наибольшее число по сумме цифр {MAX_NUM}, сумма его цифр {MAX_SUM}")
+
+except ValueError:
+	print('Ошибка, вы ввели строку!')

@@ -12,3 +12,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+	NUM_COUNT = int(input("Сколько будет чисел? "))
+	DIGIT = int(input("Какую цифру считать? "))
+	while DIGIT > 9:
+		print('Нужно вводить только одну цифру')
+		DIGIT = int(input("Какую цифру считать? "))
+	COUNT = 0
+	for i in range(1, NUM_COUNT + 1):
+		num = int(input("Число " + str(i) + ": "))
+		while num > 0:
+			if num % 10 == DIGIT:
+				COUNT += 1
+			num = num // 10
+	print(f"Было введено {COUNT} цифр {DIGIT}")
+
+except ValueError:
+	print('Ошибка, вы ввели строку!')

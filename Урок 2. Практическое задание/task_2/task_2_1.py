@@ -12,3 +12,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+ODD = 0
+EVEN = 0
+
+try:
+	NUM = int(input('Введите число: '))
+	TMP = NUM
+	while TMP > 0:
+		if TMP % 10 % 2 == 0:
+			EVEN += 1
+		else:
+			ODD += 1
+		TMP = TMP // 10
+		
+	print(f'Число {NUM} содержит {EVEN} четных числа и {ODD} нечетных числа')
+except ValueError:
+	print('Ошибка, нужно ввести целое число!')
+
+

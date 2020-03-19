@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def sum_seq(n, item):
+	if n == 1:
+		return item
+	else:
+		return item + sum_seq(n-1, (item / (-2)))
+
+	
+RES = sum_seq(3, 1)
+print('\n', RES)
+
+

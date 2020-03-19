@@ -14,3 +14,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import math
+
+
+def reverse(num_rev):
+	if num_rev < 10:
+		return num_rev
+	return (num_rev % 10) * 10 ** (int(math.log(num_rev, 10))) + reverse(num_rev // 10)
+	# int(math.log(num_rev, 10) - это выражение определяет степень (разряд) числа в зависимости
+	# от количества цифр в числе num_rev
+
+try:
+	NUM = int(input('Введите целое число: '))
+	REV_NUM = reverse(NUM)
+	print(REV_NUM)
+except ValueError:
+	print('Ошибка, нужно ввести целое число!')

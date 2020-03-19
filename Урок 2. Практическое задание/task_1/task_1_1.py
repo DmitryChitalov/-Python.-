@@ -32,3 +32,36 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUM_X = None
+NUM_Y = None
+
+while True:
+	SIGN = input('Введите знак операции ("+", "-", "*", "/"), для выхода введите "0": ')
+	if SIGN  == '0':
+		print('До свидания!')
+		break
+	elif SIGN in ("+", "-", "*", "/"):
+		try:
+			NUM_X = float(input('Введите число X: '))
+			NUM_Y = float(input('Введите число Y: '))
+		except ValueError:
+			print('Вы ввели строку вместо числа!')
+			break
+		
+		if SIGN == '+':
+			print(f'{NUM_X + NUM_Y}')
+		elif SIGN == '-':
+			print(f'{NUM_X - NUM_Y}')
+		elif SIGN == '*':
+			print(f'{NUM_X * NUM_Y}')
+		elif SIGN == '/':
+			try:
+				print(f'{NUM_X / NUM_Y}')
+			except ZeroDivisionError:
+				print('Деление на ноль!')
+	else:
+		print('Непраильно введен знак операции!')
+		
+		
+		
