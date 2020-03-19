@@ -15,3 +15,28 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calculate_even_odd(n, e, o):
+    k = n % 10
+    if k % 2 == 0:
+        e += 1
+    else:
+        o += 1
+    if n // 10 == 0:
+        return e, o
+    else:
+        n = n // 10
+        return calculate_even_odd(n, e, o)
+
+
+while True:
+    try:
+        NUM = int(input('Введите число: '))
+        break
+    except ValueError:
+        print('Некорректный ввод. Введите целое число')
+EVEN = 0
+ODD = 0
+EVEN1, ODD1 = calculate_even_odd(NUM, EVEN, ODD)
+print(f'В числе всего {EVEN1 + ODD1} цифр, из которых {EVEN1} четных и {ODD1} нечетных')
