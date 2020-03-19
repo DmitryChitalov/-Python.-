@@ -5,3 +5,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    try:
+        N = int(input('введите натуральное число n'))
+        break
+    except ValueError:
+        print('Некорректный ввод. Введите целое число')
+left_side = 0
+for i in range(1, N + 1):
+    left_side += i
+    right_side = i * (i + 1) / 2
+    if left_side == right_side:
+        k = 1
+    else:
+        k = 0
+if k == 1:
+    print(f'равенство 1+2+...+n = n(n+1)/2 выполняется для всех n от 1 до {N} ')
