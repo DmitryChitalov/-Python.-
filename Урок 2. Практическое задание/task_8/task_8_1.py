@@ -12,3 +12,36 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    try:
+        Q = int(input('Сколько будет чисел? - '))
+        break
+    except ValueError:
+        print('Некорректный ввод. Введите целое число')
+while True:
+    try:
+        F = int(input('Какую цифру считать? -'))
+        if 0 <= F <= 9:
+            break
+        else:
+            print('Введите одну цифру')
+    except ValueError:
+        print('Некорректный ввод. Введите одну цифру')
+k = 0
+for i in range(1, Q + 1):
+    while True:
+        try:
+            N = int(input(f'Число {i}: '))
+            break
+        except ValueError:
+            print('Некорректный ввод. Введите целое число')
+    while N // 10 != 0:
+        if N % 10 == F:
+            k += 1
+        N = N // 10
+        if N < 10:
+            if N == F:
+                k += 1
+if k > 0:
+    print(f'Было введено {k} цифр "{F}"')
