@@ -12,3 +12,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        N = int(input('Введите число: '))
+        break
+    except ValueError:
+        print('Некорректный ввод. Введите целое число')
+EVEN = 0
+ODD = 0
+k = N % 10
+if k % 2 == 0:
+    EVEN += 1
+else:
+    ODD += 1
+while N // 10 != 0:
+    N = N // 10
+    k = N % 10
+    if k % 2 == 0:
+        EVEN += 1
+    else:
+        ODD += 1
+print(f'В числе всего {EVEN + ODD} цифр, из которых {EVEN} четных и {ODD} нечетных')
