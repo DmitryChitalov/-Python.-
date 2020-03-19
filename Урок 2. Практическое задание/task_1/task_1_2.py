@@ -46,7 +46,7 @@ def num_enter(message):
 def operation_enter():
     operation = input("Enter the operation (+, -, *, / or 0 to exit): ")
     if operation == '0':
-        return None
+        return
     # elif operation not in ('+', '-', '*', '/'):
     elif operation != '+' and operation != '-' \
             and operation != '*' and operation != '/':
@@ -72,7 +72,7 @@ def result(num_1st, num_2nd, operation):
 def calc():
     operation = operation_enter()
     if operation is None:
-        return None
+        return
 
     num_1st = num_enter("Enter the first number: ")
     num_2nd = num_enter("Enter the second number: ")
