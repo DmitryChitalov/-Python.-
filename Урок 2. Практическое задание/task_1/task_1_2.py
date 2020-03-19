@@ -33,3 +33,41 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def arithmetic(SIGN, N1, N2):
+    if SIGN == '+':
+        print(f'Результат {N1} + {N2} = {N1 + N2}')
+    elif SIGN == '-':
+        print(f'Результат {N1} - {N2} = {N1 - N2}')
+    elif SIGN == '*':
+        print(f'Результат {N1} * {N2} = {N1 * N2}')
+    elif SIGN == '/':
+        if N2 != 0:
+            print(f'Результат {N1} / {N2} = {N1 / N2}')
+        else:
+            print('Деление на 0 невозможно повторите ввод')
+
+
+def calculator():
+    while True:
+        OPER_SIGN = input('Введите операцию (+, -, *, / или 0 для выхода):')
+        if OPER_SIGN in ['+', '-', '*', '/', '0']:
+            break
+        else:
+            print('Неверная операция. Повторите ввод.')
+    if OPER_SIGN != '0':
+        while True:
+            try:
+                NUM1 = int(input('Введите первое число: '))
+                NUM2 = int(input('Введите второе число: '))
+                break
+            except ValueError:
+                print('Некорректный ввод')
+        arithmetic(OPER_SIGN, NUM1, NUM2)
+        calculator()
+    else:
+        return
+
+
+calculator()
