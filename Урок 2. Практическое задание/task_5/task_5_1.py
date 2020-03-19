@@ -17,3 +17,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+INCREMENT = 32
+for i in range(10):
+    ANSWER = ''
+    for i in range(INCREMENT, INCREMENT+10):
+        ANSWER = ANSWER + f'{INCREMENT} - {chr(INCREMENT)} '
+        INCREMENT += 1
+        if INCREMENT > 127:
+            break
+    print(ANSWER)
+

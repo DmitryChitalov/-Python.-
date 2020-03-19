@@ -15,3 +15,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def odd_or_even(number, odd=0, even=0):
+    if len(str(number)) == 1:
+        if number % 2 == 0:
+            even += 1
+            return odd, even
+        odd += 1
+        return odd, even
+    if (number % 10) % 2 != 0:
+        odd += 1
+        return odd_or_even(number // 10, odd, even)
+    even += 1
+    return odd_or_even(number // 10, odd, even)
+
+
+while True:
+    try:
+        NUMBER = int(input(f'Введите число: '))
+        ODD, EVEN = odd_or_even(NUMBER)
+        print(f'В числе {NUMBER} всего {EVEN + ODD} цифр, из которых {EVEN} чётных и {ODD} нечётных')
+        break
+    except ValueError:
+        print(f'Ошибка ввода!')
+    except RecursionError:
+        print(f'Введите меньшее число элементов')

@@ -12,3 +12,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    ANSWER = ''
+    try:
+        NUMBER = int(input('Введите число: '))
+        TEMP_NUMBER = NUMBER
+        while True:
+            ANSWER = ANSWER + str(TEMP_NUMBER % 10)
+            TEMP_NUMBER = TEMP_NUMBER // 10
+            if TEMP_NUMBER == 0:
+                break
+        print(f'Перевернутое число: {ANSWER}')
+    except ValueError:
+        print(f'Ошибка ввода!')

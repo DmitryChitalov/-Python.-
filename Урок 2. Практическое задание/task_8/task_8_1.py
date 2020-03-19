@@ -12,3 +12,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        NUMBER1 = int(input(f'Сколько будет чисел? '))
+        NUMBER2 = int(input(f'Какую цифру считать? '))
+        COUNT = 0
+        for i in range(1, NUMBER1 + 1):
+            SPAM = int(input(f'Число{i}: '))
+            while SPAM > 0:
+                if SPAM % 10 == NUMBER2:
+                    COUNT += 1
+                SPAM = SPAM // 10
+        print(f'Было введено {COUNT} цифр {NUMBER2}')
+        break
+    except ValueError:
+        print(f'Ошибка ввода! ')

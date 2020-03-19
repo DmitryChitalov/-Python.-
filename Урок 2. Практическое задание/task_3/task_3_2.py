@@ -14,3 +14,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def number_reverse(number, answer=''):
+    if len(str(number)) == 1:
+        return f'{answer + str(number)}'
+    answer = answer + str(number % 10)
+    return number_reverse(number // 10, answer)
+
+while True:
+    try:
+        NUMBER = int(input('Введите число, которое требуется перевернуть:'))
+        print(f'Перевернутое число: {number_reverse(NUMBER)}')
+        break
+    except ValueError:
+        print(f'Ошибка ввода!')
+    except RecursionError:
+        print(f'Введите меньшее число элементов')

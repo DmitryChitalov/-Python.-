@@ -32,3 +32,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import re
+
+while True:
+    OPERATOR = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+    if OPERATOR == '0':
+        print(f'Exit')
+        break
+    if re.match(r'[^\-\+\*\/]', OPERATOR) or len(OPERATOR) > 1:
+        print(f'Неверная операция. Повторите ввод!')
+        continue
+    try:
+        OPERAND_1 = int(input('Введите первое число: '))
+        OPERAND_2 = int(input('Введите второе число: '))
+        try:
+            print(f'Результат {OPERAND_1} {OPERATOR} {OPERAND_2} = '
+                  f'{eval(str(OPERAND_1) + OPERATOR + str(OPERAND_2))}')
+        except ZeroDivisionError:
+            print(f'На ноль делить нельзя')
+    except ValueError:
+        print(f'Неверный ввод!')

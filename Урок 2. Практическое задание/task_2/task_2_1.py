@@ -12,3 +12,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        NUMBER = int(input('Введите число: '))
+        EVEN = 0
+        ODD = 0
+        TEMP_NUMBER = NUMBER
+        while TEMP_NUMBER !=0:
+            if ((TEMP_NUMBER % 10) % 2) == 0:
+                EVEN += 1
+            else: ODD += 1
+            TEMP_NUMBER = TEMP_NUMBER // 10
+        print(f'В числе {NUMBER} всего {EVEN + ODD} цифр, из которых {EVEN} чётных и {ODD} нечётных')
+        break
+    except ValueError:
+        print(f'Ошибка ввода')

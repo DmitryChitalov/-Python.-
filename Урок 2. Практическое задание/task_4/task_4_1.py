@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        NUMBER = int(input('Введите количество элементов: '))
+        ANSWER = 1
+        TEMP_NUMBER = 1
+        for i in range(NUMBER - 1):
+            TEMP_NUMBER = TEMP_NUMBER / -2
+            ANSWER += TEMP_NUMBER
+        print(f'Количество элементов - {NUMBER}, их сумма {ANSWER}')
+        break
+    except ValueError:
+        print(f'Ошибка ввода!')

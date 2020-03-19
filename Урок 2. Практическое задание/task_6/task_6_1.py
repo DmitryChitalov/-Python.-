@@ -7,3 +7,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import randint
+
+INCREMENT = 0
+NUMBER = randint(0, 100)
+while True:
+    try:
+        ANSWER = int(input(f'Отгадай число: '))
+        INCREMENT += 1
+    except ValueError:
+        print(f'Ошибка ввода!')
+    if NUMBER == ANSWER:
+        print(f'Поздравляем вы угадали!\nКоличество попыток {INCREMENT}')
+    elif NUMBER > ANSWER:
+        print(f'Число {ANSWER} меньше загаданного.\nОсталось {10 - INCREMENT} попыток')
+    else:
+        print(f'Число {ANSWER} больше загаданного.\nОсталось {10 - INCREMENT} попыток')
+    if INCREMENT == 10:
+        print(f'Вы неугадали(\nЗагаданное число {NUMBER}')
+        break
