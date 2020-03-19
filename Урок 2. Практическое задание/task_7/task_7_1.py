@@ -5,3 +5,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+N = int(input("Введите число: "))
+SUMM = 0
+formula = N * (N + 1) / 2
+while N > 0:
+    SUMM = SUMM + N
+    N = N - 1
+if SUMM == formula:
+    print("Верно")
+

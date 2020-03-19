@@ -32,3 +32,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+while True:
+    OPERATION = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+    if OPERATION == '0':
+        break
+    if "+-*/".find(OPERATION) == -1:
+        print(f"Неверная операция. Повторите ввод")
+        continue
+    try:
+        NUM_1 = float(input("Введите первое число: "))
+        NUM_2 = float(input("Введите второе число: "))
+    except ValueError:
+        print("Неверно введены цифры")
+
+    if OPERATION == "+":
+        print(f"{NUM_1} + {NUM_2} = {NUM_1 + NUM_2}")
+    elif OPERATION == "-":
+        print(f"{NUM_1} - {NUM_2} = {NUM_1 - NUM_2}")
+    elif OPERATION == "*":
+        print(f"{NUM_1} - {NUM_2} = {NUM_1 * NUM_2}")
+    elif OPERATION == "/":
+        try:
+            print(f"{NUM_1} / {NUM_2} = {NUM_1 / NUM_2}")
+        except ZeroDivisionError:
+            print("Делить на ноль нельзя")
+
+print("Вы вышли из программы")

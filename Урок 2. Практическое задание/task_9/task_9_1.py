@@ -10,3 +10,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+N = int(input("Сколько будет чисел?: "))
+res_summ = 0
+while N > 0:
+    NUM = int(input(f"Число: "))
+    summ = 0
+    local_num = NUM
+    while local_num != 0:
+        digit = local_num % 10
+        summ = summ + digit
+        local_num = local_num // 10
+    if res_summ < summ:
+        res_summ = summ
+        res_num = NUM
+    N = N - 1
+print(f"Наибольшее число по сумме цифр: {res_num}, сумма его цифр: {res_summ}")

@@ -8,3 +8,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+try:
+    N = int(input("Введите натуральное число: "))
+except ValueError:
+    print("Неверно введено число")
+
+A = 1
+B = 1
+sum = 1
+while N > B:
+    A = A / -2
+    B = B + 1
+    sum = sum + A
+if N == 0:
+    print(0)
+else:
+    print(sum)

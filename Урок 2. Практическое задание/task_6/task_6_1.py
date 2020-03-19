@@ -7,3 +7,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import random
+
+
+COUNT_ATTEMPTS = int(input("Количество попыток: "))
+RAND = int(random() * 100)
+print(RAND)
+while True:
+    while True:
+        NUM = input("Введите число: ")
+        if NUM.isdigit():
+            NUM = int(NUM)
+            break
+        print("Неверно введено число")
+        continue
+
+    if NUM > RAND:
+        print("Вы ввели большое число")
+    if NUM < RAND:
+        print("Вы ввели маленькое число")
+    if NUM == RAND:
+        print("Угадали")
+        break
+    if COUNT_ATTEMPTS == 1:
+        print("Вы не угадали")
+        break
+    COUNT_ATTEMPTS = COUNT_ATTEMPTS - 1

@@ -33,3 +33,34 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calculator(operator, a, b):
+    if operator == '0':
+        return "Вы вышли из программы"
+
+    elif operator == '+':
+        if a == 0:
+            print(str(f'ответ {b}'))
+            calculator(input("Введите операцию (+, -, *, / или 0 для выхода): "),
+                       int(input("Введите первое число: ")),
+                       int(input("Введите второе число: ")))
+        return calculator(operator, a - 1, b + 1)
+    elif operator == "-":
+        if b == 0:
+            print(str(f'ответ {a}'))
+            calculator(input("Введите операцию (+, -, *, / или 0 для выхода): "),
+                       int(input("Введите первое число: ")),
+                       int(input("Введите второе число: ")))
+        return calculator(operator, a - 1, b - 1)
+    elif operator == "*":
+        if b == 1:
+            print(str(f'ответ {a}'))
+            calculator(input("Введите операцию (+, -, *, / или 0 для выхода): "),
+                       int(input("Введите первое число: ")),
+                       int(input("Введите второе число: ")))
+        return a + calculator(operator, a, b - 1)
+
+
+print(calculator(input("Введите операцию (+, -, *, / или 0 для выхода): "),
+                 int(input("Введите первое число: ")), int(input("Введите второе число: "))))

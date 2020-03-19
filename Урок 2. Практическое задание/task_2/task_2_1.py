@@ -12,3 +12,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+try:
+    NUM = int(input("Введите натуральное число: "))
+except BaseException:
+    print("Неверно введено число")
+
+count_even = 0
+count_odd = 0
+flag = True
+while flag:
+    digit = NUM % 10
+    if digit % 2 == 0:
+        count_even = count_even + 1
+    else:
+        count_odd = count_odd + 1
+    NUM = NUM // 10
+    if NUM == 0:
+        flag = False
+
+print(f"Четные {count_even}")
+print(f"Нечетные {count_odd}")
+print(f"Всего цифр {count_even + count_odd}")
+

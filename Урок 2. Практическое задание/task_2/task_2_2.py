@@ -15,3 +15,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def even_odd(a, even, odd):
+    digit = a % 10
+    if a == 0:
+        return f"четные - {even} нечетные - {odd}"
+    elif digit % 2 == 0:
+        return even_odd(a // 10, even + 1, odd)
+    else:
+        return even_odd(a // 10, even, odd + 1)
+
+
+print(even_odd(360, 0, 0))

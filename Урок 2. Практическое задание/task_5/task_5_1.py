@@ -17,3 +17,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+START = 32
+END = 127
+while START <= END:
+    string_l = ''
+    t = 0
+    while t < 10 and START <= END:
+        string_l = string_l + f'{str(START)} - {chr(START)} '
+        START = START + 1
+        t = t + 1
+    print(string_l)

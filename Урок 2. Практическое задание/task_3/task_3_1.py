@@ -12,3 +12,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+try:
+    NUM = int(input("Введите натуральное число: "))
+except ValueError:
+    print("Неверно введено число")
+revers = ''
+flag = True
+while flag:
+    digit = NUM % 10
+    revers = revers + str(digit)
+    NUM = NUM // 10
+    if NUM == 0:
+        flag = False
+print(revers)
+

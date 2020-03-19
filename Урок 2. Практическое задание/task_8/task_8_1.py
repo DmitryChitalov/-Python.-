@@ -12,3 +12,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+N = int(input("Сколько будет чисел?: "))
+COUNT_NUM = int(input("Какую цифру считать?: "))
+T = 1
+count = 0
+while N >= T:
+    NUM = int(input(f"Число {T}: "))
+    while NUM != 0:
+        digit = NUM % 10
+        if digit == COUNT_NUM:
+            count = count + 1
+        NUM = NUM // 10
+    T = T + 1
+print(f"Было введено {count} цифр {COUNT_NUM}")

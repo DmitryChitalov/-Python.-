@@ -17,3 +17,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def ascii(start, end):
+
+    if end - start < 10:
+        string = ''
+        for i in range(0, end - start + 1):
+            string = string + f'{start + i} - {chr(start + i)} '
+        return string
+    string = ''
+    for i in range(0, 10):
+        string = string + f'{start + i} - {chr(start + i)} '
+    print(string)
+    return ascii(start + 10, end)
+
+
+print(ascii(32, 127))

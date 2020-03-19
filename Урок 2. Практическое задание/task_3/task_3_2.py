@@ -14,3 +14,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def revers(a):
+    if len(str(a)) == 1:
+        return a
+    return f"{a % 10}{revers(a//10)}"
+
+
+print(revers(982637))

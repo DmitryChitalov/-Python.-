@@ -7,3 +7,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+from random import random
+
+
+RAND = int(random() * 100)
+# print(RAND)
+
+
+def guess(n, num):
+    if num == RAND:
+        print("вы угадали")
+    elif n == 1:
+        print("Вы не угадали")
+    elif num > RAND:
+        print("Вы ввели слишком большое число")
+        return guess(n - 1, int(input("Введите число: ")))
+    elif num < RAND:
+        print("Вы ввели слишком маленькое число")
+        return guess(n - 1, int(input("Введите число: ")))
+
+
+guess(int(input("Введите количество попыток: ")), int(input("Введите число: ")))
