@@ -13,3 +13,26 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+ER_STRING = 'ошибка ввода!'
+try:
+
+    number = int(input('Введите число:'))
+    if number < 0 and number > 999:
+        print(ER_STRING)
+    else:
+        num_a = number % 10
+        num_b = (number // 10) % 10
+        num_c = number // 100
+
+        """
+            я знаю про конструкцию print(f"сумма = {num_a + num_b + num_c}"),
+            но прохожу курс парлельно с сновной работой(на старом компе) в pycharm 5.
+            pycharm 5 такой конструкции не понимает. заменил аналогом.
+        """
+
+        print("сумма = %d" % (num_a + num_b + num_c))
+        print("Произведение = %d" % (num_a * num_b * num_c))
+except:
+    print(ER_STRING)
+
+
