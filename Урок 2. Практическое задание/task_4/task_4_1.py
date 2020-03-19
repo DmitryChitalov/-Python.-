@@ -8,3 +8,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+SUM = 0
+FIRST_VALUE, FIRST_VALUE_TMP = 1, 1 # Начальное значение прогрессии
+DENOM = -0.5 # Знаменатель прогрессии
+
+try:
+    NUM = int(input('Введите количество элементов: '))
+    if NUM > 0:
+        for i in range(NUM): # для разнообразия, хоть range это и массив...
+            SUM += FIRST_VALUE_TMP
+            FIRST_VALUE_TMP *= DENOM
+        print(f'Количество элементов - {NUM}, их сумма - {SUM}')
+
+        # Для проверки сумма этой геометрической прогрессии.
+        print(f'Проверка = {FIRST_VALUE * (DENOM ** NUM - 1) / (DENOM - 1)}')
+    else:
+        raise ValueError('Число меньше или равно нулю, повторите ввод.')
+except ValueError as err:
+    print(f'Ошибка ввода: {err}')

@@ -32,3 +32,54 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+# Пришлось ввести для точности из-за некорректного отображения float.
+from decimal import Decimal, InvalidOperation
+
+
+def calc(operation, num_1, num_2):
+    """
+    Get operation ('+','-','*' or '/') and two real numbers.
+    Return result as text.
+    """
+    if operation == '+':
+        text = f'Результат {num_1} + {num_2} = {num_1 + num_2}'
+    elif operation == '-':
+        text = f'Результат {num_1} - {num_2} = {num_1 - num_2}'
+    elif operation == '*':
+        text = f'Результат {num_1} * {num_2} = {num_1 * num_2}'
+    elif operation == '/':
+        if num_2 != 0:
+            text = f'Результат {num_1} / {num_2} = {num_1 / num_2}'
+        else:
+            text = 'На ноль делить нельзя.'
+    return text
+
+
+def num_input(numeral):
+    """
+    Get input string for input message and checks input until it's ok.
+    Return Decimal.
+    """
+    while True:
+        try:
+            num = Decimal(input(f'Введите {numeral} число: '))
+            return num
+        except InvalidOperation:
+            print(f'Неверный ввод. Требуется вещественное число. Повторите ввод числа.')
+            continue
+
+
+while True:
+    OPERATION = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+    if OPERATION == '0':
+        break
+    # тут pylint ругается, рекомендует использовать
+    # if OPERATION in ('+', '-', '*', '/'): но массивы не используем =)
+    if OPERATION == '+' or OPERATION == '-' or OPERATION == '*' or OPERATION == '/':
+        NUM_1 = num_input('первое')
+        NUM_2 = num_input('второе')
+        print(calc(OPERATION, NUM_1, NUM_2))
+    else:
+        print('Неверная операция. Повторите ввод')
+        continue

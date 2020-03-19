@@ -5,3 +5,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    N = int(input('Введите число: '))
+    if N <= 0:
+        raise ValueError('Число должно быть положительным.')
+    SUM = int(N * (N + 1) / 2)
+    TEMP_N = N
+    while TEMP_N > 0:
+        SUM -= TEMP_N
+        TEMP_N -= 1
+    if SUM == 0:
+        print(f'Выражение 1+2+...+n = n(n+1)/2 верно для n = {N}!')
+    else:
+        print(f'С числом {N} что-то пошло не так!')
+except ValueError as err:
+    print(f'Ошибка ввода. Попробуйте еще раз. Ошибка: {err}')

@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+ODD, TOTAL = 0, 0
+
+try:
+    NUM = int(input('Введите натуральное число: '))
+    if NUM <= 0:
+        print('Вы ввели отрицательное число или ноль, но ничего страшного...')
+    TEMP_NUM = abs(NUM)
+except ValueError as err:
+    print(f'Ошибка ввода: {err}')
+else:
+    while TEMP_NUM:
+        TOTAL += 1
+        ODD += TEMP_NUM % 2 and True
+        TEMP_NUM //= 10
+    print(f'В числе {NUM} всего {TOTAL} цифр, '
+          f'из которых {TOTAL-ODD} чётных и {ODD} нечётных')

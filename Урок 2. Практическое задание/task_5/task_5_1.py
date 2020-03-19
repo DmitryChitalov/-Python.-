@@ -16,4 +16,10 @@
 122 - z 123 - { 124 - | 125 - } 126 - ~ 127 - 
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
+
 """
+SYM_NUM = 32
+while SYM_NUM < 128:
+    END_OF_PRINT = '\t' if SYM_NUM % 10 != 1 else '\n'
+    print(f'{SYM_NUM} - {chr(SYM_NUM)}', end=END_OF_PRINT)
+    SYM_NUM += 1

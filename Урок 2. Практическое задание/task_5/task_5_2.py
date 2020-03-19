@@ -17,3 +17,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion_ascii_print(start, stop, syms_per_line, count=0):
+    """
+    Recursion. Prints ASCII symbols from start to stop
+    with number of symbols per line
+    """
+
+    if stop > start:
+        next_symbol = recursion_ascii_print(
+            start + 1, stop, syms_per_line, count + 1)
+        sep = '\t' if (count + 1) % (syms_per_line) else '\n'
+        return f'{start} - {chr(start)}{sep}{next_symbol}'
+    return f'{stop} - {chr(stop)}'
+
+
+START = 32
+STOP = 127
+SYMS_PER_LINE = 10
+
+print(recursion_ascii_print(START, STOP, SYMS_PER_LINE))

@@ -14,3 +14,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion_vice_versa(number):
+    """Recursion. Return vice-versa number as string"""
+    return f'{number%10}{recursion_vice_versa(number//10)}' if number // 10 else number
+
+
+try:
+    NUM = abs(int(input('Введите число: ')))  # Вдруг палец попадет на минус...
+    if NUM:
+        print(f'Перевернутое число: {recursion_vice_versa(NUM)}')
+    else:
+        print('0')
+except ValueError as err:
+    print(f'Ошибка ввода: {err}')

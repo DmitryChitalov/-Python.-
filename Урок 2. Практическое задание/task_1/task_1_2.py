@@ -33,3 +33,55 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+from decimal import Decimal, InvalidOperation
+
+
+def calc(operation, num_1, num_2):
+    """
+    Get operation ('+','-','*' or '/') and two real numbers.
+    Return result as text.
+    """
+    if operation == '+':
+        text = f'Результат {num_1} + {num_2} = {num_1 + num_2}'
+    elif operation == '-':
+        text = f'Результат {num_1} - {num_2} = {num_1 - num_2}'
+    elif operation == '*':
+        text = f'Результат {num_1} * {num_2} = {num_1 * num_2}'
+    elif operation == '/':
+        if num_2 == 0:
+            text = 'На ноль делить нельзя.'
+        else:
+            text = f'Результат {num_1} / {num_2} = {num_1 / num_2}'
+    return text
+
+
+def num_input(numeral):
+    """
+    Get input string for input message and checks input until it's ok.
+    Return Decimal. Recursion variant.
+    """
+    try:
+        num = Decimal(input(f'Введите {numeral} число: '))
+        return num
+    except InvalidOperation:
+        print(f'Неверный ввод. Требуется вещественное число. Повторите ввод числа.')
+        return num_input(numeral)
+
+
+def recursion_calc():
+    """Recursion"""
+    operation = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+    # тут pylint ругается, рекомендует использовать
+    # if OPERATION in ('+', '-', '*', '/'): но массивы не используем =)
+    if (operation == '+' or operation ==
+            '-' or operation == '*' or operation == '/'):
+        num_1 = num_input('первое')
+        num_2 = num_input('второе')
+        print(calc(operation, num_1, num_2))
+        recursion_calc()
+    else:
+        print('Неверная операция. Повторите ввод.')
+        recursion_calc()
+
+
+recursion_calc()

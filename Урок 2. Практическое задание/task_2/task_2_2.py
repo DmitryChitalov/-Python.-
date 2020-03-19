@@ -15,3 +15,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion_odd_even(number, total=0, odd=0):
+    """Get number, returns total, even end odd in f-string text"""
+    if number:
+        total += 1
+        odd += number % 2 and True
+        return recursion_odd_even(number // 10, total, odd)
+    return f'всего {total} цифр, из которых {total-odd} чётных и {odd} нечётных'
+
+
+try:
+    NUM = int(input('Введите натуральное число: '))
+    if NUM <= 0:
+        print('Вы ввели отрицательное число или ноль, но ничего страшного...')
+    TEMP_NUM = abs(NUM)
+except ValueError as err:
+    print(f'Ошибка ввода: {err}')
+else:
+    print(f'В числе {NUM} {recursion_odd_even(TEMP_NUM)}')
