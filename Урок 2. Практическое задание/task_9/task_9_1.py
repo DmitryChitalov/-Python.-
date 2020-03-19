@@ -10,3 +10,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        Q = int(input('Введите количество чисел: '))
+        break
+    except ValueError:
+        print('Некорректный ввод. Введите целое число')
+max_n = 0
+max_sum = 0
+for i in range(1, Q + 1):
+    while True:
+        try:
+            N = int(input('Введите очередное число: '))
+            break
+        except ValueError:
+            print('Некорректный ввод. Введите целое число')
+    M = N
+    sum1 = 0
+    while N // 10 != 0:
+        k = N % 10
+        N = N // 10
+        sum1 += k
+        if N < 10:
+            sum1 += N
+    if sum1 >= max_sum:
+        max_sum = sum1
+        max_n = M
+print(f'Наибольшее число по сумме цифр: {max_n}, сумма его цифр: {max_sum}')
