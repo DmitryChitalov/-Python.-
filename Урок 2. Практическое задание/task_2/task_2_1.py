@@ -24,7 +24,7 @@ try:
             even_count += 1
         else:
             odd_count += 1
-    print('четных: ' + str(even_count))
-    print('нечетных: ' + str(odd_count))
+    print('четных: %d' %(even_count))
+    print('нечетных: %d' %(odd_count))
 except:
     print(ER_STRING)
