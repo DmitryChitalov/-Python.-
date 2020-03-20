@@ -32,3 +32,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    SYMBOL = input('Введите операцию (+, -, *, / или 0 для выхода) : ')
+    if SYMBOL == '0':
+        print('Выход из программы!')
+        break
+    if SYMBOL in ('+', '-', '*', '/'):
+        while True:
+            try:
+                NUM_1 = int(input("Введите первое число : "))
+                NUM_2 = int(input("Введите второе число : "))
+                if SYMBOL == '+':
+                    print(f"Результат {NUM_1} + {NUM_2} = {NUM_1 + NUM_2} ")
+                    break
+                if SYMBOL == '-': # pylint указал ,что после break некорректно ставить elif
+                    print(f"Результат {NUM_1} - {NUM_2} = {NUM_1 - NUM_2} ")
+                    break
+                if SYMBOL == '*':
+                    print(f"Результат {NUM_1} * {NUM_2} = {NUM_1 * NUM_2:.2f} ")
+                    break
+                if SYMBOL == "/":
+                    print(f"Результат {NUM_1} / {NUM_2} = {NUM_1 / NUM_2:.2f} ")
+                    break
+            except ValueError:
+                print('Некорректное значение.Введите число.')
+            except ZeroDivisionError:
+                print('На ноль делить нельзя')
+    else:
+        print('Некорректное значение')
