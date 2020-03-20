@@ -14,3 +14,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+"""
+3.	Сформировать из введенного числа обратное по порядку входящих в него
+цифр и вывести на экран. Например, если введено число 3486,
+то надо вывести число 6843.
+
+Подсказка:
+Используйте арифм операции для формирования числа, обратного введенному
+
+Пример:
+Введите число: 123
+Перевернутое число: 321
+
+ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
+"""
+def reverse_func(NUMBER, reverse):
+    try:
+        if int(NUMBER) >= 0:
+            if int(NUMBER) != 0:
+                reverse *= 10
+                reverse += int(NUMBER) % 10
+                return reverse_func(int(NUMBER) // 10, reverse)
+            return reverse
+        raise ValueError
+    except ValueError:
+        return 'Incorrect number'
+
+NUMBER = input('Enter a number : ')
+print(reverse_func(NUMBER, reverse=0))
