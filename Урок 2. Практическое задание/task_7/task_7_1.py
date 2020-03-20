@@ -5,3 +5,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+N = int(input("Input integer: "))
+S = 0
+for i in range(1, N + 1):
+    S += i
+M = N * (N + 1) // 2
+print(S)
+print(M)

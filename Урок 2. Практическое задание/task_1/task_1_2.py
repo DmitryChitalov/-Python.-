@@ -33,3 +33,38 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calc_rec():
+    """
+    __________
+    """
+
+    try:
+        num1 = float(input("Input first integer: "))
+        num2 = float(input("Input second integer: "))
+        operation = input("Operator: ")
+        result = 0
+        if operation == '+':
+            result = num1 + num2
+        elif operation == '-':
+            result = num1 - num2
+        elif operation == '*':
+            result = num1 * num2
+        elif operation == '/':
+            try:
+                result = num1 / num2
+            except ZeroDivisionError:
+                print("Division error by 0")
+        elif operation == '0':
+            return "The end"
+        else:
+            print("Invalid operator")
+        print(f'{num1} {operation} {num2} = {result}')
+        return calc_rec()
+    except ValueError:
+        print("Error")
+        return calc_rec()
+
+
+print(calc_rec())

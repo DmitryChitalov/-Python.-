@@ -8,3 +8,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+N = int(input("Input integer: "))
+E = 1
+S = 0
+for i in range(N):
+    S += E
+    E /= -2
+print(f"Result is {S}")

@@ -32,3 +32,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+print("0 is exit")
+while True:
+    S = input("Operator: ")
+    if S == '0':
+        break
+    if S in ('+', '-', '*', '/'):
+        X = float(input("Input first integer: "))
+        Y = float(input("Input second integer: "))
+        if S == '+':
+            print(f'Result is {X+Y}')
+        elif S == '-':
+            print(f'Result is {X-Y}')
+        elif S == '*':
+            print(f'Result is {X*Y}')
+        elif S == '/':
+            if Y != 0:
+                print(f'Result is {X/Y}')
+            else:
+                print(f"Division by 0")
+    else:
+        print(f"Invalid operator")

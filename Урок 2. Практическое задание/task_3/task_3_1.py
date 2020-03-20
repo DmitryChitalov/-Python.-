@@ -12,3 +12,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+N = int(input("Input integer: "))
+M = 0
+while N > 0:
+    M = M * 10 + N % 10
+    N = N // 10
+print(f"Result is {M}")

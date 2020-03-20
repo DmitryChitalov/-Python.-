@@ -12,3 +12,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+N = int(input("Input integer: "))
+EVEN = ODD = 0
+while N > 0:
+    if N % 2 == 0:
+        EVEN += 1
+    else:
+        ODD += 1
+    N = N // 10
+print(f"Even is {EVEN}, odd is {ODD}")

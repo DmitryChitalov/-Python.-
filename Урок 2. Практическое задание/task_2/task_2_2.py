@@ -15,3 +15,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def digit_counter(num, even, odd):
+    """
+    _________
+    """
+    if num <= 0:
+        return f"{EVEN} even,{ODD} odd integer"
+    else:
+        if num % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+        return digit_counter(num // 10, even, odd)
+
+
+if __name__ == "__main__":
+    EVEN = 0
+    ODD = 0
+    try:
+        NUM = int(input("Input positive integer: "))
+        if NUM < 0:
+            print("Integer must bu positive")
+        else:
+            print(digit_counter(NUM, EVEN, ODD))
+    except ValueError:
+        print("Mistake")

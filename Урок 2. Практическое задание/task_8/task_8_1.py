@@ -12,3 +12,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+N = int(input("How many integers will be? "))
+D = int(input("What number to consider? "))
+COUNT = 0
+for i in range(1, N + 1):
+    M = int(input("Integer " + str(i) + ": "))
+    while M > 0:
+        if M % 10 == D:
+            COUNT += 1
+        M = M // 10
+print("Was introduced %d integers %d" % (COUNT, D))
