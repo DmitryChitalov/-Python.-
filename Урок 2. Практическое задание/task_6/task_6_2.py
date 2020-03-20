@@ -7,3 +7,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import random
+
+RAND_NUMBER = random.randrange(0, 100)
+
+
+def game_numbers(attempts=10):
+    user_answer = int(input('Введите ваш вариант: '))
+    attempts -= 1
+    if attempts == 0:
+        print(
+            f'Количество попыток закночилось, вы проиграли. Загаданное число - {RAND_NUMBER}')
+        return
+    if user_answer == RAND_NUMBER:
+        print('Поздравляем! Вы угадали!')
+        return
+    if user_answer > RAND_NUMBER:
+        print(f'Ваше число больше загаданного. Осталось {attempts} попыток')
+        game_numbers(attempts)
+    elif user_answer < RAND_NUMBER:
+        print(f'Ваше число меньше загаданного. Осталось {attempts} попыток')
+        game_numbers(attempts)
+
+
+game_numbers()

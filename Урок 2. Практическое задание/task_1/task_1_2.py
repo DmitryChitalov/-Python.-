@@ -30,6 +30,31 @@
 Введите первое число: вп
 Вы вместо трехзначного числа ввели строку (((. Исправьтесь
 Введите операцию (+, -, *, / или 0 для выхода):
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calc():
+    try:
+        operator = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+        if operator == '0':
+            print('Выход')
+            return
+        elif operator != '+' and operator != '-' and operator != '*' and operator != '/':
+            raise ValueError
+        operand_1 = int(input('Введите первое число: '))
+        operand_2 = int(input('Введите второе число: '))
+        if operator == '+':
+            print(f'Ваш результат: {operand_1 + operand_2}')
+        elif operator == '-':
+            print(f'Ваш результат: {operand_1 - operand_2}')
+        elif operator == '*':
+            print(f'Ваш результат: {operand_1 * operand_2}')
+        elif operator == '/':
+            print(f'Ваш результат: {operand_1 / operand_2}')
+        calc()
+    except ValueError:
+        print('Некорректный ввод!')
+        calc()
+
+
+calc()

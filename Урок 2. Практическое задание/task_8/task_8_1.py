@@ -9,6 +9,14 @@
 Число 1: 223
 Число 2: 21
 Было введено 1 цифр '3'
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+COUNTER_OF_NUMBERS = int(input('Сколько будет чисел? - '))
+UNIT = int(input('Какую цифру считать? - '))
+COUNTER_OF_UNITS = 0
+for i in range(COUNTER_OF_NUMBERS):
+    number = input(f'Число {i+1}: ')
+    for j in number:
+        if str(UNIT) == j:
+            COUNTER_OF_UNITS += 1
+
+print(f'Было введено {COUNTER_OF_UNITS} цифр "{UNIT}"')

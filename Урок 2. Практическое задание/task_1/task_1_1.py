@@ -32,3 +32,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    OPERATION = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+    if OPERATION == '0':
+        print('Выход')
+        break
+    try:
+        if OPERATION not in ('+', '-', '*', '/'):
+            raise ValueError
+    except ValueError:
+        print('Неверная операция. Повторите ввод')
+        continue
+    FIRST_NUMBER = int(input('Введите первое число: '))
+    SECOND_NUMBER = int(input('Введите второе число: '))
+
+    if OPERATION == '+':
+        print(f'Результат {FIRST_NUMBER} {OPERATION} {SECOND_NUMBER} = '
+              f'{FIRST_NUMBER + SECOND_NUMBER}')
+    elif OPERATION == '-':
+        print(f'Результат {FIRST_NUMBER} {OPERATION} {SECOND_NUMBER} = '
+              f'{FIRST_NUMBER - SECOND_NUMBER}')
+    elif OPERATION == '*':
+        print(f'Результат {FIRST_NUMBER} {OPERATION} {SECOND_NUMBER} = '
+              f'{FIRST_NUMBER * SECOND_NUMBER}')
+    elif OPERATION == '/':
+        print(f'Результат {FIRST_NUMBER} {OPERATION} {SECOND_NUMBER} = '
+              f'{FIRST_NUMBER / SECOND_NUMBER}')

@@ -7,3 +7,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+
+RAND_NUMBER = random.randrange(0, 100)
+ATTEMPTS = 10
+
+while ATTEMPTS > 0:
+    USER_NUMBER = int(input('Введите ваш вариант: '))
+    if USER_NUMBER > RAND_NUMBER:
+        print('Ваше число больше')
+    elif USER_NUMBER < RAND_NUMBER:
+        print('Ваше число меньше')
+    else:
+        print('Вы угадали!')
+        break
+    ATTEMPTS -= 1
+else:
+    print(f'Мне жаль, но вы проиграли. Загаданное число {RAND_NUMBER}')

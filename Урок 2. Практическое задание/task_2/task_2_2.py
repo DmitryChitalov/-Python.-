@@ -12,6 +12,24 @@
 Пример:
 Введите число: 123
 Количество четных и нечетных цифр в числе равно: (1, 2)
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+USER_NUMBER = int(input('Введите число: '))
+
+
+def units(num):
+    return num % 10
+
+
+def parse_number(number, even=0, odd=0):
+    unit = units(number)
+    if unit % 2 == 0:
+        even += 1
+    elif unit % 2 != 0:
+        odd += 1
+    if number < 10:
+        print(f'Количество четных и нечетных цифр в числе равно: {(even, odd)}')
+    else:
+        parse_number(number // 10, even, odd)
+
+
+parse_number(USER_NUMBER)

@@ -11,6 +11,22 @@
 Пример:
 Введите число, которое требуется перевернуть: 123
 Перевернутое число: 321
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+USER_NUMBER = int(input('Введите число, которое требуется перевернуть: '))
+
+
+def units(num):
+    return num % 10
+
+
+def parse_number(number, res_string=''):
+    unit = units(number)
+    res_string += str(unit)
+    if number < 10:
+        print(f'Перевернутое число: {res_string}')
+        return
+
+    parse_number(number // 10, res_string)
+
+
+parse_number(USER_NUMBER)

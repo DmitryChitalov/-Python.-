@@ -5,3 +5,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+NUMBER = int(input('Введите любое натуральное число: '))
+
+
+def left_side(n):
+    if n < 1:
+        return 0
+    else:
+        return n + left_side(n - 1)
+
+
+def right_side(n):
+    return n * (n + 1) // 2
+
+
+print(f'Равенство 1+2+...+n = n(n+1)/2 выполняется с результатом {left_side(NUMBER) == right_side(NUMBER)}, '
+      f'так как левая часть равенства равна {left_side(NUMBER)}, правая равна {right_side(NUMBER)}, при n = {NUMBER}')

@@ -14,6 +14,11 @@
 102 - f 103 - g 104 - h 105 - i 106 - j 107 - k 108 - l 109 - m 110 - n 111 - o
 112 - p 113 - q 114 - r 115 - s 116 - t 117 - u 118 - v 119 - w 120 - x 121 - y
 122 - z 123 - { 124 - | 125 - } 126 - ~ 127 - 
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+COUNTER = 1
+while COUNTER < 97:
+    if COUNTER % 10 == 0:
+        print(f'{COUNTER + 31} - {chr(COUNTER + 31)}')
+    else:
+        print(f'{COUNTER + 31} - {chr(COUNTER + 31)}', end=' ')
+    COUNTER += 1
