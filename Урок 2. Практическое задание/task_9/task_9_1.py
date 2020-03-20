@@ -10,3 +10,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+try:
+    COUNT_OF_NUMBERS = int(input("Сколько будет чисел? "))
+    MAX_NUM = 0
+    MAX_SUM = 0
+
+    for i in range(1, COUNT_OF_NUMBERS + 1):
+        NUM = int(input(f"Число {i}: "))
+        # Переменная для деления числа на разряды
+        NUMBER = NUM
+        # Сумма цифр в числе
+        SUM = 0
+        # Цикл для суммирования цифр в числе
+        while NUMBER > 0:
+            SUM += NUMBER % 10
+            NUMBER //= 10
+        if SUM > MAX_SUM:
+            MAX_SUM = SUM
+            MAX_NUM = NUM
+    print(f"Наибольшее число по сумме цифр: {MAX_NUM}, сумма его цифр: {MAX_SUM}")
+except ValueError:
+    print("Введите корректное значение")

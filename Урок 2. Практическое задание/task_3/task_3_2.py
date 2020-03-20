@@ -14,3 +14,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion_inverse(num, number=''):
+    """Переворот числа через рекурсию"""
+    number += str(num % 10)
+    num //= 10
+    if num == 0:
+        return print(f"Перевернутое число: {number}")
+    return recursion_inverse(num, number)
+
+
+NUM = int(input("Введите число, которое требуется перевернуть: "))
+recursion_inverse(NUM)

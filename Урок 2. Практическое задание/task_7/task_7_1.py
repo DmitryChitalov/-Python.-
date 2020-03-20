@@ -5,3 +5,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    NUM = int(input("Введите конечное число: "))
+    RES = 0
+    for i in range(1, NUM + 1):
+        RES += i
+    RES_1 = int(NUM * (NUM + 1) / 2)
+
+    print(f'Ряд 1+2+...+n = {RES}')
+    print(f"n(n+1)/2 = {RES_1}")
+except ValueError:
+    print("Введите корректное значение")

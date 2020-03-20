@@ -33,3 +33,33 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion_calc():
+    """
+    Калькулятор через рекурсию
+    """
+    try:
+        operation = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+        if operation == "0":
+            return print("До свидания!")
+        num_1 = int(input("Введите первое число: "))
+        num_2 = int(input("Введите второе число: "))
+        if operation == '+':
+            print(f"Ваш результат {num_1 + num_2}")
+        elif operation == '-':
+            print(f"Ваш результат {num_1 - num_2}")
+        elif operation == '*':
+            print(f"Ваш результат {num_1 * num_2}")
+        elif operation == '/':
+            print(f"Ваш результат {num_1 / num_2}")
+        return recursion_calc()
+    except ValueError:
+        print("Введите корректное значение")
+        return recursion_calc()
+    except ZeroDivisionError:
+        print("На ноль делить нельзя")
+        return recursion_calc()
+
+
+recursion_calc()

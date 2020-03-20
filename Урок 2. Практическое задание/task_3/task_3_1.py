@@ -12,3 +12,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    NUMB = int(input("Введите натуральное число: "))
+    RESULT = ''
+    while NUMB > 0:
+        RESULT += str(NUMB % 10)
+        NUMB = NUMB // 10
+    print(RESULT)
+except ValueError:
+    print("Введите натуральное число")

@@ -32,3 +32,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    STATUS = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+    if STATUS == "0":
+        print("Пока")
+        break
+    elif STATUS not in ("+", "-", "*", "/", "0"):
+        print("Неверная операция. Повторите ввод")
+        continue
+
+    NUM_1 = int(input("Введите первое число: "))
+    NUM_2 = int(input("Введите второе число: "))
+
+    if STATUS == "+":
+        print(f"Результат {NUM_1} + {NUM_2} = {NUM_1 + NUM_2}")
+    elif STATUS == "-":
+        print(f"Результат {NUM_1} - {NUM_2} = {NUM_1 - NUM_2}")
+    elif STATUS == "*":
+        print(f"Результат {NUM_1} * {NUM_2} = {NUM_1 * NUM_2}")
+    elif STATUS == "/":
+        if NUM_2 == 0:
+            print("На ноль делить нельзя!")
+            continue
+        print(f"Результат {NUM_1} / {NUM_2} = {NUM_1 / NUM_2}")

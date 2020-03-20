@@ -15,3 +15,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion_nums(num, odd=0, even=0):
+    """Проверка на четность и нечетность цифр в числе"""
+    res_num = num % 10
+    if res_num % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+    num //= 10
+    if num == 0:
+        return print(f"Количество четных и нечетных цифр в числе равно: ({even}, {odd})")
+    return recursion_nums(num, odd, even)
+
+
+NUMBER = int(input("Введите число: "))
+recursion_nums(NUMBER)

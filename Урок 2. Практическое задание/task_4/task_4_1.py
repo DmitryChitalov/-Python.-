@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    NUM_EL = int(input("Введите количество элементов: "))
+    EL = 1
+    SUM = 0
+    while NUM_EL > 0:
+        SUM += EL
+        EL /= -2
+        NUM_EL -= 1
+    print(SUM)
+except ValueError:
+    print("Введите корректное значение")
