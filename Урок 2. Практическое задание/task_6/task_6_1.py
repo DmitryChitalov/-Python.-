@@ -7,3 +7,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import random
+
+TRY_COUNT = 0
+NUMBER = round(random() * 100)
+while TRY_COUNT <= 10:
+    try:
+        USER_NUMBER = int(input('Угадайте число от 0 до 100 : '))
+        if USER_NUMBER >= 0 and USER_NUMBER <= 100:
+            TRY_COUNT += 1
+            if USER_NUMBER < NUMBER:
+                print(f'Вы ввели слишком маленькое число.У вас осталось {10 - TRY_COUNT} попыток')
+            elif USER_NUMBER > NUMBER:
+                print(f'Вы ввели слишком большое число.У вас осталось {10 - TRY_COUNT} попыток')
+            else:
+                print(f'Поздравляю. Вы угадали за {TRY_COUNT} попыток.')
+                break
+        else:
+            raise ValueError
+    except ValueError:
+        print('Некорректное значение.Введите целое число от 0 до 100.')
+else:
+    print(f'Увы, количество попыток Вы исчерпали.Правильный ответ : {NUMBER}')
