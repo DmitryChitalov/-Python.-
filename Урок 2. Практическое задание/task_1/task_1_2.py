@@ -33,3 +33,60 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+# Способ 2
+def user_input():
+    """
+    Функция не принимает каких-либо значений
+    :return: функция запрашивает ввод у пользователя двух чисел и возвращает их
+    """
+    user_number_a = int(input('Введите первое число: '))
+    user_number_b = int(input('Введите второе число: '))
+    return user_number_a, user_number_b
+
+
+def recursion():
+    """
+    Функция не принимает каких-либо значений
+    :return: завершение рекурсии
+    """
+    # дабы не путаться далее, введем переменные для кодов операций, а также для "0"
+    op_plus = ord('+')
+    op_minus = ord('-')
+    op_mult = ord('*')
+    op_div = ord('/')
+    op_zero = ord('0')
+
+    try:
+        # запрашиваем ввод знака операции
+        user_operation = ord(input('Введите операцию (+, -, *, / или 0 для выхода): '))
+
+        # проверяем соответствие знака, тем что мы хотим использовать
+        # если "0", то цикл прерываем, если такого знака у нас нет, то ошибка
+        if user_operation == op_zero:
+            return
+        if user_operation == op_plus:
+            number_a, number_b = user_input()
+            print(f'Результат {number_a} + {number_b} = {number_a + number_b}')
+        elif user_operation == op_minus:
+            number_a, number_b = user_input()
+            print(f'Результат {number_a} - {number_b} = {number_a - number_b}')
+        elif user_operation == op_mult:
+            number_a, number_b = user_input()
+            print(f'Результат {number_a} * {number_b} = {number_a * number_b}')
+        elif user_operation == op_div:
+            number_a, number_b = user_input()
+            print(f'Результат {number_a} / {number_b} = {number_a / number_b}')
+        else:
+            print('Неверная операция. Повторите ввод')
+        recursion()
+
+    except TypeError:
+        # если ловим строку, то выводим ошибку
+        print('Неверная операция. Повторите ввод')
+        recursion()
+
+
+# вызываем нашу функцию recursion
+recursion()

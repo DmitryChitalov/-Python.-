@@ -5,3 +5,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion(number, iterator=1, summ=0):
+    """
+    Функция принимает в виде значения число
+    А также параметры итератора и суммы по умолчанию
+    :return: завершение рекурсии, вывод результата
+    """
+    if iterator > number:
+        print('Равенство выполняется!') if summ == number * (number + 1) // 2 else print('Равенство не выполняется!')
+        return
+    else:
+        summ += iterator
+        iterator += 1
+        recursion(number, iterator, summ)
+
+
+# вызываем нашу функцию recursion
+recursion(113)

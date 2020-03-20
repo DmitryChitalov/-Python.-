@@ -17,3 +17,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion(symbol=32, iterator=1):
+    """
+    Функция принимает в виде значений код символа и итератор
+    Оба параметра имеют значения по умолчанию
+    Выводит на печать код и сам символ
+    :return: завершение рекурсии
+    """
+    if symbol > 127:
+        return
+    if iterator % 10 != 0:
+        print(f'{symbol} - {chr(symbol)} ', end='')
+        recursion(symbol+1, iterator+1)
+    else:
+        print(f'{symbol} - {chr(symbol)}')
+        recursion(symbol + 1, iterator + 1)
+
+
+# вызываем нашу функцию recursion
+recursion()

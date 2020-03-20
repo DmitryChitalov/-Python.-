@@ -14,3 +14,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion(number, result_number=0):
+    """
+    Функция принимает на входе число и параметр по-умолчанию out_number
+    Выводит на печать результат
+    :return: завершение рекурсии, вывод результата
+    """
+    if number > 0:
+        result_number = result_number * 10 + number % 10
+        recursion(number // 10, result_number)
+    else:
+        print(result_number)
+        return
+
+
+# запрашиваем ввод пользователя
+USER_NUMBER = int(input('Введите число: '))
+# вызываем нашу функцию recursion, передавая параметром число
+recursion(USER_NUMBER)

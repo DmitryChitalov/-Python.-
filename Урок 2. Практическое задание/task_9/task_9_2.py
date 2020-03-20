@@ -10,3 +10,43 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion(count_number, max_sum=0, max_number=0):
+    """
+    Функция принимает в виде значения количество вводимых чисел
+    Параметры максимальной суммы и числа по умолчанию заданы 0
+    :return: завершение рекурсии, вывод результата
+    """
+
+    if count_number == 0:
+        print(f'Наибольшее число по сумме цифр: {max_number}, сумма его цифр: {max_sum}')
+        return
+    else:
+        # создаем переменную для хранения суммы цифр
+        summ = 0
+        # запрашиваем ввод пользователя
+        user_number = int(input('Введите число: '))
+        # создадим переменную для оперирования в цикле без изменения исходной
+        oper_number = user_number
+
+        while oper_number > 0:
+            # складываем цифры в числе и уменьшаем число на порядок
+            summ += oper_number % 10
+            oper_number = oper_number // 10
+
+        # проверяем является ли текущая сумма цифр максимальной,
+        # если да, то эту сумму делаем максимальной
+        if summ > max_sum:
+            max_sum = summ
+            max_number = user_number
+
+        count_number -= 1
+        recursion(count_number, max_sum, max_number)
+
+
+# запрашиваем ввод пользователя
+COUNT_NUMBER = int(input('Введите количество чисел: '))
+
+# вызываем нашу функцию recursion
+recursion(COUNT_NUMBER)

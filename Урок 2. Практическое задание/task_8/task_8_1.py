@@ -12,3 +12,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+# запрашиваем ввод пользователя
+COUNT_NUMBER = int(input('Сколько будет чисел? '))
+SOURCE_NUMBER = int(input('Какую цифру считать? '))
+# вводим счетчик искомой цифры
+RESULT_NUMBER = 0
+
+# повторяем цикл по количеству цифр
+for i in range(0, COUNT_NUMBER):
+    # запрашиваем ввод пользователя
+    USER_NUMBER = int(input(f'Число {i+1}: '))
+    # запускаем цикл перебора цифр в числе
+    while USER_NUMBER > 0:
+        # проверяем равна ли цифра искомой, если да, то увеличиваем счетчик
+        if USER_NUMBER % 10 == SOURCE_NUMBER:
+            RESULT_NUMBER += 1
+        USER_NUMBER = USER_NUMBER // 10
+
+# выводим результат
+print(f'Было введено {RESULT_NUMBER} цифр "{SOURCE_NUMBER}"')
