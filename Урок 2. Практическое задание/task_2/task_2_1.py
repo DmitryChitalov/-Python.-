@@ -12,3 +12,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+ER_STRING = 'ошибка ввода!'
+try:
+    number = abs(int(input('введите натуральное  число: ')))
+    even_count = 0 #счетчик четных чисел
+    odd_count = 0 #счетчик нечетных чисел
+
+    while number > 0:
+        number //= 10
+        if (number % 10) % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+    print('четных: ' + str(even_count))
+    print('нечетных: ' + str(odd_count))
+except:
+    print(ER_STRING)
