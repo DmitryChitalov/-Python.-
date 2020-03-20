@@ -16,3 +16,26 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+
+
+# с помощью if - else
+ER_STTRING = 'ошибка ввода!'
+try:
+    year = int(input('введите год: '))
+    if year % 4 == 0 and year % 100 != 0 or year % 400 ==0:
+        print('високосный')
+    else:
+        print('невисокосный')
+except:
+    print(ER_STTRING)
+
+
+
+# С помощью тернарного оператора
+ER_STTRING = 'ошибка ввода!'
+try:
+    year = int(input('введите год: '))
+    print(('невисокосный', 'високосный')[year % 4 == 0 and year % 100 != 0 or year % 400 ==0])
+
+except:
+    print(ER_STTRING)
