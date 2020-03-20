@@ -5,3 +5,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    N = int(input("Введите число n : "))
+    if N > 0:
+        NUMBER_1 = 0
+        for el in range(1, N+1):
+            NUMBER_1 += el
+        NUMBER_2 = N * (N + 1) // 2
+        print(f'Равенство выполняется: {NUMBER_1} = {NUMBER_2}')
+    else:
+        raise ValueError
+except ValueError:
+    print('Некоректное значение. Введите натуральное число.')
