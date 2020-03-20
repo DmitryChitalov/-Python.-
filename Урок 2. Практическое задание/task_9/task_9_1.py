@@ -10,3 +10,44 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+# Данная реализация не учитывает, что могут быть введены числа с одинаковой суммой цифр,
+# если бы можно было пользоваться словарями, то я складировал бы числа
+# с максимальной суммой цифр туда и сравнивал бы последнее введённое число с ними,
+# в результат можно было бы выводить перечень чисел с максимальной суммой.
+# А вообще на эту задачу идеально ложатся классы, я думаю проще всего было бы решить через них.
+
+try:
+    while True:
+        COUNT_NUM = int(input('Сколько будет чисел? - '))
+        if COUNT_NUM <= 0:
+            print('Необходимо вводить число - больше нуля!')
+            continue
+        break
+
+    STEP = 1
+    MAX_SUM_NUM = 0
+    MAX_ENTER = 0
+
+    while COUNT_NUM > 0:
+        while True:
+            ENTER_NUM = int(input(f'Число {STEP}: '))
+            if ENTER_NUM <= 0:
+                print('Необходимо вводить число - больше нуля!')
+                continue
+            break
+        SUM_NUM = 0
+        SUB_STEP = 10
+        while ENTER_NUM // (SUB_STEP / 10) != 0:
+            ONE_NUM = ENTER_NUM % SUB_STEP // (SUB_STEP / 10)
+            SUM_NUM = SUM_NUM + ONE_NUM
+            SUB_STEP *= 10
+        if SUM_NUM > MAX_SUM_NUM:
+            MAX_SUM_NUM = SUM_NUM
+            MAX_ENTER = ENTER_NUM
+        STEP += 1
+        COUNT_NUM -= 1
+
+    print(f'Наибольшее число по сумме цифр: {MAX_ENTER}, сумма его цифр: {MAX_SUM_NUM}')
+except ValueError:
+    print('Необходимо вводить числа!')

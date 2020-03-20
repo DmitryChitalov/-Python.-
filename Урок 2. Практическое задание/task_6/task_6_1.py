@@ -7,3 +7,32 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+from random import randint
+
+NUM = randint(0, 100)
+MAX_ANSW = 10
+ANSWER = 1
+
+while ANSWER <= MAX_ANSW:
+    try:
+        USER_ANSWER = int(input(f'Попытка №{ANSWER}, введите число: '))
+        if USER_ANSWER == NUM:
+            print('Поздравляю! Вы угадали!')
+            break
+        if USER_ANSWER > NUM:
+            if ANSWER < MAX_ANSW:
+                print(f'Вы ввели число, которое БОЛЬШЕ загаданного. '
+                      f'Осталось попыток: {MAX_ANSW - ANSWER}')
+            else:
+                print('Вы не смогли угадать число. Попробуйте ещё раз.')
+        elif USER_ANSWER < NUM:
+            if ANSWER < MAX_ANSW:
+                print(f'Вы ввели число, которое МЕНЬШЕ загаданного. '
+                      f'Осталось попыток: {MAX_ANSW - ANSWER}')
+            else:
+                print('Вы не смогли угадать число. Попробуйте ещё раз.')
+        ANSWER += 1
+    except ValueError:
+        print(f'Необходимо вводить целое число! Осталось попыток: {MAX_ANSW - ANSWER}')
+        ANSWER += 1

@@ -8,3 +8,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    COUNT_ITER = int(input('Введите количество элементов из ряда: '))
+    NUM = 1
+    SUM = 0
+
+    while COUNT_ITER > 0:
+        SUM = SUM + NUM
+        NUM /= -2
+        COUNT_ITER -= 1
+
+    print(f'Сумма элементов ряда: {SUM}')
+except ValueError:
+    print('Необходимо вводить число.')
