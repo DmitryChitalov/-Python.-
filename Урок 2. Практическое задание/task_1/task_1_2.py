@@ -42,13 +42,14 @@ def calc():
             num_1 = int(input("Введите первое число : "))
             num_2 = int(input("Введите второе число : "))
             if symbol == '+':
-                return f'Результат {num_1} + {num_2} = {num_1 + num_2}'
+                print(f'Результат {num_1} + {num_2} = {num_1 + num_2}')
             if symbol == '-':
-                return f'Результат {num_1} - {num_2} = {num_1 - num_2}'
+                print(f'Результат {num_1} - {num_2} = {num_1 - num_2}')
             if symbol == '*':
-                return f'Результат {num_1} * {num_2} = {round(num_1 * num_2, 2)}'
+                print(f'Результат {num_1} * {num_2} = {round(num_1 * num_2, 2)}')
             if symbol == '/':
-                return f'Результат {num_1} / {num_2} = {round(num_1 / num_2, 2)}'
+                print(f'Результат {num_1} / {num_2} = {round(num_1 / num_2, 2)}')
+            return calc()
         except ValueError:
             print('Некорректное значение.Введите число.')
             return calc()
