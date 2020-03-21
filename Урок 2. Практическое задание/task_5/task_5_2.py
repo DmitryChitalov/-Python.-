@@ -17,3 +17,34 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+from re import sub
+
+
+def get_ascii_code_value_table(
+        initialize: bool = False,
+        start: str = "1",
+        start_code: int = 32,
+        last_code: int = 127,
+        string: str = ""
+) -> [str, None]:
+    if not initialize:
+        start = sub(r"[\s]", "", input("Введите 1 для начала, или 0 для выхода из программы: "))
+
+    if start == "0":
+        return
+    elif start == "1":
+        if start_code <= last_code:
+            string += f"{start_code} - {chr(start_code)} " if (start_code - 32) % 10 != 0 \
+                else f"{start_code} - {chr(start_code)} \n"
+            start_code += 1
+
+            return get_ascii_code_value_table(True, start, start_code, last_code, string)
+        else:
+            return string
+    else:
+        print("Вы ввели неверное действие, попробуйте еще раз")
+        return get_ascii_code_value_table()
+
+
+print(get_ascii_code_value_table())
