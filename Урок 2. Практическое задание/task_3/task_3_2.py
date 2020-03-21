@@ -14,3 +14,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(number, result):
+    """Рекурсия решения фцнкции"""
+    if number <= 0:
+        print(result)
+        return
+    one_number = number % 10
+    result = result + str(one_number)
+    recursion((number // 10), result)
+
+# start
+recursion(int(input(f"Введите число: ")), "")

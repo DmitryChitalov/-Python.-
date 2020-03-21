@@ -12,3 +12,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+def reverse(number):
+    """---"""
+    result = ""
+    while number > 0:
+        one_number = number % 10
+        result = result + str(one_number)
+        number = number // 10
+    print(result)
+
+# start
+X = int(input(f"Введите число: "))
+reverse(X)
