@@ -5,13 +5,10 @@
 """
 from random import randint
 
+# Данная реализация не учитывает, что в массиве может быть несколько цифр
+# с одинаковым количеством, но она короче
 LIST = [randint(0, 10) for i in range(20)]
 print(LIST)
-NUM = 0
-COUNT = 0
-
-for itm in LIST:
-    if LIST.count(itm) > COUNT:
-        NUM = itm
-        COUNT = LIST.count(itm)
+NUM = max(LIST)
+COUNT = LIST.count(NUM)
 print(f'Число, которое чаще всего встречается в массиве - {NUM}, оно встречается {COUNT} раз(а).')

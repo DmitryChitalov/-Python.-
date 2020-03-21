@@ -15,7 +15,7 @@ print(LIST)
 FIRST_MIN = min(LIST)
 if LIST.count(FIRST_MIN) > 1:
     print(f'Наименьший элемент: {FIRST_MIN}, встречается в этом массиве '
-          f'{LIST.count(FIRST_MIN)} раз.')
+          f'{LIST.count(FIRST_MIN)} раз(а).')
 else:
     LIST.pop(LIST.index(FIRST_MIN))
     SECOND_MIN = min(LIST)

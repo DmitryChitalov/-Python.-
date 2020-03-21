@@ -14,10 +14,10 @@
 from random import randint
 
 LIST = [randint(-100, 100) for i in range(20)]
-print(LIST)
+print(f'Исходный массив: {LIST}')
 MIN_VAL_IND = LIST.index(min(LIST))
 MAX_VAL_IND = LIST.index(max(LIST))
-print(f'В данном массиве чисел: \nмаксимальное число {max(LIST)} стоит на {MAX_VAL_IND} позиции,\n'
-      f'минимальное число {min(LIST)} стоит на {MIN_VAL_IND} позиции.')
+print(f'В данном массиве чисел: \nМаксимальное число {max(LIST)} стоит на {MAX_VAL_IND} позиции,\n'
+      f'Минимальное число {min(LIST)} стоит на {MIN_VAL_IND} позиции.\nЗаменяем их:')
 LIST[MIN_VAL_IND], LIST[MAX_VAL_IND] = LIST[MAX_VAL_IND], LIST[MIN_VAL_IND]
 print(LIST)

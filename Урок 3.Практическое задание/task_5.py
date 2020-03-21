@@ -10,7 +10,8 @@
 """
 from random import randint
 
-LIST = [randint(-100, 100) for i in range(20)]
+LIST = [randint(-20, 20) for i in range(10)]
 MAX_NEGATIVE = max([itm for itm in LIST if itm < 0])
-print(LIST)
-print(MAX_NEGATIVE)
+print(f'Базовый список: {LIST}')
+print(f'Максимальный отрицательный элемент в данном массиве = {MAX_NEGATIVE}, '
+      f'его индекс {LIST.index(MAX_NEGATIVE)}')

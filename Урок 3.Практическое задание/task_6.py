@@ -17,10 +17,15 @@ from random import randint
 
 COUNT = int(input('Введите количество элементов списка: '))
 LIST = [randint(0, 100) for i in range(COUNT)]
-print(LIST)
+print(f'Массив: {LIST}')
 MIN_VAL_IND = LIST.index(min(LIST))
 MAX_VAL_IND = LIST.index(max(LIST))
 if MIN_VAL_IND > MAX_VAL_IND:
     MIN_VAL_IND, MAX_VAL_IND = MAX_VAL_IND, MIN_VAL_IND
-
-print(sum(LIST[MIN_VAL_IND+1:MAX_VAL_IND]))
+    print(f'Сумма между минимальным ({LIST[MAX_VAL_IND]}) '
+          f'и максимальным ({LIST[MIN_VAL_IND]}) элементами: '
+          f'{sum(LIST[MIN_VAL_IND + 1:MAX_VAL_IND])}')
+else:
+    print(f'Сумма между минимальным ({LIST[MIN_VAL_IND]}) '
+          f'и максимальным ({LIST[MAX_VAL_IND]}) элементами: '
+              f'{sum(LIST[MIN_VAL_IND + 1:MAX_VAL_IND])}')

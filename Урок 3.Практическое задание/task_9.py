@@ -18,13 +18,18 @@ COUNT_COLUMN = int(input('Задайте количество столбцов �
 MAX_NUM = int(input('Задайте максимальное число в матрице: '))
 LIST = [[randint(0, MAX_NUM) for I in range(COUNT_COLUMN)] for J in range(COUNT_ROW)]
 for itm in LIST:
-    print(itm)
+    for J in itm:
+        print(J, '\t', end='')
+    print()
 
 NEW_LIST = []
-MIN_NUM = MAX_NUM
 for J in range(COUNT_COLUMN):
+    MIN_NUM = MAX_NUM
     for I in LIST:
         if I[J] < MIN_NUM:
             MIN_NUM = I[J]
     NEW_LIST.append(MIN_NUM)
-print(NEW_LIST)
+for ITM in NEW_LIST:
+    print(ITM, '\t', end='')
+print(' - Минимальные значения по столбцам')
+print(f'Максимальное среди них = {max(NEW_LIST)}')
