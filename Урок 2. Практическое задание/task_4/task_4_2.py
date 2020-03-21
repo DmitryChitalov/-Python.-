@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(number, result, item):
+    """Рекурсия решения фцнкции"""
+    if number == 0:
+        print(result)
+        return
+    result = result + item
+    item = item / (- 2)
+    number = number - 1
+    recursion(number, result, item)
+
+# start
+recursion(int(input(f"Введите число: ")), 0, 1)

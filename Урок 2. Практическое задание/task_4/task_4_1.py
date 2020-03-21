@@ -8,3 +8,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+N = int(input("ВВедите число: "))
+SUM = 0
+ITEM = 1
+while N > 0:
+    SUM = SUM + ITEM
+    ITEM = ITEM / (- 2)
+    N = N-1
+print(SUM)
