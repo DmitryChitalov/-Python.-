@@ -15,3 +15,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(number, even_count, odd_count):
+    """Рекурсия решения фцнкции"""
+    #Базовый случай
+    if number <= 0:
+        print("Количество нечетных цифр: ", odd_count)
+        print("Количество четных цифр: ", even_count)
+        return
+
+    if number % 2 == 0:
+        even_count = even_count + 1
+    else:
+        odd_count = odd_count + 1
+    recursion(number // 10, even_count, odd_count)
+
+# start
+recursion(int(input(f"Введите число: ")), 0, 0)
