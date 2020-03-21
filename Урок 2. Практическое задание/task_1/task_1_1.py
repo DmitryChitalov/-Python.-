@@ -32,3 +32,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+# Pylint советует использовать not in, но я сделал реализацию без массивов
+while True:
+    USER_OPERATION = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+    if USER_OPERATION == "0":
+        break
+    if USER_OPERATION != "+" and USER_OPERATION != "-" and USER_OPERATION != "*" and\
+            USER_OPERATION != "/":
+        print("Введено некорректное действие")
+        continue
+    try:
+        NUMBER_1 = int(input("Введите первое число: "))
+        NUMBER_2 = int(input("Введите второе число: "))
+    except ValueError:
+        print("Неверный ввод числа")
+        continue
+    if USER_OPERATION == "+":
+        print(f"{NUMBER_1} + {NUMBER_2} = {NUMBER_1 + NUMBER_2}")
+    elif USER_OPERATION == "-":
+        print(f"{NUMBER_1} - {NUMBER_2} = {NUMBER_1 - NUMBER_2}")
+    elif USER_OPERATION == "*":
+        print(f"{NUMBER_1} * {NUMBER_2} = {NUMBER_1 * NUMBER_2}")
+    else:
+        try:
+            print(f"{NUMBER_1} / {NUMBER_2} = {NUMBER_1 / NUMBER_2}")
+        except ZeroDivisionError:
+            print("Обнаружено деление на ноль. Повторите ввод данных")

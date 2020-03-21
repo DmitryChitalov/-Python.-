@@ -17,3 +17,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+TOTAL_ROW = ""
+j = 0
+for i in range(32, 128):
+    if j == 10:
+        TOTAL_ROW = TOTAL_ROW + "\n"
+        j = 0
+    TOTAL_ROW = TOTAL_ROW + f"{i} - {chr(i)} "
+    j += 1
+print(TOTAL_ROW)

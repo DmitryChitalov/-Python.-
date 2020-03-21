@@ -7,3 +7,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import randint
+
+
+ANSWER = randint(1, 100)
+i = 10
+while i > 0:
+    USER_ANSWER = int(input("Введите число: "))
+    if USER_ANSWER < ANSWER:
+        print("Больше!")
+        i = i - 1
+    elif USER_ANSWER > ANSWER:
+        print("Меньше!")
+        i = i - 1
+    else:
+        print("Вы угадали!")
+        break
+else:
+    print("Попытки кончились")

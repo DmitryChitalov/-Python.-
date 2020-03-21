@@ -12,3 +12,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import sys
+try:
+    USER_NUMBER = int(input("Введите число: "))
+except ValueError:
+    print("Вы не ввели число")
+    sys.exit()
+TOTAL_EVEN = 0
+TOTAL_NUMBER = 0
+
+while USER_NUMBER != 0:
+    TOTAL_NUMBER += 1
+    if (USER_NUMBER % 10) % 2 == 0:
+        TOTAL_EVEN += 1
+    USER_NUMBER = USER_NUMBER // 10
+print(f"Всего цифр в числе {TOTAL_NUMBER} из них четных {TOTAL_EVEN}")

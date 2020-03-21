@@ -12,3 +12,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import sys
+
+CONVERTED_NUMBER = ""
+try:
+    USER_NUMBER = int(input("Введите число: "))
+except ValueError:
+    print("Неверный ввод числа")
+    sys.exit()
+
+while USER_NUMBER != 0:
+    CONVERTED_NUMBER = CONVERTED_NUMBER + str(USER_NUMBER % 10)
+    USER_NUMBER = USER_NUMBER // 10
+print(CONVERTED_NUMBER)

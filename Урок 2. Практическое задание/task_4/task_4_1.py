@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+ROW_RANGE = int(input("Введите количество элементов в ряду: "))
+ROW_EL = 1
+ROW_SUM = 0
+i = 0
+
+while i <= ROW_RANGE - 1:
+    i += 1
+    ROW_SUM = ROW_SUM + ROW_EL
+    ROW_EL = ROW_EL * -0.5
+
+print(ROW_SUM)

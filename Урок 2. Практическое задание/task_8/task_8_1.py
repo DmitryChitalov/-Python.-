@@ -12,3 +12,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import sys
+
+try:
+    NUMBER_COUNT = int(input("Сколько будет чисел?: "))
+    TARGET_DIGIT = int(input("Какую цифру считать?: "))
+except ValueError:
+    print("Введено не число")
+    sys.exit()
+TOTAL_DIGIT = 0
+
+for i in range(NUMBER_COUNT):
+    n = int(input(f"Введите число {i+1}: "))
+    while n != 0:
+        if n % 10 == TARGET_DIGIT:
+            TOTAL_DIGIT += 1
+        n = n // 10
+
+print(f"Всего цифр \"{TARGET_DIGIT}\" в числах - {TOTAL_DIGIT}")

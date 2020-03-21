@@ -14,3 +14,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import sys
+
+try:
+    USER_NUMBER = int(input("Введите число: "))
+except ValueError:
+    print("Неверный ввод числа")
+    sys.exit()
+
+def number_converter(user_number, conv=""):
+    """ Решение рекурсией """
+    if user_number == 0:
+        print(conv)
+    else:
+        conv = conv + str(user_number % 10)
+        user_number = user_number // 10
+        number_converter(user_number, conv)
+
+
+number_converter(USER_NUMBER)

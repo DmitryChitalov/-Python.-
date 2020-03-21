@@ -13,7 +13,8 @@ from random import randint
 ANSWER = randint(1, 100)
 
 
-def recur_count(i, user_answer):
+def recur_count(user_answer, i=10):
+    """Решение рекурсией"""
     if i == 0:
         print("Попытки кончились!")
     if user_answer == ANSWER:
@@ -25,7 +26,7 @@ def recur_count(i, user_answer):
             print("Больше!")
         i = i - 1
         user_answer = int(input("Введите число: "))
-        return recur_count(i, user_answer)
+        recur_count(user_answer, i)
 
 
-recur_count(10, 50)
+recur_count(int(input("Введите число: ")))
