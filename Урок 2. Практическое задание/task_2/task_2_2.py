@@ -15,3 +15,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def even_count(NUMBER, even_score, not_even_score):
+    if int(NUMBER) > 0 and int(NUMBER) % 2 == 0:
+        even_score += 1
+        return even_count(NUMBER // 10, even_score, not_even_score)
+    elif int(NUMBER) > 0:
+        not_even_score += 1
+        return even_count(NUMBER // 10, even_score, not_even_score)
+    return f'Количество четных' \
+            f' и нечетных цифр в числе равно: ({even_score}, {not_even_score})'
+
+NUMBER = int(input('Введите натуральное число : '))
+print(even_count(NUMBER, even_score=0, not_even_score=0))

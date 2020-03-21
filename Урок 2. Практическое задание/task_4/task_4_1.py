@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+try:
+    NUMBER = int(input('Введите натуральное число : '))
+    if NUMBER > 0:
+        K, SUMM = 1., 0.
+        for el in range(NUMBER):
+            SUMM += K
+            K /= -2
+        print(SUMM)
+    else:
+        raise ValueError
+except ValueError:
+    print('Некорректное значение. Введите натуральное число.')

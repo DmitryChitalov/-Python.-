@@ -33,3 +33,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def calc():
+    symbol = input('Введите операцию (+, -, *, / или 0 для выхода) : ')
+    if symbol == '0':
+        return 'Выход из программы!'
+    if symbol in ('+', '-', '*', '/'):
+        try:
+            num_1 = int(input("Введите первое число : "))
+            num_2 = int(input("Введите второе число : "))
+            if symbol == '+':
+                print(f'Результат {num_1} + {num_2} = {num_1 + num_2}')
+            if symbol == '-':
+                print(f'Результат {num_1} - {num_2} = {num_1 - num_2}')
+            if symbol == '*':
+                print(f'Результат {num_1} * {num_2} = {round(num_1 * num_2, 2)}')
+            if symbol == '/':
+                print(f'Результат {num_1} / {num_2} = {round(num_1 / num_2, 2)}')
+            return calc()
+        except ValueError:
+            print('Некорректное значение.Введите число.')
+            return calc()
+        except ZeroDivisionError:
+            print('На ноль делить нельзя')
+            return calc()
+    else:
+        print('Некорректное значение.')
+        return calc()
+
+print(calc())
