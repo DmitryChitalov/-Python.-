@@ -14,3 +14,12 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+BIG_LIST = list(range(2, 100))
+SHORT_LIST = list(range(2, 10))
+
+for L in SHORT_LIST:
+    COUNT = 0
+    for N in BIG_LIST:
+        COUNT = COUNT + 1 if N % L == 0 else COUNT
+    print(f'В диапазоне 2-99: {COUNT} чисел кратны {L}')

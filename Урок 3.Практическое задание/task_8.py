@@ -36,3 +36,19 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+from random import randint
+
+# Реализация с автоматической генерацией случайного списка, чтоб не заполнять руками
+LIST = [[randint(0, 10) for I in range(4)] for J in range(5)]
+
+for itm in LIST:
+    itm.append(sum(itm))
+    print(itm)
+
+# Реализация с ручным вводом
+# PRINT_TEXT = 'Введите число: '
+# LIST = [[int(input(PRINT_TEXT)) for I in range(4)] for J in range(5)]
+#
+# for itm in LIST:
+#     itm.append(sum(itm))
+#     print(itm)

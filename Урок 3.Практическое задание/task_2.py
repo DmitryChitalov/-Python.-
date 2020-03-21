@@ -10,3 +10,25 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+from random import randint
+
+# генерируем список уникальных случайных чисел. С не уникальными
+# мой генератор списков будет не корректно работать, иначе не вышло
+# придумать решение в одну строку
+
+LIST = list(set([randint(1, 100) for i in range(20)]))
+NEW_LIST = [LIST.index(itm) for itm in LIST if itm % 2 == 0]
+print(LIST, '\n', NEW_LIST)
+
+# Реализация в несколько строк но учитывающая повторяющиеся элементы в списке
+
+# VALUE = int(input('Введите количество чисел в массиве: '))
+# LIST = [randint(1, 100) for i in range(VALUE)]
+# NEW_LIST = []
+#
+# for itm in list(range(0, VALUE - 1)):
+#     if LIST[itm] % 2 == 0:
+#         NEW_LIST.append(itm)
+# print(LIST)
+# print(NEW_LIST)
