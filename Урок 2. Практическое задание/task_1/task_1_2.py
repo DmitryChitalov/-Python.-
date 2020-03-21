@@ -33,3 +33,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calc():
+    """Рекурсивный запрос параметров и расчет"""
+    operation = input(f"Знак (+,-,*,/): ")
+    if operation == '0':
+        return
+    if operation in ('+', '-', '*', '/'):
+        x_input = float(input("X="))
+        y_input = float(input("Y="))
+    if operation == '+':
+        print(f"%.2f" % (x_input + y_input))
+    elif operation == '-':
+        print(f"%.2f" % (x_input - y_input))
+    elif operation == '*':
+        print(f"%.2f" % (x_input * y_input))
+    elif operation == '/':
+        if y_input != 0:
+            print(f"%.2f" % (x_input / y_input))
+        else:
+            print(f"Деление на ноль!")
+    else:
+        print(f"Неверный знак операции!")
+    calc()
+
+
+print("Ноль в качестве знака операции завершит работу программы")
+calc()

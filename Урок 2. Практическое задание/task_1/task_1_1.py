@@ -32,3 +32,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+print("Ноль в качестве знака операции завершит работу программы")
+while True:
+    S = input(f"Знак (+,-,*,/): ")
+    if S == '0':
+        break
+    if S in ('+', '-', '*', '/'):
+        X = float(input("X="))
+        Y = float(input("Y="))
+    if S == '+':
+        print(f"%.2f" % (X + Y))
+    elif S == '-':
+        print(f"%.2f" % (X - Y))
+    elif S == '*':
+        print(f"%.2f" % (X * Y))
+    elif S == '/':
+        if Y != 0:
+            print(f"%.2f" % (X / Y))
+        else:
+            print(f"Деление на ноль!")
+    else:
+        print(f"Неверный знак операции!")
