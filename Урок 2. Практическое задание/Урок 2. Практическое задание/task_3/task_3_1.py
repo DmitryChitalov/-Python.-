@@ -12,3 +12,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+try:
+    NUMBER = int(input('Enter a number : '))
+    REVERSE = 0
+    if NUMBER > 0:
+        while NUMBER != 0:
+            REVERSE *= 10
+            REVERSE += NUMBER % 10
+            NUMBER = NUMBER // 10
+        print(REVERSE)
+    else:
+        raise ValueError
+except ValueError:
+    print('Incorrect number.')
+

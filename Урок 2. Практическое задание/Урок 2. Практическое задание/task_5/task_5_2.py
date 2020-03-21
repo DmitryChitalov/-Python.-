@@ -17,3 +17,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def numbers(n):
+    if n != 128:
+        print(f'{n} - {chr(n)}', end=' ')
+        if n % 10 - 1 == 0:
+            print()
+        return numbers(n + 1)
+
+numbers(32)
