@@ -17,3 +17,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+# Формирует строку с числами от l_pos до 127 включительно
+def print_chars(l_pos, l_iter):
+    if l_pos < 128:
+        if l_iter == 9:
+            string = '\n'
+        else:
+            string = ''
+        string += f'{l_pos} - {chr(l_pos)} {print_chars(l_pos + 1, (l_iter + 1) % 10)} '
+        return string
+    else:
+        return ''
+
+
+print(f'{print_chars(32, 0)}')

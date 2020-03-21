@@ -15,3 +15,42 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            num = input(f"Введите число\n")
+            num = int(num)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+# Разбор числа на цифры рекурсивно, количество нечетных цифр вычисляется total - even
+def parse_number(l_number, l_total, l_even):
+    if l_number:
+        digit = l_number % 10
+        # Остаток от деления 0
+        if not digit % 2:
+            l_even += 1
+        return parse_number(l_number // 10, l_total + 1, l_even)
+    else:
+        return l_total, l_even
+
+
+# Начальная инициализация
+number = input_number()
+# Могли ввести 0
+if number:
+    total = 0
+    even = 0
+else:
+    total = 1
+    even = 1
+tmp_number = abs(number)
+total, even = parse_number(tmp_number, total, even)
+
+print(f'В числе {number} всего {total} цифр, {even} четных, {total - even} нечетных')

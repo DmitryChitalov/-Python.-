@@ -8,3 +8,28 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            num = input(f"Введите положительное число\n")
+            num = int(num)
+            if num > 0:
+                break
+            else:
+                print('Введено некорректное число')
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+count = input_number()
+cur_num = 1
+multiply = -0.5
+res = 0
+for i in range(0, count):
+    res += cur_num
+    cur_num *= multiply
+print(f'Количество элементов - {count}, их сумма - {res}')

@@ -8,3 +8,35 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            num = input(f"Введите положительное число\n")
+            num = int(num)
+            if num > 0:
+                break
+            else:
+                print('Введено некорректное число')
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+# Находит сумму ряда
+# l_sum - сумма с прошлого вызова
+# l_cur_num - текущий элемент
+# l_count - сколько осталось найти членов последовательности
+def sequence_sum(l_sum, l_cur_num, l_count):
+    if l_count > 1:
+        # Результат - сумма текущего члена и всех последующих
+        return l_cur_num + sequence_sum(l_sum, l_cur_num * -0.5, l_count - 1)
+    else:
+        return l_cur_num
+
+
+count = input_number()
+res = sequence_sum(0, 1, count)
+print(f'Количество элементов - {count}, их сумма - {res}')

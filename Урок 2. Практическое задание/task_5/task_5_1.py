@@ -17,3 +17,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+start = 32
+end = 128
+pos = start
+str_len = 0
+string = ''
+while pos < end:
+    if str_len > 9:
+        str_len = 0
+        print(f'{string}')
+        string = ''
+    string += f'{pos} - {chr(pos)} '
+    pos += 1
+    str_len += 1
+print(f'{string}')

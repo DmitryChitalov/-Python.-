@@ -12,3 +12,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            num = input(f"Введите число\n")
+            num = int(num)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+number = input_number()
+tmp_number = abs(number)
+reverse = 0
+while tmp_number:
+    reverse = reverse * 10 + tmp_number % 10
+    tmp_number //= 10
+reverse *= -1 if number < 0 else 1
+print(f'Исходное число {number}, перевернутое {reverse}')

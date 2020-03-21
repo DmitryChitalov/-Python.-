@@ -5,3 +5,26 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            num = input(f"Введите положительное число\n")
+            num = int(num)
+            if num > 0:
+                break
+            else:
+                print('Введено некорректное число')
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+n = input_number()
+res_formula = n * (n + 1) // 2
+res = 0
+for i in range(1, n + 1):
+    res += i
+print(f'Результат суммирования {res}, результат формулы {res_formula}')

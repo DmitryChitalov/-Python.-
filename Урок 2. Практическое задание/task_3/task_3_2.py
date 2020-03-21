@@ -14,3 +14,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            num = input(f"Введите число\n")
+            num = int(num)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+# Переворачивает число, учитывает отрицательное
+def reverse_number(l_number, l_reverse):
+    if abs(l_number) > 10:
+        # Следующая итерация из (abc, fed) передаем (ab, fedc)
+        res = reverse_number(abs(l_number) // 10, l_reverse * 10 + l_number % 10)
+        return -res if l_number < 0 else res
+    else:
+        return l_reverse * 10 + l_number
+
+
+number = input_number()
+reverse = reverse_number(number, 0)
+print(f'Исходное число {number}, перевернутое {reverse}')

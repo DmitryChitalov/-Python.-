@@ -12,3 +12,39 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number():
+    while True:
+        try:
+            num = input(f"Введите число\n")
+            num = int(num)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+# Начальная инициализация
+number = input_number()
+# Могли ввести 0
+if number:
+    total = 0
+    even = 0
+else:
+    total = 1
+    even = 1
+not_even = 0
+tmp_number = abs(number)
+# Пока число не равно 0
+while tmp_number:
+    digit = tmp_number % 10
+    tmp_number //= 10
+    total += 1
+    if digit % 2:
+        not_even += 1
+    else:
+        even += 1
+
+print(f'В числе {number} всего {total} цифр, {even} четных, {not_even} нечетных')

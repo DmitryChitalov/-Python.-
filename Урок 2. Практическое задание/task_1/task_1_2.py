@@ -33,3 +33,52 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number(string):
+    while True:
+        try:
+            num = input(f"Введите {string} число\n")
+            num = int(num)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+# Ожидает на ввод символ операции или '0'. Повторяет попытку ввода, пока не введено корректно
+def input_char():
+    while True:
+        char = input(f"Введите символ операци '- + / *' или '0' для завершения\n")
+        if len(char) == 1 and char in ['-', '+', '/', '*', '0']:
+            break
+        else:
+            print("Введен недопустимый символ")
+    return char
+
+
+def recursion():
+    operation = input_char()
+    # База рекурсии
+    if operation == '0':
+        return
+    else:
+        number_1 = input_number('первое')
+        number_2 = input_number('второе')
+        if operation == '-':
+            res = number_1 - number_2
+        elif operation == '+':
+            res = number_1 + number_2
+        elif operation == '*':
+            res = number_1 * number_2
+        elif operation == '/':
+            if number_2 == 0:
+                res = 'Деление на 0'
+            else:
+                res = number_1 / number_2
+        print(f'Результат {res}')
+        recursion()
+
+
+recursion()
