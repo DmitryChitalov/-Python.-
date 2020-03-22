@@ -22,7 +22,7 @@ def get_sum():
         count += 1
         summ += first_el
         first_el /= - 2
-    return sum
+    return summ
 
 
 print(get_sum())
