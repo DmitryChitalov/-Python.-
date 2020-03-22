@@ -11,3 +11,56 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+
+# создаем список из условия
+SOURCE_LIST = [88, 26, 41, 75, 23, 52, -49, 60, 69, -18]
+
+
+# Способ 1
+# в переменные MIN_IDX и MAX_IDX по умолчанию запишем индекс
+# первог элемента, будем считать их индексами
+# минимального и максимального элементов
+MIN_IDX = MAX_IDX = 0
+
+# аналогично запишем MIN_EL и MAX_EL
+# в них запишем первый элемент списка и
+# будем считать его минимальным и максимальным
+# для последующих вычислений
+MIN_EL = MAX_EL = SOURCE_LIST[0]
+
+# в цикле вычисляем минимальный элемент и записываем его индекс
+for idx in range(len(SOURCE_LIST) - 1):
+    if SOURCE_LIST[idx] < MIN_EL:
+        MIN_EL = SOURCE_LIST[idx]
+        MIN_IDX = idx
+
+# в цикле вычисляем максимальный элемент и записываем его индекс
+for idx in range(len(SOURCE_LIST) - 1):
+    if SOURCE_LIST[idx] > MAX_EL:
+        MAX_EL = SOURCE_LIST[idx]
+        MAX_IDX = idx
+
+# меняем элементы в списке местами
+SOURCE_LIST[MIN_IDX], SOURCE_LIST[MAX_IDX] = SOURCE_LIST[MAX_IDX], SOURCE_LIST[MIN_IDX]
+
+# выводим исходный список после обработки
+print(SOURCE_LIST)
+
+
+# Способ 2
+# используем min и max для сокращения решения
+# функция max увидел в 4 задании,
+# поэтому решил добавить в решение
+
+# создаем список из условия
+SOURCE_LIST = [88, 26, 41, 75, 23, 52, -49, 60, 69, -18]
+
+# находим минимальное и максимальное числа
+MIN_EL = min(SOURCE_LIST)
+MAX_EL = max(SOURCE_LIST)
+
+# меняем элементы в списке местами
+SOURCE_LIST[MIN_IDX], SOURCE_LIST[MAX_IDX] = SOURCE_LIST[MAX_IDX], SOURCE_LIST[MIN_IDX]
+
+# выводим исходный список после обработки
+print(SOURCE_LIST)

@@ -36,3 +36,23 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+# создаем пустой список для заполнения
+RESULT_LIST = list()
+
+for i in range(1,6):
+    print(f'{i}-я строка:')
+    # создаем временный список для заполнения
+    TMP_LIST = list()
+    # заполняем TMP_LIST вводом с клавиатуры
+    for j in range(0,4):
+        TMP_LIST.append(int(input()))
+    # подсчитываем сумму элементов и добавляем в список
+    TMP_LIST.append(sum(TMP_LIST))
+    # добавляем временный список к результирующему
+    RESULT_LIST.append(TMP_LIST)
+
+# выводим списки (элементы RESULT_LIST)
+# на экране получится матрица, как в условии
+for el in RESULT_LIST:
+    print(el)
