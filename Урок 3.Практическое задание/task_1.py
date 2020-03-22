@@ -14,3 +14,7 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+MY_LIST = [i for i in range(2, 100)]
+for itm in range(2, 10):
+    spam = [i for i in MY_LIST if i % itm == 0]
+    print(f'В диапазоне 2-99: {len(spam)} чисел кратны {itm}')

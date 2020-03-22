@@ -36,3 +36,16 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+
+def matrix_input():
+    my_matrix = []
+    for i in range(5):
+        spam = [int(input('введите число: ')) for i in range(4)]
+        spam.append(sum(spam))
+        my_matrix.append(spam)
+    return "\n".join([f"{my_matrix[i]}" for i in range(0, len(my_matrix))])
+
+
+MATRIX = matrix_input()
+print(MATRIX)
