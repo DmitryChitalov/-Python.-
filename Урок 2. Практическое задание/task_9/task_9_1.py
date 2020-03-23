@@ -10,3 +10,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+def sum_numbers(number):
+    """Функция по подсчету кол-ва цифр"""
+    summa = 0
+    while number > 0:
+        one_number = number % 10
+        summa += one_number
+        number = number // 10
+    return summa
+
+N = int(input("Сколько будет чисел? - "))
+MAX_SUM = 0
+MAX_X = 0
+for I in range(N):
+    X = int(input("Число " + str(I + 1) + ": "))
+    R = sum_numbers(X)
+    if R > MAX_SUM:
+        MAX_SUM = R
+        MAX_X = X
+print(f"Наибольшее число по сумме цифр: ", MAX_X, "сумма его цифр:", MAX_SUM)
