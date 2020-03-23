@@ -3,3 +3,11 @@
 
 Подсказка: можно применить ф-цию max с параметром key
 """
+a = list(map(int, input('Введите масив чисел в строку через пробел: ').split()))
+k = a[0]
+n = a.count(k)
+for i in range(1, len(a) - 1):
+    if a.count(a[i]) > n:
+        k = a[i]
+        n = a.count(k)
+print(k)
