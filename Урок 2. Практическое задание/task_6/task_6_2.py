@@ -7,3 +7,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import random
+def recursion(secret, tries):
+    """Рекурсия решения фцнкции"""
+    if tries >= 10:
+        print(f"Твои попытки закончились!")
+        return
+    guess = int(input(f"Твой вариант: "))
+    if guess == secret:
+        print(f"Ты угадал!")
+        return
+    if guess < secret:
+        print(f"Это слишком мало! Попробуй еще раз")
+    elif guess > secret:
+        print(f"Это слишком много!Попробуй еще раз")
+    recursion(secret, tries+1)
+
+# start
+SECRET = random.randint(0, 100)
+recursion(SECRET, 0)

@@ -7,3 +7,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+SECRET = random.randint(0, 100)
+GUESS = 0
+TRIES = 0
+print(f"Это число от 0 до 100, я дам тебе 10 попыток угадать его!")
+while GUESS != SECRET and TRIES < 10:
+    GUESS = int(input("Твой вариант: "))
+    if GUESS < SECRET:
+        print(f"Это слишком мало! Попробуй еще раз")
+    elif GUESS > SECRET:
+        print(f"Это слишком много!Попробуй еще раз")
+    TRIES = TRIES + 1
+if GUESS == SECRET:
+    print(f"Ты угадал!")
+else:
+    print(f"Твои попытки закончились!")
+    print(f"Это число: ", SECRET)
