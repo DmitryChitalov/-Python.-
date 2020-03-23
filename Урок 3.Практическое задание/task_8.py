@@ -1,3 +1,5 @@
+import random
+
 """
 Задание_8. Матрица 5x4 заполняется вводом с клавиатуры кроме последних элементов строк.
 Программа должна вычислять сумму введенных элементов каждой строки
@@ -36,3 +38,19 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+n = int(input('Введите колличество строк в масиве: '))
+m = int(input('Введите колличество столбцов в масиве: '))
+a = []
+# for i in range(0, n):
+#     a.append([random.randint(0, 10) for j in range(0, m)]) автоматическое заполнени масива
+for i in range(0, n):
+    a.append([])
+    print(f'{i + 1}-я строка:')
+    for j in range(0, m):
+        a[i].append(int(input()))
+for i in range(0, n):
+    sum_row = 0
+    for j in a[i]:
+        sum_row += j
+    a[i].append(sum_row)
+    print(a[i])
