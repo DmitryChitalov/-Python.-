@@ -5,3 +5,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def recursion(number):
+    """Рекурсия решения фцнкции"""
+    if number == 1:
+        return 1
+    result = recursion(number -1)
+    return number + result
+
+N = int(input("Введите натуральное число: "))
+SUM = recursion(N)
+if SUM == N*(N + 1) // 2:
+    print("Множества натуральных чисел выполняется равенство N(N+1)/2 =", SUM)
+else:
+    print("Множества натуральных чисел не не выполняет равенство N(N+1)/2")
