@@ -14,3 +14,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recur_method(numb, flip=0):
+
+    if numb == 0:
+        return flip
+    else:
+        flip = (flip * 10) + (numb % 10)
+        numb = numb // 10
+        return recur_method(numb, flip)
+
+
+try:
+    NUMB = int(input('введите число: '))
+    print(f'Ваше число в обратном порядке: {recur_method(NUMB)}')
+except ValueError:
+    print('Введите число!')

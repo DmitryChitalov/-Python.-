@@ -12,3 +12,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+user_numb = int(input("Введите число: "))
+flip = 0
+
+while user_numb != 0:
+    flip = (flip * 10) + (user_numb % 10)
+    a = user_numb % 10
+    user_numb = user_numb // 10
+print(f'Число обратное введенному: {flip}')

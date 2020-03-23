@@ -12,3 +12,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+user_numb = int(input('Введите натуральное число: '))
+
+even_number = 0
+odd_number = 0
+
+while user_numb != 0:
+    a = user_numb % 10
+    user_numb = user_numb // 10
+    print(a)
+    print(user_numb)
+
+    if a % 2 == 0:
+        even_number += 1
+    else:
+        odd_number += 1
+
+print(f'В веденном числе {even_number} четных цифр и {odd_number} нечетных')

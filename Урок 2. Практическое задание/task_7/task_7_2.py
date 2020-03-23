@@ -5,3 +5,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recur_method(numb, s=0, m=1):
+
+    if s == m:
+        print(f'Равенство: {s == m}')
+
+    elif s < m:
+        recur_method(numb, s+1, numb * (numb + 1) // 2)
+
+
+try:
+    NUMB = int(input('Введите число: '))
+    recur_method(NUMB)
+except ValueError:
+    print('Необходимо ввести ЧИСЛО!')

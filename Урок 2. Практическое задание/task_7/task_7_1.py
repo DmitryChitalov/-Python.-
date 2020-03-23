@@ -5,3 +5,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def cycle_method(numb):
+
+    s = 0
+    for i in range(1, numb + 1):
+        s += i
+        m = numb * (numb + 1) // 2
+    print(f'Равенство (1+2+...+n = n(n+1)/2): {s == m}')
+
+
+try:
+    NUMB = int(input("Введите число: "))
+    cycle_method(NUMB)
+except ValueError:
+    print('Введите число!')

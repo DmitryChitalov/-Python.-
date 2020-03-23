@@ -33,3 +33,48 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calc():
+
+    user_var = input('Введите действие: +, -, *, /, если хотите выйти нажмите 0: ')
+
+    if user_var == '0':
+        return 'Выход'
+
+    else:
+        if user_var in '+-*/':
+            try:
+                num_a = int(input('Введите первое число: '))
+                num_b = int(input('введите второе число: '))
+
+                if user_var == '+':
+                    user_res = num_a + num_b
+                    print(f'Сумма чисел: {user_res}')
+                    return calc()
+
+                elif user_var == '-':
+                    user_res = num_a - num_b
+                    print(f'Разность чисел: {user_res}')
+                    return calc()
+
+                elif user_var == '*':
+                    user_res = num_a - num_b
+                    print(f'Произведение чисел: {user_res}')
+                    return calc()
+
+                elif user_var == '-':
+                    user_res = num_a - num_b
+                    print(f'Частное чисел: {user_res}')
+                    return calc()
+
+            except ValueError:
+                print('Введите число, а не строку!')
+                return calc()
+        else:
+            print('Введите арифметическое действие!')
+            return calc()
+
+
+calc()
+

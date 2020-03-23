@@ -10,3 +10,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+count_num = int(input('Введите количество чисел: '))
+max_sum = 0
+
+for i in range(0, count_num):
+    user_num = input('Введите очередное число: ')
+    sum_num = 0
+    for i in user_num:
+        sum_num += int(i)
+    if sum_num > max_sum:
+        max_sum = sum_num
+        max_num = user_num
+
+print(f'{max_sum} {max_num}')
