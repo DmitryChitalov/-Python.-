@@ -10,7 +10,7 @@ def recursion(number):
     """Рекурсия решения фцнкции"""
     if number == 1:
         return 1
-    result = recursion(number -1)
+    result = recursion(number - 1)
     return number + result
 
 N = int(input("Введите натуральное число: "))

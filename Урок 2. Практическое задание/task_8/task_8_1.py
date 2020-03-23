@@ -12,3 +12,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+def count_number(search_number, number):
+    """Функция по подсчету кол-ва цифр"""
+    count = 0
+    while number > 0:
+        one_number = number % 10
+        if one_number == search_number:
+            count = count + 1
+        number = number // 10
+    return count
+
+N = int(input("Сколько будет чисел? - "))
+O = int(input("Какую цифру считать? - "))
+SUM = 0
+for I in range(N):
+    X = int(input("Число " + str(I + 1) + ": "))
+    R = count_number(O, X)
+    SUM = SUM + R
+
+print(f"Было введено", SUM, "цифр '", O, "'")
