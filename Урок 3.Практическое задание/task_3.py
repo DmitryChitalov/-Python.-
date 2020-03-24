@@ -11,3 +11,13 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+import random
+
+ARR = [random.randint(-40, 40) for i in range(20)]
+print(ARR)
+IMIN = ARR.index(min(ARR))
+IMAX = ARR.index(max(ARR))
+print(f'Минимальное число {min(ARR)} стоит на позиции {ARR.index(min(ARR))}')
+print(f'Максимальное число {max(ARR)} стоит на позиции {ARR.index(max(ARR))}')
+ARR[IMIN], ARR[IMAX] = ARR[IMAX], ARR[IMIN]
+print(f'Результирующий массив {ARR}')

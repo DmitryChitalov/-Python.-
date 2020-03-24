@@ -7,3 +7,26 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+import random
+
+ARR = [random.randint(-40, 40) for i in range(30)]
+print(f'Массив {ARR}')
+
+if ARR[0] > ARR[1]:
+    MIN1 = 0
+    MIN2 = 1
+else:
+    MIN1 = 1
+    MIN2 = 0
+
+for i in range(2, len(ARR)):
+    if ARR[i] < ARR[MIN1]:
+        b = MIN1
+        MIN1 = i
+        if ARR[b] < ARR[MIN2]:
+            MIN2 = b
+    elif ARR[i] < ARR[MIN2]:
+        MIN2 = i
+
+print(f'Наименьший элемент {ARR[MIN1]}')
+print(f'Второй наименьший элемент {ARR[MIN2]}')

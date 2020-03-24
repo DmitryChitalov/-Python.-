@@ -8,3 +8,24 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+import random
+
+ARR = [random.randint(-40, 40) for i in range(30)]
+print(f'Массив {ARR}')
+
+i = 0
+index = -1
+while i < len(ARR):
+    if ARR[i] < 0 and index == -1:
+        index = i
+    elif ARR[i] < 0 and ARR[i] > ARR[index]:
+        index = i
+    i += 1
+if index == -1:
+    print(f'В массиве нет отрицательных значений')
+else:
+    print(f'Максимальный отрицательный элемент в данном массиве = {ARR[index]}, его индекс {index + 1}')
+
+
+
+

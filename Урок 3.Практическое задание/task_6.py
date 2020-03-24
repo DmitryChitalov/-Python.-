@@ -13,3 +13,25 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+import random
+
+ARR = [random.randint(-40, 40) for i in range(30)]
+print(f'Массив {ARR}')
+
+IMIN = 0
+IMAX = 0
+for i in range(1, len(ARR)):
+    if ARR[i] < ARR[IMIN]:
+        IMIN = i
+    elif ARR[i] > ARR[IMAX]:
+        IMAX = i
+# print(ARR[IMIN], ARR[IMAX])
+
+if IMIN > IMAX:
+    IMIN, IMAX = IMAX, IMIN
+
+COUNT = 0
+for i in range(IMIN + 1, IMAX - 1):
+    COUNT += ARR[i]
+print(
+    f'Cумма элементов, находящихся между минимальным и максимальным элементами равна {COUNT}')

@@ -14,3 +14,13 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+EMPTY = [0] * 8
+for i in range(2, 100):
+    for j in range(2, 10):
+        if i % j == 0:
+            EMPTY[j - 2] += 1
+i = 0
+while i < len(EMPTY):
+    print(f"{EMPTY[i]} чисел кратны  -  {i + 2}")
+    i += 1
