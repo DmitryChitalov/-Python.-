@@ -12,3 +12,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+n = int(input('Сколько будет чисел? '))
+d = int(input('Какую цифру считать? '))
+count = 0
+for i in range(1, n + 1):
+    num = int(input(f'Число {str(i)} : '))
+    while num > 0:
+        if num % 10 == d:
+            count += 1
+        num = num // 10
+
+print(f'Было введено {count} цифр(ы) {d}')
