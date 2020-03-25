@@ -13,3 +13,23 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+#a = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+
+a = [int(input("Введите число: ")) for _ in range(
+    0, int(input("Введите количество элементов в массиве: ")))]
+
+max = a[0]
+min = a[0]
+max_indx = 0
+min_indx = 0
+for index, i in enumerate(a):
+    if i > max:
+        max = i
+        max_indx = index
+    if i < min:
+        min = i
+        min_indx = index
+if max_indx > min_indx:
+    print(sum(a[min_indx + 1:max_indx]))
+else:
+    print(sum(a[max_indx + 1:min_indx]))

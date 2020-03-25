@@ -11,3 +11,18 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+
+a = [88, 26, 41, 75, 23, 52, -49, 60, 69, -18]
+max = a[0]
+min = a[0]
+max_indx = 0
+min_indx = 0
+for index, i in enumerate(a):
+    if i > max:
+        max = i
+        max_indx = index
+    if i < min:
+        min = i
+        min_indx = index
+a[max_indx], a[min_indx] = min, max
+print(a)

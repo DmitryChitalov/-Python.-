@@ -7,3 +7,27 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+a = [28, -73, 44, -86, -7, -52, -19, -3, -15, -86]
+# a = sorted(a)
+# print(a[0])
+# print(a[1])
+
+
+if a[0] > a[1]:
+    indx_min1 = 0
+    indx_min2 = 1
+else:
+    indx_min1 = 1
+    indx_min2 = 0
+
+for i in range(2, len(a)):
+    if a[i] <= a[indx_min1]:
+        b = indx_min1
+        indx_min1 = i
+        if a[b] <= a[indx_min2]:
+            indx_min2 = b
+    elif a[i] <= a[indx_min2]:
+        indx_min2 = i
+
+print(a[indx_min1])
+print(a[indx_min2])

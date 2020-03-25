@@ -36,3 +36,16 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+from functools import reduce
+
+ROW = 5
+COL = 4
+a = []
+for i in range(1, ROW + 1):
+    print(f'{i}-я строка')
+    items = [int(input()) for _ in range(0, COL)]
+    items.append(reduce(lambda x, y: x + y, items))
+    a.append(items)
+for i in a:
+    print(i)
