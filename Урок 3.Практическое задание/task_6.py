@@ -13,3 +13,16 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+from random import randint
+EXAMPLE = [randint(0, 100) for i in range(0, 10)]
+# EXAMPLE = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+MIN_INDEX = EXAMPLE.index(min(EXAMPLE))
+MAX_INDEX = EXAMPLE.index(max(EXAMPLE))
+START = min(MIN_INDEX, MAX_INDEX)
+RESULT = 0
+
+for i in range(START+1, START + abs(MAX_INDEX-MIN_INDEX)):
+    RESULT += EXAMPLE[i]
+print(f"Базовый список: {EXAMPLE}")
+print(f"Сумма элементов между минимальным({EXAMPLE[MIN_INDEX]}) "
+      f"и максимальным ({EXAMPLE[MAX_INDEX]}) элементами: {RESULT}")

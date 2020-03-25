@@ -10,3 +10,8 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+from random import randint
+# START_ARRAY = [8, 3, 15, 6, 4, 2]
+START_ARRAY = [randint(0, 20) for i in range(0, 10)]
+RESULT = [index for index in range(len(START_ARRAY)) if START_ARRAY[index] % 2 == 0]
+print(f"Исходный массив: {START_ARRAY}, результат: {RESULT}")

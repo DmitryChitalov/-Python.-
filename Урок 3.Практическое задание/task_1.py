@@ -14,3 +14,12 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+RESULT = [0 for i in range(2, 10)]
+for i in range(2, 100):
+    for j in range(2, 10):
+        if i % j == 0:
+            RESULT[j - 2] += 1
+
+for i in range(len(RESULT)):
+    print(f"В диапазоне 2-99: {RESULT[i]} чисел кратны {i+2}")
