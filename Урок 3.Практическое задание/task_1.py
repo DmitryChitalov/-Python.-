@@ -14,3 +14,16 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+LIST_OF_NUMBERS = []
+
+for i in range(100):
+    if i != 0 and i != 1:
+        LIST_OF_NUMBERS.append(i)
+print(LIST_OF_NUMBERS)
+for i in range(10):
+    COUNTER = 0
+    if i != 0 and i != 1:
+        for item in LIST_OF_NUMBERS:
+            if item % i == 0:
+                COUNTER += 1
+        print(f'В диапазоне 2-99: {COUNTER} чисел кратны {i}')

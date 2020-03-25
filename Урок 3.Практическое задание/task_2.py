@@ -10,3 +10,6 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+START_LIST = [8, 3, 15, 6, 4, 2]
+END_LIST = [START_LIST.index(i) for i in START_LIST if i%2==0]
+print(f'Исходный массив: {START_LIST}, результат: {END_LIST}')

@@ -36,3 +36,15 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+MATRIX = []
+for i in range(5):
+    stroke = []
+    for j in range(5):
+        if j == 4:
+           stroke.append(sum(stroke))
+           break
+        num = int(input(f'Введите {j+1} элемент {i+1} строки: '))
+        stroke.append(num)
+    MATRIX.append(stroke)
+for el in MATRIX:
+    print(el)
