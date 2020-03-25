@@ -10,3 +10,16 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+ARR = [8, 3, 15, 6, 4, 2]
+EVEN = []
+for i in range(len(ARR)):
+    if ARR[i] % 2 == 0:
+        EVEN.append(i)
+print(ARR)
+print(f'Индексы четных элементов: {EVEN}')
+
+
+#  Решение в одну строку
+
+print([i for i in range(len(ARR)) if ARR[i] % 2 == 0])

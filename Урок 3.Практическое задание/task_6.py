@@ -13,3 +13,37 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+from random import randint
+
+# Заполняем массив случачайными числами
+ARR = []
+# for i in range(10):
+while len(ARR) < 10:
+    n = int(randint(1,50))
+    if n in ARR:        # условие для избежания дублирования элементов
+        continue
+    ARR.append(n)
+print(ARR)
+
+MAX_EL = ARR[0]
+MIN_EL = ARR[0]
+MAX_IND = 0
+MIN_IND = 0
+
+# Определяем индексы наибольшего и наименьшего элемент а также сами элементы
+for j in range(len(ARR)):
+    if MAX_EL < ARR[j]:
+        MAX_EL = ARR[j]
+        MAX_IND = j
+    if MIN_EL > ARR[j]:
+        MIN_EL = ARR[j]
+        MIN_IND = j
+        
+SUM = 0
+for k in range(len(ARR)):
+    if MIN_IND < k < MAX_IND:
+        SUM += ARR[k]
+    elif MIN_IND > k > MAX_IND:
+        SUM += ARR[k]
+        
+print(f'Сумма элементов между минимальным {MIN_EL} и максимальным {MAX_EL} элементами: {SUM}')
