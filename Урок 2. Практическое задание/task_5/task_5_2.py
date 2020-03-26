@@ -17,3 +17,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def print_ascii(start_num, end_num, count=0):
+    print(f"{start_num} - {chr(start_num)}".ljust(9), end='')
+    count += 1
+    if start_num == end_num:
+        return
+    if count % 10 == 0:
+        print()
+    print_ascii(start_num + 1, end_num, count)
+
+
+print_ascii(32, 127)
