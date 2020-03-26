@@ -11,3 +11,12 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+LST = [i for i in range(1, 21)]
+
+MN = min(LST)
+MX = max(LST)
+INDEX_MIN = LST.index(MN)
+INDEX_MAX = LST.index(MX)
+LST[INDEX_MIN], LST[INDEX_MAX] = LST[INDEX_MAX], LST[INDEX_MIN]
+
+print(LST)

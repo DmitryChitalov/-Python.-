@@ -13,3 +13,16 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+LST = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+
+MX_I = LST.index(max(LST))
+MN_I = LST.index(min(LST))
+
+if MN_I > MX_I:
+    MN_I, MX_I = MX_I, MN_I
+
+SUM_OF_ELELEMENTS = 0
+for i in range(MN_I + 1, MX_I):
+    SUM_OF_ELELEMENTS += LST[i]
+print(SUM_OF_ELELEMENTS)

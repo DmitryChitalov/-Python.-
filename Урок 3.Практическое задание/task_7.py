@@ -7,3 +7,36 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+LST = [28, -86, 44, -37, -7, -52, -19, -3, -15, -73]
+
+# вариант 1
+COUNT = 0
+for i in LST:
+    if i == min(LST):
+        COUNT += 1
+print(f'Наименьший элемент: {min(LST)}, встречается в этом массиве {COUNT} раз')
+
+LST.pop(LST.index(min(LST)))
+print(f'Второй наименьший элемент: {min(LST)}')
+
+# вариант 2
+if LST[0] > LST[1]:
+    MIN1 = 0
+    MIN2 = 1
+else:
+    MIN1 = 1
+    MIN2 = 0
+
+for i in range(2, len(LST)):
+    COUNT = 0
+    if LST[i] < LST[MIN1]:
+        b = MIN1
+        MIN1 = i
+        COUNT += 1
+        if LST[b] < LST[MIN2]:
+            MIN2 = b
+    elif LST[i] < LST[MIN2]:
+        MIN2 = i
+
+print(f'Наименьший элемент: {LST[MIN1]}, встречается в этом массиве {COUNT} раз')
+print(f'Второй наименьший элемент: {LST[MIN2]}')

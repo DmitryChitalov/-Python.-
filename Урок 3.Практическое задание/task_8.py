@@ -36,3 +36,19 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+N = 5
+M = 4
+
+EXT_LST = []
+for i in range(N):
+    print(f'{i+1}-я строка:')
+    b = []
+    for j in range(M):
+        b.append(int(input()))
+    b.append(sum(b))
+    EXT_LST.append(b)
+    print()
+for el in EXT_LST:
+    print(el)
+
