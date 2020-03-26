@@ -10,3 +10,16 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+LST = [8, 3, 15, 6, 4, 2]
+# Чтобы воспользоваться автозаполнением массива, раскомментируйте 4 строки ниже
+# from random import randint
+# LENGTH = 10 # количество элементов списка
+# FROM, TO = 0, 100 # диапазон значений для randint()
+# LST = [randint(FROM, TO) for i in range(LENGTH)]
+print(list(enumerate(LST)))  # для проверки
+# вариант 1
+OUTPUT_1 = [index for index, number in enumerate(LST) if not number % 2]
+print(OUTPUT_1)
+# вариант 2
+OUTPUT_2 = [index for index in range(len(LST)) if not LST[index] % 2]
+print(OUTPUT_2)

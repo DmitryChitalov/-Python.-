@@ -3,3 +3,15 @@
 
 Подсказка: можно применить ф-цию max с параметром key
 """
+
+from random import randint
+
+
+LENGTH = 10  # количество элементов списка
+FROM, TO = -5, 5  # диапазон значений для randint()
+LST = [randint(FROM, TO) for i in range(LENGTH)]  # Заполняем список
+print(LST)  # выводим список для проверки
+# выводим самое частое число, если есть еще с таким
+# количеством, то первое из них.
+MOST_FREQ = max(LST, key=LST.count)
+print(f'Чаще всего в массиве встречается число "{MOST_FREQ}"')

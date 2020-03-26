@@ -36,3 +36,17 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+from random import randint
+
+# количество строк и столбцов соответственно
+ROW, COLUMN = 5, 4
+# заполняем рэндомно
+MATRIX = [[randint(0, 9) for n in range(COLUMN)] for m in range(ROW)]
+# добавляем сумму в каждую строку
+# [lst.append(sum(lst)) for lst in MATRIX] # на эту запись ругался Pylint
+for lst in MATRIX:
+    lst.append(sum(lst))
+# принтим
+for lst in MATRIX:
+    print(lst)
