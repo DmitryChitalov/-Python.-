@@ -8,3 +8,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+def fun(number):
+    n = 1
+    i = 0
+    sum = 0
+    while i < number:
+        sum += n
+        n = n / 2 * -1
+        i += 1
+    return sum
+
+
+try:
+    NUMBER = int(input("Введите количество элементов: "))
+    print(f"Количество элементов - {NUMBER}, их сумма - {fun(NUMBER)}")
+except ValueError:
+    print("Вы ввели некорректные данные")
