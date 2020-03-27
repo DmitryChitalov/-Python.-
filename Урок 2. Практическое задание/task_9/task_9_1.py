@@ -34,3 +34,4 @@ try:
     print(fun(A))
 except ValueError:
     print("Вы ввели некорректные данные")
+
