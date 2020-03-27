@@ -12,3 +12,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+def cycle_method(number):
+    """четные"""
+    a = 0
+    """нечетные"""
+    b = 0
+
+    while number != 0:
+        c = number % 10
+        number = number // 10
+        if c % 2 == 0:
+           a += 1
+        else:
+            b += 1
+    return a, b
+
+
+try:
+    NUMBER = int(input("Введите натуральное число: "))
+    print(f"{cycle_method(NUMBER)}")
+except ValueError:
+    print("Вы ввели некорректные данные")
