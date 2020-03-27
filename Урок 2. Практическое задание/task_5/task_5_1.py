@@ -31,3 +31,4 @@ STEP = 10
 print("Это вывод цикла:")
 for i in range(first_ascii_num, LAST_ASCII_NUM + 1, STEP):
     print(fun(i, i + STEP))
+
