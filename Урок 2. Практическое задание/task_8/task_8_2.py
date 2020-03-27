@@ -31,4 +31,4 @@ try:
     B = int(input("Какую цифру считать? - "))
     print(fun(A, B))
 except ValueError:
-    print("Вы ввели некорректные данные")
+    print("Вы ввели некорректные данные")    
