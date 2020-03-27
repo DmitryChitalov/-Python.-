@@ -12,3 +12,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+K = 0
+def fun(a, b):
+    global K
+    if a == 0:
+        return f"Было введено {K} цифр {b}"
+    f = int(input(f"Число: "))
+    while f > 0:
+        if f % 10 == b:
+            K += 1
+        f = f // 10
+
+    return fun(a-1, b)
+
+
+try:
+    A = int(input("Сколько будет чисел? - "))
+    B = int(input("Какую цифру считать? - "))
+    print(fun(A, B))
+except ValueError:
+    print("Вы ввели некорректные данные")
