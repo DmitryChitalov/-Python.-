@@ -75,5 +75,4 @@ def fun():
             print("Вы ввели некорректные")
             return fun()
 
-
 fun()
