@@ -36,3 +36,24 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+try:
+    MATRIX = []
+    N = 0
+    while N < 5:
+        LIST = []
+        i = 0
+        SUMM = 0
+        print(f"{N + 1}-я строка: ")
+        while i < 4:
+            ELEMENTS = int(input())
+            LIST.append(ELEMENTS)
+            i += 1
+            SUMM += ELEMENTS
+        LIST.append(int(SUMM))
+        MATRIX.append(LIST)
+        N += 1
+
+    for k, j in enumerate(MATRIX):
+        print(MATRIX[k])
+except ValueError:
+    print("Введите корректное значение")

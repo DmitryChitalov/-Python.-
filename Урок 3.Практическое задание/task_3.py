@@ -11,3 +11,17 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+A = [-49, 99, 41, 75, 23, 52, 88, -100, 60, 69, -18]
+MAX_NUM = A.index(max(A))
+MIN_NUM = A.index(min(A))
+print(f"В данном массиве чисел максимальное число {max(A)} стоит на {MAX_NUM} позиции, "
+      f"а минимальное число {min(A)} стоит на {MIN_NUM} позиции")
+print("Заменяем их")
+print(A)
+if MAX_NUM < MIN_NUM:
+    A[MIN_NUM], A[MAX_NUM] = A[MAX_NUM], A[MIN_NUM]
+elif MAX_NUM > MIN_NUM:
+    A[MAX_NUM], A[MIN_NUM] = A[MIN_NUM], A[MAX_NUM]
+print(f"В данном массиве чисел максимальное число {max(A)} стоит на {MIN_NUM} позиции, "
+      f"а минимальное число {min(A)} стоит на {MAX_NUM} позиции")
+print(A)
