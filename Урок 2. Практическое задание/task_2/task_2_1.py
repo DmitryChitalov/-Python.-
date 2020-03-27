@@ -31,5 +31,5 @@ def cycle_method(number):
 try:
     NUMBER = int(input("Введите натуральное число: "))
     print(f"{cycle_method(NUMBER)}")
-except ValueError: 
+except ValueError:
     print("Вы ввели некорректные данные")
