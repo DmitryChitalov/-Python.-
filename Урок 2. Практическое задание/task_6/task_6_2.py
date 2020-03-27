@@ -24,3 +24,4 @@ def fun(k, number):
 
 
 fun(1, random.randint(0, 100))
+
