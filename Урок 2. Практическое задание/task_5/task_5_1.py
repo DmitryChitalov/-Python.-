@@ -17,3 +17,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+def fun(from_symbol, to_symbol, output_str=''):
+    for i in range(from_symbol, to_symbol):
+        if i <= LAST_ASCII_NUM:
+            output_str += f'{i} - {chr(i)} '
+    return output_str
+
+
+first_ascii_num = 32
+LAST_ASCII_NUM = 127
+STEP = 10
+
+print("Это вывод цикла:")
+for i in range(first_ascii_num, LAST_ASCII_NUM + 1, STEP):
+    print(fun(i, i + STEP))
