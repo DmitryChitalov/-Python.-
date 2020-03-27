@@ -54,7 +54,7 @@ while True:
                     print("Вы поделили на ноль")
                     continue
 
-            print(f"Результат {NUM_A} {SIGHN} {NUM_B} = {RESULT}")
+            print(f"{NUM_A} {SIGHN} {NUM_B} = {RESULT}")
         except ValueError:
             print("Введены некорректные данные")
 
