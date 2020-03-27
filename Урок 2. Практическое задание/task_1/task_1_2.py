@@ -33,3 +33,47 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def fun():
+    sign = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+
+    if sign == '0':
+        return "Выход"
+
+    else:
+        if sign in "+-*/":
+            try:
+                a = int(input("Первое число: "))
+                b = int(input("Второе число: "))
+
+                if sign == '+':
+                    result = a + b
+                    print(f"{result}")
+                    return fun()
+
+                elif sign == '-':
+                    result = a - b
+                    print(f"{result}")
+                    return fun()
+                elif sign == '*':
+                    result = a * b
+                    print(f"{result}")
+                    return fun()
+
+                elif sign == '/':
+                    if b != 0:
+                        result = a / b
+                        print(f"{result}")
+                    else:
+                        print("На 0 делить нельзя")
+                    return fun()
+
+            except ValueError:
+                print("Вы ввели некорректные данные")
+                return fun()
+
+        else:
+            print("Вы ввели некорректные")
+            return fun()
+
+
+fun()
