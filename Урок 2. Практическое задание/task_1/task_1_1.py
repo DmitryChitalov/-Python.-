@@ -50,7 +50,7 @@ while True:
             if SIGHN == '/':
                 if NUM_B != 0:
                     RESULT = NUM_A / NUM_B
-                else:
+                else:  
                     print("Вы поделили на ноль")
                     continue
 
