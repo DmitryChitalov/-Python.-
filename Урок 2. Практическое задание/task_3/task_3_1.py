@@ -23,5 +23,5 @@ def fun(number):
 try:
     NUMBER = int(input("Введите число: "))
     print(f"{fun(NUMBER)}")
-except ValueError:  
+except ValueError:
     print("Вы ввели некорректные данные")
