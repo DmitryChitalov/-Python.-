@@ -18,5 +18,5 @@ def fun(i, n, number, sum):
 try:
     NUMBER = int(input("Введите количество элементов: "))
     fun(0, 1, NUMBER, 0)
-except ValueError:   
+except ValueError:
     print("Вы ввели некорректные данные")
