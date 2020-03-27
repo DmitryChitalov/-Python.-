@@ -22,7 +22,7 @@ def fun(number, k=0):
         number = number // 10
         return fun(number, k)
 
-    
+
 try:
     NUMBER = int(input("Введите число: "))
     print(f"{fun(NUMBER)}")
