@@ -14,4 +14,25 @@
 Количество четных и нечетных цифр в числе равно: (1, 2)
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
+a = четные
+b = нечетные
 """
+def fun(number, a=0, b=0):
+    if number == 0:
+        return a, b
+    else:
+        c= number % 10
+        number = number // 10
+        if c % 2 == 0:
+            a += 1
+            return fun(number, a, b)
+        else:
+            b += 1
+            return fun(number, a, b)
+
+
+try:
+    NUMBER = int(input("Введите натуральное число: "))
+    print(f"{fun(NUMBER)}")
+except ValueError:
+    print("Вы ввели некорректные данные")
