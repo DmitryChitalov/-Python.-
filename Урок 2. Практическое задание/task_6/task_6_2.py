@@ -7,3 +7,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import random
+def fun(k, number):
+    print(f"Попытка номер {k}")
+    answer = int(input("Введите число от 0 до 100: "))
+    if k == 10 or answer == number:
+        if answer == number:
+            print("Верно!")
+        print(f"Число: {number}")
+    else:
+        if answer > number:
+            print(f"Число меньше чем {number}")
+        else:
+            print(f"Число больше чем {number}")
+        fun(k + 1, number)
+
+
+fun(1, random.randint(0, 100))
