@@ -36,3 +36,27 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+
+def num_enter(message=""):
+    while True:
+        num = input(message)
+        if num.isdigit():
+            return int(num)
+        else:
+            print("Invalid number. Repeat entry.")
+
+
+matrix = [[None for i in range(0, 5)] for j in range(0, 4)]
+print(matrix)
+
+for row in range(0, 4):
+    print(f"{row + 1}-я строка:")
+    for el in range(0, 5):
+        if el == 4:
+            matrix[row][el] = sum(matrix[row][0:4])
+        else:
+            matrix[row][el] = num_enter()
+
+for row in matrix:
+    print(row)
