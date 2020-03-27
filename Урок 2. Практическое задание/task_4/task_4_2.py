@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def fun(i, n, number, sum):
+    if i == number:
+        print(f"Количество элементов - {number}, их сумма - {sum}")
+    elif i < number:
+        return fun(i + 1, n / 2 * -1, number, sum+n)
+
+
+try:
+    NUMBER = int(input("Введите количество элементов: "))
+    fun(0, 1, NUMBER, 0)
+except ValueError:
+    print("Вы ввели некорректные данные")
