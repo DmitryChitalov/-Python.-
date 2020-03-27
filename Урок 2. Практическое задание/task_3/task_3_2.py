@@ -14,3 +14,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def fun(number, k=0):
+    if number == 0:
+        return k
+    else:
+        k = (k * 10) + (number % 10)
+        number = number // 10
+        return fun(number, k)
+
+
+try:
+    NUMBER = int(input("Введите число: "))
+    print(f"{fun(NUMBER)}")
+except ValueError:
+    print("Вы ввели некорректные данные")
