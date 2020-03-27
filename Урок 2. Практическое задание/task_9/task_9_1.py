@@ -10,3 +10,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+def fun(a):
+    steps = 0
+    max = 0
+    for _ in range(0, a):
+        try:
+            number = input("Введите очередное число: ")
+            sum = 0
+            for i in number:
+                sum += int(i)
+            if sum > max:
+                max = sum
+                high = number
+            steps += 1
+        except ValueError:
+            print("Вы ввели некорректные данные")
+
+    return f"Наибольшее число по сумме цифр: {high}, сумма его цифр: {max}"
+
+
+try:
+    A = int(input("Введите количество чисел: "))
+    print(fun(A))
+except ValueError:
+    print("Вы ввели некорректные данные")
