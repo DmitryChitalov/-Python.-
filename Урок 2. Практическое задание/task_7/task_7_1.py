@@ -19,3 +19,4 @@ try:
     fun(NUMBER)
 except ValueError:
     print("Вы ввели некорректные данные")
+
