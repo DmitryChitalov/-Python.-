@@ -7,3 +7,26 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+
+
+def fun():
+    number = random.randint(0, 100)
+    k = 1
+
+    while count < 11:
+        print(f"Попытка номер {k}")
+        answer = int(input("Введите число от 0 до 100: "))
+        if answer != numb:
+            if number < answer:
+                print(f"Число меньше чем {number}")
+            if number > answer:
+                print(f"Число больше чем {number}")
+        else:
+            print("Вы угадали!")
+            break
+        k += 1
+    return number
+
+
+print(f"Загаданное число - {fun()}")
