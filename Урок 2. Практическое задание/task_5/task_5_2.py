@@ -32,3 +32,4 @@ STEP = 10
 
 print("Это вывод рекурсии: ")
 fun(first_ascii_num, first_ascii_num + STEP)
+
