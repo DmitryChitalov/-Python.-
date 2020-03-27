@@ -12,3 +12,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+def fun(number):
+    k = 0
+    while number != 0:
+        k = (k * 10) + (number % 10)
+        number = number // 10
+    return k
+
+
+try:
+    NUMBER = int(input("Введите число: "))
+    print(f"{fun(NUMBER)}")
+except ValueError:
+    print("Вы ввели некорректные данные")
