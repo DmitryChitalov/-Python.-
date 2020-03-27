@@ -17,7 +17,7 @@
 a = четные
 b = нечетные
 """
-def fun(number, a=0, b=0):
+def fun(number, a=0, b=0):  
     if number == 0:
         return a, b
     else:
