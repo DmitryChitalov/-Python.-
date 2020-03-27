@@ -17,7 +17,7 @@ def fun(number):
         n = n / 2 * -1
         i += 1
     return sum
- 
+
 
 try:
     NUMBER = int(input("Введите количество элементов: "))
