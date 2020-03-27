@@ -32,3 +32,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    SIGHN = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+    if SIGHN == '0':
+        break
+    if SIGHN in "+-*/":
+        try:
+            NUM_A = int(input("Первое число: "))
+            NUM_B = int(input("Второе число: "))
+            if SIGHN == '+':
+                RESULT = NUM_A + NUM_B
+            if SIGHN == '-':
+                RESULT = NUM_A - NUM_B
+            if SIGHN == '*':
+                RESULT = NUM_A * NUM_B
+            if SIGHN == '/':
+                if NUM_B != 0:
+                    RESULT = NUM_A / NUM_B
+                else:
+                    print("Вы поделили на ноль")
+                    continue
+
+            print(f"Результат {NUM_A} {SIGHN} {NUM_B} = {RESULT}")
+        except ValueError:
+            print("Введены некорректные данные")
+
+    else:
+        print(f"Введены некорректные данные")
