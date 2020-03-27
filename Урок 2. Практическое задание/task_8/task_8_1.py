@@ -12,3 +12,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def fun(a, b):
+    k = 0
+    for i in range(1, a + 1):
+        try:
+            f = int(input(f"Число {str(i)}: "))
+            while f > 0:
+                if f % 10 == b:
+                    k += 1
+                f = f // 10
+        except ValueError:
+            print("Вы ввели некорректные данные")
+    print(f"Было введено {k} цифр '{b}'")
+
+
+try:
+    A = int(input("Сколько будет чисел? - "))
+    B = int(input("Какую цифру считать? - "))
+    fun(A, B)
+except ValueError:
+    print("Вы ввели некорректные данные")
