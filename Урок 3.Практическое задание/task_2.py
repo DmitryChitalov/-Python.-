@@ -10,3 +10,9 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+import random
+
+arr = [random.randint(0, 20) for i in range(10)]
+print(arr)
+print([elem for elem in range(len(arr)) if not (arr[elem] % 2)])

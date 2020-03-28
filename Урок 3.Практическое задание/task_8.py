@@ -36,3 +36,31 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+# Размерность массива
+ROW_NUM = 4
+COL_NUM = 4
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено целое
+def input_number(string):
+    while True:
+        try:
+            num = input(f"Введите {string} число\n")
+            num = int(num)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return num
+
+
+# Двумерный массив из нулей
+arr = [[0] * COL_NUM for i in range(ROW_NUM)]
+# Ввод массива поэлементно
+for i in range(ROW_NUM):
+    for j in range(COL_NUM):
+        elem = input_number(f'[{i}, {j}]')
+        arr[i][j] = elem
+# Добавим сумму строки в конец
+for i in range(ROW_NUM):
+    arr[i].append(sum(arr[i]))
+print(arr)

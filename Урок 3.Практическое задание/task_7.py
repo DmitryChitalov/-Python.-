@@ -7,3 +7,16 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+import random
+
+arr = [random.randint(0, 10) for i in range(10)]
+print(arr)
+min_elem = min(arr)
+min_elem_count = arr.count(min_elem)
+# В копии массива убираем минимальный элемент и находим минимум заново
+arr_copy = arr.copy()
+arr_copy.remove(min_elem)
+second_min_elem = min(arr_copy)
+print(f'Наименьший элемент: {min_elem}, встречается в этом массиве {min_elem_count}')
+print(f'Второй наименьший элемент: {second_min_elem}')

@@ -13,3 +13,15 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+import random
+
+arr = [random.randint(0, 100) for i in range(10)]
+print(arr)
+# Позиции минимального и максимального элементов
+min_elem_pos = arr.index(min(arr))
+max_elem_pos = arr.index(max(arr))
+# Границы среза для массива
+left_pos = min(min_elem_pos, max_elem_pos) + 1
+right_pos = max(min_elem_pos, max_elem_pos)
+print(f'Сумма элементов между минимальным ({arr[min_elem_pos]}) и максимальным ({arr[max_elem_pos]}) элементами: {sum(arr[left_pos:right_pos])}')

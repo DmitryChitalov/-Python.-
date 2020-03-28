@@ -11,3 +11,19 @@
 [13, 12, 7, 15] минимальные значения по столбцам
 Максимальное среди них = 15
 """
+import random
+# Размерность массива
+ROW_NUM = 4
+COL_NUM = 5
+
+# Двумерный массив из нулей
+arr = [[0] * COL_NUM for i in range(ROW_NUM)]
+# Ввод массива поэлементно
+for i in range(ROW_NUM):
+    for j in range(COL_NUM):
+        arr[i][j] = random.randint(0, 20)
+    print(arr[i])
+print('---------------')
+# Матрица транспонируется и находится минимальный элемент в строке
+arr_col_min = [min(i) for i in zip(*arr)]
+print(f'Минимальные значения по столбцам\n{arr_col_min}\nМаксимальное среди них = {max(arr_col_min)}')

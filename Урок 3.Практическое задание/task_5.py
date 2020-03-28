@@ -8,3 +8,11 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+import random
+
+arr = [random.randint(-9, 10) for i in range(10)]
+print(arr)
+pos_max = arr.index(max([j for j in arr if j < 0]))
+print(f'Максимальный отрицательный элемент в данном массиве = {arr[pos_max]}, его индекс {pos_max}')
+# Второй способ в одну строку, если будет несколько максимальных отрицательных элементов
+print([(i, item) for i, item in enumerate(arr) if item == max([j for j in arr if j < 0])])

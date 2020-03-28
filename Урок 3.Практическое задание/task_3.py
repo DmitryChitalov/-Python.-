@@ -11,3 +11,16 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+import random
+
+arr = [random.randint(0, 20) for i in range(10)]
+print(arr)
+max_pos = 0
+min_pos = 0
+for (i, item) in enumerate(arr):
+    if item > arr[max_pos]:
+        max_pos = i
+    if item < arr[min_pos]:
+        min_pos = i
+arr[max_pos], arr[min_pos] = arr[min_pos], arr[max_pos]
+print(arr)
