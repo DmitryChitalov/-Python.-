@@ -36,3 +36,20 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+USER_MATRIX = []
+
+
+for i in range(5):
+    row = []
+    for j in range(4):
+        row.append(int(input(f"Введите {j + 1} элемент {i + 1} строки: ")))
+    USER_MATRIX.append(row)
+
+
+for i in USER_MATRIX:
+    i.append(sum(i))
+
+
+for i in USER_MATRIX:
+    print(i)

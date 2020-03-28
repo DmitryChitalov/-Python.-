@@ -10,3 +10,12 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+
+SOURCE_ROW = [8, 3, 15, 6, 4, 2]
+
+
+INDEX_ROW = [i for i in range(len(SOURCE_ROW)) if SOURCE_ROW[i] % 2 == 0]
+
+
+print(f"Исходный массив: {SOURCE_ROW}\nРезультат: {INDEX_ROW}")

@@ -13,3 +13,15 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+import random
+
+USER_LIST = [random.randint(-100, 100) for i in
+             range(int(input("Введите количество элементов в массиве: ")))]
+print(f"Массив:\n{USER_LIST}")
+
+# Можно решить в одну строчку, но слишком нечитаемо. Решил сделать более развернуто
+FIRST_INDEX = min(USER_LIST.index(min(USER_LIST)), USER_LIST.index(max(USER_LIST)))
+SECOND_INDEX = max(USER_LIST.index(min(USER_LIST)), USER_LIST.index(max(USER_LIST)))
+print(f"Сумма элементов между минимальным ({min(USER_LIST)}) и "
+      f"максимальным ({max(USER_LIST)}) элементами: {sum(USER_LIST[FIRST_INDEX + 1:SECOND_INDEX])}")

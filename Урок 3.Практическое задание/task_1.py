@@ -14,3 +14,12 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+MY_ARRAY = [i for i in range(2, 100)]
+
+for i in range(2, 10):
+    MULTIPLE = 0
+    for j in MY_ARRAY:
+        if j % i == 0:
+            MULTIPLE += 1
+    print(f"В диапазоне 2-99: {MULTIPLE} чисел кратны {i}")
