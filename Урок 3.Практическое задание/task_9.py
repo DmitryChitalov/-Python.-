@@ -11,3 +11,26 @@
 [13, 12, 7, 15] минимальные значения по столбцам
 Максимальное среди них = 15
 """
+from random import random
+
+M = 4
+N = 3
+A = []
+for i in range(N):
+    b = []
+    for j in range(M):
+        n = int(random() * 100)
+        b.append(n)
+        print('%4d' % n, end='')
+    A.append(b)
+    print()
+
+MINX = [1000] * M
+for j in range(M):
+    for i in range(N):
+        if A[i][j] < MINX[j]:
+            MINX[j] = A[i][j]
+
+
+print(MINX, "- минимальные значения по столбцам")
+print("Максимальный среди них: ", max(MINX))

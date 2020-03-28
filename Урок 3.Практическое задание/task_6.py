@@ -13,3 +13,26 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+INPUT = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+MAX_NUMBER = 0
+MAX_INDEX = 0
+MIN_NUMBER = 100000
+MIN_INDEX = 0
+TOTAL = 0
+for I in range(0, len(INPUT)):
+    if INPUT[I] > MAX_NUMBER:
+        MAX_NUMBER = INPUT[I]
+        MAX_INDEX = I
+    if INPUT[I] < MIN_NUMBER:
+        MIN_NUMBER = INPUT[I]
+        MIN_INDEX = I
+if MAX_INDEX < MIN_INDEX:
+    Z = MAX_INDEX
+    MAX_INDEX = MIN_INDEX
+    MIN_INDEX = Z
+for I in range(MIN_INDEX + 1, MAX_INDEX):
+    TOTAL = TOTAL + INPUT[I]
+
+print(INPUT)
+print("Сумма элементов между минимальным", '(', MIN_NUMBER, ')', "и максимальным", '(', MAX_NUMBER, ')', "элементами: ",  TOTAL)
+

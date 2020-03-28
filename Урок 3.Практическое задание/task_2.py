@@ -10,3 +10,12 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+#        0, 1,  2, 3, 4, 5
+INPUT = [8, 3, 15, 6, 4, 2]
+# result = [0, 3, 4, 5]
+RESULT = []
+for I in range(0, len(INPUT)):
+    if INPUT[I]%2 == 0:
+        RESULT.append(I)
+print(RESULT)

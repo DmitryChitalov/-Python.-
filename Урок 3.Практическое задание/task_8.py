@@ -36,3 +36,19 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+M = 5
+N = 4
+A = []
+for i in range(N):
+    b = []
+    s = 0
+    print("%d-я строка:" % (i + 1))
+    for j in range(M - 1):
+        n = int(input())
+        s += n
+        b.append(n)
+    b.append(s)
+    A.append(b)
+
+for i in A:
+    print(i)
