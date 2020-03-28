@@ -11,3 +11,13 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+
+A = [88, 26, 41, 75, 23, 52, -49, 60, 69, -18]
+A_CONTROL = [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
+MAX_ITEM = max(A)
+MIN_ITEM = min(A)
+MAX_INDEX = A.index(MAX_ITEM)
+MIN_INDEX = A.index(MIN_ITEM)
+A[MAX_INDEX], A[MIN_INDEX] = A[MIN_INDEX], A[MAX_INDEX]
+print(A)
+print(A == A_CONTROL)

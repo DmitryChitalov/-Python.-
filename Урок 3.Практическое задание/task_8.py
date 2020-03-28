@@ -36,3 +36,22 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+from pprint import pprint
+
+N = 5
+M = 4
+A = []
+for i in range(N):
+    tmp_list = []
+    for j in range(M):
+        try:
+            item = int(
+                input(f'Введите {j + 1}-тый элемент строки {i + 1}: ').strip())
+        except ValueError:
+            item = 0
+        finally:
+            tmp_list.append(item)
+    tmp_list.append(sum(tmp_list))
+    A.append(tmp_list)
+pprint(A)

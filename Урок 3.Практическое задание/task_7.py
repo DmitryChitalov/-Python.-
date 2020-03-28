@@ -7,3 +7,15 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+A = [28, -86, 44, -37, -7, -52, -19, -3, -15, -73]
+MIN_ITEM_FIRST = min(A)
+if A.count(MIN_ITEM_FIRST) == 1:
+    A.remove(MIN_ITEM_FIRST)
+    MIN_ITEM_SECOND = min(A)
+    print(
+        f'Наименьший элемент: {MIN_ITEM_FIRST}, встречается в этом массиве 1 раз')
+    print(f'Второй наименьший элемент: {MIN_ITEM_SECOND}')
+else:
+    print(f'Наименьший элемент: {MIN_ITEM_FIRST}, встречается в '
+          f'этом массиве {A.count(MIN_ITEM_FIRST)} раз/разa')

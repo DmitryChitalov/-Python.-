@@ -13,3 +13,28 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+from random import randint
+
+try:
+    NUM = int(input('Введите количество элементов в массиве: ').strip())
+except ValueError:
+    print('Введеное значени некореткно. Выходим')
+    NUM = False
+
+if NUM:
+    A = []
+    for i in range(NUM):
+        A.append(randint(1, 100))
+    print('Массив:', A)
+    MAX_ITEM = max(A)
+    MIN_ITEM = min(A)
+    MAX_ITEM_INDEX = A.index(MAX_ITEM)
+    MIN_ITEM_INDEX = A.index(MIN_ITEM)
+    if MAX_ITEM_INDEX > MIN_ITEM_INDEX:
+        B = A[MIN_ITEM_INDEX + 1:MAX_ITEM_INDEX]
+    else:
+        B = A[MAX_ITEM_INDEX + 1:MIN_ITEM_INDEX]
+    print(
+        f'Сумма элементов между минимальным ({MIN_ITEM})  и максимальным ({MAX_ITEM}) '
+        f' элементами: {sum(B)}')
