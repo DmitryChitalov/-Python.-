@@ -11,3 +11,23 @@
 [13, 12, 7, 15] минимальные значения по столбцам
 Максимальное среди них = 15
 """
+
+matrix = [[36, 20, 42, 38 ],
+          [46, 27, 7, 33],
+          [13, 12, 47, 15]]
+
+
+a = []
+b = []
+c = []
+for y in range(len(matrix) + 2  ):
+    a = []
+    for g in range(len(matrix)):
+        try:
+            a.append(matrix[g][y])
+            if len(a) == 3:
+                b.append(min(a))
+        except:
+            break
+print(f'{b} минимальные значения по столбцам \n'
+      f'максимальное серди них = {max(b)}')
