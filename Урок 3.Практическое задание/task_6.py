@@ -13,3 +13,30 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+from random import random
+N = 10
+arr = [0]*N
+even = []
+amin = 0
+amax = 0
+sumnumber = 0
+a = []
+for i in range(N):
+    arr[i] = int(random() * 35)
+
+amaxnum = max(arr)
+aminnum = min(arr)
+amax = arr.index(max(arr))
+amin = arr.index(min(arr))
+print('Исходный массив: ', arr)
+if amax > amin:
+    a = arr[amin + 1:amax]
+    for i in a:
+        sumnumber += i
+if amax < amin:
+    a = arr[amax + 1:amin]
+    for i in a:
+        sumnumber += i
+
+print(f'Сумма элементов между минимальным {aminnum}  и максимальным {amaxnum} элементами: {sumnumber}')
