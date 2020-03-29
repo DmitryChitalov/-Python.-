@@ -7,3 +7,31 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+
+from random import random
+N = 10
+arr = [0]*N
+even = []
+amin = 0
+amax = 0
+sumnumber = 0
+a = []
+for i in range(N):
+    arr[i] = int(random() * 35)
+print(f'исходный массив {arr}')
+a = min(arr)
+arr.remove(min(arr))
+b = min(arr)
+arr.remove(min(arr))
+c = min(arr)
+if a == b != c:
+    print(f'Наименьшее число {a} встречается 2 раза')
+elif a == b == c:
+    print(f'Наименьшее число {a} встречается более 2 раз')
+elif a != b:
+    print(f'Наименьшее число {a} встречается 1 раз \n'
+          f'Второе наименьшее число {b}')
+
+
+
