@@ -36,3 +36,23 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+def task_8():
+    i_row = 5
+    j_col = 4
+    matrix = []
+    for i in range(i_row):
+        string = []
+        s = 0
+        print(f"{i+1}-я строка: ")
+        for j in range(j_col):
+            n = int(input())
+            s += n
+            string.append(n)
+        string.append(s)
+        matrix.append(string)
+
+    for i in matrix:
+        print(i)
+
+
+task_8()
