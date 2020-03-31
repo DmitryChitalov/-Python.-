@@ -11,3 +11,30 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+from random import randint
+
+
+def fun(mas):
+    imax = max(mas)
+    imin = min(mas)
+    i_max = mas.index(imax)
+    i_min = mas.index(imin)
+
+    print(
+        f'В данном массиве чисел максимальное число {imax:4} стоит на {i_max:4} позиции, '
+        f'а минимальное число {imin:4} стоит на {i_min:4} позиции')
+
+    print(mas)
+    print('Заменяем их')
+    mas[i_max], mas[i_min] = imin, imax
+    i_max = mas.index(imax)
+    i_min = mas.index(imin)
+    print(
+        f'В данном массиве чисел максимальное число {imax:4} стоит на {i_max:4} позиции, '
+        f'а минимальное число {imin:4} стоит на {i_min:4} позиции')
+
+    print(mas)
+
+
+MASS = [randint(-100, 100) for i in range(10)]
+fun(MASS)
