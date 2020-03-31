@@ -7,3 +7,26 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+from random import randint
+
+
+def fun(mas):
+
+    print(f"Исходный массив: {mas}")
+
+    imin = min(mas)
+    k = 0
+    for i in mas:
+        if i == imin:
+            mas.remove(i)
+            k += 1
+
+    print(f"Наименьший элемент: {imin}, встречается в этом массиве {k} раз")
+
+    if k == 1:
+        i_2_min = min(mas)
+        print(f"Второй наименьший элемент: {i_2_min}")
+
+
+MASS = [randint(-100, 100) for i in range(10)]
+fun(MASS)
