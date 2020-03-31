@@ -14,3 +14,14 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+def fun():
+    range_1 = list(range(2, 100))
+    range_2 = list(range(2, 10))
+    for i in range_2:
+        k = 0
+        for el in range_1:
+            if el % i == 0:
+                k += 1
+        print(f"В диапазоне 2-99: {k} чисел кратны {i}")
+
+fun()
