@@ -10,3 +10,28 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+user_list = [8, 3, 15, 6, 4, 2]
+second_list = []
+res_list = []
+# Вариант 1
+for i in user_list:
+    if i % 2 == 0:
+        second_list.append(user_list.index(i))
+print(second_list)
+
+# Вариант 2
+res = [res_list.append(user_list.index(i)) for i in user_list if i % 2 == 0]
+print(res_list)
+
+# Вариант из урока
+
+
+def task_2(my_list):
+
+    print(
+        f'Исходный массив {my_list}, результат: '
+        f'{[el for el in range(len(my_list)) if my_list[el] % 2 == 0]}')
+
+
+MAIN_LIST = [3, 7, 12, 15, 8, 10, 4]
+task_2(MAIN_LIST)

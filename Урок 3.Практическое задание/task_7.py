@@ -7,3 +7,20 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+import random
+
+user_array = [random.randint(-100, 100) for i in range(10)]
+res_1 = min(user_array)
+count = 0
+
+for el in user_array:
+    if el == res_1:
+        user_array.remove(el)
+        count += 1
+print(f'Первое наименьшее число {res_1}, \n'
+      f'в списке {user_array} \n'
+      f'встречается {count} раз(а)')
+
+if count == 1:
+    res_2 = min(user_array)
+    print(f'Второй минимальный элемент списка {res_2}')
