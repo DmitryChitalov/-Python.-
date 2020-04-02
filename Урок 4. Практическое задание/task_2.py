@@ -1,3 +1,6 @@
+from math import log1p
+import timeit
+
 """
 Написать два алгоритма нахождения i-го по счёту простого числа.
 Без использования «Решета Эратосфена»;
@@ -11,4 +14,74 @@
 
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
+"""
+
+
+def func1(k):  # перебор делителей
+    a = [0] * k
+    a[0], a[1] = 2, 3
+    i = 2
+    m = 3
+    while i < p:
+        m = m + 1
+        check_div = 0
+        for j in range(2, m):
+            if m % j == 0:
+                check_div = 1
+        if check_div == 0:
+            a[i] = m
+            i += 1
+    return a[k - 1]
+
+
+def func2(k):  #
+    a = [0] * k
+    a[0], a[1] = 2, 3
+    i = 2
+    m = 3
+    while i < p:
+        m = m + 1
+        check_div = 0
+        for j in range(2, int(m ** 0.5) + 1):
+            if m % j == 0:
+                check_div = 1
+                break
+        if check_div == 0:
+            a[i] = m
+            i += 1
+    return a[k - 1]
+
+
+def func3(k):
+    n = int(k * log1p(2 * k) + k)
+    a = [i for i in range(n)]
+    a[1] = 0
+    m = 2
+    while m ** 2 < n:
+        if a[m] != 0:
+            j = m ** 2
+            while j < n:
+                a[j] = 0
+                j = j + m
+        m += 1
+    b = [a[i] for i in a if a[i] != 0]
+    return b[k - 1]
+
+
+p = int(input("Введите номер простого числа которое нужно вывести: "))
+print(func1(p))
+print(timeit.timeit("func1(p)", setup="from __main__ import func1, p", number=1))
+print(func2(p))
+print(timeit.timeit("func2(p)", setup="from __main__ import func2, p", number=1))
+print(func3(p))
+print(timeit.timeit("func3(p)", setup="from __main__ import func3, p", number=1))
+"""
+в первой функции внешний цикл переберёт все числа до искомого простого числа
+и внутрений цикл будет еще повтрорно перебеирать эти цифры
+
+вторая функция в разы быстрее так как во втором цикле мы гораздо сократили количество переборов делителей
+и добавили break, который прерывает цикл for если уже точно известно что число не является простым
+
+третья функция самая быстрая так как первый цикл прпереберает только часть чисел до искомого элемента. И второй цикл не 
+переберает уже найденые простые числа
 """
