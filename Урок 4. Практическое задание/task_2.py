@@ -12,3 +12,142 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+import timeit
+
+
+# Алгоритм без использования Решета Эратосфена
+
+def without_era(elem, edge):
+    lst = []
+    for i in range(2, edge + 1):
+        for k in range(2, i):
+            if i % k == 0:
+                break
+        else:
+            lst.append(i)
+    # вывод массива простых чисел
+    # print(lst)
+    # вывод индекса простого числа
+    # # print(lst[elem-1])
+
+
+# число запусков программы
+qty = [1, 10, 100, 1000]
+
+print(f'\nПоиск 10-го по счёту простого числа')
+for i in qty:
+    print(f'Число запусков кода = {i}. ', end='')
+    print(f'Время выполнения операции = ', end='')
+    print(
+        timeit.timeit(
+            'without_era(10, 29)',
+            setup='from __main__ import without_era',
+            number=i))
+
+print(f'\nПоиск 100-го по счёту простого числа')
+for i in qty:
+    print(f'Число запусков кода = {i}. ', end='')
+    print(f'Время выполнения операции = ', end='')
+    print(
+        timeit.timeit(
+            'without_era(100, 541)',
+            setup='from __main__ import without_era',
+            number=i))
+
+print(f'\nПоиск 1000-го по счёту простого числа')
+for i in qty:
+    print(f'Число запусков кода = {i}. ', end='')
+    print(f'Время выполнения операции = ', end='')
+    print(
+        timeit.timeit(
+            'without_era(1000, 7919)',
+            setup='from __main__ import without_era',
+            number=i))
+
+# print(f'\nПоиск 10000-го по счёту простого числа')
+# for i in qty:
+#     print(f'Число запусков кода = {i}. ', end='')
+#     print(f'Время выполнения операции = ', end='')
+#     print(
+#         timeit.timeit(
+#             'without_era(10000, 104729)',
+#             setup='from __main__ import without_era',
+#             number=i))
+
+
+def with_era(elem, edge):
+    a = [0] * (edge + 1)  # создание массива с n количеством элементов
+    for i in range(edge + 1):  # заполнение массива ...
+        a[i] = i  # значениями от 0 до n-1
+
+    # вторым элементом является единица, которую не считают простым числом
+    # забиваем ее нулем.
+    a[1] = 0
+
+    m = 2  # замена на 0 начинается с 3-го элемента (первые два уже нули)
+    while m < edge:  # перебор всех элементов до заданного числа
+        if a[m] != 0:  # если он не равен нулю, то
+            j = m * 2  # увеличить в два раза (текущий элемент простое число)
+            while j < edge:
+                a[j] = 0  # заменить на 0
+                j = j + m  # перейти в позицию на m больше
+        m += 1
+
+    lst = []
+    for i in a:
+        if a[i] != 0:
+            lst.append(a[i])
+
+    del a
+    # вывод массива простых чисел
+    # print(lst)
+    # вывод индекса простого числа
+    # # print(lst[elem-1])
+
+
+print(f'\nПоиск 10-го по счёту простого числа')
+for i in qty:
+    print(f'Число запусков кода = {i}. ', end='')
+    print(f'Время выполнения операции = ', end='')
+    print(
+        timeit.timeit(
+            'with_era(10, 29)',
+            setup='from __main__ import with_era',
+            number=i))
+
+print(f'\nПоиск 100-го по счёту простого числа')
+for i in qty:
+    print(f'Число запусков кода = {i}. ', end='')
+    print(f'Время выполнения операции = ', end='')
+    print(
+        timeit.timeit(
+            'with_era(100, 541)',
+            setup='from __main__ import with_era',
+            number=i))
+
+print(f'\nПоиск 1000-го по счёту простого числа')
+for i in qty:
+    print(f'Число запусков кода = {i}. ', end='')
+    print(f'Время выполнения операции = ', end='')
+    print(
+        timeit.timeit(
+            'with_era(1000, 7919)',
+            setup='from __main__ import with_era',
+            number=i))
+
+# print(f'\nПоиск 10000-го по счёту простого числа')
+# for i in qty:
+#     print(f'Число запусков кода = {i}. ', end='')
+#     print(f'Время выполнения операции = ', end='')
+#     print(
+#         timeit.timeit(
+#             'with_era(10000, 104729)',
+#             setup='from __main__ import with_era',
+#             number=i))
+
+
+# Т.о алгоритм с использованием «Решета Эратосфена» более эффективен,
+# т.к. работает значительно быстрее при больших значениях входных данных.
+# При небольших входных значениях разница во времени незначительна.
+# В целом, использование алгоритма «Решета Эратосфена» при операциях с
+# простыми числами целесообразнее
