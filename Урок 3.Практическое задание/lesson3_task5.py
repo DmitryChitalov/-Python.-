@@ -8,3 +8,13 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+from random import randint
+a = []
+a_help = []
+for i in range(10):
+    a.append(randint(-50,10))
+print(a)
+for i in a:
+    if i < 0:
+        a_help.append(i)
+print(max(a_help))

@@ -11,3 +11,19 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+from random import random
+from random import randint
+a = []
+for i in range(6):
+    n = randint(-50,50)
+    a.append(n)
+print(a)
+max = max(a)
+index_max = a.index(max)
+min = min(a)
+index_min = a.index(min)
+print(f"В данном массиве макимальное число {max} стоит на {index_max} позиции, "
+      f"а минимальное число {min} стоит на {index_min} позиции")
+a[index_max] = min
+a[index_min] = max
+print(a)

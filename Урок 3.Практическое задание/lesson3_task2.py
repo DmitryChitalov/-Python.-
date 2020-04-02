@@ -10,3 +10,15 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+from random import random
+a = []
+b = []
+for i in range(6):
+    n = int(random() * 20 )
+    a.append(n)
+print(a)
+for i in a:
+    if i % 2 == 0:
+        b.append(a.index(i))
+print(b)
+
