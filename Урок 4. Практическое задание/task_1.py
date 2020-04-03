@@ -12,3 +12,92 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+
+from random import randint
+from timeit import timeit
+from cProfile import run
+
+
+def min_list_circle(matrix):
+    '''
+    Нахождение минимума в матрице построчно
+    собственный min + цикл
+    '''
+    min_list = []
+    for row in matrix:
+        min_ = row[0]
+        for column in row:
+            if column < min_:
+                min_ = column
+        min_list.append(min_)
+    return min_list
+    # О-нотация для данной функции имеет следующий вид
+    # O(1)+O(n)*(O(1)+O(n)*(O(1)+O(1))+O(1)) => O(n^2)
+
+
+def min_list_gen(matrix):
+    '''
+    Нахождение минимума в матрице построчно
+    встроенный min + генератор
+    '''
+    return [min(row) for row in matrix]  # O(n) для min и O(n) для цикла
+    # О-нотация для данной функции того же порядка O(n^2)
+
+
+def min_list_min_circle(matrix):
+    '''
+    Нахождение минимума в матрице построчно
+    встроенный min + цикл
+    '''
+    min_list = []
+    for row in matrix:  # O(n)
+        min_list.append(min(row))  # O(n)
+    return min_list
+    # как и тут O(n^2)
+
+
+ROW = 50
+COLUMN = 50
+MATRIX = [[randint(0, 100) for n in range(COLUMN)] for m in range(ROW)]
+
+SETUP_1 = 'from __main__ import min_list_circle, MATRIX'
+SETUP_2 = 'from __main__ import min_list_gen, MATRIX'
+SETUP_3 = 'from __main__ import min_list_min_circle, MATRIX'
+
+print(f"Собственный min = "
+      f"{timeit('min_list_circle(MATRIX)', setup=SETUP_1, number=10000)}")
+print(f"Встроенный min с генератором = "
+      f"{timeit('min_list_gen(MATRIX)', setup=SETUP_2, number=10000)}")
+print(f"Встроенный min с циклом = "
+      f"{timeit('min_list_min_circle(MATRIX)', setup=SETUP_3, number=10000)}")
+
+# run('min_list_circle(MATRIX)')
+# run('min_list_gen(MATRIX)')
+# run('min_list_min(MATRIX)')
+
+'''
+Запуск матрицы 50х50
+Собственный min = 1.2449296779999999
+Встроенный min с генератором = 0.7033379959999999
+Встроенный min с циклом = 0.749448009
+
+Запуск матрицы 100х100
+Собственный min = 4.61266067
+Встроенный min с генератором = 2.5733569530000002
+Встроенный min с циклом = 2.6562216000000003
+
+Как видно при увеличении размеров строк и столбцов в 2 раза время увеличивается примерно в 4 раза
+
+Cprofile показал аналогичный результат с матрицей 1000х1000:
+Собственный min = 0.045
+Встроенный min с генератором = 0.23
+Встроенный min с циклом = 0.24
+
+В результате замеров видно, что собственная функция min заметно проигрывает по времени (почти в 2 раза),
+это проявляется как при малых размерах матрицы так и больших, зависимость линейная.
+Предполагаю, что это по большей части связано с оптимальностью встроенных функций Python, в частности
+функции min.
+
+Самым оптимальным является использование встроенной функции min с генератором,
+хотя обычный цикл остает совсем незначительно, так как природа цикла for одинакова.
+'''
