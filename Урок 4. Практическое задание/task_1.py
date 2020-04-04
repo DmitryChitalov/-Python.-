@@ -12,3 +12,188 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+
+"""
+2.	Посчитать четные и нечетные цифры введенного натурального числа.
+Например, если введено число 34560, то у него 3 четные цифры
+(4, 6 и 0) и 2 нечетные (3 и 5).
+"""
+
+import timeit
+
+
+def cycle(NUM):
+    count_even = 0
+    count_odd = 0
+    flag = True
+    while flag:
+        digit = NUM % 10
+        if digit % 2 == 0:
+            count_even = count_even + 1
+        else:
+            count_odd = count_odd + 1
+        NUM = NUM // 10
+        if NUM == 0:
+            flag = False
+    return count_even, count_odd
+    #print(f"Четные {count_even}")
+    #print(f"Нечетные {count_odd}")
+    #print(f"Всего цифр {count_even + count_odd}")
+
+
+def even_odd(a, even, odd):
+    digit = a % 10
+    if a == 0:
+        return f"четные - {even} нечетные - {odd}"
+    elif digit % 2 == 0:
+        return even_odd(a // 10, even + 1, odd)
+    else:
+        return even_odd(a // 10, even, odd + 1)
+
+
+NUM = 32432432454766754762301936256582714
+even = 0
+odd = 0
+
+#t = print([(cycle(i)) for i in range(10000)])
+
+print('Число ', NUM)
+print(f'реализвция цикл секунды {timeit.timeit("cycle(i)", setup="from __main__ import cycle, NUM, i")}')
+print(f'реализация рекурсия секунды {timeit.timeit("even_odd(i, even, odd)", setup="from __main__ import even_odd, even, odd, NUM, i")}')
+
+# в данном примере цикл быстрее чем рекурсия
+# 56.629886656000004
+# 67.404420633
+
+"""
+3.	Сформировать из введенного числа обратное по порядку входящих в него
+цифр и вывести на экран. Например, если введено число 3486,
+то надо вывести число 6843.
+"""
+
+
+def reverc_cycle(NUM):
+    revers = ''
+    flag = True
+    while flag:
+        digit = NUM % 10
+        revers = revers + str(digit)
+        NUM = NUM // 10
+        if NUM == 0:
+            flag = False
+    return revers
+
+
+def new_reverc_cycle(NUM):
+    revers = 0
+    flag = True
+    while flag:
+        digit = NUM % 10
+        revers = revers * 10 + digit  # заменил на арифметические операторы
+        NUM = NUM // 10
+        if NUM == 0:
+            flag = False
+    return revers
+
+
+def revers(a):
+    if len(str(a)) == 1:
+        return a
+    return f"{a % 10}{revers(a//10)}"
+
+
+NUM = [3243545, 429488428423048, 243289493853485845747374651473,
+       4483210483120481203943284123421831475743543451242335688994776]
+
+
+for item in NUM:
+    print("Число", item)
+    print(
+        f'реализвция цикл секунды {timeit.timeit("reverc_cycle(item)", setup="from __main__ import reverc_cycle, item ", number=100000)}')
+    print(
+        f'реализация улучшенного цикла секунды {timeit.timeit("new_reverc_cycle(item)", setup="from __main__ import new_reverc_cycle, item", number=100000)}')
+    print(
+        f'реализация улучшеного цикла секунды {timeit.timeit("revers(item)", setup="from __main__ import revers, item", number=100000)}')
+
+
+"""
+Из данного примера видно, что самой быстрой оказалась реализация циклом с арифметическими операторами,
+самой медленной оказалась рекурсия
+Число 3243545
+реализвция цикл секунды 0.268916015
+реализация улучшенного цикла секунды 0.16404752900000003
+реализация улучшенного цикла секунды 0.43661683199999995
+Число 429488428423048
+реализвция цикл секунды 0.6228207639999999
+реализация улучшенного цикла секунды 0.4119131920000001
+реализация улучшенного цикла секунды 1.0196945000000002
+Число 243289493853485845747374651473
+реализвция цикл секунды 1.3382581130000002
+реализация улучшенного цикла секунды 0.9448713739999999
+реализация улучшенного цикла секунды 2.2996123170000002
+Число 4483210483120481203943284123421831475743543451242335688994776
+реализвция цикл секунды 3.092022535000001
+реализация улучшенного цикла секунды 2.432137925000001
+реализация улучшенного цикла секунды 5.894979079999999
+"""
+
+
+def func_sort(a):
+    a = sorted(a)
+    return f"{a[0]}, {a[1]}"
+
+
+def new_func_sort(a):
+    a.sort()
+    return f"{a[0]}, {a[1]}"
+
+
+def func_cycle(a):
+    if a[0] > a[1]:
+        indx_min1 = 0
+        indx_min2 = 1
+    else:
+        indx_min1 = 1
+        indx_min2 = 0
+
+    for i in range(2, len(a)):
+        if a[i] <= a[indx_min1]:
+            b = indx_min1
+            indx_min1 = i
+            if a[b] <= a[indx_min2]:
+                indx_min2 = b
+        elif a[i] <= a[indx_min2]:
+            indx_min2 = i
+
+    return a[indx_min1], a[indx_min2]
+
+
+a = [[28, 73, 44, 86, 7, 52, 19, 3, 15, 86],
+     [28, 73, 44, 86, 7, 52, 19, 3, 15, 86, 45, 213, 547, 21317, 658, 1, 4537, 9724, 1231, 63, 46, 867, 9, 679, 45, 24]]
+
+
+for item in a:
+    print("Массив", item)
+    print(func_sort(item))
+    print(func_cycle(item))
+    print(new_func_sort(item))
+    print(
+        f'реализвция со встроенными функциями секунды {timeit.timeit("func_sort(item)", setup="from __main__ import func_sort, item ", number=1000000)}')
+    print(
+        f'реализация цикла секунды {timeit.timeit("func_cycle(item)", setup="from __main__ import func_cycle, item", number=1000000)}')
+    print(
+        f'реализация цикла секунды {timeit.timeit("new_func_sort(item)", setup="from __main__ import new_func_sort, item", number=1000000)}')
+
+"""
+Самой быстрой реализацией оказалась со встроенным методом sort,
+дынный метод перезаписывает существующи список, а sorted делает копию. Самым медленным оказался линейный перебор
+
+Массив [-86, -86, -73, -52, -19, -15, -7, -3, 28, 44]
+реализвция со встроенными функциями секунды 0.6609064230000001
+реализация цикла секунды 2.3066340840000024
+реализация цикла секунды 0.5649771510000008
+Массив [-4537, -86, -86, -73, -52, -19, -15, -7, -3, 1, 9, 24, 28, 44, 45, 45, 46, 63, 213, 547, 658, 679, 867, 1231, 9724, 21317]
+реализвция со встроенными функциями секунды 0.8210548730000014
+реализация цикла секунды 5.616799292
+реализация цикла секунды 0.6934942799999995
+"""
