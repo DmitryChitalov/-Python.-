@@ -12,3 +12,55 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+
+"""
+Мной была взята задача из третьего урока под номером один.
+Я осуществил оптимизацию функции засчет использования генераторов вместо циклов и 
+прогнал с разными входными данными.
+результаты:
+my_func_1(1, 100000) - 227.1
+my_func_2(1, 100000) - 214.5
+my_func_1(1, 10000) - 22.5
+my_func_2(1, 10000) - 17.6
+my_func_1(1, 1000) - 2.2
+my_func_2(1, 1000) - 1.9
+
+Вывод можно сделать следующий: засчет использования генераторов 
+можно добиться увелечения скорости работы скрипта
+"""
+
+
+import timeit
+
+
+def my_func_1(min_range, max_range):
+    array = []
+    for i in range(min_range, max_range + 1):
+        array.append(i)
+    for itm in range(2, 10):
+        spam = []
+        for i in array:
+            if i % itm == 0:
+                spam.append(i)
+        print(
+            f'В диапазоне {min_range}-{max_range}: {len(spam)} чисел кратны {itm}')
+
+
+def my_func_2(min_range, max_range):
+    array = [i for i in range(min_range, max_range + 1)]
+    for itm in range(2, 10):
+        spam = [i for i in array if i % itm == 0]
+        print(
+            f'В диапазоне {min_range}-{max_range}: {len(spam)} чисел кратны {itm}')
+
+
+func_1 = timeit.timeit(
+    "my_func_1(1, 100000)",
+    setup="from __main__ import my_func_1",
+    number=1000)
+func_2 = timeit.timeit(
+    "my_func_2(1, 100000)",
+    setup="from __main__ import my_func_2",
+    number=1000)
+print(func_1)
+print(func_2)
