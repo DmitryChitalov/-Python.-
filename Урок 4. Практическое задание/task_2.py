@@ -38,12 +38,12 @@ def sieve_without_eratosthenes(i):
 
 
 def sieve_eratosthenes(i):
-    '''Функция поиска i-го простого числа,
+    """Функция поиска i-го простого числа,
     используя алгоритм «Решето Эратосфена»
-    '''
+    """
 
     i_max = prime_counting_function(i)
-    lst_prime = [_ for _ in range(2, i_max)]
+    lst_prime = list(range(2, i_max))
 
     for number in lst_prime:
         if lst_prime.index(number) <= number - 1:
@@ -56,12 +56,12 @@ def sieve_eratosthenes(i):
 
 
 def prime_counting_function(i):
-    '''Функция возвращает верхнюю границу отрезка на котором лежат
+    """Функция возвращает верхнюю границу отрезка на котором лежат
     i-e количество простых чисел. Функция основана на теореме о
     распределении простых чисел, она утверждает, что функция
     распределения простых чисел. Количество простых чисел на отрезке
     [1;n] растёт с увеличением n как n / ln(n).
-    '''
+    """
 
     number_of_primes = 0
     number = 2
@@ -74,7 +74,7 @@ def prime_counting_function(i):
 NUMBER_EXECUTIONS = 1
 TEST_VALUE = 1000
 
-for TEST_VALUE in [10,100,1000, 10000] :
+for TEST_VALUE in [10, 100, 1000]:
 
     time1 = timeit.timeit(f'sieve_without_eratosthenes({TEST_VALUE})',
                           setup='from __main__ import sieve_without_eratosthenes',
@@ -84,6 +84,7 @@ for TEST_VALUE in [10,100,1000, 10000] :
                           setup='from __main__ import sieve_eratosthenes',
                           number=NUMBER_EXECUTIONS)
 
-    print(f'Программа без использования алгоритма «Решето Эратосфена» быстрее программы с использованием алгоритма «Решето Эратосфена» в \
-    {round(time2 / time1, 2)} раз для N={TEST_VALUE}'
+    print(f'Программа c использованием алгоритма «Решето Эратосфена»\
+            быстрее программы без использованием алгоритма «Решето Эратосфена» в \
+            {round(time2 / time1, 2)} раз для N={TEST_VALUE}'
           )

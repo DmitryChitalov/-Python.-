@@ -13,46 +13,41 @@
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
 
-import math
 import timeit
 
 
-def naive(input):
-    '''O(2n^2)
-    '''
+def naive(input_1):
+    """O(2n^2)"""
 
-    MIN_NUMBER_1 = 1000
+    min_number_1 = 1000
 
-    for J in range(len(INPUT)):
-        for I in range(0, len(INPUT)):
-            if INPUT[I] <= MIN_NUMBER_1:
-                MIN_NUMBER_1 = INPUT[I]
-                MIN_INDEX_1 = I
+    for j in range(len(input_1)):
+        for i in range(0, len(input_1)):
+            if input_1[i] <= min_number_1:
+                min_number_1 = input_1[i]
 
 
-def optimized(input):
-    '''O(n)
-    '''
-    MIN_NUMBER_1 = 1000
-
-    for I in range(0, len(INPUT)):
-        if INPUT[I] <= MIN_NUMBER_1:
-            MIN_NUMBER_1 = INPUT[I]
-            MIN_INDEX_1 = I
+def optimized(input_1):
+    """O(n)"""
+    min_number_1 = 1000
+    for i in range(0, len(input_1)):
+        if input_1[i] <= min_number_1:
+            min_number_1 = input_1[i]
 
 
 NUMBER_EXECUTIONS = 1000
 INPUT = [28, -86, 44, -37, -7, -52, -19, -3, -15, -73, 28, -86, 44, -37, -7, -52, -19, -3, -15, -73]
 
-time1 = timeit.timeit(f'naive({INPUT})',
+TIME1 = timeit.timeit(f'naive({INPUT})',
                       setup='from __main__ import naive',
                       number=NUMBER_EXECUTIONS)
 
-time2 = timeit.timeit(f'optimized({INPUT})',
+TIME2 = timeit.timeit(f'optimized({INPUT})',
                       setup='from __main__ import optimized',
                       number=NUMBER_EXECUTIONS)
 
 print(f'O(n) Быстрее в  \
-{round(time1 / time2, 2)} раз чем O(2n^2)'
+{round(TIME1 / TIME2, 2)} раз чем O(2n^2)'
       )
-'''Первый алгоритм линейной сложности и второй квадратичной (во второй добавлен второй цикл для сложности)'''
+# Первый алгоритм линейной сложности и второй квадратичной
+# (во второй добавлен второй цикл для сложности)
