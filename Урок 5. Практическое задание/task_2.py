@@ -11,3 +11,34 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+
+from SimpleMath import MathDeque, MathCalc
+
+
+# Класс, не исспользуюший коллекции
+
+A = MathCalc("A29878FA4324", 16)
+B = MathCalc("C4F", 16)
+C = A + B
+print(A)
+print(B)
+print(C)
+MathCalc.another_system(A, 8)
+MathCalc.another_system(B, 8)
+D = A * B
+print()
+print(A)
+print(B)
+print(D)
+
+
+# Класс, использующий коллекцию deque
+
+A = MathDeque("A2", 16)
+B = MathDeque("C4F", 16)
+C = A + B
+D = A * B
+print(A)
+print(B)
+print(C)
+print(D)

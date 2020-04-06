@@ -25,3 +25,66 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+
+# Все методы прописаны в Python файле в классе DataTable и TableTuple
+# Классы подстраивались под условие данной задачи и не являются универсальными
+# Поэтому их нельзя использовать в других задачах
+
+from Tables import DataTable, TableTuple
+from collections import namedtuple
+"""
+В данном подходе в качестве коллекции использовался defaultdict(list)
+Все данные в исходном виде хранятся как словарь
+Ключи - это имена таблиц
+Данные - это списки в которы хранится необходимая информация
+Для корректного вывода conclusion(Конкретно для этого задания) важно наличие названия name
+И дополнительные операции в статическом методе класса
+В остальном данный класс универсален
+"""
+
+
+def method_1():
+
+    sql = DataTable(
+        name="str",
+        profit_1="int",
+        profit_2="int",
+        profit_3="int",
+        profit_4="int"
+    )
+
+    amount = int(input("Введите количество предприятий: "))
+    while amount > 0:
+        SQL.insert_data()
+        amount -= 1
+    sql.print_info()
+    sql.conclusion
+
+
+"""
+Во втором методе использовалась коллекция namedtuple
+в качестве имен передется имя предприятия и доход в виде списка
+Исходный класс этого метода полностью подстроен под заданный тип кортежа
+"""
+
+
+def method_2():
+
+    base_tuple = namedtuple("Information", "name profit")
+    sql = TableTuple()
+    amount = int(input("Введите количество предприятий: "))
+    while amount > 0:
+        tmp = base_tuple(
+            name=input("Введите имя предприятия: "),
+            profit=input("через пробел введите прибыль данного предприятия "
+                         "за каждый квартал(Всего 4 квартала): ").split(" ")
+        )
+        sql.insert_data(tmp)
+        del tmp
+        amount -= 1
+    sql.conclusion
+
+
+# method_1()
+method_2()
