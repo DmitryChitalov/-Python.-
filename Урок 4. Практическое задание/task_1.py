@@ -12,3 +12,93 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+import timeit
+import cProfile
+import random
+
+
+"""
+Задача № 1
+Функция выпоняет логические побитовые операции "И", "ИЛИ"
+"исключающее ИЛИ", побитовый сдвиг вправо и влево на два знака
+ над входными числами.
+"""
+def logic_operations(n1: int, n2: int):
+
+    bit_or = n1 | n2
+    bit_and = n1 & n2
+    bit_xor = n1 ^ n2
+    left_sh = n1 << 2
+    right_sh = n1 >> 2
+
+    # print(f"Bitwise OR: {bin(BIT_OR)}")
+    # print(f"Bitwise AND: {bin(BIT_AND)}")
+    # print(f"Bitwise XOR: {bin(BIT_XOR)}")
+    # print(f"Bitwise left shift: {bin(L_SHIFT)}")
+    # print(f"Bitwise right shift: {bin(R_SHIFT)}")
+    return bin(bit_or), bin(bit_and), bin(bit_xor), bin(left_sh), bin(right_sh)
+
+
+print(f"Задача № 1")
+print('Логические побитовые операции, маленькие числа: ',
+      timeit.timeit(
+          'logic_operations(5, 6)',
+          setup='from __main__ import logic_operations',
+          number=1000))
+print('Логические побитовые операции, большие числа: ',
+      timeit.timeit(
+          'logic_operations(999999999, 999999999999)',
+          setup='from __main__ import logic_operations',
+          number=1000))
+# Входные данные практически не влияют на время исполнения функции"
+
+
+"""
+Задача № 2
+Далее две реализации функции, которая сохраняет во втором массиве индексы четных элементов 
+(рандомного) первого массива. Например, если дан массив со значениями 8, 3, 15, 6, 4, 2, то 
+во второй массив надо заполнить значениями 1, 4, 5, 6 (или 0, 3, 4, 5 - если индексация 
+начинается с нуля), т.к. именно в этих позициях первого массива стоят четные числа.
+"""
+
+
+def even_elem_1():
+    arr = list(range(20000))
+    #
+    # for i in range(20000):
+    #     arr.append(i)
+    a = []
+    for i in arr:
+        if i % 2 == 0:
+            a.append(arr.index(i))
+        else:
+            pass
+    # print(f"В массиве {arr}")
+    # print(f"Четные элементы находятся по следующим индексам: {a}")
+
+
+def even_elem_2():
+    arr = [i for i in range(20000)]
+    a = [arr.index(i) for i in arr if i % 2 == 0]  # решение
+    # print(f"В массиве {arr}")
+    # print(f"Четные элементы находятся по следующим индексам: {a}")
+
+
+print(f"Задача № 2")
+print('Функция, которая сохраняет во втором массиве индексы четных элементов: ',
+      timeit.timeit(
+          'even_elem_1',
+          setup='from __main__ import even_elem_1',
+          number=1000))
+print('Функция, которая сохраняет во втором массиве индексы четных элементов: ',
+      timeit.timeit(
+          'even_elem_2',
+          setup='from __main__ import even_elem_2',
+          number=1000))
+
+cProfile.run('even_elem_1()')
+cProfile.run('even_elem_2()')
+
+# модули timeit и cProfile показывают похожие результаты результаты (относительно функций)
+# данную задачу не удалось оптимизировать
+#
