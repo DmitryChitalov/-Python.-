@@ -25,3 +25,66 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+from collections import defaultdict
+from collections import namedtuple
+
+
+# Ожидает на ввод число. Повторяет попытку ввода, пока не введено корректно
+def input_number(string):
+    while True:
+        try:
+            number = input(f"{string}\n")
+            number = int(number)
+            break
+        except ValueError:
+            print("Не удалось преобразовать в число")
+    return number
+
+
+company_cnt = input_number('Введите количество предприятий')
+companies = []
+for i in range(company_cnt):
+    company = defaultdict(lambda: None)
+    company_name = input('Введите название предприятия\n')
+    print('Введите прибыль данного предприятия за каждый квартал (всего 4)')
+    profit = []
+    for j in range(4):
+        profit.append(input_number(f'Введите прибыль за {j+1} квартал: '))
+    company['name'] = company_name
+    company['profit'] = profit
+    companies.append(company)
+# Подсчет средней годовой
+avg = 0
+for company in companies:
+    avg += sum(company['profit'])
+avg /= len(companies) if len(companies) else 1
+print(f'Средняя годовая прибыль всех предприятий: {avg}')
+# Вывод компаний
+company_names = [company["name"] for company in companies if sum(company["profit"]) >= avg]
+print(f'Предприятия, с прибылью выше среднего значения: {", ".join(company_names)}')
+company_names = [company["name"] for company in companies if sum(company["profit"]) < avg]
+print(f'Предприятия, с прибылью ниже среднего значения: {", ".join(company_names)}')
+
+
+# То же самое, но с namedtuple
+COMPANY = namedtuple('Company', 'name profit sum')
+company_cnt = input_number('Введите количество предприятий')
+companies = []
+for i in range(company_cnt):
+    company_name = input('Введите название предприятия\n')
+    print('Введите прибыль данного предприятия за каждый квартал (всего 4)')
+    profit = []
+    for j in range(4):
+        profit.append(input_number(f'Введите прибыль за {j+1} квартал: '))
+    companies.append(COMPANY(company_name, profit, sum(profit)))
+# Подсчет средней годовой
+avg = 0
+for company in companies:
+    avg += company.sum
+avg /= len(companies) if len(companies) else 1
+print(f'Средняя годовая прибыль всех предприятий: {avg}')
+# Вывод компаний
+company_names = [company.name for company in companies if company.sum >= avg]
+print(f'Предприятия, с прибылью выше среднего значения: {", ".join(company_names)}')
+company_names = [company.name for company in companies if company.sum < avg]
+print(f'Предприятия, с прибылью ниже среднего значения: {", ".join(company_names)}')
