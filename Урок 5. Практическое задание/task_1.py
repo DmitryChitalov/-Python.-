@@ -25,3 +25,41 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+from collections import *
+
+
+n = int(input("Введите количество предприятий для расчета прибыли: "))
+company = namedtuple('Company', 'id name profit')  # коллекция
+dict_company = {}
+summ = 0
+for i in range(1, n + 1):
+    name = input("Введите название предприятия: ")
+    profit = list(map(int, input(
+        "через пробел введите прибыль данного предприятия за каждый квартал(Всего 4 квартала): ").split(' ')))
+    dict_company[i] = company(
+        id=i,
+        name=name,
+        profit=profit,
+    )
+    summ += sum(dict_company[i].profit)
+
+list_comp = defaultdict(list)  # коллекция
+for item in dict_company:
+    if sum(dict_company[item].profit) > summ / n:
+        list_comp["max"].append(dict_company[item].name)
+    else:
+        list_comp["min"].append(dict_company[item].name)
+
+print(list_comp)
+print()
+print('Средняя годовая прибыль всех предприятий: ', summ / n)
+print(
+    "Предприятия, с прибылью выше среднего значения: ",
+    ', '.join(
+        list_comp['max']))
+print()
+print(
+    "Предприятия, с прибылью ниже среднего значения: ",
+    ', '.join(
+        list_comp['min']))
