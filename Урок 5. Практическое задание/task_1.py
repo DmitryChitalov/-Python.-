@@ -1,3 +1,5 @@
+from collections import namedtuple
+
 """
 1.	Пользователь вводит данные о количестве предприятий, их наименования и прибыль
 за 4 квартала (т.е. 4 отдельных числа) для каждого предприятия.
@@ -25,3 +27,21 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+n = int(input('Enter number of companies: '))
+PROF = namedtuple('Profit', 'name year_prof')
+all_copm = [0] * n
+total = 0
+for i in range(n):
+    all_copm[i] = PROF(
+        name=input('Enter company name: '),
+        year_prof=sum(tuple(map(int, input('Enter company profit for each quarter: ').split())))
+    )
+    total += all_copm[i].year_prof
+average_prof = total / n
+print(f'Average profit of all companies: {average_prof}')
+more_avg = [i.name for i in all_copm if i.year_prof > average_prof]
+less_avg = [i.name for i in all_copm if i.year_prof < average_prof]
+print('Companies with profit more than average:')
+print(*more_avg)
+print('Companies with profit less than average:')
+print(*less_avg)
