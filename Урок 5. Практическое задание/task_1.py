@@ -25,3 +25,56 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+# импортируем требуемый модуль
+from collections import namedtuple
+
+# запрашиваем ввод количества компаний
+COMPANIES_COUNT = int(input('Введите количество предприятий для расчета прибыли: '))
+# создадим именованный кортеж
+COMPANIES = namedtuple('COMPANIES', ['NAME', 'PROFIT', 'PROFIT_AVG'])
+# создадим результирующий словарь
+RESULT_DICT = dict()
+
+for i in range(1, COMPANIES_COUNT + 1):
+    # запрашиваем ввод названия
+    COMPANY_NAME = input('Введите название предприятия: ')
+    # запрашиваем ввод прибыли за все кварталы
+    COMPANY_PROFIT = input('Через пробел введите прибыль данного '
+                           'предприятия за каждый квартал(Всего 4 квартала): ')
+    # переносим строку уже после ввода
+    print()
+    # создаем список для последующих вычислений
+    AVG_LIST = list(map(int, COMPANY_PROFIT.split(' ')))
+    # создаем компанию, вносим данные
+    # заодно подсчитываем среднюю прибыль за все 4 квартала
+    Company = COMPANIES(NAME=COMPANY_NAME, PROFIT=AVG_LIST, PROFIT_AVG=float(sum(AVG_LIST) / 4))
+    # добавляем компанию в результирующий словарь
+    RESULT_DICT[i] = Company
+
+# средняя прибыль всех предприятий
+PROFIT_AVG_ALL = 0
+# в цикле складываем каждый квартал каждого предприятия
+for i in range(1, len(RESULT_DICT) + 1):
+    PROFIT_AVG_ALL += sum(RESULT_DICT[i].PROFIT)
+
+# после окончания цикла делим общую сумму на количество предприятий
+PROFIT_AVG_ALL = float(PROFIT_AVG_ALL / len(RESULT_DICT))
+# выводим результат
+print(f'Средняя годовая прибыль всех предприятий: {PROFIT_AVG_ALL}')
+
+# предприятия выше и ниже общей средней прибыли
+PROFIT_MORE = list()
+PROFIT_LESS = list()
+
+# добавляем наименование предприятия к одному или второму списку
+# в зависимости от его средней прибыли
+for i in range(1, len(RESULT_DICT) + 1):
+    if RESULT_DICT[i].PROFIT_AVG >= PROFIT_AVG_ALL:
+        PROFIT_MORE.append(RESULT_DICT[i].NAME)
+    else:
+        PROFIT_LESS.append(RESULT_DICT[i].NAME)
+
+# выводим результат
+print(f'Предприятия, с прибылью выше среднего значения: {PROFIT_MORE}')
+print(f'Предприятия, с прибылью ниже среднего значения: {PROFIT_LESS}')
