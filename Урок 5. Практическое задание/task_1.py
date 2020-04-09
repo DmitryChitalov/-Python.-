@@ -25,3 +25,48 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+from collections import namedtuple
+
+
+ENTERPRISE = namedtuple('ENTERPRISE', ['q1', 'q2', 'q3', 'q4'])
+
+ENTITIES = {}
+
+NUM_ENTITIES = int(input("Количество предприятий: "))
+
+for i in range(NUM_ENTITIES):
+    name = input(str(i+1) + '-е предприятие: ')
+    profit_q1 = int(input('Прибыль за 1-й квартал: '))
+    profit_q2 = int(input('Прибыль за 2-й квартал: '))
+    profit_q3 = int(input('Прибыль за 3-й квартал: '))
+    profit_q4 = int(input('Прибыль за 4-й квартал: '))
+    ENTITIES[name] = ENTERPRISE(
+        q1=profit_q1,
+        q2=profit_q2,
+        q3=profit_q3,
+        q4=profit_q4
+    )
+
+print(ENTITIES, '\n')
+
+TOTAL_PROFIT = ()
+
+for name, profit in ENTITIES.items():
+    print(f'Предприятие: {name} прибыль за год - {sum(profit)}')
+    TOTAL_PROFIT += profit
+
+AVG_PROFIT = sum(TOTAL_PROFIT) / NUM_ENTITIES
+print(f'Средняя прибыль за год для всех предприятий {AVG_PROFIT} \n')
+
+print('Предприятия, у которых прибыль выше среднего: ')
+
+for name, profit in ENTITIES.items():
+    if sum(profit) > AVG_PROFIT:
+        print(f'{name} - {sum(profit)}')
+
+print('Предприятия, у которых прибыль ниже среднего:')
+
+for name, profit in ENTITIES.items():
+    if sum(profit) < AVG_PROFIT:
+        print(f'{name} - {sum(profit)}')
