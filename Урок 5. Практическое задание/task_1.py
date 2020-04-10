@@ -25,3 +25,42 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+import collections
+
+
+COMPS_LST = []
+try:
+    QUANTITY = int(input('Введите количество предприятий '
+                         'для расчета прибыли: '))
+    if QUANTITY <= 0:
+        raise ValueError('Ошибка ввода: число д.б. больше нуля')
+    COMPANY = collections.namedtuple(
+        'COMPANY', 'name profit_1 profit_2 profit_3 profit_4')
+    for n in range(QUANTITY):
+        name = input('Введите название предприятия: ')
+        profit = input(
+            'Через пробел введите прибыль данного '
+            'предприятия за каждый квартал(Всего 4 квартала): '
+        ).split()
+        profit = list(map(int, profit))
+        COMPS_LST.append(COMPANY(name, *profit))
+
+    AVG_YEAR = sum(sum(profit)
+                   for name, *profit in COMPS_LST) / QUANTITY
+    MORE_AVG = [name
+                for name, *profit in COMPS_LST if sum(profit) >= AVG_YEAR]
+    LESS_AVG = [name
+                for name, *profit in COMPS_LST if sum(profit) < AVG_YEAR]
+
+    print(f'Средняя годовая прибыль всех предприятий: '
+          f'{round(AVG_YEAR, 2)}')
+    print(f'Предприятия, с прибылью выше или равной среднему значению: '
+          f'{", ".join(MORE_AVG)}')
+    print(f'Предприятия, с прибылью ниже среднего значения: '
+          f'{", ".join(LESS_AVG)}')
+
+except ValueError as err:
+    print(f'Ошибка ввода: {err}')
+except TypeError as err:
+    print(f'Ошибка ввода: {err}')
