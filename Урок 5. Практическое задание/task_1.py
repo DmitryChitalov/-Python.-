@@ -25,3 +25,42 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+from collections import namedtuple, deque
+
+user_comps = set()
+QUARTERS = 4
+Company = namedtuple('Company', ['name', 'quarters', 'total'])
+
+num = int(input('Введите количество организаций: '))
+total_profit = 0
+for i in range(1, num + 1):
+    total = 0
+    quarters = []
+    name = input('Insert company name: ')
+
+    for j in range(QUARTERS):
+        quarters.append(int(input(f'Прибыль за {j + 1} квартал равна: ')))
+        total += quarters[j]
+
+    comp = Company(name=name, quarters=tuple(quarters), total=total)
+
+    user_comps.add(comp)
+    total_profit += total
+
+average = total_profit / num
+
+print(f'\nСредняя прибыль {average}\n')
+
+print(f'Организация с прибылью выше среднего: ')
+for comp in user_comps:
+    if comp.total > average:
+        print(f'Прибыль "{comp.name}" составила - {comp.total}\n')
+
+
+print(f'Организация с прибылью ниже среднего: ')
+for comp in user_comps:
+    if comp.total < average:
+        print(f'Прибыль "{comp.name}" составила - {comp.total}')
+
+
+
