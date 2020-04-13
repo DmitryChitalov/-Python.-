@@ -25,3 +25,48 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+import collections
+from copy import deepcopy
+
+# Вариант 1
+n = int(input('Введите количество предприятий для расчета прибыли: '))
+companies = []
+
+profit_sum = 0
+for i in range(n):
+    company = collections.namedtuple('company', 'profit_year')
+    company.name = input(f'{i + 1}-ая компания: ')
+    profit = list(map(int, input("через пробел введите прибыль данного предприятия за каждый "
+                                 "за каждый квартал(Всего 4 квартала): ").split()))
+    profit_year = 0
+    for item in profit:
+        profit_year += item
+    company.profit_year = profit_year
+    profit_sum += profit_year
+    companies.append(company)
+
+avrg = profit_sum / n
+
+
+more_avrg = []
+less_avrg = []
+equally_avrg = []
+
+for item in companies:
+    if item.profit_year > avrg:
+        print(item.profit_year, avrg)
+        more_avrg.append(item.name)
+    elif item.profit_year < avrg:
+        less_avrg.append(item.name)
+    else:
+        equally_avrg.append(item.name)
+
+
+print(f'Средняя годовая прибыль всех предприятий: {avrg}')
+if len(more_avrg):
+    print(f'Предприятия, с прибылью выше среднего значения: {", ".join(more_avrg)}')
+if len(less_avrg):
+    print(f'Предприятия, с прибылью меньше среднего значения: {", ".join(less_avrg)}')
+if len(equally_avrg):
+    print(f'Предприятия, с прибылью равной среднему значению: {", ".join(equally_avrg)}')
