@@ -38,27 +38,30 @@
 """
 
 
-def num_enter(message=""):
+def row_enter(message):
     while True:
-        num = input(message)
-        if num.isdigit():
-            return int(num)
-        else:
-            print("Invalid number. Repeat entry.")
+        break_point = True
+        row = input(message).split()
+        row_int = []
+        for item in row:
+            if item.isdecimal():
+                row_int.append(int(item))
+            else:
+                print(f"Invalid number {item}. Repeat entry.")
+                break_point = False
+        if break_point:
+            return row_int
 
 
-matrix = [[None for i in range(0, 5)] for j in range(0, 4)]
+matrix = [[] for j in range(0, 4)]
 
 for row in range(0, 4):
-    print(f"{row + 1}-я строка:")
-    for el in range(0, 5):
-        if el == 4:
-            matrix[row][el] = sum(matrix[row][0:4])
-        else:
-            matrix[row][el] = num_enter()
+    matrix[row] = row_enter(f"{row + 1}-я строка:\n")
+    matrix[row].append(sum(matrix[row]))
 
 for row in matrix:
     print(row)
+
 
 
 

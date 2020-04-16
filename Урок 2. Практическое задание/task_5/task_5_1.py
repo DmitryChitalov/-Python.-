@@ -17,3 +17,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+start_num = 32
+end_num = 127
+count = 0
+
+for i in range(start_num, end_num + 1):
+    print(f"{i} - {chr(i)}".ljust(9), end='')
+    count += 1
+    if count % 10 == 0:
+        print()
+

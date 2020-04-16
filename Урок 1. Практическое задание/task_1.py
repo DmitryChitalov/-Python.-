@@ -13,3 +13,18 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+
+try:
+    user_number = int(input("Type the number - "))
+    first_num = user_number // 100
+    second_num = (user_number // 10) % 10
+    third_num = user_number % 10
+
+    res_sum = first_num + second_num + third_num
+    res_mult = first_num * second_num * third_num
+
+    print(f"Summary - {res_sum}")
+    print(f"Multiplication - {res_mult}")
+except ValueError:
+    print("You entered an incorrect value.")
