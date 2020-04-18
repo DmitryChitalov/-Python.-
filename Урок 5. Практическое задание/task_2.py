@@ -11,3 +11,36 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+
+from collections import deque
+
+CONVERSE_TABLE = {
+    '0': 0, '1': 1, '2': 2, '3': 3,
+    '4': 4, '5': 5, '6': 6, '7': 7,
+    '8': 8, '9': 9, 'A': 10, 'B': 11,
+    'C': 12, 'D': 13, 'E': 14, 'F': 15
+    }
+
+
+def hex_dec(hex_num):
+    """
+    Преобразование 16-теричного числа в десятичное
+    :param hex_num: список символов в шестнадцатеричном числе
+    :return: десятичное число
+    """
+    hex_num = deque(hex_num)
+    hex_num.reverse()
+    dec_number = 0
+    for i in range(len(hex_num)):
+        dec_number += CONVERSE_TABLE[hex_num[i]] * 16 ** i
+    return dec_number
+
+
+# Ввод чисел в консоли, сразу преобразуются в списки
+NUMS = [input("Введите 16-теричное число: ").upper() for i in range(2)]
+# Вычисление суммы и произведения путём приведения чисел
+# в десятичную систему счисления
+SUM = hex(hex_dec(NUMS[0]) + hex_dec(NUMS[1]))[2:].upper()
+MULTIPLICATION = hex(hex_dec(NUMS[0]) * hex_dec(NUMS[1]))[2:].upper()
+print(f'{NUMS[0]} + {NUMS[1]} = {SUM}')
+print(f'{NUMS[0]} + {NUMS[1]} = {MULTIPLICATION}')

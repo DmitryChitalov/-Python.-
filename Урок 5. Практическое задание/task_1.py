@@ -25,3 +25,25 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+from collections import defaultdict
+
+COUNT_COMP = int(input('Введите количество предприятий: '))
+ALL_COMP = defaultdict(int)
+for NUM in range(COUNT_COMP):
+    COMP_NAME = input('Введите название компении: ')
+    for i in range(1, 5):
+        ALL_COMP[COMP_NAME] += int(input('Введите доход за квартал: '))
+
+INCOME_ALL_COMP = 0
+for KEY in ALL_COMP:
+    INCOME_ALL_COMP += ALL_COMP[KEY]
+
+AVG_INCOME = INCOME_ALL_COMP / COUNT_COMP
+print(f'Средняя годовая прибыль всех предприятий: {AVG_INCOME}')
+BELOW_AVG = [KEY for KEY in ALL_COMP if ALL_COMP.get(KEY) < AVG_INCOME]
+IN_STR = ', '.join(BELOW_AVG)
+print(f'Предприятия, с прибылью ниже среднего значения: {IN_STR}')
+HIGH_AVG = [KEY for KEY in ALL_COMP if ALL_COMP.get(KEY) >= AVG_INCOME]
+IN_STR = ', '.join(HIGH_AVG)
+print(f'Предприятия, со средним доходом или выше среднего: {IN_STR}')
