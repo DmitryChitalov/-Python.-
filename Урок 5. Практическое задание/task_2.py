@@ -11,3 +11,19 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+
+from collections import defaultdict
+
+
+USER_NUMBERS = defaultdict(list)
+FIRST = input("Введите первое число: ")
+SECOND = input("Введите второе число: ")
+USER_NUMBERS[FIRST] = list(FIRST)
+USER_NUMBERS[SECOND] = list(SECOND)
+
+
+SUMM = hex(sum([int("".join(i), 16) for i in USER_NUMBERS.values()]))[2:]
+MULT = hex(int("".join(USER_NUMBERS[FIRST]), 16) * int("".join(USER_NUMBERS[SECOND]), 16))[2:]
+
+print(f"Сумма чисел {USER_NUMBERS[FIRST]} и {USER_NUMBERS[SECOND]} равна: {list(SUMM)}\n"
+      f"Произведение чисел {USER_NUMBERS[FIRST]} и {USER_NUMBERS[SECOND]} равно: {list(MULT)}")
