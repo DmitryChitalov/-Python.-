@@ -25,3 +25,44 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+from collections import namedtuple
+
+
+Firm = namedtuple("Firm", "Name Income")
+
+
+USER_COUNT = input("Введи число фирм: ")
+FIRM_LIST = []
+
+
+def get_income(firm):
+    """Получаем массив целых чисел"""
+    return [int(item) for item in firm.Income.split()]
+
+
+def avg_income(firm):
+    """Получаем среднюю прибыль фирмы за 4 квартала"""
+    f_income = get_income(firm)
+    return sum(f_income)/len(f_income)
+
+
+def all_income(firm_list):
+    """Считаем среднюю прибыль для всех фирм"""
+    total = []
+    for i in firm_list:
+        total = total + get_income(i)
+    return sum(total)/len(total)
+
+
+for i in range(int(USER_COUNT)):
+    name = input("Укажите имя фирмы: ")
+    income = input("Укажите прибыль фирмы за 4 квартала: ")
+    firm = Firm(name, income)
+    FIRM_LIST.append(firm)
+
+
+print(f"Средняя годовая прибыль всех предприятий: {all_income(FIRM_LIST)}\n"
+      f"Предприятия с прибылью выше средней: "
+      f"{[i.Name for i in FIRM_LIST if avg_income(i) > all_income(FIRM_LIST)]}\n"
+      f"Предприятия с прибылью ниже средней:"
+      f" {[i.Name for i in FIRM_LIST if avg_income(i) < all_income(FIRM_LIST)]}")
