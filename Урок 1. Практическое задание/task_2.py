@@ -6,3 +6,14 @@
 Подсказка: это стандартные операции, которые осуществляются с помощью
 стандартных операторов. Попробуйте найти каких именно.
 """
+
+a = 5
+b = 6
+
+print(f'5 AND 6: {a & b} ({bin(a & b)})')
+print(f'5 OR 6: {a | b} ({bin(a | b)})')
+print(f'5 XOR 6: {a ^ b} ({bin(a ^ b)})')
+print(f'NOT 5: {~a} ({bin(~a)})')
+print(f'NOT 6: {~b} ({bin(~a)})')
+print(f'5 shifted left by 2 digits: {5 << 2} ({bin(5 << 2)})')
+print(f'5 shifted right by 2 digits: {5 >> 2} ({bin(5 >> 2)})')

@@ -14,3 +14,21 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+from random import random
+
+low = input('Enter the lower limit: ')
+high = input('Enter the high limit: ')
+
+print('Choose the option: \n1. Random integer \n2. Random float \n3. Random char')
+option = int(input('Option: '))
+
+if option == 1:
+    result = int(random() * (int(high) - int(low) + 1) + int(low))
+elif option == 2:
+    result = random() * (float(high) - float(low)) + float(high)
+elif option == 3:
+    result = chr(int(random() * (ord(high) - ord(low) + 1) + ord(low)))
+else:
+    print('Wrong option!')
+print(result)

@@ -13,3 +13,11 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+user_input = int(input('Enter a three digit number: '))
+a = user_input // 100
+b = user_input % 100 // 10
+c = user_input % 10
+
+print(f'The sum of digits: {a+b+c}')
+print(f'The mult of digits: {a*b*c}')
