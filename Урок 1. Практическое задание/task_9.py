@@ -4,3 +4,12 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+a = int(input('Введите a: '))
+b = int(input('Введите b: '))
+c = int(input('Введите c: '))
+if (((a<c) and (a>b)) or ((a>c) and (a<b))):
+    print(a)
+elif (((b<c) and (b>a)) or ((b>c) and (b<a))):
+    print(b)
+elif (((c<b) and (c>a)) or ((c>b) and (c<a))):
+    print(c)
