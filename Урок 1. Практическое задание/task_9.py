@@ -13,3 +13,5 @@ elif (((b<c) and (b>a)) or ((b>c) and (b<a))):
     print(b)
 elif (((c<b) and (c>a)) or ((c>b) and (c<a))):
     print(c)
+if (a==b) or (a==c) or (b==c):
+    print('Вы ввели одинаковые числа')
