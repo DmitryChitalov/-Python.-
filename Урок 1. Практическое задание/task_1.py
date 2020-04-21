@@ -14,10 +14,10 @@
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
 
-user_input = int(input('Enter a three digit number: '))
-a = user_input // 100
-b = user_input % 100 // 10
-c = user_input % 10
+THREE_DIGITS_NUMBER = int(input('Enter a three digit number: '))
+A = THREE_DIGITS_NUMBER // 100
+B = THREE_DIGITS_NUMBER % 100 // 10
+C = THREE_DIGITS_NUMBER % 10
 
-print(f'The sum of digits: {a+b+c}')
-print(f'The mult of digits: {a*b*c}')
+print(f'The sum of digits: {A + B + C}')
+print(f'The mult of digits: {A * B * C}')

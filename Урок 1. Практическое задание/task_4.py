@@ -17,18 +17,18 @@
 
 from random import random
 
-low = input('Enter the lower limit: ')
-high = input('Enter the high limit: ')
+LOW = input('Enter the lower limit: ')
+HIGH = input('Enter the high limit: ')
 
 print('Choose the option: \n1. Random integer \n2. Random float \n3. Random char')
-option = int(input('Option: '))
+OPTION = int(input('Option: '))
 
-if option == 1:
-    result = int(random() * (int(high) - int(low) + 1) + int(low))
-elif option == 2:
-    result = random() * (float(high) - float(low)) + float(high)
-elif option == 3:
-    result = chr(int(random() * (ord(high) - ord(low) + 1) + ord(low)))
+if OPTION == 1:
+    RESULT = int(random() * (int(HIGH) - int(LOW) + 1) + int(LOW))
+elif OPTION == 2:
+    RESULT = random() * (float(HIGH) - float(LOW)) + float(HIGH)
+elif OPTION == 3:
+    RESULT = chr(int(random() * (ord(HIGH) - ord(LOW) + 1) + ord(LOW)))
 else:
     print('Wrong option!')
-print(result)
+print(RESULT)

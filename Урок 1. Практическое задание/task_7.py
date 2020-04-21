@@ -5,15 +5,15 @@
 то определить, является ли он разносторонним, равнобедренным или равносторонним.
 """
 
-a = int(input("Enter the first side: "))
-b = int(input("Enter the second side: "))
-c = int(input("Enter the third side: "))
+A = int(input("Enter the first side: "))
+B = int(input("Enter the second side: "))
+C = int(input("Enter the third side: "))
 
-if a + b <= c or a + c <= b or b + c <= a:
+if A + B <= C or A + C <= B or B + C <= A:
     print("Such triangle does not exist")
-elif a != b and a != c and b != c:
+elif A != B and A != C and B != C:
     print("It is a miscellaneous triangle")
-elif a == b == c:
+elif A == B == C:
     print("It is a equilateral triangle ")
 else:
     print("It is a isosceles triangle")

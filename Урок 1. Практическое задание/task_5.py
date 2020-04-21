@@ -11,13 +11,13 @@
 В обоих случаях он 24, но никак не -24
 """
 
-first_entered_letter = input("Enter the first letter: ").lower()
-second_entered_letter = input("Enter the second letter: ").lower()
+FIRST_LETTER = input("Enter the first letter: ").lower()
+SECOND_LETTER = input("Enter the second letter: ").lower()
 
-pos_left = ord(first_entered_letter) - ord("a") + 1
-pos_right = ord(second_entered_letter) - ord("a") + 1
-length = abs(pos_left - pos_right) - 1
+POS_LEFT = ord(FIRST_LETTER) - ord("a") + 1
+POS_RIGHT = ord(SECOND_LETTER) - ord("a") + 1
+LENGTH = abs(POS_LEFT - POS_RIGHT) - 1
 
-print(f'The number of {first_entered_letter} is {pos_left}')
-print(f'The number of {second_entered_letter} is {pos_right}')
-print(f'There are {length} letters between them')
+print(f'The number of {FIRST_LETTER} is {POS_LEFT}')
+print(f'The number of {SECOND_LETTER} is {POS_RIGHT}')
+print(f'There are {LENGTH} letters between them')
