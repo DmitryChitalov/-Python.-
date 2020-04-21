@@ -8,3 +8,6 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+NUM = int(input("Enter the number of a letter: "))
+print(chr(NUM + ord("a") - 1))
