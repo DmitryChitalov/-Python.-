@@ -9,3 +9,32 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+
+import random
+
+
+def stone_sort(arr):
+    n = 1
+    
+    while n < len(arr):
+        flag = 0
+        for i in range(len(arr) - n):
+            if arr[i] < arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                flag += 1
+                # print(flag)
+        if flag == 0:
+            break
+        
+        n += 1
+        
+    #return arr
+
+
+array = [random.randint(-100, 100) for _ in range(10)]
+print(f'Массив: {array}')
+
+# array = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+stone_sort(array)
+print(f'Массив после сортировки: {array}')
