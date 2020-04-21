@@ -14,6 +14,7 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
 from random import random
 
 LOW = input('Enter the lower limit: ')
