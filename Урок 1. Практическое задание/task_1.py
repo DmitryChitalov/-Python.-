@@ -13,3 +13,12 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+DIGIT = int(input('Введите трехзначное число:'))
+if DIGIT > 999 or DIGIT < 100 or DIGIT == 0 or DIGIT == str:
+    print('Неверный ввод, попробуйте в другой раз!')
+else:
+    DIGIT_ONE = DIGIT // 100
+    DIGIT_TWO = (DIGIT - DIGIT_ONE * 100) // 10
+    DIGIT_THREE = (DIGIT % ((DIGIT_ONE * 100) + (DIGIT_TWO * 10)))
+    print(DIGIT_ONE + DIGIT_TWO + DIGIT_THREE)
+    print(DIGIT_ONE * DIGIT_TWO * DIGIT_THREE)
