@@ -14,3 +14,31 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+from random import randrange
+
+
+
+LEFT = int(input("Минимальная граница: "))
+RIGHT = int(input("Максимальная граница: "))
+NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+print(NUMB)
+
+LEFT = float(input("Минимальная граница: "))
+RIGHT = float(input("Максимальная граница: "))
+NUMB = random() * (RIGHT - LEFT) + LEFT
+print(round(NUMB, 3))
+
+
+
+#     случайный символ в интервале
+
+LETTER_1 = input('input a 1st letter ')
+LETTER_NUMB_1 = (ord(LETTER_1))
+FIRST_DIFF = LETTER_NUMB_1 - 97  
+
+LETTER_2 = input('input a second letter ')
+LETTER_NUMB_2 = (ord(LETTER_2))
+SECOND_DIFF = LETTER_NUMB_2 - 97 
+
+print(chr(randrange(97+ FIRST_DIFF, 97 + SECOND_DIFF + 1)))
