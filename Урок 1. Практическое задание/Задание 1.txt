@@ -1,0 +1,10 @@
+NUMBER = int(input("Введите трёхзначное число: "))
+DIGIT_1 = NUMBER % 10
+NUMBER = NUMBER // 10
+DIGIT_2 = NUMBER % 10
+NUMBER = NUMBER // 10
+DIGIT_3 = NUMBER
+PRODUCT = DIGIT_1 * DIGIT_2 * DIGIT_3
+SUM = DIGIT_1 + DIGIT_2 + DIGIT_3
+print(f"Произведение цифр в числе = {PRODUCT}")
+print(f"Сумма цифр в числе = {SUM}")
