@@ -4,3 +4,16 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+NUM_1 = int(input("Введите первое число: "))
+NUM_2 = int(input("Введите второе число: "))
+NUM_3 = int(input("Введите третье число: "))
+if (NUM_1 == NUM_2) or (NUM_2 == NUM_3) or (NUM_1 == NUM_3):
+    print("Часть или все введенные числа равны")
+else:
+    if (NUM_2 < NUM_3 < NUM_1) or (NUM_1 < NUM_3 < NUM_2):
+        MED = NUM_3
+    elif (NUM_3 < NUM_2 < NUM_1) or (NUM_1 < NUM_2 < NUM_3):
+        MED = NUM_2
+    else:
+        MED = NUM_1
+    print(f"Среднне число: {MED}.")
