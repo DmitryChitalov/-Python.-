@@ -3,8 +3,4 @@
 __pycache__
 myvenv
 venv
-db.sqlite3
-/static
-/media
-.DS_Store
 .idea
