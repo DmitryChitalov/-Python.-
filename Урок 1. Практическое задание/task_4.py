@@ -14,3 +14,25 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+
+VAR = input('Что вы хотите получить?\nСлучайное целое число - введите "I".\n'
+            'Случайное вещественное число - введите "F".\nСлучайные символ - введите "S"\n'
+            'Ваш вариант:  ')
+if VAR == 'I':
+    MIN_INT = int(input("Минимальная граница: "))
+    MAX_INT = int(input("Максимальная граница: "))
+    NUMB_INT = int(random() * (MAX_INT - MIN_INT + 1)) + MIN_INT
+    print(NUMB_INT)
+elif VAR == 'F':
+    MIN_FLOAT = float(input("Минимальная граница: "))
+    MAX_FLOAT = float(input("Максимальная граница: "))
+    NUMB_FLOAT = random() * (MAX_FLOAT - MIN_FLOAT) + MIN_FLOAT
+    print(round(NUMB_FLOAT, 3))
+elif VAR == 'S':
+    MIN_SYM = ord(input("Первая буква: "))
+    MAX_SYM = ord(input("Последняя буква: "))
+    RAND_SYM = chr(int((random()) * int((MAX_SYM - MIN_SYM + 1)) + MIN_SYM))
+    print(RAND_SYM)
+else:
+    print('Вы неверно выбрали вариант!')
