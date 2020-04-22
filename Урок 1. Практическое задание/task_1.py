@@ -13,3 +13,25 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+while True:
+    numb = input("Введите трехзначное число: ")
+
+    try:
+        numb = int(numb)
+        if len(str(numb)) != 3:
+            raise ValueError
+        break
+
+    except ValueError:
+        print('Введите трехзначное число!')
+
+a = numb // 100
+b = (numb // 10) % 10
+c = numb % 10
+
+summ = a + b + c
+mult = a * b * c
+
+print(f'Введенное число: {numb}')
+print(f'Сумма цифр числа равна {summ}')
+print(f'Произведение цифр числа равно {mult}')
