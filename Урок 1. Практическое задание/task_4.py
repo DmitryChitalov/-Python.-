@@ -14,3 +14,40 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+
+'''случайное число в диапазоне'''
+# вводим диапозон
+number1 = int(input('Введите от какого числа начинаем \n'))
+number2 = int(input('Введите число которым заканчиваем \n'))
+
+# генерим
+random_number = random()
+result = int(number1 + random_number * (number2 - number1 + 1))
+
+# выводим результат
+print(result)
+
+'''случайное число вещественное'''
+# вводим диапозон
+number1 = float(input('Введите от какого числа начинаем \n'))
+number2 = float(input('Введите число которым заканчиваем \n'))
+random_number = random()
+
+# генерим
+result = number1 + random_number * (number2 - number1)
+
+# выводим результат
+print(result)
+
+''' случайный символ'''
+# вводим диапозон
+letter1 = ord(input('введите первую букву \n').lower())
+letter2 = ord(input('введите вторую букву \n').lower())
+
+# генерим
+random_number = random()
+result = chr(int(letter1 + random_number * (letter2 - letter1 + 1)))
+
+# выводим результа
+print(result)

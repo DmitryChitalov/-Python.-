@@ -8,3 +8,16 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+# получаем букву
+user_number = int(input('Введите число от 1 до 26 \n'))
+letter = chr(user_number + 96)
+
+# проверка
+if user_number == 0:
+    raise Exception("Простите но нулевая позиция не предусмотрена")
+
+if user_number < 1 or user_number > 26:
+    raise Exception("Простите но в алфовите только 26 букв")
+
+# вы водим результат
+print(f'ваше буква: {letter}')
