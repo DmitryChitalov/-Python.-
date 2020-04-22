@@ -8,3 +8,8 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+LETTER = int(input('Введите номер буквы: '))
+LETTER = LETTER + 97 - 1
+print(chr(LETTER))
+
