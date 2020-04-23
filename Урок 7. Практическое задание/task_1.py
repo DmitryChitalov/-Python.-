@@ -9,3 +9,53 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+from random import randint
+import timeit
+
+
+def bubble(li):
+    """Пузырьковая сортировка в порядке убывания"""
+    n = 1
+    while n < len(li):
+        for i in range(len(li) - n):
+            if li[i] < li[i + 1]:
+                li[i], li[i + 1] = li[i + 1], li[i]
+        n += 1
+    return li
+
+
+def bubble_optimize(li):
+    """Оптимизированная пузырьковая сортировка"""
+    n = 1
+    while n < len(li):
+        # Добавлен флаг на смену чисел
+        swap = False
+        for i in range(len(li) - n):
+            if li[i] < li[i + 1]:
+                li[i], li[i + 1] = li[i + 1], li[i]
+                swap = True
+        # Если не было замены в цикле то сортировка завершается
+        if not swap:
+            break
+        n += 1
+    return li
+
+
+NUMS = [randint(-100, 99) for _ in range(1000)]
+print(f"Изначальный массив: {NUMS}")
+print(f"Отсортированный массив: {bubble(NUMS)}")
+print(f"Пузырькоый метод"
+      f": {timeit.timeit('bubble(NUMS)', setup='from __main__ import bubble, NUMS', number=1000)}")
+
+NUMS = [randint(-100, 99) for _ in range(1000)]
+print(f"Изначальный массив: {NUMS}")
+print(f"Отсортированный массив: {bubble_optimize(NUMS)}")
+print(f"Оптимизированный пузырьковый метод: "
+      f"{timeit.timeit('bubble_optimize(NUMS)', setup='from __main__ import bubble_optimize, NUMS', number=1000)}")
+
+"""
+Оптимизированная версия сортировки работает намного быстрее обычного варианта
+Пример на список из 1000 элементов:
+Пузырьковый метод: 96.0789044
+Оптимизированный пузырьковый метод: 0.36995719999998755
+"""
