@@ -4,3 +4,19 @@
 составленного из этих отрезков. Если такой треугольник существует,
 то определить, является ли он разносторонним, равнобедренным или равносторонним.
 """
+side_a = int(input('Длина 1-го отрезка: '))
+side_b = int(input('Длина 2-го отрезка: '))
+side_c = int(input('Длина 3-го отрезка: '))
+
+# Условие существование треугольника
+triangle = True if side_a + side_b > side_c and side_b + side_c > side_a and side_a + side_c > side_b else False
+if triangle is False:
+    print('Треугольник не возможно построить!')
+if triangle is True:
+    print('Треугольник возможен!')
+    if side_a == side_b == side_c:
+        print('Это равносторонний треугольник')
+    elif side_a != side_b != side_c:
+        print('Это разносторонний треугольник')
+    else:
+        print('Это равнобедренный треугольник')
