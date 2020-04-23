@@ -14,3 +14,30 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+
+LEFT = int(input("Введите начальную границу диапазона (число): "))
+RIGHT = int(input("Введите конечную границу диапазона (число): "))
+NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+print(f'Случайное целое число: {NUMB}')
+
+LEFT = float(LEFT)
+RIGHT = float(RIGHT)
+NUMB = random() * (RIGHT - LEFT) + LEFT
+print(f'Случайное вещественное число: {round(NUMB, 3)}')
+
+ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+LETTER_LEFT = input("Введите начальную букву диапазона (латинскую, прописную): ")
+LETTER_RIGHT = input("Введите конечную букву диапазона (латинскую, прописную): ")
+LEFT = ALPHABET.index(LETTER_LEFT)
+RIGHT = ALPHABET.index(LETTER_RIGHT)
+NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+print(f'Случайная буква в выбранном диапазоне: {ALPHABET[NUMB]}')
+
+SYMBOLS = ['~', '!', '@', '#', '$', '%', '^', '&', '*']
+SYMBOL_LEFT = input("Введите начальнй символ диапазона (из предложенных: '~', '!', '@', '#', '$', '%', '^', '&', '*' ): ")
+SYMBOL_RIGHT = input("Введите конечный символ диапазона (из предложенных: '~', '!', '@', '#', '$', '%', '^', '&', '*' ): ")
+LEFT = SYMBOLS.index(SYMBOL_LEFT)
+RIGHT = SYMBOLS.index(SYMBOL_RIGHT)
+NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+print(f'Случайная буква в выбранном диапазоне: {SYMBOLS[NUMB]}')

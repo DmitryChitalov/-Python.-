@@ -8,3 +8,13 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+# VAR_1
+LETTER = int(input("Введите номер буквы (в диапазоне 97 - 122: )"))
+SYMBOL = chr(LETTER)
+print(chr(LETTER))
+print(ord(SYMBOL))
+
+# VAR_2
+ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+NUMB = (int(input("Введите номер буквы в диапазоне от 1 до 26: "))) - 1
+print(f'Это буква {ALPHABET[NUMB]}')
