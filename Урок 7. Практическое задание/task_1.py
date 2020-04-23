@@ -9,3 +9,27 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+import random
+
+
+def bubble_sort(lst):
+    n = 1
+    flag = False
+    while n < len(lst):
+        for i in range(len(lst)-n):
+            if lst[i] < lst[i+1]:
+                lst[i], lst[i+1] = lst[i+1], lst[i]
+                flag = True
+        if not flag:
+            break
+        n += 1
+    return lst
+
+
+orig_list = [random.randint(-100, 100) for _ in range(10)]
+orig_list2 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+print(orig_list)
+print(bubble_sort(orig_list))
+
+print(orig_list2)
+print(bubble_sort(orig_list2))
