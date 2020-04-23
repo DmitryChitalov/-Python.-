@@ -8,3 +8,6 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+LETTERS = 'abcdefghijklmnopqrstuvwxyz'
+A = int(input('Введите номер буквы: '))
+print(f'Введенному номеру соответствует буква: {LETTERS[A-1]}')

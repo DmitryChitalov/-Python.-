@@ -13,3 +13,8 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+NUMBER = int(input('Введите трехзначное число: '))
+AMOUNT = NUMBER // 100 + ((NUMBER // 10) % 10) + NUMBER % 10
+MULTIPLY = (NUMBER // 100) * ((NUMBER // 10) % 10) * (NUMBER % 10)
+print(AMOUNT)
+print(MULTIPLY)
