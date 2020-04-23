@@ -14,3 +14,14 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+import random
+
+A = int(input('Первое число:'))
+B = int(input('Второе число:'))
+C = int(random.random() * (B - A + 1)) + A
+D = round(float(random.random() * (B - A)) + A, 3)
+print(f'Случайное целое число {C}\n Случайное вещественное число {D}')
+LETTER_1 = ord(input('Первая буква:'))
+LETTER_2 = ord(input('Вторая буква:'))
+RAND_LETTER = int(random.random() * (LETTER_2 - LETTER_1 + 1)) + LETTER_1
+print('Случайная буква:', chr(RAND_LETTER))
