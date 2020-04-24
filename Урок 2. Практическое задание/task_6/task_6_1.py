@@ -7,3 +7,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import random
+import sys
+
+ANSWER = random.randint(0, 100)
+TRY_NUMBER = 0  # Количество попыток
+
+while True:
+
+    TRY_NUMBER += 1
+
+    try:
+        TRY = int(input(f"Угадайте число от 0 до 100 (попытка № {TRY_NUMBER}): "))
+    except ValueError:
+        print("Некорректные  данные, программа завершена")
+        sys.exit()
+
+    if TRY < ANSWER:
+        print(f"Вы ввели число меньше, чем загадано")
+    elif TRY > ANSWER:
+        print(f"Вы ввели число больше, чем загадано")
+    else:  # TRY == ANSWER:
+        print(f"Вы угадали число {ANSWER} за {TRY_NUMBER} попыток")
+        break
+
+    if TRY_NUMBER == 10:
+        print(f"Вы использовали 10 попыток (ответ был {ANSWER}), увы...")
+        break

@@ -15,3 +15,35 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+import sys
+
+
+def get_even_and_odd(number):
+    # условие завершения рекурсии
+    if not number:
+        return 0, 0
+    # условие рекурсивного вызова
+    number_even, number_odd = get_even_and_odd(number//10)
+    if number % 10 % 2:
+        number_odd += 1
+    else:
+        number_even += 1
+
+    return number_even, number_odd
+
+
+try:
+    NUMBER = int(input("Введите натуральное число: "))
+except ValueError:
+    print("Некорректные  данные, программа завершена")
+    sys.exit()  # pylint советует использовать эту функцию вместо quit()
+
+if NUMBER < 1:
+    print("Число должно быть натуральным")
+    sys.exit()
+
+NUMBER_EVEN, NUMBER_ODD = get_even_and_odd(NUMBER)
+
+print(f"В числе {NUMBER} всего {NUMBER_EVEN+NUMBER_ODD} цифр, "
+      f"из которых {NUMBER_EVEN} чётных и {NUMBER_ODD} нечётных")

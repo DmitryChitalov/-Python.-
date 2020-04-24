@@ -5,3 +5,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import sys
+
+try:
+    NUMBER = int(input("Введите натуральное число: "))
+except ValueError:
+    print("Некорректные  данные, программа завершена")
+    sys.exit()
+
+if NUMBER < 1:
+    print("Число должно быть натуральным")
+    sys.exit()
+
+RESULT_1 = 0
+for i in range(NUMBER):
+    RESULT_1 += i + 1
+
+RESULT_2 = NUMBER * (NUMBER + 1) / 2
+
+print(f"Результат вычисления типа 1+2+...+n = {RESULT_1}")
+print(f"Результат вычисления типа n(n+1)/2  = {RESULT_2}")

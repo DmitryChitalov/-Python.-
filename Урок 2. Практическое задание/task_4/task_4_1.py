@@ -8,3 +8,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import sys
+
+try:
+    NUMBER = int(input("Введите количество элементов: "))
+except ValueError:
+    print("Некорректные  данные, программа завершена")
+    sys.exit()
+
+RESULT = 1
+NUMBER_NEXT = RESULT / 2
+for i in range(NUMBER-1):
+    RESULT = RESULT - NUMBER_NEXT
+    NUMBER_NEXT = - NUMBER_NEXT / 2
+
+print(f"Количество элементов = {NUMBER}, их сумма = {RESULT}")

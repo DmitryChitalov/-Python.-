@@ -12,3 +12,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import sys
+
+try:
+    NUMBER = int(input("Введите натуральное число: "))
+except ValueError:
+    print("Некорректные  данные, программа завершена")
+    sys.exit()  # pylint советует использовать эту функцию вместо quit()
+
+if NUMBER < 1:
+    print("Число должно быть натуральным")
+    sys.exit()
+
+NUMBER_EVEN, NUMBER_ODD = 0, 0  # Счетчики четных и нечетных цифр
+NUMBER_I = NUMBER  # Число для использования в итерациях (будет изменяться)
+
+while True:
+    if NUMBER_I % 10 % 2:
+        NUMBER_ODD += 1
+    else:
+        NUMBER_EVEN += 1
+
+    NUMBER_I = NUMBER_I // 10
+    if not NUMBER_I:
+        break
+
+print(f"В числе {NUMBER} всего {NUMBER_EVEN+NUMBER_ODD} цифр, "
+      f"из которых {NUMBER_EVEN} чётных и {NUMBER_ODD} нечётных")

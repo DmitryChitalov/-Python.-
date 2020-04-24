@@ -12,3 +12,39 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import sys
+
+try:
+    AMOUNT = int(input("Сколько будет чисел? "))
+    DIGIT = int(input("Какую цифру считать? "))
+except ValueError:
+    print("Некорректные  данные, программа завершена")
+    sys.exit()
+
+if AMOUNT < 1:
+    print("Количество вводимых чисел не должно быть меньше 1, программа завершена")
+    sys.exit()
+
+if DIGIT < 0 or DIGIT > 9:
+    print("Диапазон цифр 0-9, программа завершена")
+    sys.exit()
+
+RESULT = 0
+
+for i in range(AMOUNT):
+
+    try:
+        NUMBER = int(input(f"Число {i+1}:"))
+    except ValueError:
+        print("Некорректные  данные, программа завершена")
+        sys.exit()
+
+    while True:
+        if NUMBER % 10 == DIGIT:
+            RESULT += 1
+        NUMBER = NUMBER // 10
+        if not NUMBER:
+            break
+
+print(f"Было введено {RESULT} цифр '{DIGIT}'")

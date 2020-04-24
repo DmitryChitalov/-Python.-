@@ -12,3 +12,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import sys
+
+try:
+    NUMBER = int(input("Введите натуральное число: "))
+except ValueError:
+    print("Некорректные  данные, программа завершена")
+    sys.exit()
+
+if NUMBER < 1:
+    print("Число должно быть натуральным")
+    sys.exit()
+
+NUMBER_REVERSE = 0
+
+while True:
+    NUMBER_REVERSE = NUMBER_REVERSE * 10 + NUMBER % 10
+    NUMBER = NUMBER // 10
+    if not NUMBER:
+        break
+
+print(f"Перевернутое число: {NUMBER_REVERSE}")

@@ -14,3 +14,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+import sys
+
+
+def get_number_reverse(number):
+    """
+    каждый раз ставим последнюю цифру на первое место
+    и опять вызываем эту функцию для остатка
+    """
+    if not number:
+        return ""
+    return str(number % 10) + get_number_reverse(number // 10)
+
+
+try:
+    NUMBER = int(input("Введите натуральное число: "))
+except ValueError:
+    print("Некорректные  данные, программа завершена")
+    sys.exit()
+
+if NUMBER < 1:
+    print("Число должно быть натуральным")
+    sys.exit()
+
+NUMBER_REVERSE = int(get_number_reverse(NUMBER))
+
+print(f"Перевернутое число: {NUMBER_REVERSE}")
