@@ -12,3 +12,28 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+# чего считаем
+TOTAL = int(input('Введите сколько будет чисел \n'))
+NUMBER = int(input('Введите цифру, которо будем считать \n'))
+COINSEDENCE = 0
+
+# считаем
+i = 0
+ROW_NUMBER = 1
+while i < TOTAL:
+    ROW = int(input(f'Введите число {ROW_NUMBER}: '))
+    ROW_NUMBER = ROW_NUMBER + 1
+    ROW_LENGTH = len(str(ROW))
+
+    k = 1
+    while k <= ROW_LENGTH:
+        CHECK = ROW % 10
+        if CHECK == NUMBER:
+            COINSEDENCE = COINSEDENCE + 1
+
+        ROW = ROW // 10
+        k = k + 1
+    i = i + 1
+
+# выводим ответ
+print(f'Было введено {COINSEDENCE} цифры "{NUMBER}"')
