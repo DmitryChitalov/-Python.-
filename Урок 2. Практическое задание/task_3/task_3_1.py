@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+# вводим циферки
+USER_NUMBER = int(input('Введите число\n'))
+NUMBER = ""
+
+# обработка
+
+i = CUANTITY = len(str(USER_NUMBER))
+while i > 0:
+    Y = USER_NUMBER % 10
+    USER_NUMBER = USER_NUMBER // 10
+    NUMBER = NUMBER + str(Y)
+
+    i = i - 1
+# выводим результат
+print(NUMBER)
+
