@@ -32,3 +32,49 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+# Вводим первое число
+RESULT = 0
+while True:
+    try:
+        NUMBER_1 = int(input('Введите число 1\n'))
+        break
+    except ValueError:
+        print('Вы вводите что-то не то попробуйте еще раз\n')
+
+while True:
+
+
+    while True:
+        ACTION = input('Введите операцию (+, -, *, / или 0 для выхода\n')
+        if ACTION in ('+', '-', '*', '/'): # почему-то оно у меня работает только так
+            break
+        else:
+            print('Вы вводите что-то не то попробуйте еще раз\n')
+    while True:
+        try:
+            NUMBER_2 = int(input('Введите число 2\n'))
+            break
+        except ValueError:
+            print('Вы вводите что-то не то попробуйте еще раз\n')
+
+    if ACTION == '+':
+        RESULT = NUMBER_1 + NUMBER_2
+    elif ACTION == '-':
+        RESULT = NUMBER_1 - NUMBER_2
+    elif ACTION == '*':
+        RESULT = NUMBER_1 * NUMBER_2
+    elif ACTION == '/':
+        while True:
+            try:
+                RESULT = NUMBER_1 / NUMBER_2
+                break
+            except ZeroDivisionError:
+                print("на ноль делить нелья попробуйте еще раз")
+                NUMBER_2 = int(input('Введите число 2'))
+
+    NUMBER_1 = RESULT
+    print(NUMBER_1)
+
+    if ACTION == '0':
+        break
