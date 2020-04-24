@@ -5,3 +5,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+# вводим n
+n = 4
+LEFT_SUMM = 0
+i = 1
+
+# cчитаем сумму левую часть
+while i <= n:
+    LEFT_SUMM = LEFT_SUMM + i
+    i = i + 1
+
+print(LEFT_SUMM)
+
+# считаем правую часть
+RIGHT = int(n * (n + 1) / 2)
+
+# сравниваем
+if LEFT_SUMM == RIGHT:
+    print(f'Все хорошо, все сошлось. Cлева : {LEFT_SUMM} Cправа: {RIGHT}')
+else:
+    print(f'Все хорошо, не  сошлось. Cлева : {LEFT_SUMM} Cправа: {RIGHT}')
