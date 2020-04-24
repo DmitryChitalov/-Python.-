@@ -39,10 +39,10 @@ def bubble_sort_after(arr):
     return arr
 
 
-count = 1000
+count = 100
 input_arr = [randint(-100, 100) for el in range(count)]
-number = 10
-print(f'Исходный массив:\n{input_arr}\n')
+number = 1000
+print(f'Source array:\n{input_arr}\n')
 
 values = ['before', 'after']
 for i in range(2):
