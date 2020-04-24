@@ -4,12 +4,16 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
-A = 56
-B = 65
-C = 55
-if A < B < C:
-    print(B)
-if B < A < C:
-    print(A)
-else:
-    print(C)
+A = int(input('Введите первое число:'))
+B = int(input('Введите второе число:'))
+C = int(input('Введите третье число:'))
+if A == B == C:
+    print('Три числа одинаковые')
+if A == B or A == C or B == C:
+    print('Два числа одинаковые')
+if A < B < C or A > B > C:
+    print('Среднее: ', B)
+if B < A < C or B > A > C:
+    print('Среднее: ', A)
+if B > C > A or B < C < A:
+    print('Среднее: ', C)
