@@ -15,3 +15,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def count_odds(num, odds=0, evens=0):
+    """ Recursively checks each last digit to be odd """
+    if num == 0:
+        return f'There are {odds} odds and {evens} evens'
+    if num % 2:
+        return count_odds(num // 10, odds, evens + 1)
+    return count_odds(num // 10, odds + 1, evens)
+
+
+print(count_odds(1234))
+print(count_odds(98765456789))
+print(count_odds(989))

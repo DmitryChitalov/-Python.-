@@ -5,3 +5,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def prove_equation(num, left=0):
+    """ Counts the left part of eqaution, then the right part and prints results"""
+    for i in range(1, num + 1):
+        left += i
+    right = num * (num + 1) // 2
+    return f'{left} == {right}'
+
+
+print(prove_equation(7))

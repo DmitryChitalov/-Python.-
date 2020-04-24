@@ -32,3 +32,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    USER_OPERATION = input("Enter operation ( +, -, *, / ) or 0 to exit: ")
+    if USER_OPERATION == '0':
+        break
+    if USER_OPERATION in ('+', '-', '*', '/'):
+        X = float(input("x = "))
+        Y = float(input("y = "))
+        if USER_OPERATION == '+':
+            print(f'{X} {USER_OPERATION} {Y} = {(X + Y):.2f}')
+        elif USER_OPERATION == '-':
+            print(f'{X} {USER_OPERATION} {Y} = {(X - Y):.2f}')
+        elif USER_OPERATION == '*':
+            print(f'{X} {USER_OPERATION} {Y} = {(X * Y):.2f}')
+        elif USER_OPERATION == '/':
+            if Y != 0:
+                print(f'{X} {USER_OPERATION} {Y} = {(X / Y):.2f}')
+            else:
+                print("Zero division is not allowed")
+    else:
+        print("Unknown sign")

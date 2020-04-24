@@ -14,3 +14,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def reverse_num(num):
+    """ Recursively adds the last digit to empty string"""
+    if num == 0:
+        return ""
+    return str(num % 10) + (reverse_num((num // 10)))
+
+
+print(reverse_num(12345))
