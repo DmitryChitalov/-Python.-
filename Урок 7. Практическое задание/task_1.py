@@ -9,3 +9,31 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+
+import random
+
+lst = [random.randint(-100, 100) for i in range(10)]
+print(f'Исходный целочисленный список :\n{lst}')
+
+
+def bubble_sort(lst):
+    n = 1
+
+    while n < len(lst):
+        sorted = True  # Для оптимизации алгоритма.(Цикл завершается, если замен больше не происходит)
+
+        for i in range(len(lst) - n):
+
+            if lst[i] < lst[i + 1]:
+                lst[i], lst[i + 1] = lst[i + 1], lst[i]
+                sorted = False
+
+        if sorted == True:
+            break
+
+        n += 1
+
+    print(f'Отсортированный список по убыванию:\n{lst}')
+
+
+bubble_sort(lst)
