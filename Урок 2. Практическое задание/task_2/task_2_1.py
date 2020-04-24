@@ -12,3 +12,26 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+# ввод числа
+user_number = input('введите число')
+
+# обработка
+i = cuantity = len(user_number)
+number = int(user_number)
+even = 0
+odd = 0
+
+while i != 0:
+    # print(number)
+    test = number % 2
+    if test == 0:
+        even = even +1
+    else:
+        odd = odd +1
+    number = number // 10
+    i = i - 1
+
+# вывод
+print(f'В числе {user_number} всего {cuantity} цифр, из которых {even} чётных и {odd} нечётных' )
+
