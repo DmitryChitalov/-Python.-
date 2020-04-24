@@ -6,3 +6,26 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+
+
+import random
+import statistics
+
+
+size = int(input("Input first integer: "))
+orig_list = [random.randint(-100, 100) for _ in range(size+1)]
+
+
+10
+
+def median(nums):
+    half = len(nums) // 2
+    nums.sort()
+    if not len(nums) % 2:
+        return (nums[half - 1] + nums[half]) / 2
+    return nums[half]
+
+
+print('Исходный массив:', orig_list)
+print('Медиана:', median(orig_list[:]))
+print('Медиана statistics:', statistics.median(orig_list[:]))
