@@ -15,3 +15,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+USER_NUMBER = int(input('Введите число\n'))
+
+def recur(user_number, even=0, odd=0):
+    """я не понимю, почему оно работает по зеркальномиу"""
+
+    if user_number <= 0:
+        print(f'В вашем числе: \n\nчетных цифр: {even}\nнечётных {odd} ')
+        return 1
+    if user_number % 2:
+        return recur(user_number // 10, even, odd + 1)
+    else:
+        return recur(user_number // 10, even + 1, odd)
+
+
+recur(USER_NUMBER)
