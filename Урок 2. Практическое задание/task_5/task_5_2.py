@@ -17,3 +17,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+START = 33
+END = 127
+
+
+def recur(start, end):
+    """печаталка таблицы символов"""
+    if start == end + 1:
+        return ""
+    else:
+        print(f'{start} - {chr(start)}')
+        return recur(start + 1, end)
+
+
+print(recur(START, END))
