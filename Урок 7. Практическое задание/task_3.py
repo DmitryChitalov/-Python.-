@@ -32,12 +32,12 @@ def median_search1(arr):
         more_arr = []
 
         el = arr_func[i]
-        count = arr_func.count(el)
-        while el in arr_func:
-            arr_func.remove(el)
+        count = 0
 
         for j in arr_func:
-            if el > j:
+            if j == el:
+                count += 1
+            elif el > j:
                 less_arr.append(j)
             else:
                 more_arr.append(j)
