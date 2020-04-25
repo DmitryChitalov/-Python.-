@@ -11,7 +11,6 @@ from random import random
 
 # загдываем число
 R_NUMBER = int(random()*100)
-print(R_NUMBER)
 END = 10
 i = 1
 
@@ -34,7 +33,7 @@ while True:
             print("Ваше число больше загаднного\n")
             i = i + 1
         elif R_NUMBER > USER_NUMBER:
-            print("Ваше меньше загаднного\n")
+            print("Ваше число больше загаднного\n")
             i = i + 1
     else:
         print(f"Вы не угадали, число было {R_NUMBER}")
