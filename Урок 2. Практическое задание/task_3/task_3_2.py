@@ -14,3 +14,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+# ввод
+NUMBER = int(input('Введите число\n'))
+
+# определение
+def recur(number, digit=""):
+    """ тут какое-то описсание функции"""
+    if number == 0:
+        return digit
+    else:
+        digit = str(number % 10)
+        return digit + str(recur(number // 10))
+
+# поехали
+print(recur(NUMBER))
