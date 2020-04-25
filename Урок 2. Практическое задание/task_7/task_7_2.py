@@ -5,3 +5,28 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+# вводим n
+N = int(input('Введите число\n'))
+
+
+def sum_left(n, a=1):
+    """ cчитает прогрессию"""
+    if n == 1:
+        return a
+    else:
+        left = a + (n - 1) + sum_left(n - 1)
+        return left
+
+
+def checker(n):
+    """ сравнивает лево и право"""
+    right = int(n * (n + 1) / 2)
+    left = sum_left(n)
+    if left == right:
+        print(f'Все хорошо, все сошлось. Cлева : {left} Cправа: {right}')
+    else:
+        print(f'Все плохо, ничего не сходиться. Cлева : {left} Cправа: {right}')
+
+
+checker(N)

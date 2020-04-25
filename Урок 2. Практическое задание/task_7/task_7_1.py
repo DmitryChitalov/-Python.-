@@ -7,7 +7,7 @@
 """
 
 # вводим n
-n = 4
+n = int(input('Введите число\n'))
 LEFT_SUMM = 0
 i = 1
 
@@ -25,4 +25,4 @@ RIGHT = int(n * (n + 1) / 2)
 if LEFT_SUMM == RIGHT:
     print(f'Все хорошо, все сошлось. Cлева : {LEFT_SUMM} Cправа: {RIGHT}')
 else:
-    print(f'Все хорошо, не  сошлось. Cлева : {LEFT_SUMM} Cправа: {RIGHT}')
+    print(f'Все плохо, не  сошлось. Cлева : {LEFT_SUMM} Cправа: {RIGHT}')
