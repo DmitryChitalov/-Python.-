@@ -9,3 +9,25 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+import random
+
+
+def bubble_sort(orig_list):
+    n = 1
+    while n < len(orig_list):
+        is_sorted = True
+        for i in range(len(orig_list)-n):
+            if orig_list[i] < orig_list[i+1]:
+                orig_list[i + 1], orig_list[i] = orig_list[i], orig_list[i+1]
+                is_sorted = False
+
+        if is_sorted:
+            break
+
+        n += 1
+    return orig_list
+
+
+or_list = [random.randint(-100, 100) for _ in range(10)]
+print(f'Изначальный список - {or_list}')
+print(f'Отсортированныый список - {bubble_sort(or_list)}')
