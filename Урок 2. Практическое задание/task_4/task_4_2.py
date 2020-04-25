@@ -8,3 +8,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+N = int(input('Введите число\n'))
+
+
+def recur(number):
+    """ считает сумму яда чисел: 1 -0.5 0.25 -0.125 ..."""
+    if number == 1:
+        summ = 1
+        return summ
+    else:
+        divider = -1 / 2
+        summ = 1 + (recur(number - 1) * divider)
+        return summ
+
+
+print(recur(N))
