@@ -10,3 +10,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMBERS = int(input('Введите количество чисел: '))
+MAX_NUM = 0
+NUM_3 = 0
+while NUMBERS != 0:
+    NUM = int(input('Введите очередное число: '))
+    if NUM > NUM_3:
+        NUM_3 = NUM
+    SUM_NUM = 0
+    while NUM != 0:
+        NUM_1 = NUM % 10
+        SUM_NUM += NUM_1
+        NUM = NUM // 10
+    if MAX_NUM < SUM_NUM:
+        MAX_NUM = SUM_NUM
+    NUMBERS -= 1
+
+print(f'Наибольшее число по сумме цифр: {NUM_3}, сумма его цифр: {MAX_NUM}')

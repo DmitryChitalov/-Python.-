@@ -12,3 +12,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUM = int(input('Введите число: '))
+NUM_1 = NUM
+EVEN = 0
+UNEVEN = 0
+while NUM != 0:
+    REMAINDER = NUM % 10
+    if REMAINDER % 2 == 0:
+        EVEN += 1
+    else:
+        UNEVEN += 1
+    NUM = NUM // 10
+
+print(f'В числе {NUM_1} всего {EVEN + UNEVEN} цифр, из которых {EVEN} чётных и {UNEVEN} нечётных.')
+
+

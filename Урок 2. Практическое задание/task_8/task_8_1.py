@@ -12,3 +12,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMBERS = int(input('Сколько будет чисел? - '))
+WHAT_NUM = int(input('Какую цифру считать? - '))
+TOTAL = 0
+while NUMBERS != 0:
+    NUM = int(input('Введите очередное число: '))
+    while NUM != 0:
+        NUM_1 = NUM % 10
+        if NUM_1 == WHAT_NUM:
+            TOTAL += 1
+        NUM = NUM // 10
+    NUMBERS -= 1
+
+print(f'Было введено {TOTAL} цифр "{WHAT_NUM}"')

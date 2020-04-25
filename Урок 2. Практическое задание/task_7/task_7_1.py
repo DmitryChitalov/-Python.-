@@ -5,3 +5,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMBER = int(input('Введите число: '))
+SUM_NUM = 0
+DIVISION = int(NUMBER * (NUMBER + 1) / 2)
+while NUMBER != 0:
+    SUM_NUM += NUMBER
+    NUMBER -= 1
+print(f'Если {SUM_NUM} = {DIVISION}, значит, для множества натуральных '
+      f'чисел выполняется равенство: 1+2+...+n = n(n+1)/2, где n - любое натуральное число.')

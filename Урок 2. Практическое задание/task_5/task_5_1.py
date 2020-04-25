@@ -17,3 +17,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+n = 32
+while n >= 32 and n <= 127:
+    if n == 41 or n == 51 or n == 61 or n == 71 or n == 81 or n == 91 or n == 101 or n == 111 or n == 121:
+        print(f'{n} - {chr(n)}', end='\n')
+    else:
+        print(f'{n} - {chr(n)}', end=' ')
+    n += 1
+
+

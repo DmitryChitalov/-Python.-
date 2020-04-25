@@ -8,3 +8,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def sum_numbers(n, m, s):
+    n_1 = n
+    if n == 0:
+        return f'Количество элементов - {n_1}, их сумма - {s}'
+    else:
+
+        return sum_numbers(n - 1, m / -2, s + m)
+
+print(sum_numbers(4, 1, 0))

@@ -14,3 +14,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def turn(num, num_1):
+    if num == 0:
+        return f'Перевернутое число: {num_1}'
+    else:
+        num_2 = num % 10
+        return turn(num // 10, str(num_1) + str(num_2))
+
+print(turn(96321, ''))
+

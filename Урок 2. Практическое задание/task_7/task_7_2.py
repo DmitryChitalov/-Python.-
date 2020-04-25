@@ -5,3 +5,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def func(num, sum, div):
+    div_1 = int(div * (div + 1) / 2)
+    if num == 0:
+        return f'Если {sum} = {div_1}, значит, равенство выполняется : 1+2+...+n = n(n+1)/2'
+    else:
+        return func(num - 1, sum + num, div)
+
+print(func(4, 0, 4))

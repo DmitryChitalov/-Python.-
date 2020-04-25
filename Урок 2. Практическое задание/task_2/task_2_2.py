@@ -15,3 +15,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def ev_unev(num, ev, unev):
+    if num == 0:
+        return f'Количество четных и нечетных цифр в числе равно: {ev}, {unev}'
+    else:
+        a = num % 10
+        if a % 2 == 0:
+            ev += 1
+        else:
+            unev += 1
+        return ev_unev(num // 10, ev, unev)
+
+print(ev_unev(77777, 0, 0))
