@@ -28,4 +28,3 @@ while i > 0:
     i = i - 1
 # выводим результат
 print(NUMBER)
-
