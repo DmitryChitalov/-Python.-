@@ -16,3 +16,44 @@
 
 Итог: 6 подстрок
 """
+
+# импортируем требуемый модуль
+import hashlib
+
+# вводим исходную строку
+SOURCE_STR = 'papa'
+
+# создаем множество для хеш-функций подстрок,
+# а также для хранения самих подстрок
+HASH_SET = set()
+SUBS_SET = set()
+
+# создаем основной цикл для прохода строки
+for i in range(len(SOURCE_STR)):
+    # создаем вложенный цикл для поиска подстроки
+    for j in range(i+1, len(SOURCE_STR)+1):
+        # находим подстроку в разрезе от i до j
+        SUB_STR = SOURCE_STR[i:j]
+        # вычисляем хеш и добавляем во множество
+        HASH_SET.add(hashlib.sha1(SUB_STR.encode('utf-8')).hexdigest())
+        # добавляем подстроку во второе множество
+        SUBS_SET.add(SUB_STR)
+
+# не знаю корректно ли, но исходная строка попадает в выборку,
+# т.е. подстрока вида SOURCE_STR[::], которая в тоже время
+# является исходной.
+
+# В данном случае, можно просто удалить ее из множеств:
+HASH_SET.remove(hashlib.sha1(SOURCE_STR.encode('utf-8')).hexdigest())
+SUBS_SET.remove(SOURCE_STR)
+
+# далее идет вывод
+print(f'Строка: {SOURCE_STR}\n')
+
+print('Подстроки:')
+for el in SUBS_SET:
+    print(el)
+
+print(f'\nИтог: {len(HASH_SET)}')
+
+
