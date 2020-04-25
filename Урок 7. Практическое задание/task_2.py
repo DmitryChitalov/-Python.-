@@ -53,3 +53,5 @@ try:
                             number=number)) + ' seconds\n')
 except ValueError as err:
     print(f'Error: Invalid number.\n{err}')
+
+n = 2
