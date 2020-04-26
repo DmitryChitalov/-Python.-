@@ -32,3 +32,34 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+OPER_SING = ["+", "-", "*", "/"]
+NUMB_1 = int(input('Введите первое число: '))
+NUMB_2 = int(input('Введите первое число: '))
+OPER_SING_USER = input('Ведите знак операции("+" "-" "*" "/") или "0" для выхода: ')
+while OPER_SING_USER != "0":
+    if OPER_SING_USER in OPER_SING:
+        if OPER_SING_USER == "+":
+            print(f'результат: {NUMB_1 + NUMB_2}')
+            NUMB_1 = NUMB_1 + NUMB_2
+        elif OPER_SING_USER == "-":
+            print(f'результат: {NUMB_1 - NUMB_2}')
+            NUMB_1 = NUMB_1 - NUMB_2
+        elif OPER_SING_USER == "*":
+            print(f'результат: {NUMB_1 * NUMB_2}')
+            NUMB_1 = NUMB_1 * NUMB_2
+        elif OPER_SING_USER == "/":
+            if NUMB_2 == 0:
+                print('На 0 делить нельзя')
+                NUMB_2 = int(input('Введите число отличное от 0: '))
+                print(f'результат: {NUMB_1 / NUMB_2}')
+                NUMB_1 = NUMB_1 / NUMB_2
+            else:
+                print(f'результат: {NUMB_1 / NUMB_2}')
+                NUMB_1 = NUMB_1 / NUMB_2
+    else:
+        print('Вы ввели неправильный знак операции. Попробуйте снова.')
+    OPER_SING_USER = input('Какую будем выполнять операцию далее("+" "-" "*" "/") или нажмите "0" для выхода: ')
+    if OPER_SING_USER == '0':
+        break
+    NUMB_2 = int(input('Введите следующее число: '))
+print(f'Спасибо за выбор нашего програмного обеспечения. Конечный результат {NUMB_1}')

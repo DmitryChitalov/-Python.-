@@ -17,3 +17,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMB = 32
+
+while NUMB <= 127:
+    RESULT = ''
+    ITER = NUMB + 10
+    while NUMB <= 127 and NUMB < ITER:
+         RESULT = RESULT + f'{NUMB} - {chr(NUMB)} '
+         NUMB += 1
+    print(RESULT)

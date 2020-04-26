@@ -17,3 +17,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(NUMB, ITER):
+    if NUMB > 127:
+        return print('END')
+    elif ITER % 10 != 0:
+        print(f'{NUMB} - {chr(NUMB)} ', end='')
+        recursion(NUMB + 1, ITER + 1)
+    else:
+        print(f'{NUMB} - {chr(NUMB)}')
+        recursion(NUMB + 1, ITER + 1)
+
+
+recursion(32, 1)

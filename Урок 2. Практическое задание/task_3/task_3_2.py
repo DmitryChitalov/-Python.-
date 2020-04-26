@@ -14,3 +14,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(NUMB, NUMB_TURN):
+    if len(str(NUMB)) == 1 and NUMB == 0:
+        print(f'Результат - {NUMB_TURN}')
+    else:
+        return recursion(NUMB // 10, (NUMB_TURN * 10) + NUMB % 10)
+
+NUMB = int(input('Ведите целое число: '))
+print(recursion(NUMB, 0))

@@ -12,3 +12,9 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMB_USER = int(input('Введите натуральное число: '))
+RESULT = 0
+while NUMB_USER > 0:
+    RESULT = NUMB_USER % 10 + RESULT * 10
+    NUMB_USER = NUMB_USER // 10
+print(f'Исходное число - {NUMB_USER}, перевернутое число - {RESULT}')

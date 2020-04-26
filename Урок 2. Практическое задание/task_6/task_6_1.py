@@ -7,3 +7,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import random
+
+NUMB = int(random() * 100)
+print(NUMB)
+ITER = 10
+NUMB_USER = int(input('Попробуйте отгадать число от 0 до 100: '))
+while ITER > 0:
+    if NUMB_USER == NUMB:
+        print(f'Вы отгадали число {NUMB}')
+        break
+    elif NUMB_USER > NUMB:
+        NUMB_USER = int(input(f'Загаданное число меньше {NUMB_USER}. Попробуйте снова: '))
+        ITER -= 1
+    else:
+        NUMB_USER = int(input(f'Загаданное число больше {NUMB_USER}. Попробуйте снова: '))
+        ITER -= 1
+print(f'Попытки закончились. Вы проиграли. Загаданное число: {NUMB}')

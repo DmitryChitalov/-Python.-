@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+N = int(input('Введите количество элекментов: '))
+NUMB = 1
+PRIMERY = N
+RESULT = 1
+if N == 1:
+    print(f'Количесвто элементов - 1, их сумма - 1 ')
+else:
+    while N > 1:
+        RESULT = RESULT + (NUMB /(-2))
+        NUMB = NUMB /(-2)
+        N -= 1
+    print(f'Количество элементов - {PRIMERY}, их сумма - {RESULT}')

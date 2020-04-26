@@ -12,3 +12,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(COUNT, NUMBER, ITER, RESULT):
+    if COUNT == 0:
+        return print(f'Было введено {RESULT} цифр {NUMBER}')
+    else:
+        NUMB = int(input(f'Введите число №{ITER}: '))
+        while NUMB > 0:
+            if NUMB % 10 == NUMBER:
+                RESULT += 1
+                NUMB = NUMB // 10
+            else:
+                NUMB = NUMB // 10
+        return recursion(COUNT - 1, NUMBER, ITER + 1, RESULT)
+
+COUNT_NUMB = int(input('Введите количество чисел: '))
+NUMBER_USER = int(input('Введите количество какой цифры посчитать: '))
+recursion(COUNT_NUMB, NUMBER_USER, 1, 0)

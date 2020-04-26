@@ -7,3 +7,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+from random import random
+
+
+def recursion(NUMB, N):
+    if N <= 10:
+        NUMB_USER = int(input('Попробуй угадать число от 0 до 100: '))
+        if NUMB_USER > NUMB:
+            print('Загаданное число меньше')
+            return recursion(NUMB, N + 1)
+        elif NUMB_USER < NUMB:
+            print('Загаданное число больше')
+            return recursion(NUMB, N + 1)
+        else:
+            return print(f'Вы отгадали загаданное число {NUMB}')
+    else:
+        return print(f'Вы проиграли. Загаданное число - {NUMB}')
+
+NUMB = int(random() * 100)
+print(NUMB) # это для тестирования
+
+recursion(NUMB, 1)

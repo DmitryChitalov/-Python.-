@@ -15,3 +15,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(NUMB, EVEN, ODD):
+    if len(str(NUMB)) == 1 and NUMB == 0:
+        return print(f'четных - {EVEN}, нечетных - {ODD}')
+    else:
+        if (NUMB % 10) % 2 == 0:
+            return recursion(NUMB // 10, EVEN + 1, ODD)
+        else:
+            return recursion(NUMB // 10, EVEN, ODD + 1)
+
+
+NUMB = int(input('Ведите натуральное число: '))
+print(recursion(NUMB, 0, 0))

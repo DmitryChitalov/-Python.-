@@ -33,3 +33,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+# Я знаю, что это обычное решение через функцию, через рекурсию ещё не получилось
+
+def recursion(NUMB_1, NUMB_2, OPER_SING_USER):
+    if OPER_SING_USER == 0:
+        return print("Вы вышли. Спасибо за использование нашего ПО")
+    elif OPER_SING_USER == "+":
+        return print(f'{NUMB_1 + NUMB_2}')
+    elif OPER_SING_USER == "-":
+        return print(f'{NUMB_1 - NUMB_2}')
+    elif OPER_SING_USER == "*":
+        return print(f'{NUMB_1 * NUMB_2}')
+    elif OPER_SING_USER == "/":
+        return print(f'{NUMB_1 / NUMB_2}')
+
+OPER_SING = ["+", "-", "*", "/"]
+NUMB_1 = int(input('Введите первое число: '))
+NUMB_2 = int(input('Введите первое число: '))
+SING_USER = input('Ведите знак операции("+" "-" "*" "/") или "0" для выхода: ')
+if SING_USER in OPER_SING:
+    OPER_SING_USER = SING_USER
+else:
+    print('Вы ввели неправильный знак операции. Попробуйте снова.')
+    SING_USER = input('Какую будем выполнять операцию далее("+" "-" "*" "/") или нажмите "0" для выхода: ')
+print(recursion(NUMB_1, NUMB_2, OPER_SING_USER))

@@ -10,3 +10,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(COUNT, ITER=1, NUMB_1=0):
+    if COUNT == 0:
+        return print(f'Максимальное из введенных: {NUMB_1}')
+    else:
+        NUMB_2 = int(input(f'Введите число №{ITER}: '))
+        return (recursion(COUNT - 1, ITER + 1, NUMB_2)) if NUMB_2 > NUMB_1 else (recursion(COUNT - 1, ITER + 1, NUMB_1))
+
+COUNT_NUMB = int(input('Введите количество чисел: '))
+recursion(COUNT_NUMB)

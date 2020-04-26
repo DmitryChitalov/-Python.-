@@ -10,3 +10,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+COUNT_NUMB = int(input('Введите количество чисел для сравнения: '))
+NUMB_1 = 0
+while COUNT_NUMB > 0:
+    NUMB_2 = int(input('Введите очередное число: '))
+    if NUMB_2 > NUMB_1:
+        NUMB_1 = NUMB_2
+        COUNT_NUMB -= 1
+    else:
+        COUNT_NUMB -= 1
+print(f'Максимальное из введенных: {NUMB_1}')
