@@ -12,3 +12,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+QUANTITY = int(input("Сколько будет чисел? - "))
+FIGURE = int(input("Какую цифру считать? - "))
+COUNT = 0
+for i in range(1, QUANTITY + 1):
+    NUM = int(input(f"Число {i}: "))
+    if NUM % 10 == FIGURE:
+        COUNT += 1
+    NUM = NUM // 10
+
+print(f"Было введено {COUNT} цифр {FIGURE}")

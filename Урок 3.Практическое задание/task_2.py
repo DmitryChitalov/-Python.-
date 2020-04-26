@@ -10,3 +10,9 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+START_LIST = [8, 3, 15, 6, 4, 2]
+FINISH_LIST = []
+for i in range(len(START_LIST)):
+   if START_LIST[i] % 2 == 0:
+       FINISH_LIST.append(i)
+print(FINISH_LIST)

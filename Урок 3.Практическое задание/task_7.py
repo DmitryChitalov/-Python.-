@@ -7,3 +7,14 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+from random import randint
+LIST = []
+N = int(input("Введите количество элементов в массиве: "))
+for i in range(N):
+    LIST.append(randint(-10, 10))
+print(LIST)
+LIST.sort()
+first_min = LIST[0]
+second_min = LIST[1]
+COUNT = LIST.count(LIST[0])
+print(f'Наименьший элемент: {first_min}, встречается в массиве {COUNT} раз(а). Второй наименьший элемент: {second_min}')

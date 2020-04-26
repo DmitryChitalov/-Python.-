@@ -7,3 +7,26 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+number = random.randint(0,100)
+count = 0
+max_count = 10
+
+while True:
+    if count < max_count:
+        print(f"У вас {max_count} попыток, чтобы угадать число. Попытка №{count+1}")
+        user_number = int(input("Введите число: "))
+        if user_number < number:
+            print("Ваше число меньше загаданного.")
+            count += 1
+
+        elif user_number > number:
+            print("Ваше число больше загаданного.")
+            count += 1
+
+        else:
+            print("Поздравляю! Вы победили!")
+            break
+    else:
+        print(f"Попыток больше нет. Вы проиграли. Загаданное число {number}")
+        break
