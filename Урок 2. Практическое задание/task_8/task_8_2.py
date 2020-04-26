@@ -12,3 +12,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def dig_count(n, digit, count):
+    if n == 0:
+        return print(f"Было введено {count} цифр(а/ы) '{digit}'.")
+    number = int(input(f"Число: "))
+    while number > 0:
+        if number % 10 == digit:
+            count += 1
+        number //= 10
+    return dig_count(n-1, digit, count)
+try:
+    n = int(input("Сколько будет чисел? -  "))
+    digit = int(input("Какую цифру считать? -  "))
+    dig_count(n, digit, 0)
+except ValueError:
+    print("Неправильный ввод данных.")

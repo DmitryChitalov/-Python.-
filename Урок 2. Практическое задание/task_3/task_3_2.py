@@ -14,3 +14,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def invert_number(number, inverted_number):
+    """A function that inverts the given number."""
+    if number == 0:
+        return print(f"Перевернутое число: {inverted_number}")
+    return invert_number(number // 10, inverted_number * 10 + number % 10)
+
+try:
+    number = int(input("Введите число: "))
+    invert_number(number, 0)
+except ValueError:
+    print("Неправильный ввод данных.")

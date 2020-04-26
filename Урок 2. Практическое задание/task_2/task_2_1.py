@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+try:
+    NUMBER = int(input("Введите натуральное число: "))
+    if NUMBER <= 0:
+        print("Вы ввели ненатуральное число")
+    else:
+        N = NUMBER
+        EVEN = 0
+        ODD = 0
+        while N > 0:
+            if N % 2 == 0:
+                EVEN += 1
+            else:
+                ODD += 1
+            N //= 10
+        print(f"В числе {NUMBER} всего {EVEN + ODD} цифр(ы), из которых {EVEN} четных и {ODD} нечетных.")
+except ValueError:
+    print("Неправильный ввод данных.")

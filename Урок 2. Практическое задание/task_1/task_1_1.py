@@ -32,3 +32,34 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+
+def calculator():
+    """A function that executes simple arithmetic operations"""
+    while True:
+        operation = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+        if operation == "0":
+            print("Вы вышли из программы")
+            break
+        if operation == "+" or operation == "-" or operation == "*" or operation == "/":
+            try:
+                A = float(input("Введите первое число: "))
+                B = float(input("Введите второе число: "))
+                if operation == "+":
+                    print(f"{A} + {B} = {A + B}")
+                elif operation == "-":
+                    print(f"{A} - {B} = {A - B}")
+                elif operation == "*":
+                    print(f"{A} * {B} = {A * B}")
+                else:
+                    try:
+                        print(f"{A} / {B} = {round(A / B, 2)}")
+                    except ZeroDivisionError:
+                        print("На ноль делить нельзя.")
+            except ValueError:
+                print("Вы ввели не число. Попробуйте еще раз.")
+        else:
+            print("Вы неправильно ввели операцию. Попробуйте снова.")
+
+calculator()

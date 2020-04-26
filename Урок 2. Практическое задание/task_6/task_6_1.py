@@ -7,3 +7,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+from random import random
+print("Компьютер загадал число от 0 до 100. Попробуйте угадать его за 10 попыток.")
+try:
+    NUMBER = int(random()*100)
+    TRY_COUNT = 1
+    while TRY_COUNT <= 10:
+        USER_NUMBER = int(input(f"Попытка {TRY_COUNT}. Ваше число: "))
+        if USER_NUMBER == NUMBER:
+            print(f"Ура! Вы отгадали число за {TRY_COUNT} попыток!")
+            break
+        if USER_NUMBER > NUMBER:
+            print("Ваше число больше загаданного.")
+        else:
+            print("Ваше число меньше загаданного.")
+        TRY_COUNT += 1
+    else:
+        print(f"Увы, вы програли. Загаданное число {NUMBER}.")
+except ValueError:
+    print("Вы ввели не число.")

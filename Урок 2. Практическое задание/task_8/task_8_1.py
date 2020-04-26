@@ -12,3 +12,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    N = int(input("Сколько будет чисел? -  "))
+    DIGIT = int(input("Какую цифру считать? -  "))
+    COUNT = 0
+    for i in range(1, N+1):
+        NUMBER = int(input(f"Число {i}: "))
+        while NUMBER > 0:
+            if NUMBER % 10 == DIGIT:
+                COUNT += 1
+            NUMBER //= 10
+    print(f"Было введено {COUNT} цифр(а/ы) '{DIGIT}'.")
+except ValueError:
+    print("Неправильный ввод данных.")

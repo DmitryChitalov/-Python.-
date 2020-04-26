@@ -5,3 +5,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def sum(n):
+    if n == 0:
+        return 0
+    return n + sum(n-1)
+try:
+    n = int(input("Введите n: "))
+    print(f"Левая часть 1+2+...+n = {sum(n)} равна правой n(n+1)/2 = {round(n*(n+1)/2)}.")
+except ValueError:
+    print("Вы ввели не число!")

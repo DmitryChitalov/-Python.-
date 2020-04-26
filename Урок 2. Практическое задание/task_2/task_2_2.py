@@ -15,3 +15,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def numbers_count(number, even, odd):
+    if number == 0:
+        return print(f"В числе всего {even + odd} цифр(ы), из которых {even} четных и {odd} нечетных.")
+    if number % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+    return numbers_count(number // 10, even, odd)
+
+try:
+    number = int(input("Введите натуральное число: "))
+    if number <= 0:
+        print("Вы ввели ненатуральное число")
+    else:
+        even = 0
+        odd = 0
+        numbers_count(number, even, odd)
+except ValueError:
+    print("Неправильный ввод данных.")

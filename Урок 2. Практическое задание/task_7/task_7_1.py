@@ -5,3 +5,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+# вариант 1 через цикл for
+try:
+    N = int(input("Введите n: "))
+    SUM = 0
+    for i in range(1, N+1):
+        SUM += i
+    print(f"Левая часть 1+2+...+n = {SUM} равна правой n(n+1)/2 = {round(N*(N+1)/2)}.")
+except ValueError:
+    print("Вы ввели не число!")
+
+# Вариант 2 через цикл while
+try:
+    N = int(input("Введите n: "))
+    RIGHT = round(N*(N+1)/2)
+    LEFT = 0
+    while N > 0:
+        LEFT += N
+        N -= 1
+    print(f"Левая часть 1+2+...+n = {LEFT} равна правой n(n+1)/2 = {RIGHT}.")
+except ValueError:
+    print("Вы ввели не число!")

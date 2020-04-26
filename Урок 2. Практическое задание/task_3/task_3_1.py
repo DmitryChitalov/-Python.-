@@ -12,3 +12,28 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+# вариант 1
+
+try:
+    NUMBER = int(input("Введите число: "))
+    INVERTED_NUMBER = ''
+    while NUMBER > 0:
+        N = NUMBER % 10
+        NUMBER = NUMBER // 10
+        INVERTED_NUMBER += str(N)
+    print(f"Перевернутое число: {int(INVERTED_NUMBER)}")
+except ValueError:
+    print("Неправильный ввод данных.")
+
+# вариант 2
+
+try:
+    NUMBER = int(input("Введите число: "))
+    INVERTED_NUMBER = 0
+    while NUMBER > 0:
+        INVERTED_NUMBER = INVERTED_NUMBER * 10 + NUMBER % 10
+        NUMBER = NUMBER // 10
+    print(f"Перевернутое число: {INVERTED_NUMBER}.")
+except ValueError:
+    print("Неправильный ввод данных.")

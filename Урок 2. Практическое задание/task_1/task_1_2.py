@@ -33,3 +33,35 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def calculator():
+    """A function that executes simple arithmetic operations"""
+    operation = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+    if operation == "0":
+        print("Вы вышли из программы")
+        return
+    # опустила else после return
+    if operation in ("+", "-", "*", "/"):
+        # Использовала список, чтобы было короче, чем
+        # if operation == "+" or operation == "-" or operation == "*" or operation == "/":
+        try:
+            A = float(input("Введите первое число: "))
+            B = float(input("Введите второе число: "))
+            if operation == "+":
+                print(f"{A} + {B} = {A + B}")
+            elif operation == "-":
+                print(f"{A} - {B} = {A - B}")
+            elif operation == "*":
+                print(f"{A} * {B} = {A * B}")
+            else:
+                try:
+                    print(f"{A} / {B} = {round(A / B, 2)}")
+                except ZeroDivisionError:
+                    print("На ноль делить нельзя. Попробуйте снова.")
+        except ValueError:
+            print("Вы ввели не число. Попробуйте еще раз.")
+    else:
+        print("Вы неправильно ввели операцию. Попробуйте еще раз.")
+    calculator()
+
+calculator()
