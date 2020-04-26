@@ -10,17 +10,7 @@
 
 from random import randint
 from copy import deepcopy
-
-try:
-    m = int(input('Введите m: '))
-except ValueError as err:
-    print('Ошибка. неверное значение m')
-    print(err)
-    print('Взято значение по умолчанию m = 10\n')
-    m = 10
-
-input_arr = [randint(0, 100) for i in range(0, 2 * m + 1)]
-print(f'Исходный массив: {input_arr}\n')
+from timeit import timeit
 
 
 # Решение без сортировки
@@ -45,11 +35,6 @@ def median_search1(arr):
         if abs(len(less_arr) - len(more_arr)) == count - 1:
             median = el
             return median
-
-
-print('# Решение без сортировки:')
-median1 = median_search1(input_arr)
-print(f'Медиана исходного массива - {median1}')
 
 
 # Решение с сортировкой
@@ -77,10 +62,41 @@ def median_search2(arr):
     return median
 
 
+try:
+    m = int(input('Введите m: '))
+except ValueError as err:
+    print('Ошибка. неверное значение m')
+    print(err)
+    print('Взято значение по умолчанию m = 10\n')
+    m = 10
+
+input_arr = [randint(0, 100) for i in range(0, 2 * m + 1)]
+print(f'Исходный массив: {input_arr}\n')
+
+number = 1000
+
+print('# Решение без сортировки:')
+median1 = median_search1(input_arr)
+print(f'Медиана исходного массива - {median1}\n')
+print(f'Время выполнени с number = {number}:')
+print("\033[31m{}\033[0m".format('Please wait...'), end='')
+print('\r' + str(timeit(f"median_search1(input_arr)",
+                        setup=f"from __main__ import median_search1, input_arr",
+                        number=number)) + ' seconds\n')
+
+print('####################################################')
+
 print('# Решение с сортировкой:')
 median2 = median_search2(input_arr)
-print(f'Медиана исходного массива - {median2}')
+print(f'Медиана исходного массива - {median2}\n')
+print("\033[31m{}\033[0m".format('Please wait...'), end='')
+print('\r' + str(timeit(f"median_search2(input_arr)",
+                        setup=f"from __main__ import median_search2, input_arr",
+                        number=number)) + ' seconds\n')
 
-
+"""
+Как видно из результатов, вариант решения с сортировкой выполняется быстрее. Это связанно с тем, что у варианта решения
+без сортировки сложность О(n^2), а у вариант с сортировкой О(n log n).
+"""
 
 
