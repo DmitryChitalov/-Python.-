@@ -33,3 +33,64 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def f_number():
+    """тут вводятся числа"""
+    while True:
+        try:
+            number = float(input('Введите число 1\n'))
+            break
+        except ValueError:
+            print('Вы вводите что-то не то попробуйте еще раз\n')
+    return number
+
+
+def f_operation():
+    """ калькулятор"""
+    while True:
+        user_operation = input('Введите операцию (+, -, *, / или 0 для выхода\n')
+
+        if user_operation not in ('+', '-', '*', '/', '0'):
+            print('Вы вводите что-то не то попробуйте еще раз\n')
+        return user_operation
+
+
+def calc():
+    """ главная считалка"""
+    operation = f_operation()
+
+    if operation != '0':
+        # 1 цифра
+        number_1 = f_number()
+        # 2 цифра
+        number_2 = f_number()
+
+        # математика
+        if operation == '+':
+            result = number_1 + number_2
+        elif operation == '-':
+            result = number_1 - number_2
+        elif operation == '*':
+            result = number_1 * number_2
+        elif operation == '/':
+            while True:
+                try:
+                    result = number_1 / number_2
+                    break
+                except ZeroDivisionError:
+                    print("на ноль делить нелья попробуйте еще раз")
+                    while True:
+                        try:
+                            number_2 = float(input('Введите число 2\n'))
+                            break
+                        except ValueError:
+                            print('Вы вводите что-то не то попробуйте еще раз\n')
+        print(f'результат: {result}')
+        calc()
+    else:
+        return
+
+
+# поехали
+calc()
