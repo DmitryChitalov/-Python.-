@@ -4,3 +4,22 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+import sys
+
+try:
+    VAL1 = int(input('Введите первое число : '))
+    VAL2 = int(input('Введите второе число : '))
+    VAL3 = int(input('Введите третье число : '))
+
+    if VAL1 == VAL2 == VAL3:
+        print('Числа одинаковые.')
+        sys.exit(1)
+
+    if VAL2 < VAL1 < VAL3 or VAL3 < VAL1 < VAL2:
+        print(f"{VAL1} является средним числом")
+    elif VAL1 < VAL2 < VAL3 or VAL3 < VAL2 < VAL1:
+        print(f"{VAL2} является средним числом")
+    else:
+        print(f"{VAL3} является средним числом")
+except ValueError:
+    print('Введите число. Попробуйте еще раз.')

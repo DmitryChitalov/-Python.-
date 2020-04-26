@@ -13,3 +13,19 @@ k – угловой коэффициент (действительное чис
 X1_VAL = 2, Y1_VAL = 3, X2_VAL = 4, Y2_VAL = 5
 Уравнение прямой, проходящей через эти точки: y = 1.0x + 1.0
 """
+
+try:
+    VAL_XA = int(input('Введите значение координаты X точки A : '))
+    VAL_YA = int(input('Введите значение координаты Y точки A : '))
+    VAL_XB = int(input('Введите значение координаты X точки B : '))
+    VAL_YB = int(input('Введите значение координаты Y точки B : '))
+
+    try:
+        VAL1 = (VAL_YB - VAL_YA) / (VAL_XB - VAL_XA)
+        VAL2 = VAL_YB - VAL1 * VAL_XB
+
+        print(f"Уравнение прямой, проходящей через эти две точки : y = {VAL1}x + {VAL2}")
+    except ZeroDivisionError:
+        print("Попытка деления на ноль!")
+except ValueError:
+    print("Введите число. Попробуйте еще раз.")
