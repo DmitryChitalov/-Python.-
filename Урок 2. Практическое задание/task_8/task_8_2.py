@@ -13,39 +13,54 @@
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
 
-TOTAL = 3  # int(input('Введите сколько будет чисел \n'))
-NUMBER = 3  # int(input('Введите цифру, которо будем считать \n'))
-ROW = int("3")
+# ввод
+TOTAL = int(input('Введите сколько будет чисел \n'))
+NUMBER = int(input('Введите цифру, которо будем считать \n'))
 
 
-# def counter(row, number, coinsedence):
-#     """ситает количество цифер в ряд"""
-#     if len(str(row)) == 1:
-#         if int(row) == number:
-#             coinsedence += 1
-#             return coinsedence
-#         else:
-#             return coinsedence
-#     else:
-#         check = int(row % 10)
-#         if check == number:
-#             coinsedence += 1
-#             coinsedence = coinsedence + counter(row // 10, number)
-#             return coinsedence
-#         else:
-#             coinsedence = coinsedence + counter(row // 10, number)
-#             return coinsedence
+# cчиталка
+def counter(row, number, coinsedence=0):
+    """ситает количество цифер в ряд"""
+    if len(str(row)) == 1:
+        if row == number:
+            coinsedence += 1
+            return coinsedence
+        else:
+            return coinsedence
+    else:
+        check = row % 10
+        if check == number:
+            coinsedence += 1
+            coinsedence = coinsedence + counter(row // 10, number)
+            return coinsedence
+        else:
+            coinsedence = coinsedence + counter(row // 10, number)
+            return coinsedence
 
 
-def row_maker(total, r_number=1):
+#  циклом
+# def row_maker(total, number=NUMBER, coinsedence=0, i=1):
+#     """делает ряды цифры"""
+#     while i <= total:
+#         row = int(input(f'введите число {i}: '))
+#         coinsedence = counter(row, number, coinsedence)
+#         i += 1
+#     return coinsedence
+
+#  рекурсией
+def row_maker(total, number=NUMBER, coinsedence=0, i=1):
     """делает ряды цифры"""
-    while r_number <= total:
-        row = int(input(f"Введите число {r_number}: "))
-        print(row)
-        r_number += 1
-    return r_numbersssssssssssssssssssssssssssssssssssssssssssssss
+    if i == total:
+        row = int(input(f'введите число {i}: '))
+        coinsedence = counter(row, number, coinsedence)
+        return coinsedence
+    else:
+        row = int(input(f'введите число {i}: '))
+        coinsedence = counter(row, number, coinsedence)
+        coinsedence = row_maker(total, number, coinsedence, i + 1)
+        return coinsedence
 
-R_NUMBER = row_maker(TOTAL)
-print(f'{R_NUMBER-}')
 
-# print(f'Было введено {COINSEDENCE} цифры "{NUMBER}"')
+# поехали
+COINSEDENCE = row_maker(TOTAL)
+print(f'Было введено {COINSEDENCE} цифр "{NUMBER}"')
