@@ -4,6 +4,32 @@
 неудачной попытки должно сообщаться больше или меньше введенное пользователем
 число, чем то, что загадано. Если за 10 попыток число не отгадано,
 то вывести загаданное число.
-
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import random
+
+NUMBER_GENERATE = random.randint(0, 100)
+COUNT_TRY = 10
+print(f'Загадано число от 0 до 100. Попробуй с 10 попыток угадать какое число загадано!'
+      f'\r\nСледи за подсказками на экране!')
+while COUNT_TRY > 0:
+    print(f'Последняя попытка!') if COUNT_TRY == 1 else \
+        print(f'Количество оставшихся попыток {COUNT_TRY}')
+    try:
+        NUMBER = int(input("Какое число загадано?\r\n"))
+        if NUMBER < 0:
+            raise IOError
+    except (ValueError, TypeError, IOError):
+        print('Ошибка ввода. Загаданное число является целым и положительным.')
+    else:
+        if NUMBER < NUMBER_GENERATE:
+            print(f'Загаданное число больше, чем это число')
+        elif NUMBER > NUMBER_GENERATE:
+            print(f'Загаданное число меньше, чем это.')
+        elif NUMBER == NUMBER_GENERATE:
+            print(f'Превосходно! Вы угадали!')
+            break
+        COUNT_TRY -= 1
+else:
+    print(f'Эх, не угадали... но ничего, в следующий раз получится :)\r\nЗагаданное число: {NUMBER_GENERATE}')
