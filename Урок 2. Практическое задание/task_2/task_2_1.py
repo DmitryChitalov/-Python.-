@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+number = int(input("Введите натуральное число: "))
+num = number
+i = len(str(number))
+odd_digits = 0
+even_digits = 0
+while i > 0:
+    if ((number % 10) % 2) == 0:
+        even_digits += 1
+        number = number // 10
+    else:
+        odd_digits += 1
+        number = number // 10
+    i -= 1
+
+print("В числе", str(num), "всего", str(len(str(num))), "цифр, из которых",
+      str(even_digits), "чётных и", str(odd_digits), "нечётных")

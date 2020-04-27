@@ -32,3 +32,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+OPERATION = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+while OPERATION != "0":
+    if OPERATION == "+":
+        NUMB_1 = float(input("Введите первое число: "))
+        NUMB_2 = float(input("Введите второе число: "))
+        print("Результат", str(NUMB_1), "+", str(NUMB_2), "=", str(NUMB_1 + NUMB_2))
+    elif OPERATION == "-":
+        NUMB_1 = float(input("Введите первое число: "))
+        NUMB_2 = float(input("Введите второе число: "))
+        print("Результат", str(NUMB_1), "-", str(NUMB_2), "=", str(NUMB_1 - NUMB_2))
+    elif OPERATION == "*":
+        NUMB_1 = float(input("Введите первое число: "))
+        NUMB_2 = float(input("Введите второе число: "))
+        print("Результат", str(NUMB_1), "*", str(NUMB_2), "=", str(NUMB_1 * NUMB_2))
+    elif OPERATION == "/":
+        NUMB_1 = float(input("Введите первое число: "))
+        NUMB_2 = float(input("Введите второе число: "))
+        if NUMB_2 == 0:
+            print("На 0 делить нельзя, повторите ввод.")
+        else:
+            print("Результат", str(NUMB_1), "/", str(NUMB_2), "=", str(round(NUMB_1 / NUMB_2, 3)))
+    else:
+        print("Неверная операция. Повторите ввод")
+    OPERATION = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+#    NUMB_1 = input("Введите первое число: ")
+#    NUMB_2 = input("Введите второе число: ")

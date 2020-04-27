@@ -17,3 +17,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUM = 32
+for i in range(9):
+    for j in range(10):
+        print(str(NUM) + " - " + chr(NUM) + " ", end='')
+        NUM += 1
+    print()
+
+for i in range(6):
+    print(str(NUM) + " - " + chr(NUM) + " ", end='')
+    NUM += 1
+print()

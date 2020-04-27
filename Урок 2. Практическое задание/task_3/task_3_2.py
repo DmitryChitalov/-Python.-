@@ -14,3 +14,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def reverse_num(n):
+#    RVRS_NUM = ''
+    if (n // 10) == 0:
+        return str(n)
+    if (n // 10) > 0:
+#        RVRS_NUM = str(n % 10) reverse_num(n // 10)
+        return str(n % 10) + str(reverse_num(n // 10))
+
+num = int(input("Введите число, которое требуется перевернуть: "))
+print("Перевернутое число:", str(reverse_num(num)))
