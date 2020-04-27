@@ -9,6 +9,32 @@
 Число 1: 223
 Число 2: 21
 Было введено 1 цифр '3'
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+q = int(input('Сколько будет чисел? '))
+k = int(input('Какую цифру считать? '))
+s = 0
+i = 0
+
+
+def count_digits(n):
+    global s, k
+    if n == 0:
+        return s
+    else:
+        if n % 10 == k:
+            s = s + 1
+        n = n // 10
+    return count_digits(n)
+
+
+def recur(q):
+    global s, n, i, k
+    if q == 0:
+        return (f"Было введено {i} цифр {k}")
+    else:
+        n = int(input('Введите число: '))
+        i = count_digits(n)
+    return recur(q - 1)
+
+
+print(recur(q))
