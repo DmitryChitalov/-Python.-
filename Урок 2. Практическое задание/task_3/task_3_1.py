@@ -12,3 +12,9 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMBER_1 = int(input('Введите число: '))
+NUMBER_2 = 0
+while NUMBER_1 > 0:
+    NUMBER_2 = NUMBER_2 * 10 + NUMBER_1 % 10
+    NUMBER_1 //= 10
+print(NUMBER_2)

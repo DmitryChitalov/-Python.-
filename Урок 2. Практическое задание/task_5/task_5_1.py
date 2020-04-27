@@ -17,3 +17,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+i = 1
+for char in range(32,128):
+    if i % 10 == 0:
+        print(f'{char: 10}- {chr(char)}')
+    else:
+        print(f'{char: 10}- {chr(char)}', end=' ')
+    i += 1

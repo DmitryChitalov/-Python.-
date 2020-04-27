@@ -12,3 +12,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMBER_1 = int(input('Введите натуральное число: '))
+NUMBER = NUMBER_1
+EVEN = 0
+ODD = 0
+while NUMBER >=1:
+    NUM = NUMBER % 10
+    if NUM % 2 == 0:
+        EVEN += 1
+    else:
+        ODD += 1
+    NUMBER //= 10
+print(f'В числе {NUMBER_1} цифр: {EVEN} чётных и {ODD} нечётных')

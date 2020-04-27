@@ -8,3 +8,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+N = int(input('Введите количество элементов в ряду n: '))
+i = 1
+NUM_SUM = 0
+NUMBER = 1
+while i <= N:
+    NUM_SUM += NUMBER
+    NUMBER /= -2
+    i += 1
+print(NUM_SUM)

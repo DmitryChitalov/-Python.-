@@ -12,3 +12,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+A = int(input('Сколько будет чисел? '))
+B = int(input('Какую цифру считать? '))
+COUNT = 0
+i = 1
+while A != 0:
+    NUMBER = int(input(f'Число {i}: '))
+    while NUMBER > 0:
+        if NUMBER % 10 == B:
+            COUNT += 1
+        NUMBER //=10
+    A -= 1
+print(f'Было введено {COUNT} цифр {B}')

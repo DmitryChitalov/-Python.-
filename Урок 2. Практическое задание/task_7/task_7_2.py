@@ -5,3 +5,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def cal1_recur(N):
+    if N == 1:
+        return N
+    elif N > 0:
+        return N + cal1_recur(N - 1)
+
+
+def cal2_recur(N):
+    return N*(N + 1)//2
+
+
+n = int(input('Введите любое натуральное число: '))
+print(f'1+2+...+n = {cal1_recur(n)}, n(n+1)/2 = {cal2_recur(n)}')
