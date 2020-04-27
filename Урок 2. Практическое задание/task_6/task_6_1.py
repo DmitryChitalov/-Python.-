@@ -4,6 +4,22 @@
 неудачной попытки должно сообщаться больше или меньше введенное пользователем
 число, чем то, что загадано. Если за 10 попыток число не отгадано,
 то вывести загаданное число.
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+NUMBER = random.randint(0,100)
+ATTEMPT = 1
+while ATTEMPT < 11:
+    answer = int(input(f'{ATTEMPT}. Угадайте число от 1 до 100: '))
+    if answer == NUMBER:
+        print(f'Вы угадали, загаданное число: {NUMBER}')
+        break
+    elif answer > NUMBER:
+        print(f'Не угадали. Нужно число меньше')
+    elif answer < NUMBER:
+        print(f'Не угадали. Нужно число больше')
+    else:
+        print(f'Ошибка. Минус попытка.')
+    ATTEMPT+=1
+
+if answer != NUMBER:
+    print(f'Вы проиграли, загаданное число: {NUMBER}')

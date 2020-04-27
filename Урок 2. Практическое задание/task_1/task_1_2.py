@@ -30,6 +30,34 @@
 Введите первое число: вп
 Вы вместо трехзначного числа ввели строку (((. Исправьтесь
 Введите операцию (+, -, *, / или 0 для выхода):
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def zero_err():
+    number2 = int(input('Введите второе число (кроме 0):'))
+    if number2 == 0:
+        return zero_err()
+    return number2
+
+
+def recursion():
+    action = input('Введите операцию (+, -, *, / или 0 для выхода):')
+    if action == '0':
+        return
+    elif action in ('+', '-', '*'):
+        number1 = input('Введите первое число:')
+        number2 = input('Введите второе число:')
+        print(eval(number1 + action + number2))
+    elif action == '/':
+        number1 = int(input('Введите первое число:'))
+        print(number1 /zero_err())
+    else:
+        print('Ошибка! Введите на выбор +, -, *, / ')
+    return recursion()
+
+
+print(recursion())
+
+
+
+

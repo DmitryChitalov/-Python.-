@@ -9,6 +9,11 @@
 Пример:
 Введите число: 123
 Перевернутое число: 321
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMBER = input('Введите число:')
+UP_NUMBER=0
+
+for idx,el in enumerate(NUMBER):
+    UP_NUMBER+=int(el)*10**idx
+
+print(f'Перевернутое число: {UP_NUMBER}')

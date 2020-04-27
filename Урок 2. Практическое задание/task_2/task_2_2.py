@@ -12,6 +12,22 @@
 Пример:
 Введите число: 123
 Количество четных и нечетных цифр в числе равно: (1, 2)
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def remains(figure):
+    return int(figure) % 2
+
+
+def not_even(NUMBER):
+    if NUMBER == []:
+        return 0
+    return remains(NUMBER[0]) + not_even(NUMBER[1:])
+
+
+NUMBER = input('Введите натуральное число:')
+NUMBER1 = list(NUMBER)
+print(f'В числе {NUMBER} всего {len(NUMBER)} цифр, '
+      f'из которых {len(NUMBER1)-not_even(NUMBER1)} '
+      f'чётных и  {not_even(NUMBER1)} нечётных')
+
