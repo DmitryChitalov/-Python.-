@@ -14,6 +14,29 @@
 102 - f 103 - g 104 - h 105 - i 106 - j 107 - k 108 - l 109 - m 110 - n 111 - o
 112 - p 113 - q 114 - r 115 - s 116 - t 117 - u 118 - v 119 - w 120 - x 121 - y
 122 - z 123 - { 124 - | 125 - } 126 - ~ 127 - 
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+n = 32
+i = 0
+k = ''
+
+def p(n):
+    p = str(f"{n} - {chr(n)} ")
+    return p
+
+
+def recur(n):
+    global i, k
+    if n > 127:
+        return k
+    else:
+        if i < 10:
+            k = k + p(n)
+            i = i + 1
+        else:
+            print(k)
+            k = p(n)
+            i = 1
+        return recur(n + 1)
+
+
+print(recur(n))
