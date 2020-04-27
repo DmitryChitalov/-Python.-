@@ -32,14 +32,37 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
-a = 1
-while a != 0:
-    SIGN = input('Введите операцию (+, -, *, / или 0 для выхода)')
-    B = int(input('Введите первое число')
-    C = int(input(Введите первое число))
 
-    if SIGN == +:
-        D=B + C
+
+a = True
+while a == True:
+    SIGN = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+
+    if SIGN == '0':
+        print('EXIT')
+        a = False
+
+    elif SIGN == '+':
+        B = int(input('Введите первое число: '))
+        C = int(input('Введите первое число: '))
+        D = B + C
+        print(D)
+    elif SIGN == '-':
+        B = int(input('Введите первое число: '))
+        C = int(input('Введите первое число: '))
+        D = B - C
+        print(D)
+    elif SIGN == '*':
+        B = int(input('Введите первое число: '))
+        C = int(input('Введите первое число: '))
+        D = B * C
+        print(D)
+    elif SIGN == '/':
+        B = int(input('Введите первое число: '))
+        C = int(input('Введите первое число: '))
+        D = B / C
         print(D)
     else:
         print('Вы ввели неверный знак')
+
+

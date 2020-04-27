@@ -33,3 +33,38 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion_1():
+    SIGN = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+
+    if SIGN == '0':
+        print('EXIT')
+        
+
+    elif SIGN == '+':
+        B = int(input('Введите первое число: '))
+        C = int(input('Введите первое число: '))
+        D = B + C
+        print(D)
+    elif SIGN == '-':
+        B = int(input('Введите первое число: '))
+        C = int(input('Введите первое число: '))
+        D = B - C
+        print(D)
+    elif SIGN == '*':
+        B = int(input('Введите первое число: '))
+        C = int(input('Введите первое число: '))
+        D = B * C
+        print(D)
+    elif SIGN == '/':
+        B = int(input('Введите первое число: '))
+        C = int(input('Введите первое число: '))
+        D = B / C
+        print(D)
+    else:
+        print('Вы ввели неверный знак')
+    if SIGN != '0':
+        return recursion_1()
+
+
+
+recursion_1()

@@ -15,3 +15,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+# пытался оставить odd и even  в функции, но при вызове они зануляются
+def recursion_2(n, odd, even):
+    if n % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+    n = n//10
+    if n > 0:
+        return recursion_2(n, odd, even)
+    print(f"Чеnных цифр {even} и нечетных {odd}")
+
+
+n = int(input('Введите число: '))
+recursion_2(n, 0, 0)

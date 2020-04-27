@@ -14,3 +14,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion_3(n, m):
+    m = m*10 + n % 10
+    n = n//10
+    if n>0:
+        return recursion_3(n,m)
+    print(m)
+
+
+n = int(input('Введите число: '))
+recursion_3(n,0)

@@ -7,3 +7,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import randint
+
+RAND_NUMB = randint(1, 100)
+a = 10
+while a > 0:
+    USER_ANSWER = int(input('Введите вариант ответа: '))
+    if USER_ANSWER == RAND_NUMB:
+        print('Вы угадали')
+        break
+    elif USER_ANSWER > RAND_NUMB:
+        print(f'Ваше число ({USER_ANSWER}) больше загаданного')
+    else:
+        print(f'Ваше число ({USER_ANSWER}) меньше загаданного')
+    a -= 1
+if a == 0:
+    print(f'Вы проиграли! Правильное число: {RAND_NUMB}')

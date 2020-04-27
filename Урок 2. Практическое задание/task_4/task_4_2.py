@@ -8,3 +8,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def recursion_4(NUMB,a,b):
+    KEEP_NUMB = NUMB
+    a = a/-2
+    print(a)
+    b = b + a
+    NUMB -= 1
+    if NUMB > 0:
+        return recursion_4(NUMB, a, b)
+    print(f'Сумма {KEEP_NUMB} элементов прогрессии равна {b}')
+
+
+NUMB = int(input('Введите кол-во элементов прогрессии: '))
+
+recursion_4(NUMB,-2,0)

@@ -12,3 +12,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMB_NUMB = int(input('Введите кол-во чисел: '))
+SEARCH_NUMB = input('Введите цифру для поиска: ')
+count = 0
+for k in range(1, NUMB_NUMB+1):
+    USER_NUMB = input('Введите число: ')
+    for i in USER_NUMB:
+        if i == SEARCH_NUMB:
+            count += 1
+print(f'Ваше число {SEARCH_NUMB} встретилось {count} раз(а)')
