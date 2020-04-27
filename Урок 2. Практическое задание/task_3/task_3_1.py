@@ -12,3 +12,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+num = int(input("Введите целое число: "))
+reverse_num = ''
+i = len(str(num)) - 1
+while i > 0:
+    reverse_num += str(num % 10)
+    num = num // 10
+    i -= 1
+
+reverse_num += str(num)
+print(reverse_num)

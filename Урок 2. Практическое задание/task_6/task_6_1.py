@@ -7,3 +7,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import random
+
+TARGET_NUM = int(random.random() * 100)
+USER_NUM = int(input("Введите целое число от 0 до 100: "))
+i = 1
+while i <= 10:
+    if USER_NUM < TARGET_NUM:
+        USER_NUM = int(input(("Ваше число меньше, попробуйте ещё раз ")))
+    elif USER_NUM > TARGET_NUM:
+        USER_NUM = int(input(("Ваше число больше, попробуйте ещё раз ")))
+    else:
+        print("Вы угадали!!!")
+        break
+    i += 1
+
+print("Загаданное число -", str(TARGET_NUM))
