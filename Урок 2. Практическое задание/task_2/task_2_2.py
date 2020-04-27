@@ -15,3 +15,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recur(number, EVEN, ODD):
+    if number == 0:
+        return print(f"четных: {EVEN}, нечетных: {ODD}")
+    else:
+        if (number % 10) == 0 or (number % 10) % 2 == 0:
+            recur(number=number // 10, EVEN=EVEN + 1, ODD=ODD)
+        else:
+            recur(number=number // 10, EVEN=EVEN, ODD=ODD + 1)
+
+
+recur(int(input('Введите число: ')), EVEN=0, ODD=0)

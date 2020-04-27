@@ -5,3 +5,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+n = int(input('Введите число: '))
+LOTS = 0
+for i in range(1, n + 1):
+    LOTS += i
+EQUALITY = n * (n + 1) // 2
+print(f'Множество натуральных чисел: {LOTS}')
+print(f'Равенство: {EQUALITY}')

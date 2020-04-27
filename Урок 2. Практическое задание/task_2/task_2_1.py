@@ -12,3 +12,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+NUMBER = int(input('Введите число: '))
+VALUE = 0
+EVEN = 0
+ODD = 0
+while NUMBER != 0:
+    VALUE = NUMBER % 10
+    NUMBER //= 10
+    if VALUE == 0 or VALUE % 2 == 0:
+        EVEN += 1
+    else:
+        ODD += 1
+print('Четных: ', EVEN)
+print('Нечетных: ', ODD)

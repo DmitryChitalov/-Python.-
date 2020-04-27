@@ -17,3 +17,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recur_ascii(start, counter):
+    if start == 128:
+        return
+    elif counter % 10 == 0:
+        print(start, '-', chr(start), end='\n')
+        return recur_ascii(start=start + 1, counter=counter + 1)
+    else:
+        print(start, '-', chr(start), end=' ')
+        return recur_ascii(start=start + 1, counter=counter + 1)
+
+
+recur_ascii(start=32, counter=1)

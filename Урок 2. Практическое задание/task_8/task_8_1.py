@@ -12,3 +12,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+QUANTITY = int(input('Сколько будет чисел?'))
+DIGIT = int(input('Какую цифру считать?'))
+q = 0
+n = 0
+while QUANTITY != 0:
+    n += 1
+    number = int(input(f'Число {n}: '))
+    for i in str(number):
+        if i == str(DIGIT):
+            q += 1
+    QUANTITY -= 1
+print(f"Было введено {q} цифр '{DIGIT}'")

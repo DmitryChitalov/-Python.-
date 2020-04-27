@@ -5,3 +5,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def proof(n, LOTS):
+    if n == 0 and LOTS == EQUALITY:
+        return print(
+            f'Доказано! Сумма множества:{LOTS} и равенство: {EQUALITY}')
+    return proof(n=(n - 1), LOTS=LOTS + n)
+
+
+n = int(input('Введите число: '))
+EQUALITY = n * (n + 1) // 2
+proof(n, LOTS=0)

@@ -17,3 +17,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+START = 32
+END = 127
+COUNTER = 1
+while COUNTER <= (END - START):
+    for i in range(START, (END + 1)):
+        if COUNTER % 10 == 0:
+            print(i, '-', chr(i), end='\n')
+        else:
+            print(i, '-', chr(i), end=' ')
+        COUNTER += 1

@@ -14,3 +14,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recur(number, inverted):
+    if number == 0:
+        return print(f'Перевернутое число: {int(inverted)}')
+    else:
+        return recur(number=number // 10,
+                     inverted=str(inverted) + str(number % 10))
+
+
+recur(int(input('Введите число: ')), inverted=0)

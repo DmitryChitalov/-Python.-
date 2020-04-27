@@ -33,3 +33,35 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def solution(sign):
+    if sign == '0':
+        print('Досвидание!')
+        return
+    if sign != '/' and sign != '*' and sign != '-' and sign != '+':
+        print('Вы ввели неверный символ, повторите ввод.')
+        solution(input('Введите операцию (+, -, *, / или 0 для выхода): '))
+    elif sign == '/':
+        num_one = int(input('Введите первое число: '))
+        num_two = int(input('Введите второе число: '))
+        while num_two == 0:
+            num_two = int(
+                input('На ноль делить нельзя! Введите второе число: '))
+        print('Ваш результат: ', num_one / num_two)
+        solution(input('Введите операцию (+, -, *, / или 0 для выхода): '))
+    else:
+        num_one = int(input('Введите первое число: '))
+        num_two = int(input('Введите второе число: '))
+        if sign == '*':
+            print('Ваш результат: ', num_one * num_two)
+            solution(input('Введите операцию (+, -, *, / или 0 для выхода): '))
+        elif sign == '+':
+            print('Ваш результат: ', num_one + num_two)
+            solution(input('Введите операцию (+, -, *, / или 0 для выхода): '))
+        elif sign == '-':
+            print('Ваш результат: ', num_one - num_two)
+            solution(input('Введите операцию (+, -, *, / или 0 для выхода): '))
+
+
+solution(input('Введите операцию (+, -, *, / или 0 для выхода): '))

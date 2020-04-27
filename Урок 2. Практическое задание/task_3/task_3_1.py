@@ -12,3 +12,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+VALUE = 0
+NUMBER = int(input('Введите число: '))
+print('Перевернутое число: ', end='')
+while NUMBER != 0:
+    VALUE = NUMBER % 10
+    NUMBER //= 10
+    print(VALUE, end='')
