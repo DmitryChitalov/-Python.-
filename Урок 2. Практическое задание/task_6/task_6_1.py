@@ -7,3 +7,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import random
+
+NUMBER = random.randint(0,100)
+i = 10
+while True:
+    answer = int(input('Угадайте число от о до 100: '))
+    if answer == NUMBER:
+        print('Поздравляю! Вы угадали!')
+        break
+    elif answer > NUMBER:
+        print('Ваше число больше загаданного!')
+    elif answer < NUMBER:
+        print('Ваше число меньше загаданного!')
+    i -= 1
+    if i == 0:
+        print(f'Вы не угадали! Загаданное число - {NUMBER}')
+        break

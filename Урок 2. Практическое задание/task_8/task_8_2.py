@@ -12,3 +12,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+I = int(input('Введите количество элементов последовательности: '))
+N = input('Введите цифру для подсчета: ')
+
+
+def count(end, n, i=0, RESULT=0):
+    if i == end:
+        return print(f'Было введено {RESULT} цифр "{N}"')
+    else:
+        num = int(input(f'Введите число {i + 1}: '))
+        RESULT += str(num).count(N)
+        count(end, n, i+1, RESULT)
+
+
+
+count(I, N)

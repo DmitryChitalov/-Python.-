@@ -8,3 +8,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+I = int(input('Введите количество элементов последовательности: '))
+QUANTITY = I
+START = 1
+RESULT = 0
+while I > 0:
+    RESULT += START
+    START = START / -2
+    I -= 1
+
+print(f'Количество элементов - {QUANTITY}, их сумма {RESULT}')

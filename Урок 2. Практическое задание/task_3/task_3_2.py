@@ -14,3 +14,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+NUMBER = input('Введите число: ')
+LEN = len(NUMBER)
+NUM = int(NUMBER)
+def rev(i, num, newi, newnum):
+    if i == 0:
+        return print(f'Перевернутое число: {newnum}')
+    else:
+        i -= 1
+        digit = num // int('1' + i * '0')
+        num -= int(str(digit) + i * '0')
+        newnum += int(str(digit) + newi * '0')
+        rev(i, num, newi+1, newnum)
+
+rev (LEN, NUM, 0, 0)

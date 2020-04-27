@@ -8,3 +8,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import sys
+
+sys.setrecursionlimit(10000)
+
+I = int(input('Введите количество элементов последовательности: '))
+QUANTITY = I
+def sum(i, start, result):
+    if i == 0:
+        return print(f'Количество элементов - {QUANTITY}, их сумма {result}')
+    else:
+        result += start
+        start = start / -2
+        sum(i-1, start, result)
+
+sum(I, 1, 0)

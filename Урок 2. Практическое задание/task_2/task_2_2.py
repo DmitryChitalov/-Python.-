@@ -15,3 +15,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+NUMBER = input('Введите натуральное число: ')
+LEN = len(NUMBER)
+NUM = int(NUMBER)
+
+def func(i, num, EVEN, UNEVEN):
+    if i == 0:
+        return print(f'В числе {NUMBER} всего {LEN} цифр, из которых {EVEN} чётных и {UNEVEN} нечётных')
+    else:
+        i -= 1
+        digit = num // int('1' + i * '0')
+        if digit % 2 != 0:
+            UNEVEN += 1
+        else:
+            EVEN += 1
+        num -= int(str(digit) + i * '0')
+        func(i, num, EVEN, UNEVEN)
+
+func(LEN, NUM, 0, 0)

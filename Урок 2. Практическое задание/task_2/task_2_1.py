@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMBER = input('Введите натуральное число: ')
+LEN = len(NUMBER)
+I = LEN
+NUM = int(NUMBER)
+EVEN = 0
+UNEVEN = 0
+while I > 0:
+    I -= 1
+    digit = NUM // int('1' + I * '0')
+    if digit % 2 != 0:
+        UNEVEN += 1
+    else:
+        EVEN += 1
+    NUM -= int(str(digit) + I * '0')
+
+print(f'В числе {NUMBER} всего {LEN} цифр, из которых {EVEN} чётных и {UNEVEN} нечётных')

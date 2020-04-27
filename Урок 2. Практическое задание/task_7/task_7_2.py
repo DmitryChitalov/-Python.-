@@ -5,3 +5,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+import random
+
+I = random.randint(1, 900)
+
+def check(end, sumM=0, i=0):
+    if i == end:
+        if sumM == end * (end + 1) / 2:
+            return print(f'Равенство верно для числа {I}')
+        else:
+            print('Ошибка в равенстве')
+    else:
+        return check(end, sumM+i+1, i+1)
+
+
+check(I)

@@ -17,3 +17,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def asc(start, stop, a, res):
+    if start == stop:
+        return print(res)
+    else:
+        a += 1
+        if a % 10 != 0:
+            res += f'{start} - {chr(start)} '
+        else:
+            res += f'{start} - {chr(start)} '
+            res += '\n'
+        asc(start+1, stop, a, res)
+
+asc(32, 128, 0, '')

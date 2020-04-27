@@ -17,3 +17,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+res = ''
+a = 0
+for i in range(32, 128):
+    a += 1
+    if a % 10 != 0:
+        res += f'{i} - {chr(i)} '
+    else:
+        res += f'{i} - {chr(i)} '
+        res += '\n'
+
+print(res)

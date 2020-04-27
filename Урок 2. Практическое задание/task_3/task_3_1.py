@@ -12,3 +12,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMBER = input('Введите число: ')
+LEN = len(NUMBER)
+I = LEN
+NUM = int(NUMBER)
+NewNUM = 0
+NewI = 0
+while I > 0:
+    I -= 1
+    digit = NUM // int('1' + I * '0')
+    NUM -= int(str(digit) + I * '0')
+    NewNUM += int(str(digit) + NewI * '0')
+    NewI += 1
+
+print(f'Перевернутое число: {NewNUM}')

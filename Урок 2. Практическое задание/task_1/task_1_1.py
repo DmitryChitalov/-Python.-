@@ -32,3 +32,26 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+while True:
+    OPER = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+
+    if OPER == '0':
+        break
+    elif OPER == '-' or OPER == '+' or OPER == '*' or OPER == '/':
+        NUM1 = int(input('Введите первое число: '))
+        NUM2 = int(input('Введите второе число: '))
+    else:
+        print('Неверная операция. Повторите ввод')
+        continue
+
+    if OPER == '+':
+        print(f'Результат {NUM1} + {NUM2} = {NUM1+NUM2}')
+    if OPER == '-':
+        print(f'Результат {NUM1} - {NUM2} = {NUM1-NUM2}')
+    if OPER == '*':
+        print(f'Результат {NUM1} * {NUM2} = {NUM1*NUM2}')
+    if OPER == '/':
+        print(f'Результат {NUM1} / {NUM2} = {NUM1/NUM2}')
+

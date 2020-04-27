@@ -5,3 +5,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+
+I = random.randint(1, 900)
+sumM = 0
+for i in range(I):
+    sumM += i+1
+if sumM == I*(I+1)/2:
+    print(f'Равенство верно для числа {I}')
+else:
+    print(f'Не верно!')

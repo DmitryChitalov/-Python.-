@@ -10,3 +10,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+I = int(input('Введите количество чисел: '))
+
+sum = 0
+for i in range(I):
+    num = int(input(f'Введите число {i+1}: '))
+    numbers = str(num)
+    sumN = 0
+    for n in numbers:
+        sumN += int(n)
+    if sumN > sum:
+        sum = sumN
+        number = num
+
+print(f'Наибольшее число по сумме цифр: {number}, сумма его цифр: {sum}')

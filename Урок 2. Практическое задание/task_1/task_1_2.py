@@ -33,3 +33,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calc():
+    OPER = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+
+    if OPER == '0':
+        return
+    elif OPER == '-' or OPER == '+' or OPER == '*' or OPER == '/':
+        NUM1 = int(input('Введите первое число: '))
+        NUM2 = int(input('Введите второе число: '))
+    else:
+        print('Неверная операция. Повторите ввод')
+        return calc()
+
+    if OPER == '+':
+        print(f'Результат {NUM1} + {NUM2} = {NUM1+NUM2}')
+        return calc()
+    elif OPER == '-':
+        print(f'Результат {NUM1} - {NUM2} = {NUM1-NUM2}')
+        return calc()
+    elif OPER == '*':
+        print(f'Результат {NUM1} * {NUM2} = {NUM1*NUM2}')
+        return calc()
+    elif OPER == '/':
+        print(f'Результат {NUM1} / {NUM2} = {NUM1/NUM2}')
+        return calc()
+
+calc()

@@ -7,3 +7,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+import random
+
+NUMBER = random.randint(0,100)
+
+def game(trycount):
+    if trycount == 0:
+        return print(f'Вы не угадали! Загаданное число - {NUMBER}')
+    else:
+        answer = int(input('Угадайте число от о до 100: '))
+        if answer == NUMBER:
+            return print('Поздравляю! Вы угадали!')
+        elif answer > NUMBER:
+            print('Ваше число больше загаданного!')
+        elif answer < NUMBER:
+            print('Ваше число меньше загаданного!')
+        game(trycount-1)
+
+game(10)
