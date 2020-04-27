@@ -29,6 +29,26 @@
 Введите операцию (+, -, *, / или 0 для выхода): rth
 Неверная операция. Повторите ввод
 Введите операцию (+, -, *, / или 0 для выхода):
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def count():
+    while True:
+        oper = input("Введите операцию (+, -, *, /) или нажмите 0 для выхода из программы: ")
+        if oper == '0':
+            return ("Завершение программы")
+        elif oper == '+' or oper == '-' or oper == '/' or oper == '*':
+            numb1 = int(input("Введите первое число: "))
+            numb2 = int(input("Введите второе число: "))
+            if oper == '+':
+                print(numb1 + numb2)
+            elif oper == '-':
+                print(numb1 - numb2)
+            elif oper == '/':
+                print(numb1 / numb2)
+            elif oper == '*':
+                print(numb1 * numb2)
+        else:
+            print("Вы ввели ввели неверный знак")
+
+print(count())
