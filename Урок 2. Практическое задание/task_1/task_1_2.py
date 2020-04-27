@@ -30,6 +30,28 @@
 Введите первое число: вп
 Вы вместо трехзначного числа ввели строку (((. Исправьтесь
 Введите операцию (+, -, *, / или 0 для выхода):
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursecount():
+    oper = input("Введите операцию (+, -, *, /) или нажмите 0 для выхода из программы: ")
+    if oper == 0:
+        return ("Завершение программы")
+    elif
+        oper == '+' or oper == '-' or oper == '/' or oper == '*':
+        numb1 = int(input("Введите первое число: "))
+        numb2 = int(input("Введите второе число: "))
+        if oper == '+':
+            print(numb1 + numb2)
+        elif oper == '-':
+            print(numb1 - numb2)
+        elif oper == '/':
+            print(numb1 / numb2)
+        elif oper == '*':
+            print(numb1 * numb2)
+        return recursecount()
+    else:
+        print("Вы ввели ввели неверный знак")
+        return recursecount()
+
+print(recurscount())
