@@ -33,7 +33,7 @@ while True:
             print("Ваше число больше загаднного\n")
             i = i + 1
         elif R_NUMBER > USER_NUMBER:
-            print("Ваше число больше загаднного\n")
+            print("Ваше число меньше загаднного\n")
             i = i + 1
     else:
         print(f"Вы не угадали, число было {R_NUMBER}")

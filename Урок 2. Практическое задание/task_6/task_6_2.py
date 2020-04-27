@@ -12,7 +12,7 @@ from random import random
 
 # загдываем число
 R_NUMBER = int(random() * 100)
-MAX_TRIES = 3
+MAX_TRIES = 10
 
 
 # отгадываем число

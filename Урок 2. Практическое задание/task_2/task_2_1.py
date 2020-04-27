@@ -33,5 +33,4 @@ while i != 0:
     i = i - 1
 
 # вывод
-print(f'В числе {user_number} всего {cuantity} цифр, из которых {even} чётных и {odd} нечётных' )
-
+print(f'В числе {user_number} всего {cuantity} цифр, из которых {even} чётных и {odd} нечётных')
