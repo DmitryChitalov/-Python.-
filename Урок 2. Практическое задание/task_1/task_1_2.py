@@ -35,11 +35,11 @@
 """
 
 
-def f_number():
+def f_number(n):
     """тут вводятся числа"""
     while True:
         try:
-            number = float(input('Введите число 1\n'))
+            number = float(input(f'Введите число {n}\n'))
             break
         except ValueError:
             print('Вы вводите что-то не то попробуйте еще раз\n')
@@ -62,9 +62,9 @@ def calc():
 
     if operation != '0':
         # 1 цифра
-        number_1 = f_number()
+        number_1 = f_number(1)
         # 2 цифра
-        number_2 = f_number()
+        number_2 = f_number(2)
 
         # математика
         if operation == '+':
@@ -80,12 +80,7 @@ def calc():
                     break
                 except ZeroDivisionError:
                     print("на ноль делить нелья попробуйте еще раз")
-                    while True:
-                        try:
-                            number_2 = float(input('Введите число 2\n'))
-                            break
-                        except ValueError:
-                            print('Вы вводите что-то не то попробуйте еще раз\n')
+                    number_2 = f_number(2)
         print(f'результат: {result}')
         calc()
     else:
