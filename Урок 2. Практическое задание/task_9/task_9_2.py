@@ -7,6 +7,35 @@
 Введите число: 23
 Введите число: 2
 Наибольшее число по сумме цифр: 23, сумма его цифр: 5
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+q = int(input('Введите количество чисел: '))
+i = 0
+s = 0
+p = 0
+
+
+def sum(n):
+    global s
+    if n == 0:
+        return s
+    else:
+        s = s + n % 10
+        n = n // 10
+    return sum(n)
+
+
+def recur(q):
+    global i, s, n, p
+    if q == 0:
+        return (f"Наибольшее число по сумме цифр: {p}, сумма его цифр: {i}")
+    else:
+        s = 0
+        n = int(input('Введите число: '))
+        k = sum(n)
+        if i < k:
+            i = k
+            p = n
+    return recur(q - 1)
+
+
+print(recur(q))
