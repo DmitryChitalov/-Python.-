@@ -9,6 +9,22 @@
 Пример:
 Введите натуральное число: 44
 В числе 44 всего 2 цифр, из которых 2 чётных и 0 нечётных
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+
+number = int(input('Введите число: '))
+total = 0
+odd = 0
+print(f'В числе {number}')
+while number != 0:
+    num = number % 10
+    if num % 2 == 0:
+        total += 1
+    else:
+        odd += 1
+    number = number // 10
+
+count = total + odd
+
+print(f'Всего: {count} цифр, из них: \n{total} - четных\n{odd} - нечетных')

@@ -11,6 +11,18 @@
 Пример:
 Введите число, которое требуется перевернуть: 123
 Перевернутое число: 321
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def rev(number, rev_num):
+    if number == 0:
+        print(f'Число наоборот: {int(rev_num)}')
+        return
+    else:
+        num = number % 10
+        rev_num = (rev_num + num / 10) * 10
+        number //= 10
+        rev(number, rev_num)
+
+number = int(input('Введите число: '))
+rev_num = 0
+rev(number, rev_num)

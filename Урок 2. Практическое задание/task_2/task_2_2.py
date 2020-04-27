@@ -12,6 +12,18 @@
 Пример:
 Введите число: 123
 Количество четных и нечетных цифр в числе равно: (1, 2)
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def rec(number, total, odd):
+
+    if number:
+        total += 1
+        odd += number % 2 and True
+        return rec(number // 10, total, odd)
+    print(f'всего {total} цифр, из которых\n{total - odd} чётных \n{odd} нечётных')
+    return
+
+number = int(input('Введите число: '))
+total=0
+odd=0
+rec(number, total, odd)
