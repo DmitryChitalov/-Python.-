@@ -13,27 +13,20 @@
 from random import random
 
 # делаем массив
-n = int(input('сколько элементов в массиве: '))
+N = int(input('сколько элементов в массиве: '))
 
-my_list = [int(random()*100) for x in range(n)]
-print(my_list)
+MY_LIST = [int(random()*100) for x in range(N)]
+print(MY_LIST)
 
 # делаем второй массив
-result = [i for i in range(len(my_list)) if my_list[i] % 2 == 0]
-print(result)
+RESULT = [i for i in range(len(MY_LIST)) if MY_LIST[i] % 2 == 0]
+print(RESULT)
 
 # проверка
-result = []
+RESULT = []
 j = 0
-for i in my_list:
+for i in MY_LIST:
     if i % 2 == 0:
-        result.append(j)
+        RESULT.append(j)
     j += 1
-print(result)
-
-
-
-
-# выводим результат
-# print(f'Исходный массив: {my_list}, результат: {result}')
-
+print(RESULT)
