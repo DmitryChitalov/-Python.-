@@ -10,3 +10,30 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+from random import random
+
+# делаем массив
+n = int(input('сколько элементов в массиве: '))
+
+my_list = [int(random()*100) for x in range(n)]
+print(my_list)
+
+# делаем второй массив
+result = [i for i in range(len(my_list)) if my_list[i] % 2 == 0]
+print(result)
+
+# проверка
+result = []
+j = 0
+for i in my_list:
+    if i % 2 == 0:
+        result.append(j)
+    j += 1
+print(result)
+
+
+
+
+# выводим результат
+# print(f'Исходный массив: {my_list}, результат: {result}')
+

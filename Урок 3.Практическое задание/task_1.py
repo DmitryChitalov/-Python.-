@@ -15,10 +15,10 @@
 В диапазоне 2-99: 11 чисел кратны 9
 """
 # делаем списока
-MY_LIST = [i for i in range(2, 100, 1)]
+MY_LIST = [i for i in range(2, 100)]
 
 # считаем кратность
-for number in range(2, 10, 1):
+for number in range(2, 10):
     cuantity = 0
     for i in MY_LIST:
         if i % number == 0:
