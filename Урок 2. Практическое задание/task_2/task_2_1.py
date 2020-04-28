@@ -12,3 +12,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMB = int(input('Введите натуральное число: '))
+
+def count_digits(NUMB):
+    even = 0
+    odd = 0
+    i = 1
+    while i <= len(str(NUMB)):
+        count = (NUMB % (10 ** i)) // (10 ** (i - 1))
+        if count % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+
+        i += 1
+
+    return even, odd
+
+
+print(f'В числе столько четных и нечетных цифр: {count_digits(NUMB)}')
+
+

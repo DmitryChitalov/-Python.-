@@ -8,3 +8,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+QTY = int(input('Введите количество элементов: '))
+
+def find_sum(QTY):
+    if QTY == 1:
+        return 1
+    else:
+        if QTY % 2 == 0:
+            i = -2 / (2 ** QTY)
+        else:
+            i = 2 / (2 ** QTY)
+    return find_sum(QTY - 1) + i
+
+print(find_sum(QTY))

@@ -33,3 +33,41 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def math_operations():
+        OP = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+
+        if OP == '0':
+            return print('Вот и все!')
+        else:
+            if OP in "+-*/":
+                try:
+                    NUM_1 = int(input('Введите первое число: '))
+                    NUM_2 = int(input('Введите второе число: '))
+
+                    if OP == '+':
+                        print(f'Результат равен {NUM_1 + NUM_2}')
+                        return math_operations()
+                    elif OP == '-':
+                        print(f'Результат равен {NUM_1 - NUM_2}')
+                        return math_operations()
+                    elif OP == '*':
+                        print(f' Результат равен {NUM_1 * NUM_2}')
+                        return math_operations()
+                    elif OP == '/':
+                        if NUM_2 != 0:
+                            print(f'Результат равен {NUM_1 / NUM_2}')
+                        else:
+                            print('На 0 делить нельзя!')
+                            return math_operations()
+                except Error:
+                    print('Вы вместо трехзначного числа ввели строку (((. Исправьтесь')
+                    return math_operations()
+            else:
+                print('Упс! Введите другой знак')
+                return math_operations()
+
+
+
+math_operations()

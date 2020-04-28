@@ -5,3 +5,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+def numbers(n):
+    i = 1
+    count1 = 0
+    count2 = n * (n + 1)/2
+    while i <= n:
+        count1 = count1 + i
+        i += 1
+    return count1, count2
+
+print(numbers(4))

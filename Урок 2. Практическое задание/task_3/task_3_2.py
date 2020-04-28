@@ -14,3 +14,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+NUMB = int(input('Введите число: '))
+
+
+def bmun(NUMB, new_numb):
+    if NUMB == 0:
+        return print(f'Перевернутое число: {new_numb}')
+    else:
+        new_numb = (new_numb * 10) + (NUMB % 10)
+        return bmun(NUMB // 10, new_numb)
+
+bmun(NUMB, 0)

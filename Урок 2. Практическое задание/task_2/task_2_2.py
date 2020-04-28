@@ -15,3 +15,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+NUMB = int(input('Введите натуральное число: '))
+
+
+def count_digits(NUMB, even, odd):
+
+    if NUMB == 0:
+        return print(f' Количество четных и нечетных цифр: {even}, {odd}')
+    else:
+        count = (NUMB % 10)
+        if count % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+
+        return count_digits(NUMB // 10, even, odd)
+
+
+count_digits(NUMB, 0, 0)

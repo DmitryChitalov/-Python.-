@@ -17,3 +17,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def symbol_table(i):
+    if i > 127:
+        return chr(i)
+    else:
+        print(i, '-', chr(i),'', end='')
+        return symbol_table(i + 1)
+
+symbol_table(32)

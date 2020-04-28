@@ -12,3 +12,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMB = int(input('Введите число: '))
+
+
+def bmun(NUMB):
+    for i in range(1, len(str(NUMB)) + 1):
+        dig = (NUMB % (10 ** i)) // (10 ** (i - 1))
+        print(dig, '', end='')
+
+
+print(bmun(NUMB))
+
+

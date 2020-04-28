@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+N = int(input('Сколько будет чисел?'))
+DIG = int(input('Какую цифру считать?'))
+
+def count_dig():
+    count = 0
+    for i in range(1, N + 1):
+        num = int(input('Введи число: '))
+        while num > 0:
+            if num % 10 == DIG:
+                count += 1
+            else:
+                num = num // 10
+    print(f'Было введено {count} цифр {DIG}')
+
+
+print(count_dig())
+

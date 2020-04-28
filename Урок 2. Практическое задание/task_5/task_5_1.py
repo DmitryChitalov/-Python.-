@@ -17,3 +17,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+def symbol_table(a, b, c):
+    for i in range(a, b, c):
+        code_symbol = f'{i} - {chr(i)}'
+        print(code_symbol, '', end=' ')
+
+symbol_table(32, 128, 1)
+
+# не получается переносить строку после каждой 10-й пары

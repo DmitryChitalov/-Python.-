@@ -7,3 +7,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+
+NUMB = random.randint(0, 100)
+
+def guess_number(NUMB):
+    i = 1
+    while i <= 10:
+        user_num = int(input('Какое число загадано?'))
+            if user_num > NUMB:
+                print('Неудача! Твое число больше загаданного')
+            elif user_num < NUMB:
+                print('Неудача! Твое число меньше загаданного')
+            else:
+                print('Ура! Это оно!')
+                break
+            i += 1
+        print(f'Загаданное число {NUMB}')
+
+
+guess_number(NUMB)
+

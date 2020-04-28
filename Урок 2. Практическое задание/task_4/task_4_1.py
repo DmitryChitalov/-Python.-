@@ -8,3 +8,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+QTY = int(input('Введите количество элементов: '))
+
+def find_sum(QTY):
+    i = -2
+    n = 1
+    sum = 0
+    while n <= QTY:
+        i = i / (-2)
+        sum = sum + i
+        n += 1
+    return sum
+print(find_sum(QTY))
+

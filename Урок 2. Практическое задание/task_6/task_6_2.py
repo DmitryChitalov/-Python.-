@@ -7,3 +7,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+NUMB = random.randint(0, 100)
+def guess_number(try_count):
+    if try_count == 0:
+        return print(f'Загаданное число {NUMB}')
+    else:
+        user_num = int(input('Какое число загадано?'))
+            if user_num > NUMB:
+                print('Неудача! Твое число больше загаданного')
+            elif user_num < NUMB:
+                print('Неудача! Твое число меньше загаданного')
+            else:
+                return print('Ура! Это оно!')
+
+        return guess_number(try_count - 1)
+
+guess_number(10)
