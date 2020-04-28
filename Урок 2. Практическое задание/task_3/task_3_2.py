@@ -14,3 +14,44 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def num_enter():
+    num_user = input("Enter your number or 0 for exit: ")
+    if num_user == '0':
+        return
+    elif num_user.isdigit():
+        return int(num_user)
+    else:
+        print("Invalid number. Repeat entry.")
+        return num_enter()
+
+
+def num_reverse(num_user, num_len=0, count=1, num_rev=""):
+    if num_len == 0:
+        num_len = len(str(num_user))
+    num_digit = (num_user % pow(10, count)) // pow(10, count - 1)
+    num_rev += str(num_digit)
+    if count == num_len:
+        return num_rev
+    return num_reverse(num_user, num_len, count + 1, num_rev)
+
+
+print(num_reverse(num_enter()))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
