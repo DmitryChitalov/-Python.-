@@ -11,3 +11,20 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+
+list = [88, 26, 41, 75, 23, 52, -49, 60, 69, -18]
+
+max = list[0]
+min = list[0]
+maxI = 0
+minI = 0
+for i in range(len(list)):
+    if list[i] > max:
+        max = list[i]
+        maxI = i
+    if list[i] < min:
+        min = list[i]
+        minI = i
+new_list = list[:]
+new_list[minI], new_list[maxI] = new_list[maxI], new_list[minI]
+print(f'Исходный массив: {list} \n Массив переменой позиций максимального и минимального значений: \n{new_list}')

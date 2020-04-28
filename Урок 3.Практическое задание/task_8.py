@@ -36,3 +36,15 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+matrix = []
+
+for i in range(5):
+    print(f'{i+1}-я строка:')
+    matrix.append([])
+    for n in range(4):
+        matrix[i].append(int(input()))
+    matrix[i].append(sum(matrix[i]))
+
+for i in range(len(matrix)):
+    print(matrix[i])

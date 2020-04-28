@@ -13,3 +13,23 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+list = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+
+max = list[0]
+min = list[0]
+maxI = 0
+minI = 0
+for i in range(len(list)):
+    if list[i] > max:
+        max = list[i]
+        maxI = i
+    if list[i] < min:
+        min = list[i]
+        minI = i
+if maxI > minI:
+    SUM = sum(list[minI + 1:maxI])
+else:
+    SUM = sum(list[maxI + 1:minI])
+
+print(SUM)
