@@ -17,3 +17,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+for i in range(32, 128, 10):
+    STR_OUT = ""
+    for j in range(i, i + 10):
+        if j <= 127:
+            STR_OUT += f' {j} - {chr(j)}'
+    print(STR_OUT)

@@ -32,3 +32,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    I = input("Введите операцию +, -, /, * или 0 для выхода: ")
+    if I == '+' or I == '-' or I == '/' or I == '*' or I == '0':
+        if I == '0':
+            break
+        else:
+            A = int(input("Введите первое число: "))
+            B = int(input("Введите второе число: "))
+            if I == '+':
+                print(A + B)
+            elif I == '-':
+                print(A - B)
+            elif I == '*':
+                print(A * B)
+            elif I == '/':
+                try:
+                    print(A/B)
+                except:ZeroDivisionError: print("На ноль делить нельзя, введите другие числа")
+    else:
+        print("Не верно выбранная операция, попробуйте снова")

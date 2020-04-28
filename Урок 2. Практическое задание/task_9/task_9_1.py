@@ -10,3 +10,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+D = int(input("Введите количество чисел "))
+MAX_SUMM = 0
+MAX_NUMB = 0
+for i in range(D):
+    N = input("Введите очередное число ")
+    SUMM = sum(map(int, list(N)))
+    if SUMM > MAX_SUMM:
+        MAX_SUMM = SUMM
+        MAX_NUMB = N
+print(f"Наибольшее число по сумме цифр: {MAX_NUMB}, сумма его цифр: {MAX_SUMM}")

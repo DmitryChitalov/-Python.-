@@ -15,3 +15,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion(NUMB, A = 0, B = 0):
+    if NUMB == 0:
+        print(f"Количество четных и нечетных цифр в числе равно ({A}, {B})")
+    else:
+        N = NUMB % 10
+        NUMB = NUMB // 10
+        if N % 2 == 0:
+            A +=1
+            recursion(NUMB, A, B)
+        else:
+            B +=1
+            recursion(NUMB, A, B)
+
+recursion(122)

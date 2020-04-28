@@ -33,3 +33,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def recursion ():
+    I = input("Введите операцию +, -, /, * или 0 для выхода: ")
+    if I == '+' or I == '-' or I == '/' or I == '*' or I == '0':
+        if I == '0':
+            print("Вычисления окончены")
+        else:
+            A = int(input("Введите первое число: "))
+            B = int(input("Введите второе число: "))
+            if I == '+':
+                print(f"Ваш результат {A + B}")
+                recursion()
+            elif I == '-':
+                print(f"Ваш результат {A - B}")
+                recursion()
+            elif I == '*':
+                print(f"Ваш результат {A * B}")
+                recursion()
+            elif I == '/':
+                print(f"Ваш результат {A / B}")
+                recursion()
+
+    else:
+        print("Не верно выбранная операция, попробуйте снова")
+        recursion()
+
+recursion()
