@@ -1,15 +1,3 @@
-"""
-Закодируйте любую строку из трех слов по алгоритму Хаффмана.
-
-Пример:
-строка для кодирования
-s = "beep boop beer!"
-
-Результат:
-00 11 11 101 010 00 011 011 101 010 00 11 11 1000 1001
-"""
-
-
 import heapq
 from collections import Counter, namedtuple
 
@@ -85,3 +73,10 @@ decode_string = huffman_decode(encode_string, encode_code)
 print(f'Encrypted string:\n{encode_string}\n')
 print(f'Decrypted string:\n{decode_string}\n')
 print_code(encode_code)
+
+
+
+
+
+
+
