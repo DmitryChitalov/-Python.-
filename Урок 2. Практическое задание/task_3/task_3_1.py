@@ -12,3 +12,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+word = ''
+COUNT = 1
+DIV = 10
+RESULT = 1
+NUMBER = int(input('Введите число : '))
+while COUNT != 0:
+    COUNT = NUMBER // DIV
+    RESULT = int((NUMBER % DIV) // (DIV / 10))
+    word = word + str(RESULT)
+    DIV *= 10
+
+print(f'Перевернутое число : {word}')

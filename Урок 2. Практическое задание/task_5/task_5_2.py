@@ -17,3 +17,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+
+def func(x=32, y=128):
+    if x != y:
+        if x % 10 == 1:
+            print(f'{x} - {chr(x)}')
+        else:
+            print(f'{x} - {chr(x)}', end=' ')
+        return func(x + 1, y)
+
+
+func()

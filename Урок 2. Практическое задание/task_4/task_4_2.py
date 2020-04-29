@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+NUMBER = int(input('Введите число : '))
+
+
+def func(number, x=0, y=1):
+    if number != 0:
+        return func(number - 1, x + y, y / -2)
+    else:
+        return x
+
+
+print(f'Сумма элементов {func(NUMBER)}')

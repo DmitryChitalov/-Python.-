@@ -32,3 +32,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+RESULT = 0
+OPERATION = ''
+while OPERATION != 'n':
+    OPERATION = input('Введите операцию :')
+    NUMBER_1 = int(input('Введите первое число :'))
+    NUMBER_2 = int(input('Введите второе число :'))
+    if OPERATION == '+':
+        RESULT = NUMBER_1 + NUMBER_2
+    if OPERATION == '-':
+        RESULT = NUMBER_1 - NUMBER_2
+    if OPERATION == '*':
+        RESULT = NUMBER_1 * NUMBER_2
+    if OPERATION == '/':
+        RESULT = NUMBER_1 / NUMBER_2
+    print(f'Результат = {RESULT}')
+    OPERATION = input('Повторим y/n :')

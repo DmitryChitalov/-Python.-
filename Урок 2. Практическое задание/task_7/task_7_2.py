@@ -5,3 +5,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+N = int(input('Введите число n : '))
+
+
+def func(n, x=1, i=1):
+    if i != n:
+        i += 1
+        return func(n, x + i, i)
+    else:
+        if x == n * (n + 1) / 2:
+            return 'Равенство выполняется'
+        else:
+            return 'Равенство не выполняется'
+
+
+print(func(N))

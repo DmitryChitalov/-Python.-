@@ -12,3 +12,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+DIV = 10
+EVEN = 0
+ODD = 0
+NUMBER = int(input('Введите число : '))
+while NUMBER // DIV != 0:
+    if int((NUMBER % DIV) // (DIV / 10)) % 2 == 0:
+        EVEN += 1
+    else:
+        ODD += 1
+    DIV *= 10
+
+print(f'В числе {NUMBER} , {EVEN + ODD} цифр , {EVEN} четных и {ODD} нечетных')
