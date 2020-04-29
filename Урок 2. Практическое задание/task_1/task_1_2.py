@@ -33,3 +33,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+def func():
+    result = 0
+    operation = input('Введите операцию :')
+    number_1 = int(input('Введите первое число :'))
+    number_2 = int(input('Введите второе число :'))
+    if operation == '+':
+        result = number_1 + number_2
+    if operation == '-':
+        result = number_1 - number_2
+    if operation == '*':
+        result = number_1 * number_2
+    if operation == '/':
+        result = number_1 / number_2
+    print(f'Результат = {result}')
+    operation = input('Повторим y/n :')
+    if operation == 'n':
+        return 'Пока , пока !'
+    else:
+        return func()
+
+print(func())

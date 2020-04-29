@@ -15,3 +15,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+DIV = 10
+EVEN = 0
+ODD = 0
+NUMBER = int(input('Введите число : '))
+
+
+def func(number, div, even, odd):
+    if number // div != 0:
+        if int((number % div) // (div / 10)) % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+        return func(number, div * 10, even, odd)
+    return f'В числе {number} , {even + odd} цифр , {even} четных и {odd} нечетных'
+
+
+print(func(NUMBER, DIV, EVEN, ODD))

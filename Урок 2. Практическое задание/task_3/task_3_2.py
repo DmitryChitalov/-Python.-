@@ -14,3 +14,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+WORD = ''
+COUNT = 1
+DIV = 10
+NUMBER = int(input('Введите число : '))
+
+
+def func(count, word, div, number):
+    if count != 0:
+        return func(number // div, word + str(int((number % div) // (div / 10))),
+                    div * 10, number)
+    return f'Перевернутое число : {word}'
+
+
+print(func(COUNT, WORD, DIV, NUMBER))
