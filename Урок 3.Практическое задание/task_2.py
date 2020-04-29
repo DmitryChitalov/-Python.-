@@ -10,3 +10,14 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+import random
+
+sort_list = []
+
+random_list = [random.randint(1, 100) for _ in range(20)]
+for i in range(len(random_list)):
+    if random_list[i] % 2 == 0:
+        sort_list.append(i)
+print(f'Произвольные значения : {random_list}')
+print(f'Индексы четных значений {sort_list}')

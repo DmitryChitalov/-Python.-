@@ -14,3 +14,42 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+################################## Вариант 1 с диапазоном чисел от 2 до 99 ####################################
+
+num_dict = {i: [] for i in range(2, 10)}
+
+i = 2
+while i < 100:
+    for ind, item in num_dict.items():
+        if i % ind == 0:
+            item.append(i)
+    i += 1
+
+for ind, item in num_dict.items():
+    print(f'В диапазоне 2-99: чисел {len(item)} кратны {ind}')
+
+################################## Вариант 2 с любым диапазоном чисел ########################################
+print('\n')
+num_dict = dict.fromkeys(range(2, 10), 0)
+
+while (1):
+    user_input = input('Введите диапазон чисел через запятую')
+    user_input = user_input.split(',')
+
+    try:
+        left_num = int(user_input[0])
+        right_num = int(user_input[1])
+        if (left_num > right_num):
+            left_num, right_num = right_num, left_num
+            print('Вы ввели левую границу дальше правой. Значения введенных границ автоматически исправлены')
+        break
+    except:
+        print('Ошибка ввода диапазона чисел')
+for num in range(left_num, right_num + 1):
+    for i in range(2, 10):
+        if num % i == 0:
+            num_dict[i] += 1
+
+for key in num_dict:
+    print(f'В диапазоне {left_num}-{right_num}: {num_dict[key]} чисел кратны {key}')

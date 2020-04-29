@@ -36,3 +36,20 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+ROWS = 5
+COLS = 4
+matrix = []
+
+for i in range(ROWS):
+    row = []
+    sum_in_row = 0
+    for j in range(COLS):
+        user_input = int(input(f'{i}-я строка, {j}-й элемент : '))
+        sum_in_row += user_input
+        row.append(user_input)
+    row.append(sum_in_row)
+    matrix.append(row)
+
+for line in matrix:
+    print(line)
