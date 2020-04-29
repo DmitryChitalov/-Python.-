@@ -13,3 +13,37 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+from random import random
+
+
+# эта часть из 4-го и 3-го задания тут ничего интересного
+
+# делаем список
+while True:
+    N = int(input('сколько элементов в массиве: '))
+    if N <= 0:
+        print(f' количество элементов не может быть меньше или равна ')
+    else:
+        break
+
+MY_LIST_1 = [int(random()*100) for x in range(N)]
+MY_LIST_2 = list(MY_LIST_1)  # нужен что бы выводить два разных списка
+
+# находим минимум и макисимум
+MIN_NUMBER, MAX_NUMBER = min(MY_LIST_1), max(MY_LIST_1)
+MIN_INDEX, MAX_INDEX = MY_LIST_1.index(MIN_NUMBER), MY_LIST_1.index(MAX_NUMBER)
+
+# что-то новое
+
+# проверка минимума и максимума
+if MIN_INDEX > MAX_INDEX:
+    MIN_INDEX, MAX_INDEX = MAX_INDEX, MIN_INDEX
+
+# считаем сумму
+SUM = 0
+for x in range(MIN_INDEX+1, MAX_INDEX):
+    SUM += MY_LIST_1[x]
+
+# выводим результат
+print(f'Список : {MY_LIST_1}')
+print(f'Сумма элементов между минимальным {MIN_NUMBER} и максимальным {MAX_NUMBER} элементами: {SUM}')
