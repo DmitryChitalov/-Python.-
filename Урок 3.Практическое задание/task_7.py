@@ -7,3 +7,29 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+from random import randint
+
+M = [randint(-100, 100) for i in range(10)]
+print(f"Исходный список: {M}")
+
+MIN_IND_1 = 0
+MIN_IND_2 = 1
+
+if M[0] > M[1]:
+    MIN_IND_1 = 1
+    MIN_IND_2 = 0
+
+for i in range(2, len(M)):
+    if M[i] < M[MIN_IND_1]:
+        a = MIN_IND_1
+        MIN_IND_1 = i
+        if M[a] < M[MIN_IND_2]:
+            MIN_IND_2 = a
+    elif M[i] < M[MIN_IND_2]:
+        MIN_IND_2 = i
+
+if MIN_IND_1 == MIN_IND_2:
+    print(f"Наименьший элемент: {M[MIN_IND_1]}, встречается 2 раза.")
+else:
+    print(f"Первый наименьший элемент: {M[MIN_IND_1]}, встречается 1 раз.")
+    print(f"Второй наименьший элемент: {M[MIN_IND_2]}")

@@ -8,3 +8,19 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+
+from random import randint
+
+M = [randint(-100, 100) for i in range(10)]
+print(f"Базовый список: {M}")
+
+max_neg_ind = -1
+
+for i in range(len(M)):
+    if M[i] < 0 and (max_neg_ind == -1 or M[i] > M[max_neg_ind]):
+        max_neg_ind = i
+
+if max_neg_ind == -1:
+    print("В массиве нет отрицательных элементов")
+else:
+    print(f"Максимальный отрицательный элемент в данном массиве = {M[max_neg_ind]}, его индекс {max_neg_ind}")

@@ -36,3 +36,15 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+m = []
+
+for i in range(5):
+    print(f"{i+1}-я строка:")
+    n = []
+    for j in range(4):
+        n.append(int(input("")))
+    n.append(sum(n))
+    m.append(n)
+
+for i in m:
+    print(i)
