@@ -36,3 +36,28 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+
+def f_matrix():
+    """ делает матрицу"""
+    matrix = [
+        [],
+        [],
+        [],
+        [],
+        [],
+    ]
+    for i in range(len(matrix)):
+        for j in range(5):
+            if j < 4:
+                matrix[i].append(int(input(f' Введите элемент {j + 1} строки {i + 1}: ')))
+            else:
+                matrix[i].append(sum(matrix[i]))
+
+    return matrix
+
+# матрица
+MATRIX = f_matrix()
+#выводим матрицу
+for i in range(len(MATRIX)):
+    print(MATRIX[i])
