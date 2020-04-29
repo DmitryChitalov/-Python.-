@@ -14,3 +14,13 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+LEFT = 2
+RIGHT = 99
+
+for NUMBER in range(2, 10):
+    RESULT = 0
+    for NUMBER_I in range(LEFT, RIGHT + 1):
+        if not (NUMBER_I % NUMBER):
+            RESULT += 1
+    print(f"В диапазоне {LEFT}-{RIGHT}: {RESULT} чисел кратны {NUMBER}")

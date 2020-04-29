@@ -36,3 +36,28 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+import random
+
+LIST_N = []
+
+for r in range(4):
+    LIST_R = []
+    print(f"{r+1} -я строка:")
+    for c in range(4):
+
+        # имитируем ввод с клавиатуры
+        NEW_NUMBER = random.randint(0, 10)
+        print(NEW_NUMBER)
+
+        # Для ввода с клавиатуры
+        # NEW_NUMBER = int(input("Введите очередное целое число: "))
+
+        LIST_R.append(NEW_NUMBER)
+
+    LIST_R.append(sum(LIST_R))
+    LIST_N.append(LIST_R)
+
+print()
+for r in range(4):
+    print(LIST_N[r])

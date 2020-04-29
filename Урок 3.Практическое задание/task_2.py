@@ -10,3 +10,9 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+LIST_FROM = [8, 3, 15, 6, 4, 2]
+
+LIST_TO = [n for n, i in enumerate(LIST_FROM) if not i % 2]
+
+print(f"Исходный массив: {LIST_FROM}, результат: {LIST_TO}")
