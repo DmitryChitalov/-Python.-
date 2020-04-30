@@ -3,7 +3,6 @@
 Программа должна вычислять сумму введенных элементов каждой строки
 и записывать ее в последнюю ячейку строки.
 В конце следует вывести полученную матрицу.
-
 1-я строка:
 3
 3
@@ -36,3 +35,16 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+from functools import reduce
+
+rows = 5
+columns = 4
+matrix = []  # итоговая матрица
+for i in range(1, rows + 1):
+    print(f'{i}-я строка:')
+    elements = [int(input()) for j in range(columns)]  # наполнение столбцов в каждой строке
+    elements.append(reduce(lambda x, y: x + y, elements))  # добавление дополнительного столбца с суммой элементов
+    matrix.append(elements)
+
+for row in matrix:
+    print(row)
