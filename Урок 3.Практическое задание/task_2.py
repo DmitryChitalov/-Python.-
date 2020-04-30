@@ -10,3 +10,12 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+import random
+NUMBERS = []
+while len(NUMBERS) < 15:
+    i = random.randint(-100, 100)
+    NUMBERS.append(i)
+print(NUMBERS)
+
+print([NUMBERS.index(i) for i in NUMBERS if i % 2 == 0])

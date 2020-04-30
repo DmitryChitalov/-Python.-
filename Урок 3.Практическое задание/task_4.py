@@ -3,3 +3,5 @@
 
 Подсказка: можно применить ф-цию max с параметром key
 """
+NUMBERS = [2, 8, 79, -9, 1, 2, 79, 15, -7, 2, 4, 2, -159, 79, 79, 79]
+print(max(NUMBERS, key=lambda x:NUMBERS.count(x)))

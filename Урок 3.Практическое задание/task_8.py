@@ -36,3 +36,28 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+import random
+N = 5
+EXT_LST = []
+for i in range(N):
+    z = []
+    for j in range(N):
+        n = int(random.randint(1, 10))
+        z.append(n)
+    EXT_LST.append(z)
+
+def last_el(m):
+    for k in range(0, N):
+        el_last = 0
+        for d in range(0, N - 1):
+            el_last += m[k][d]
+        m[k][N - 1] = el_last
+    return m
+
+def printMatrix(mat):
+   for l in range(len(mat)):
+      for o in range(len(mat[l])):
+          print("{:4d}".format(mat[l][o]), end="")
+      print()
+
+printMatrix(last_el(EXT_LST))

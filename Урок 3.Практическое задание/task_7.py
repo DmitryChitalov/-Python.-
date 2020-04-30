@@ -7,3 +7,18 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+import random
+NUMBERS = []
+
+while len(NUMBERS) < 10:
+    i = random.randint(-100, 100)
+    NUMBERS.append(i)
+
+print(f'Исходный массив: {NUMBERS}')
+MIN_1 = min(NUMBERS)
+if NUMBERS.count(MIN_1) > 1:
+    print(f'Наименьший элемент: {MIN_1}, встречается в этом массиве {NUMBERS.count(MIN_1)} раз')
+else:
+    NUMBERS.remove(MIN_1)
+    print(f'Наименьший элемент: {MIN_1}, встречается в этом массиве 1 раз')
+    print(f'Второй наименьший элемент: {min(NUMBERS)}')

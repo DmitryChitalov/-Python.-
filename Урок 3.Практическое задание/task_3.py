@@ -11,3 +11,15 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+import random
+NUMBERS = []
+while len(NUMBERS) < 15:
+    i = random.randint(-100, 100)
+    NUMBERS.append(i)
+print(NUMBERS)
+
+m = NUMBERS.index(max(NUMBERS))
+n = NUMBERS.index(min(NUMBERS))
+
+NUMBERS[m], NUMBERS[n] = NUMBERS[n], NUMBERS[m]
+print(NUMBERS)
