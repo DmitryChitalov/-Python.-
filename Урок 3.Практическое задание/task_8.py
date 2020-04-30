@@ -36,3 +36,16 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+big_arr = []
+for n in range(4):
+    array = []
+    for i in range(4):
+        a = int(input())
+        array.append(a)
+    array.append(sum(array))
+    b = array
+    big_arr.append(b)
+
+for k in big_arr:
+    print(k)
