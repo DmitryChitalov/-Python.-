@@ -13,3 +13,18 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+from random import random
+ARRAY = [int(random() * 100) for _ in range(10)]
+MIN_ID = ARRAY.index(min(ARRAY))
+MAX_ID = ARRAY.index(max(ARRAY))
+AMOUNT = 0
+if MIN_ID > MAX_ID:
+    for i in range((MAX_ID + 1), MIN_ID):
+        AMOUNT += ARRAY[i]
+else:
+    for i in range((MIN_ID + 1), MAX_ID):
+        AMOUNT += ARRAY[i]
+print(f'Массив: {ARRAY}')
+print(
+    f'Сумма элементов между минимальным ({ARRAY[MIN_ID]}) и максимальным ({ARRAY[MAX_ID]}) элементами: {AMOUNT}')

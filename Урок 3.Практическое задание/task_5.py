@@ -8,3 +8,14 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+from random import random
+ARRAY = [int((random() * 100) - 50) for _ in range(15)]
+print(ARRAY)
+num = 0
+for i in ARRAY:
+    if i < 0 and num == 0:
+        num = i
+    elif i < 0 and i > num:
+        num = i
+print(
+    f'Максимальный отрицательный элемент в данном массиве = {num}, его индекс {ARRAY.index(num)}')

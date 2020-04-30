@@ -10,4 +10,11 @@
 В данном массиве чисел максимальное число   88 стоит на
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
-"""
+ """
+from random import random
+N = 15
+ARRAY = [(i * int(random() * 20) - 1) for i in range(N)]
+print('Массив до замены: ', ARRAY)
+ARRAY[ARRAY.index(max(ARRAY))], ARRAY[ARRAY.index(
+    min(ARRAY))] = ARRAY[ARRAY.index(min(ARRAY))], ARRAY[ARRAY.index(max(ARRAY))]
+print('Массив после замены: ', ARRAY)

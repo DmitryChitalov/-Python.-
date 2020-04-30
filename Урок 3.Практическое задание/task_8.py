@@ -36,3 +36,19 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+ROW = 5
+COLUMN = 4
+ARRAY = []
+for i in range(1, COLUMN + 1):
+    row = []
+    amount = 0
+    print(f'{i}-я строка:')
+    for j in range(ROW - 1):
+        num = int(input())
+        amount += num
+        row.append(num)
+    row.append(amount)
+    ARRAY.append(row)
+
+for i in ARRAY:
+    print(i)
