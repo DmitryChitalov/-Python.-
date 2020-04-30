@@ -10,3 +10,15 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+from random import random
+#BASE_ARRAY = [8, 3, 15, 6, 4, 2]
+BASE_ARRAY = [int(20 * random() - 10) for i in range(30)]
+
+EVEN_IDX = []
+for i in range(len(BASE_ARRAY)):
+    if BASE_ARRAY[i] % 2 == 0:
+        EVEN_IDX.append(i)
+
+print(BASE_ARRAY)
+print(EVEN_IDX)
