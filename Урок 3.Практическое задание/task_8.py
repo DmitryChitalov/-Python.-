@@ -53,4 +53,3 @@ for line in MATRIX:
     for item in line:
         print(f'{item:>5}', end="")
     print()
-
