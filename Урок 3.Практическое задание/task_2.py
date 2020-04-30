@@ -10,3 +10,8 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+import random
+
+A = [random.randint(1, 20) for i in range(10)]
+C = [el for el in range(len(A)) if A[el] % 2 == 0]
+print(f'Исходный массив: {A} \nPезультат: {C}')

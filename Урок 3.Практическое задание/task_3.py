@@ -11,3 +11,19 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+import random
+
+
+A = [random.randint(-20, 20) for i in range(10)]
+print(f'Массив №1: {A}')
+MAX_NUM = A[0]
+MIN_NUM = A[0]
+for i in A:
+    if i > MAX_NUM:
+        MAX_NUM = i
+    elif i < MIN_NUM:
+        MIN_NUM = i
+MIN_IDX = A.index(MIN_NUM)
+MAX_IDX = A.index(MAX_NUM)
+A[MIN_IDX], A[MAX_IDX] = A[MAX_IDX], A[MIN_IDX]
+print(f'Массив №2: {A}')

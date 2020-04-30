@@ -36,3 +36,19 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+MATRIX = [
+    [],
+    [],
+    [],
+    [],
+    []
+]
+for i in range(5):
+    for j in range(5):
+        if j < 4:
+            MATRIX[i].append(int(input(f'Введите число {i} строки {j} столбца: ')))
+        else:
+            MATRIX[i].append(sum(MATRIX[i]))
+
+for i in range(len(MATRIX)):
+    print(MATRIX[i])
