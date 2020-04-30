@@ -8,3 +8,13 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+import random
+
+array = [random.randint(-100, 100) for i in range(10)]
+print(array)
+
+maxmin = min(array)
+for el in array:
+    if el < 0 and el > maxmin:
+        maxmin = el
+print(f'Максимальное отрицательное число в массиве: {maxmin}')
