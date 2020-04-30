@@ -14,3 +14,14 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+ran = [i for i in range(2, 100)]
+mul = [0] * 10
+
+for val in ran:
+    for div in range(2, 10):
+        if val % div == 0:
+            mul[div] += 1
+
+for div in range(2, 10):
+    print(f"В диапазоне [2;99] кол-во чисел кратных {div} = {mul[div]}")

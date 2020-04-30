@@ -36,3 +36,18 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+matrix = [[0] * 5 for _ in range(5)]
+
+for i in range(5):
+    print(f'{i + 1}-я строка')
+    for j in range(4):
+        mat = int(input(f'Введите символ в {j+1} яейку строки {i+1}: '))
+        matrix[i][j] = mat
+
+for i in range(5):
+    for j in range(4):
+        matrix[i][4] += mat
+print('\nПолученная матрица:')
+for line in matrix:
+    print(line)

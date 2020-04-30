@@ -11,3 +11,20 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+
+from random import randint
+a = []
+b = int(input('Ведите длину массива '))
+for i in range(b):
+    n = randint(0, 20)
+    a.append(n)
+print(f'Случайный массив из {len(a)} чисел: \n{a}')
+max = max(a)
+index_max = a.index(max)
+min = min(a)
+index_min = a.index(min)
+print(f"В данном массиве макимальное число {max} стоит на {index_max+1} позиции, а минимальное число {min} стоит на {index_min+1} позиции")
+
+a[index_max] = min
+a[index_min] = max
+print(f'\nМеняем их местами: \n{a}')

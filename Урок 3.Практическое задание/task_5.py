@@ -8,3 +8,19 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+
+from random import randint
+
+list = []
+b = int(input('Ведите длину массива '))
+for i in range(b):
+    list.append(randint(-10, 10))
+ls = []
+for p in list:
+    if p < 0:
+        ls.append(p)
+
+max_minus = max(ls)
+ind_min = list.index(max_minus)
+print(f'Базовый список: \n{list}')
+print(f'Максимальный отрицательный элемент в данном массиве: {max_minus}, его индекс: {ind_min} позиция {ind_min+1}')

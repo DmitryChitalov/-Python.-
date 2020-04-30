@@ -10,3 +10,16 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+from random import randint
+rn = int(input('Ведите длину массива '))
+a = []
+b = []
+for i in range(rn):
+    n = randint(0, 10)
+    a.append(n)
+print(f'Исходный массив: {a}')
+for i in a:
+    if i % 2 == 0:
+        b.append(a.index(i))
+print(f'Индексы четных элементов: {b}')
