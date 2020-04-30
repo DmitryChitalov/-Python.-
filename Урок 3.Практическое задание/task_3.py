@@ -11,3 +11,13 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+import random
+LEN = int(input('Введите длину массива: '))
+a = [random.randint(0, 99) for k in range(LEN)]
+print(a)
+MAX_INDEX = a.index(max(a))
+MIN_INDEX = a.index(min(a))
+a[MAX_INDEX], a[MIN_INDEX] = a[MIN_INDEX], a[MAX_INDEX]
+print(a)
+
+
