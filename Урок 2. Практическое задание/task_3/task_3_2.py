@@ -14,3 +14,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recfunc(num, invert=0):
+    """ Наша рекурсия"""
+
+    if num == 0:
+        return invert
+    else:
+        invert = (invert * 10) + (num % 10)
+        num = num // 10
+        return recfunc(num, invert)
+
+
+try:
+    NUMB = int(input("Введите число: "))
+    print(f"Перевернутое число: {recfunc(NUMB)}")
+except ValueError:
+    print("Введите число. Попробуйте еще раз.")

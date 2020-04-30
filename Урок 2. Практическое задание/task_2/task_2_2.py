@@ -15,3 +15,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recfunc(num, chet=0, nechet=0):
+    """ Наша рекурсия"""
+
+    if num == 0:
+        return chet, nechet
+    else:
+        # достаем очередную цифру числа
+        cif = num % 10
+        # число естественно становится короче
+        num = num // 10
+        # проверяем цифра четная или нечетная
+        if cif % 2 == 0:
+            chet += 1
+            return recfunc(num, chet, nechet)
+        else:
+            nechet += 1
+            return recfunc(num, chet, nechet)
+
+
+try:
+    NUMB = int(input("Введите число: "))
+    print(f"Количество четных и нечетных цифр в числе: {recfunc(NUMB)}")
+except ValueError:
+    print("Введите число. Попробуйте еще раз.")
+

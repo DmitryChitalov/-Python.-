@@ -8,3 +8,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def loopfunc(countt):
+    """ Наш цикл"""
+
+    num = 1
+    i = 0
+    rez = 0
+
+    while i < countt:
+        rez += num
+        num = num / 2 * -1
+        i += 1
+
+    return rez
+
+
+try:
+    COUNTT = int(input("Введите количество элементов: "))
+    print(f"Количество элементов: {COUNTT} и их сумма: {loopfunc(COUNTT)}")
+except ValueError:
+    print("Введите число. Попробуйте еще раз.")

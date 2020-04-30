@@ -12,3 +12,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def loopfunc(count_num, ord_num):
+    """ Наш цикл"""
+
+    count = 0
+    for i in range(1, count_num + 1):
+        try:
+            num = int(input(f"Число {str(i)}: "))
+            while num > 0:
+                if num % 10 == ord_num:
+                    count += 1
+                num = num // 10
+        except ValueError:
+            print("Введите число. Попробуйте еще раз.")
+    print(f"Было введено {count} цифр '{ord_num}'")
+
+
+try:
+    COUNT_NUM = int(input("Сколько будет чисел?"))
+    ORD_NUM = int(input("Какую цифру считать?"))
+    loopfunc(COUNT_NUM, ORD_NUM)
+except ValueError:
+    print("Введите число. Попробуйте еще раз.")

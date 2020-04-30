@@ -10,3 +10,35 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def loopfunc(most):
+    """ Наш цикл"""
+
+    steps = 0
+    max_sum = 0
+
+    for _ in range(0, most):
+        try:
+            num = input("Введите число: ")
+            sums = 0
+
+            for i in num:
+                sums += int(i)
+
+            if sums > max_sum:
+                max_sum = sums
+                most_num = num
+
+            steps += 1
+        except ValueError:
+            print("Введите число. Попробуйте еще раз")
+
+    return f"Наибольшее число по сумме цифр: {most_num}, сумма его цифр: {max_sum}"
+
+
+try:
+    MOST = int(input("Введите количество чисел: "))
+    print(loopfunc(MOST))
+except ValueError:
+    print("Введите число. Попробуйте еще раз")

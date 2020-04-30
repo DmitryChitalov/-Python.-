@@ -5,3 +5,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def loopfunc(num):
+    """Наш цикл"""
+
+    count = 0
+    for i in range(1, num + 1):
+        count += i
+        rez = num * (num + 1) // 2
+    print(f"Равенство: {count == rez}")
+
+
+try:
+    NUMB = int(input("Введите число: "))
+    loopfunc(NUMB)
+except ValueError:
+    print("Введите число. Попробуйте еще раз.")

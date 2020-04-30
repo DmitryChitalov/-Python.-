@@ -7,3 +7,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import random
+
+
+def loopfunc():
+    """ Наш цикл"""
+
+    num = random.randint(0, 100)
+    count = 1
+
+    while count < 11:
+        print(f"Номер попытки {count}")
+        resp = int(input("Введите число от 0 до 100: "))
+        if resp != num:
+            if num < resp:
+                print(f"Загаданное число меньше чем {num}")
+            if num > resp:
+                print(f"Загаданное число больше чем {num}")
+        else:
+            print("Вы угадали!")
+            break
+        count += 1
+    return num
+
+
+print(f"Загаданное число - {loopfunc()}")

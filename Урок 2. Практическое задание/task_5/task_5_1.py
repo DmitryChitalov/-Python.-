@@ -17,3 +17,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def loopfunc(firstch, lastch, rezstr=''):
+    """ Наш цикл"""
+
+    for i in range(firstch, lastch):
+        if i <= CONST_LAST_CH:
+            rezstr += f'{i} - {chr(i)} '
+    return rezstr
+
+
+CONST_FIRST_CH = 32
+CONST_LAST_CH = 127
+STEP = 10
+
+for i in range(CONST_FIRST_CH, CONST_LAST_CH + 1, STEP):
+    print(loopfunc(i, i + STEP))

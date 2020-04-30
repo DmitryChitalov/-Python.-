@@ -33,3 +33,53 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recfunc():
+    """ Наша рекурсия"""
+
+    operac = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+
+    if operac == '0':
+        return "Выход"
+
+    else:
+        if operac in "+-*/":
+            try:
+                num_1 = int(input("Введите первое число: "))
+                num_2 = int(input("Введите второе число: "))
+
+                if operac == '+':
+                    rez = num_1 + num_2
+                    print(f"Ваш результат {rez}")
+                    return recfunc()
+
+                elif operac == '*':
+                    rez = num_1 * num_2
+                    print(f"Ваш результат {rez}")
+                    return recfunc()
+
+                elif operac == '-':
+                    rez = num_1 - num_2
+                    print(f"Ваш результат {rez}")
+                    return recfunc()
+
+                elif operac == '/':
+                    if num_2 != 0:
+                        rez = num_1 / num_2
+                        print(f"Ваш результат {rez}")
+                    else:
+                        print("Деление на 0 невозможно")
+                    return recfunc()
+
+            except ValueError:
+                print(
+                    "Вы вместо трехзначного числа ввели строку (((. Исправьтесь")
+                return recfunc()
+
+        else:
+            print("Введен неверный символ, попробуйте еще раз")
+            return recfunc()
+
+
+recfunc()
