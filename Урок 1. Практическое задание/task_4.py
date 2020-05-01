@@ -14,26 +14,3 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
-
-from random import random
-
-try:
-    LEFT = int(input("Минимальная граница: "))
-    RIGHT = int(input("Максимальная граница: "))
-    NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
-    print(NUMB)
-except ValueError:
-    print("Вы ввели нечисло. Попробуйте заново")
-
-try:
-    LEFT = float(input("Минимальная граница: "))
-    RIGHT = float(input("Максимальная граница: "))
-    NUMB = random() * (RIGHT - LEFT) + LEFT
-    print(round(NUMB, 3))
-except ValueError:
-    print("Вы ввели нечисло. Попробуйте заново")
-
-LEFT = ord(input("Введите символ нижней границы: "))
-RIGHT = ord(input("Введите символ верхней границы: "))
-RESULT = int(random() * (RIGHT - LEFT + 1)) + LEFT
-print(chr(RESULT))
