@@ -8,3 +8,81 @@ s = "beep boop beer!"
 Результат:
 00 11 11 101 010 00 011 011 101 010 00 11 11 1000 1001
 """
+from collections import Counter
+
+
+class TreeNode:
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+
+class Haffman:
+    _codes = dict()
+    _tree = None
+
+    # Разбор входной строки и назначение кода каждому символу
+    def parse(self, string):
+        # Подсчитаем вхождение каждого элемента в строке
+        counter = Counter(string)
+        elements = sorted(counter.items(), key=lambda item: item[1])
+
+        if len(elements) > 1:
+            while len(elements) > 1:
+                weight = elements[0][1] + elements[1][1]
+                node = TreeNode(elements.pop(0)[0], elements.pop(0)[0])
+
+                # Ищем, куда вставить новый элемент
+                for i, item in enumerate(elements):
+                    if weight > item[1]:
+                        continue
+                    else:
+                        elements.insert(i, (node, weight))
+                        break
+                else:
+                    elements.append((node, weight))
+        # Разбираем коды
+        self._tree = elements[0][0]
+        self.haffman_code(self._tree)
+        # Кодируем исходную строку
+        result = ''
+        for i in string:
+            result += self._codes[i] + ' '
+        return result
+
+    @classmethod
+    # Рекурсивно обходим дерево и присваиваем коды каждому символу
+    def haffman_code(cls, tree, path=''):
+        if not isinstance(tree, TreeNode):
+            cls._codes[tree] = path
+        else:
+            cls.haffman_code(tree.left, path=f'{path}0')
+            cls.haffman_code(tree.right, path=f'{path}1')
+
+    @classmethod
+    # Декодирует на основе текущего словаря
+    def decode(cls, string):
+        result = ''
+        cur_elem = cls._tree
+        for i in string:
+            if not isinstance(cur_elem, TreeNode):
+                result += cur_elem
+                cur_elem = cls._tree
+            else:
+                # Выбираем, по какой ветке пойти
+                if i == '0':
+                    cur_elem = cur_elem.left
+                else:
+                    cur_elem = cur_elem.right
+        return result
+
+
+if __name__ == '__main__':
+    haffman = Haffman()
+    res = haffman.parse('beep boop beer!')
+    print(res)
+    # Также можно декодировать зашифрованную строку
+    code = res.replace(' ', '')
+    res = Haffman.decode(code)
+    print(res)
+
