@@ -14,3 +14,23 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+import random
+RAND_RANGE_TYPE = input("Выберите тип диапазона (N - случайное целое число, "
+                        "R - случайное вещественное число, "
+                        "C - случайный символ): ")
+if RAND_RANGE_TYPE == "N":
+    MIN_VALUE = int(input("Введите минимальное значение: "))
+    MAX_VALUE = int(input("Введите максимальное значение: "))
+    RESULT = int(random.random() * (MAX_VALUE - MIN_VALUE + 1)) + MIN_VALUE
+    print(RESULT)
+elif RAND_RANGE_TYPE == "R":
+    MIN_VALUE = float(input("Введите минимальное значение: "))
+    MAX_VALUE = float(input("Введите максимальное значение: "))
+    RESULT = random.random() * (MAX_VALUE - MIN_VALUE + 1) + MIN_VALUE
+    print(round(RESULT, 3))
+else:
+    MIN_VALUE = ord(input("Введите минимальное значение: "))
+    MAX_VALUE = ord(input("Введите максимальное значение: "))
+    RESULT = int(random.random() * (MAX_VALUE - MIN_VALUE + 1)) + MIN_VALUE
+    print(chr(RESULT))
