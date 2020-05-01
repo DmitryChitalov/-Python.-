@@ -8,3 +8,18 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+
+from random import random
+
+BASE_LIST = [(int(200 * random()) - 100) for i in range(30)]
+#BASE_LIST = [-55, -69, -5, 72, -1, -58, -79, 58, 74, 1]
+MAX_NEG_ELEM = -1000
+MAX_NEG_ELEM_IDX = 0
+for i in range(1, len(BASE_LIST) - 1):
+    if 0 > BASE_LIST[i] > MAX_NEG_ELEM:
+        MAX_NEG_ELEM_IDX = i
+        MAX_NEG_ELEM = BASE_LIST[i]
+
+print(BASE_LIST)
+print(f"Максимальный отрицательный элемент в данном массиве = {MAX_NEG_ELEM},"
+      f" его индекс {MAX_NEG_ELEM_IDX}")

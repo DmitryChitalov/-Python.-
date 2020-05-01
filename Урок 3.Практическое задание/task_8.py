@@ -36,3 +36,20 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+MATRIX = [[0] * 5] * 5
+print(MATRIX)
+
+for i in range(5):
+    print(f"{i + 1}-я строка:")
+    for j in range(4):
+        MATRIX[i][j] = int(input())
+
+for i in range(5):
+    SUMM = 0
+    for j in range(4):
+        SUMM += MATRIX[i][j]
+    MATRIX[i][4] = SUMM
+
+for i in range(5):
+    print(MATRIX[i])

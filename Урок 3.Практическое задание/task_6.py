@@ -13,3 +13,26 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+from random import random
+#ARR1 = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+ARR1 = [int(100 * random()) for i in range(int(input("Введите количество элементов в массиве: ")))]
+print(f"Массив: {ARR1}")
+
+MIN_ELEM = sorted(ARR1)[0]
+MAX_ELEM = sorted(ARR1)[-1]
+MIN_IDX = ARR1.index(MIN_ELEM)
+MAX_IDX = ARR1.index(MAX_ELEM)
+
+if MIN_IDX < MAX_IDX:
+    summ = 0
+    for i in range(MIN_IDX + 1, MAX_IDX):
+        summ += ARR1[i]
+elif MIN_IDX > MAX_IDX:
+    summ = 0
+    for i in range(MAX_IDX + 1, MIN_IDX):
+        summ += ARR1[i]
+else:
+    summ = 0
+
+print(f"Сумма элементов между минимальным ({MIN_ELEM})  и максимальным ({MAX_ELEM}) элементами: {summ}")
