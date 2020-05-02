@@ -13,3 +13,18 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+from random import randint
+
+o = 0
+x = [randint(1, 50) for i in range(0, 10)]
+print(x)
+min_x = x.index(min(x))
+max_x = x.index(max(x))
+if min_x > max_x:
+    min_x, max_x = max_x, min_x
+for i in range(min_x + 1, max_x):
+    o += x[i]
+
+print(f'Сумма элементов между минимальным ({min(x)})  и максимальным ({max(x)}) элементами: {o}')
+
+

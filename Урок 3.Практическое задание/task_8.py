@@ -36,3 +36,17 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+from random import randint
+
+N = 5
+M = 4
+
+EXT_LST = []
+for i in range(N):
+    b = []
+    for j in range(M):
+        b.append(randint(0, 2))
+    b.append(sum(b))
+    EXT_LST.append(b)
+for j in range(len(EXT_LST)):
+    print(EXT_LST[j], '\n')
