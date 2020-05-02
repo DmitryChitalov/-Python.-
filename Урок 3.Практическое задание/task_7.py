@@ -7,3 +7,13 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+from random import random
+
+N = int(input("Введите длину массива: "))
+my_arr = [int(random() * 100 - 50) for i in range(N)]
+print(my_arr)
+min_count = my_arr.count(min(my_arr))
+print(f"Наименьший элемент: {min(my_arr)}, встречается в этом массиве {min_count} раз")
+if min_count < 2:
+    my_arr.remove(min(my_arr))
+    print(f"Второй наименьший элемент: {min(my_arr)}")

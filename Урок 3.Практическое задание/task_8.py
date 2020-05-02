@@ -36,3 +36,14 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+my_arr = []
+for i in range(5):
+    my_arr.append([])
+    s = 0
+    for j in range(4):
+        n = int(input(f"Введите {j + 1} число строки: "))
+        s +=n
+        my_arr[-1].append(n)
+    my_arr[-1].append(s)
+for i in my_arr:
+    print(i)
