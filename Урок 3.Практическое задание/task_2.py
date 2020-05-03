@@ -10,3 +10,15 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+
+def proc(first_lst):
+    """ Наша процедура в одну строку"""
+
+    print(
+        f"Исходный массив: {first_lst}, результат: "
+        f"{[per for per in range(len(first_lst)) if first_lst[per] % 2 == 0]}")
+
+
+FIRST_LIST = [8, 3, 15, 6, 4, 2]
+proc(FIRST_LIST)

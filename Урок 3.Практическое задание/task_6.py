@@ -13,3 +13,42 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+from random import randint
+
+
+def proc(lst):
+    """Наша процедура"""
+
+    print(f"Массив: {lst}")
+
+    min_ind = 0
+    max_ind = 0
+    step = 1
+    suma = 0
+
+    for i in lst:
+
+        if lst[min_ind] > i:
+            min_ind = lst.index(i)
+        elif lst[max_ind] < i:
+            max_ind = lst.index(i)
+
+    if max_ind - min_ind < 0:
+        step = -1
+
+    for i in lst[min_ind + step:max_ind:step]:
+        suma += i
+
+    print(
+        f"Сумма элементов между минимальным ({lst[min_ind]})",
+        f" и максимальным ({lst[max_ind]}) элементами: {suma}"
+    )
+
+
+try:
+    NUM = int(input('Введите количество элементов в массиве: '))
+    LST = [randint(1, 100) for x in range(NUM)]
+    proc(LST)
+except ValueError:
+    print("")

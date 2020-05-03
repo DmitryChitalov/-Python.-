@@ -14,3 +14,21 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+
+def proc():
+    """ Наша процедура"""
+
+    lst1 = list(range(2, 10))
+    lst2 = list(range(2, 100))
+
+    for elem in lst1:
+        num = 0
+
+        for i in lst2:
+            if i % elem == 0:
+                num += 1
+        print(f"В диапазоне 2-99: {num} чисел кратны {elem}")
+
+
+proc()

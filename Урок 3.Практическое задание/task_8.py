@@ -36,3 +36,30 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+
+def proc():
+    """ Наша процедура мэтрикс"""
+
+    row = 5
+    col = 4
+    matrix = []
+
+    for i in range(row):
+        string = []
+        s = 0
+        print(f"{i + 1}-я строка: ")
+
+        for j in range(col):
+            n = int(input())
+            s += n
+            string.append(n)
+
+        string.append(s)
+        matrix.append(string)
+
+    for i in matrix:
+        print(i)
+
+
+proc()

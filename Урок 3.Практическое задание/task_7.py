@@ -7,3 +7,30 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+from random import randint
+
+
+def proc(lst):
+    """ Наша прооцедура"""
+
+    print(f"Исходный массив: {lst}")
+
+    min_one = min(lst)
+    count = 0
+
+    for elem in lst:
+
+        if elem == min_one:
+            lst.remove(elem)
+            count += 1
+
+    print(f"Наименьший элемент: {min_one}, встречается в этом массиве {count} раз")
+
+    if count == 1:
+        min_two = min(lst)
+        print(f"Второй наименьший элемент: {min_two}")
+
+
+LST = [randint(-1000, 1000) for i in range(10)]
+proc(LST)
