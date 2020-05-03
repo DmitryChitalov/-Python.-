@@ -11,3 +11,28 @@
 [13, 12, 7, 15] минимальные значения по столбцам
 Максимальное среди них = 15
 """
+
+n = int(input('Задайте количество строк в матрице: '))
+m = int(input('Задайте количество столбцов в матрице: '))
+a = []
+for i in range(n):
+    str = []
+    for j in range(m):
+        q = random.randint(0, 100)
+        str.append(q)
+        print(f'{str[j]:3}', end='')
+    a.append(str)
+    print()
+
+b = []
+
+for i in range(m):
+    mn = []
+    for j in range(n):
+        mn.append(a[j][i])
+    b.append(min(mn))
+
+print(f'{b} минимальные значение по столбцам')
+print(f'Максимальный элемент среди них: {max(b)}')
+
+
