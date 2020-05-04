@@ -16,7 +16,7 @@
 import cProfile
 
 
-# Generators
+# Генераторы
 
 def test_any(func):
     lst = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103,
@@ -199,20 +199,18 @@ cProfile.run('classic(1000)')
 # 6 function calls in 0.001 seconds - 100
 # 6 function calls in 0.007 seconds - 1000
 
-## Analysis ######################################################################
+"""
+Генераторы. Не удалось выполнить 1000 измерений 30-го числа, алгоритм слишком сложный из-за вложенных генераторов.
+Кроме того, такой алгоритм крайне сложно отладить. Самое большое время на замерах без мемоизации. 
+Сложность алгоритма O(n): внешний цикл проходит по каждому элементу исходного диапазона O(n), 
+а для каждого элемента еще обрабатывается две строки сразу двух списков O(n^(1/2)) (проходов будет кол-во 
+элементов^(1/2)). Итого O(n^(1/2)*n) = O(n^3/2).
 
-# Generators method is the worst
-# It couldn’t perform calculations of even the 30th element 1000 times, but with memoization it achieves good results
-# Unreal to debug
-# Increases the number of calls - logarithmic complexity, bcz of nested lists O(log n)
+Метод делителей выигрывает на небольших числах, но на втором месте для больших входных данных. Квадратичная сложность
+O(n^2) из-за вложенных циклов с полным проходом.
 
-##################################################################################
+Классический алгоритм решета Эратосфена выигрывает на больших числах с серьезным отрывом. Сложность алгоритма 
+O(n log(log n)).
 
-# Dividers method wins on small numbers
-# Average results for execution speed of 1000 measurements, with memoization the result is much higher
-# Linear complexity, one pass, O(n)
-
-##################################################################################
-
-# Eratosthenes's sieve is the best on huge numbers and in the average
-# Linear complexity, O(n)
+Мемоизация уравнивает все алгоритмы. При выборе алгоритма для решения конкретной задачи необходимо учитывать цели.
+"""
