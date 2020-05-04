@@ -12,3 +12,133 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+'''Требуется посчитать, сколько раз встречается определенная цифра в введенной
+ последовательности чисел. Количество вводимых чисел и цифра,
+ которую необходимо посчитать, задаются вводом с клавиатуры.'''
+
+import timeit
+from random import random, randint
+
+print("ПЕРВАЯ ЗАДАЧА")
+def cycle_1(COUNT_NUMB_1=10000, NUMBER_USER_1=2):
+# константа (2)
+    ITER_1 = 1
+    RESULT_1 = 0
+# вложенные циклы n^2
+    while COUNT_NUMB_1 > 0:
+        NUMB_1 = randint(0,100)
+        while NUMB_1 > 0:
+            RESULT_1 += 1 if NUMB_1 % 10 == NUMBER_USER_1 else RESULT_1
+            NUMB_1 = NUMB_1 // 10
+        ITER_1 += 1
+        COUNT_NUMB_1 -= 1
+'''Максимальная сложность = O(n2), так как имеется вложенный цикл'''
+
+def recursion_1(COUNT=1000000, NUMBER=2, ITER_2=1, RESULT_2=0):
+    if COUNT == 0:
+        return print(f'Было введено {RESULT} цифр {NUMBER}')
+    else:
+        NUMB_2 = randint(0,100)
+# обычный цикл, сложность n
+        while NUMB_2 > 0:
+            if NUMB_2 % 10 == NUMBER:
+                RESULT_2 += 1
+                NUMB_2 = NUMB_2 // 10
+            else:
+                NUMB_2 = NUMB_2 // 10
+        return recursion_1(COUNT - 1, NUMBER, ITER_2 + 1, RESULT_2)
+'''Максимальная сложность этого решения = O(n)'''
+print('Первый вариант:')
+print('Через цикл:')
+print(timeit.timeit("cycle_1()", setup="from __main__ import cycle_1", number=1000))
+print('Через рекурсию:')
+print(timeit.timeit("recursion_1", setup="from __main__ import recursion_1", number=1000))
+
+'''При первом варианте выполнение через цикл составило в районе 17 секунд. По сравнению с циклом выполнение через 
+рекурсию прошло значительно быстрее и составило примерно 0,01 миллисекунду.
+Анализируя сложность операций примененных в данных примерах, видно, что при рекурсии сложность O(n), а при цикле O(n2), 
+что и приводит к такой разнице во времени выполнения. При этом при увеличении количества входных данных, при первой
+реализации, время выполнения значительно увеличивается, а при рекурсии это увеличение не заметно.
+Буду пробовать оптимизировать цикл.
+1. Для начала меняем функцию генерации псевдослучайного числа с randint на random'''
+
+def cycle_2(COUNT_NUMB_3=10000, NUMBER_USER_3=2):
+    ITER_3 = 1
+    RESULT_3 = 0
+    while COUNT_NUMB_3 > 0:
+        NUMB_3 = int(random() * 100)
+        while NUMB_3 > 0:
+            RESULT_3 += 1 if NUMB_3 % 10 == NUMBER_USER_3 else RESULT_3
+            NUMB_3 = NUMB_3 // 10
+        ITER_3 += 1
+        COUNT_NUMB_3 -= 1
+
+print('------------------------')
+print('Второй вариант:')
+print('Через цикл:')
+print(timeit.timeit("cycle_2()", setup="from __main__ import cycle_2", number=1000))
+
+'''При замене randint на random время выполнения через цикл сократиловсь до 9.5 секунд/
+* The random() method is implemented in C, executes in a single Python step,
+  and is, therefore, threadsafe.
+  2. Далее меняем тернарный оператор на обычный'''
+
+def cycle_3(COUNT_NUMB_4=10000, NUMBER_USER_4=2):
+    ITER_4 = 1
+    RESULT_4 = 0
+    while COUNT_NUMB_4 > 0:
+        NUMB_4 = int(random() * 100)
+        while NUMB_4 > 0:
+            if NUMB_4 % 10 == NUMBER_USER_4:
+                RESULT_4 += 1
+                NUMB_4 = NUMB_4 // 10
+            else:
+                NUMB_4 = NUMB_4 // 10
+        ITER_4 += 1
+        COUNT_NUMB_4 -= 1
+
+print('------------------------')
+print('Третий вариант:')
+print('Через цикл:')
+print(timeit.timeit("cycle_3()", setup="from __main__ import cycle_3", number=1000))
+
+'''Вывод: При данном изменении, код оптимизировался до 4 сек. выполнения. Но при этом стал более длинным.'''
+
+print('*********************************************************************************************')
+print('*********************************************************************************************')
+
+print("ВТОРАЯ ЗАДАЧА")
+'''Основная задача напишисать программу, доказывающую или проверяющую, что для множества
+натуральных чисел выполняется равенство: 1+2+...+n = n(n+1)/2,
+где n - любое натуральное число.'''
+
+def cycle_11(COUNT_NUMB_11=1000):
+    RESULT_11_1 = 0
+#    RESULT_11_2 = int(COUNT_NUMB_11 * (COUNT_NUMB_11 + 1) / 2)
+    COUNT_11 = 0
+    while COUNT_NUMB_11 > 0:
+        COUNT_11 += 1
+        RESULT_11_1 = RESULT_11_1 + COUNT_11
+        COUNT_NUMB_11 -= 1
+    # if RESULT_11_1 == RESULT_11_2:
+    #     print(f'Равенство выполняется!')
+    # else:
+    #     print('Равенство не выполняется')
+print(cycle_11(100000))
+
+def recursion_12 (N=1000, RESULT_12=0, COUNT_12=1):
+    if COUNT_12 > N:
+#        print('Равенство выполняется') if RESULT_12 == (N * (N + 1) / 2) else print('Равенство не выполняется')
+        return
+    else:
+        return recursion_12(RESULT_12 + COUNT_12, COUNT_12 + 1, N)
+
+recursion_12(100000)
+print('Используя цикл, время выполнения составило:')
+print(timeit.timeit("cycle_11()", setup="from __main__ import cycle_11", number=1000))
+print('Испльзуя рекурсияю, время выполнения составило:')
+print(timeit.timeit("recursion_12()", setup="from __main__ import recursion_12", number=1000))
+
+'''В данном примере видно, что при цикле время выполнения составило 2 миллисекунды, а при использовании 
+рекурсии 0,3 миллисекунды. В связи с тем, что при увеличении входных параметров ситуация не меняется 
+и время выполнение мало, оптимизировать нечего'''
