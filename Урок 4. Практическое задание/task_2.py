@@ -73,6 +73,7 @@ def non_eratosphens(n):
 # cProfile.run('non_eratosphens(100)')
 #          1182 function calls in 0.003 seconds
 #
+#
 #    Ordered by: standard name
 #
 #    ncalls  tottime  percall  cumtime  percall filename:lineno(function)

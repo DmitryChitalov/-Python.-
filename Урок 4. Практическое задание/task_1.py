@@ -14,6 +14,7 @@
 """
 
 import random
+import cProfile
 
 # Урок 3 Задание_5.	В массиве найти максимальный отрицательный элемент.
 # Вывести на экран его значение и позицию (индекс) в массиве.
@@ -33,6 +34,9 @@ def task3_5(num_list):
 # 100 loops, best of 5: 10.8 msec per loop [random.randint(-100, 0) for _ in range(10000)]
 # 100 loops, best of 5: 104 msec per loop [random.randint(-100, 0) for _ in range(100000)]
 
+# python -m timeit -n 100 -s "import random" "x = [random.randint(-100, 0) for _ in range(500000)]" "import task_1" "task_1.task3_5(x)"
+# 100 loops, best of 5: 533 msec per loop
+
 def task3_5_v2(num_list):
     new_list = [i for i in num_list if i < 0]
     maximum = max(new_list)
@@ -43,6 +47,11 @@ def task3_5_v2(num_list):
 # 100 loops, best of 5: 1.01 msec per loop
 # 100 loops, best of 5: 10.9 msec per loop
 # 100 loops, best of 5: 108 msec per loop
+
+# python -m timeit -n 100 -s "import random" "x = [random.randint(-100, 0) for _ in range(500000)]" "import task_1" "task_1.task3_5_v2(x)"
+# 100 loops, best of 5: 555 msec per loop
+
+# cProfile.run('task3_5_v2(import random" "x = [random.randint(-100, 0) for _ in range(500000)])')
 
 # task3_5 и task3_5_v2 при увеличении значений in range(значение) быстродествие в пользу функции task3_5
 
