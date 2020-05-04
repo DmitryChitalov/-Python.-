@@ -12,3 +12,91 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+import random
+import time
+import timeit
+
+STR_CODE = """
+n = 4567341112121465
+odd = even = 0
+while n > 0:
+    if n % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+    n = n//10
+"""
+print(timeit.timeit(STR_CODE, number=10000))
+
+def recursion_2(n, odd, even):
+    if n % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+    n = n//10
+    if n > 0:
+        return recursion_2(n, odd, even)
+
+
+
+print(timeit.timeit("recursion_2(4567341112121465, 0, 0)", setup="from __main__ import recursion_2", number=10000))
+ 
+
+"""
+Замеры:
+время выполнения цикла: 0.021782206999999998
+время выполнения рекурсии: 0.03637995200000001
+В данном случае рекурсия менее эффективна, т.к. при одинаковой сложности O(n) проще выполнить 
+набор операторов, чем вызывать каждый раз функцию заново 
+"""
+
+def len(LEN):
+    a = [random.randint(0, 67) for k in range(LEN)]
+
+    a = sorted(a)
+    min1 = a[0]
+    min2 = a[1]
+    
+
+
+print(timeit.timeit("len(100)", setup="from __main__ import len", number=1000))
+
+
+
+def len2(LEN):
+    a = [random.randint(0, 67) for k in range(LEN)]
+    
+    if a[0] > a[1]:
+        min1 = 0
+        min2 = 1
+    else:
+        min1 = 1
+        min2 = 0
+        
+    for i in range(2,LEN):
+        if a[i] < a[min1]:
+            b = min1
+            min1 = i
+            if a[b] < a[min2]:
+                min2 = b
+        elif a[i] < a[min2]:
+            min2 = i
+            
+    
+
+
+
+print(timeit.timeit("len2(100)", setup="from __main__ import len2", number=100))
+
+"""
+До измерений я был уверен, что мой вариант (первый) с сортировкой массива будет быстрее, но с увеличением 
+массива все только ухудшалось.
+Замеры:
+    При длинне массива в 1000:
+        1.309564682
+        0.13738260099999988
+    При длинне в 10000:
+        12.361966123
+        1.278302677000001
+А произошло это из-за того что у sorted сложность O(n log n), в то время,как у второго алгоритма сложность O(n)
+"""
