@@ -13,39 +13,40 @@ import timeit
 import random
 import copy
 
-def merge_sort(orig_list):
-    start_list = copy.deepcopy(orig_list)
-    if len(orig_list) > 1:
-        center = len(orig_list) // 2
-        left = orig_list[:center]
-        right = orig_list[center:]
+def merge_sort(nums):
+    start_list = copy.deepcopy(nums)
+    if len(nums) > 1:
+        center = len(nums) // 2
+        left = nums[:center]
+        right = nums[center:]
 
         merge_sort(left)
         merge_sort(right)
 
-        # перестали делить
-        # выполняем слияние
         i, j, k = 0, 0, 0
 
         while i < len(left) and j < len(right):
-            if left[i] > right[j]:
-                orig_list[k] = left[i]
+            if left[i] < right[j]:
+                nums[k] = left[i]
                 i += 1
             else:
-                orig_list[k] = right[j]
+                nums[k] = right[j]
                 j += 1
             k += 1
 
         while i < len(left):
-            orig_list[k] = left[i]
+            nums[k] = left[i]
             i += 1
             k += 1
 
         while j < len(right):
-            orig_list[k] = right[j]
+            nums[k] = right[j]
             j += 1
             k += 1
-        return f"исходный массив {start_list[0:5]} отсортированный {orig_list[0:5]}"
+        return f"исходный массив {start_list[0:5]} отсортированный {nums[0:5]}"
+
+
 
 orig_list = [random.random()*50 for _ in range(10)]
+
 print(merge_sort(orig_list))
