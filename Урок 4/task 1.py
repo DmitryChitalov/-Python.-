@@ -45,3 +45,5 @@ def sum_around2(list, min_id, max_id):
 print(list)
 print(sum_around1(list))
 print(sum_around2(list, list.index(min(list)), list.index(max(list))))
+
+

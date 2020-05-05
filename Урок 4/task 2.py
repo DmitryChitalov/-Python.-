@@ -1,5 +1,5 @@
-count = int(input("Enter size = "))
-
+from datetime import datetime
+import time
 
 # функция algo имеет квадратичную сложность O(n^2) ведь чем больще число, тем больше сложность у функции IsPrime,
 # а по-скольку надо проверять каждое число то мы проверяем n раз функцию IsPrim, котрая сама O(n)
@@ -34,16 +34,18 @@ def eratosthenes(n):
                 sieve[j] = 0
     return sieve
 
+# черезвычайное быстрое вычисление, использование математических хитростей многократно ускорило вычисление,
+# убирая ненужные итерации
+for i in range(5):
+    count = pow(10,i)
+    start_time = datetime.now()
+    eratosthenes(count * 10)
+    print(datetime.now() - start_time)
 
-print(algo(count))
-list = eratosthenes(count*10)
-list_prime = []
-a = 0
-for i in list:
-    if i != 0:
-        list_prime.append(i)
-print(list_prime[count-1])
-
-
-
-
+# квадратная сложность при 100к уже вычисляет больше нескольких минут, каждый раз вычисляем (можно оптимизировать при
+# помози динамического программирования)
+for i in range(5):
+    count = pow(10,i)
+    start_time = datetime.now()
+    algo(count)
+    print(datetime.now() - start_time)
