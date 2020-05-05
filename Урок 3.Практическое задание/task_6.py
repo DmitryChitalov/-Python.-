@@ -47,3 +47,5 @@ for x in range(MIN_INDEX+1, MAX_INDEX):
 # выводим результат
 print(f'Список : {MY_LIST_1}')
 print(f'Сумма элементов между минимальным {MIN_NUMBER} и максимальным {MAX_NUMBER} элементами: {SUM}')
+
+print(2**24)
