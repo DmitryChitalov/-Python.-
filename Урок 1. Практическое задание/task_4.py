@@ -14,3 +14,27 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+from random import random
+
+try:
+    PARAM_1 = int(input("Введите левую границу диапазона для случайного числа: "))
+    PARAM_2 = int(input("Введите правую границу диапазона для случайного числа: "))
+    RAND = int(random() * (PARAM_2 - PARAM_1 + 1)) + PARAM_1
+    print(RAND)
+except ValueError:
+    print("Вы вместо числа ввели букву")
+
+try:
+    PARAM_1 = float(input("Введите левую границу диапазона для вещественного числа: "))
+    PARAM_2 = float(input("Введите правую границу диапазона для вечещественного числа: "))
+    RAND = int(random() * (PARAM_2 - PARAM_1)) + PARAM_1
+    print(round(RAND, 3))
+except ValueError:
+    print("Вы вместо числа ввели букву")
+
+PARAM_1 = ord(input("Введите левую границу диапазона для символа: "))
+PARAM_2 = ord(input("Введите правую границу диапазона для символа: "))
+RAND = int(random() * (PARAM_2 - PARAM_1 + 1)) + PARAM_1
+print(chr(RAND))
+
