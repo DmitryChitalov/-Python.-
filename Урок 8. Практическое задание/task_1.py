@@ -16,3 +16,25 @@
 
 Итог: 6 подстрок
 """
+
+import hashlib
+
+
+USER_STR = input("Введите строку из маленьких латинских букв: ")
+NEW_ARRAY = set()  # контейнер для хранения хэш-сумм
+
+N = len(USER_STR)
+for i in range(N):
+    if i == 0:
+        N = len(USER_STR) - 1
+    else:
+        N = len(USER_STR)
+    for j in range(N, i, -1):
+        BYTE_STR = USER_STR[i:j].encode('utf-8')  # преобразование подстроки в байтовую
+        HASH_STR = hashlib.sha1(BYTE_STR).hexdigest()  # сделать хэш-сумму из байтовой строки
+        print(f'{HASH_STR} - {USER_STR[i:j]}')
+        NEW_ARRAY.add(HASH_STR)
+        # добавить хэш-сумму в массив, если такая уже есть в массиве, то не добавится
+print(NEW_ARRAY)
+
+print(f"Количество различных подстрок в строке '{USER_STR}' равно {len(NEW_ARRAY)}")
