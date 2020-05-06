@@ -12,3 +12,49 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+
+import timeit
+
+
+def funcloop(num):
+    """O(n) – линейная сложность
+        функция использующая цикл"""
+
+    array = []
+
+    for i in range(len(num)):
+        if num[i] % 2 == 0:
+            array.append(i)
+    return array
+
+
+def funcgen(nums):
+    """O(n) – линейная сложность
+        Функция использующая генератор"""
+
+    return [i for i, elem in enumerate(nums) if elem % 2 == 0]
+
+
+NUM = [elem for elem in range(10000)]
+
+print(timeit.timeit(
+        "funcloop(NUM)",
+        setup="from __main__ import funcloop, NUM",
+        number=10000))
+
+print(timeit.timeit(
+        "funcgen(NUM)",
+        setup="from __main__ import funcgen, NUM",
+        number=10000))
+
+
+"""
+ Результат:
+ Функция использующая цикл завершилась за 23.208390899999998 секунд.
+ Функция использующая генератор завершилась за 14.354028099999997 секунд.
+
+ Вывод:
+ Там где можно нужно заменять циклы генераторами
+ т.к. в этом случае код работает почти в половину быстрее.
+ Потому что генераторы это встроенные функции.
+"""
