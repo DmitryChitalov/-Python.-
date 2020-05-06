@@ -11,3 +11,20 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+class Hexadecimal:
+    def __init__(self, num):
+        self.num = int(num, 16)
+
+    def __add__(self, other):
+        return other + self.num
+
+    def __mul__(self, other):
+        return other  * self.num
+
+num_1 = Hexadecimal('a2')
+num_2 = Hexadecimal('c4f')
+
+print(hex(num_1 + num_2))
+print(hex(num_1 * num_2))
+
+
