@@ -119,17 +119,26 @@ def simples_n(target, simple=0):
     #print((f'{target}-ое простое число: {simple}'))
 
 """
+Результат для 100-го простого числа 0.004 seconds
+Результат для 500-го простого числа 0.144 seconds
+Результат для 1000-го простого числа 0.658 seconds
 Результат для 2000-го простого числа 3.008 seconds
 Данный алгоритм не обладает преимуществами, медленный, сложный"""
 
 
-cProfile.run('simple_n(target)')
-cProfile.run('simple_n1(target)')
-cProfile.run('simple_n2(target)')
-cProfile.run('simple_n3(target)')
+#cProfile.run('simple_n(target)')
+#cProfile.run('simple_n1(target)')
+#cProfile.run('simple_n2(target)')
+#cProfile.run('simple_n3(target)')
 cProfile.run('simples_n(target)')
 
 
 #print(timeit.timeit('simple_n2(target)', setup='from __main__ import simple_n2, target', number=10000))
 #print(timeit.timeit('simple_n3(target)', setup='from __main__ import simple_n3, target', number=10000))
-#print(timeit.timeit('simples_n(target)', setup='from __main__ import simples_n, simples, target', number=1000))
+#print(timeit.timeit('simples_n(target)', setup='from __main__ import simples_n, simples, target', number=50))
+
+"""На данных примерах хорошо видно, что грамотный алгоритм в разы повышает скорость вычислений.
+Оптимизация алгоритмов - необходимая вещь для хорошо работающего кода. 
+Наши учебные примеры не отличаются большой сложностью вычислений, а тем более большими вводными данными
+В реальности плохой неоптимизированный код может делать вычисления неоправданно дорогими по затраченным ресурсам"""
+
