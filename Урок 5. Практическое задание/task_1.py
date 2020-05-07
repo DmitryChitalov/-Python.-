@@ -25,3 +25,47 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+import collections
+all_profit = 0
+report_period = 4
+
+companies = collections.defaultdict()
+company_plus = collections.deque()
+company_minus = collections.deque()
+
+while (1):
+    try:
+        user_input = int(input('Введите количество компаний: '))
+        for i in range(user_input):
+            name = input(f'\nВведите название {i + 1}й компании: ')
+            profit = 0
+            q = 1
+            while q <= report_period:
+                try:
+                    profit += float(input(f'Введите прибыль за {q}й квартал: '))
+                except ValueError:
+                    print('Вы ввели недопустимое значение')
+                    continue
+                q += 1
+            companies[name] = profit
+            all_profit += profit
+        mid_profit = all_profit / user_input
+
+        for i, item in companies.items():
+            if item >= mid_profit:
+                company_plus.append(i)
+            else:
+                company_minus.append(i)
+    except ValueError:
+        print('Вы ввели недопустимое значение')
+        continue
+    break
+
+
+print(f'\nСредняя прибыль для всех компаний составила: {mid_profit}')
+print(f'Прибыль выше среднего у {len(company_plus)} компаний:')
+print(*company_plus)
+
+print(f'Прибыль ниже среднего у {len(company_minus)} компаний:')
+print(*company_minus)
