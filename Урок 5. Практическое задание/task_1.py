@@ -25,3 +25,31 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+import collections
+
+defdict = collections.defaultdict(int)
+
+n = int(input('Введите количество предприятий для расчета прибыли: '))
+
+avg_glob = 0
+
+for j in range(n):
+    name = input("Введите название предприятия: ")
+    profit = input("Введите прибыль за каждый квартал через пробел: ")
+    profit_ls = profit.split(' ')
+    i = 0
+    for el in profit_ls:
+        i = i + int(el)
+    avg = i / 4
+    defdict[name] = avg
+    avg_glob += avg
+
+avg_glob = avg_glob / n
+
+print(f'Средняя годовая прибыль всех предприятий: {avg_glob}')
+
+for i, j in defdict.items():
+    if j > avg_glob:
+        print(f'Предприятия с прибылью выше среднего значения: {i}')
+    else:
+        print(f'Предприятия с прибылью ниже среднего значения: {i}')
