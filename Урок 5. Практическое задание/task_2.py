@@ -11,3 +11,33 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+
+from collections import deque
+
+HEX_NUM = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9,
+           'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
+num = 2
+summ = 0
+multy = 1
+while num != 0:
+    result = [i for i in input('Введите число: ').upper()]
+    result = deque(result)
+    deque.reverse(result)
+    res = 0
+    n = 0
+    for i in result:
+        res += (HEX_NUM[i] * 16 ** n)
+        n += 1
+    summ += res
+    multy *= res
+    num -= 1
+
+print(f'Сумма чисел: {hex(summ).upper()}')
+print(f'Произведение чисел: {hex(multy).upper()}')
+
+"""
+ Извините за такое решение,
+ времени очень ограничено в этот раз было,
+ если надо переделать, обязательно переделаю
+ 
+"""
