@@ -25,3 +25,36 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+import collections
+
+
+companies = collections.defaultdict(dict)
+
+number = int(input('Введите количество предприятий для расчета прибыли: '))
+
+for i in range(number):
+    name = input('Введите название предприятия: ')
+    income = input('через пробел введите прибыль данного предприятия\n'
+                   'за каждый квартал(Всего 4 квартала): ')
+    income = [int(i) for i in income.split(' ')]
+    companies.update({name: income})
+
+
+average = collections.defaultdict(dict)
+for k, v in companies.items():
+    average.update({k: (sum(v) / len(v))})
+
+common_av = sum(average.values()) / len(average.values())
+
+bigger = []
+smaller = []
+for k, v in average.items():
+    if v >= common_av:
+        bigger.append(k)
+    else:
+        smaller.append(k)
+
+print(f'Средняя годовая прибыль всех предприятий: {common_av}')
+print(f'Предприятия, с прибылью выше среднего значения: {", ".join(bigger)}')
+print(f'Предприятия, с прибылью ниже среднего значения: {", ".join(smaller)}')

@@ -11,3 +11,45 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+
+import collections
+
+
+class Hexdeque(collections.deque):
+    def __add__(self, other):
+        num = ''
+        numother =''
+        for i in self:
+            num +=i
+        num = int(num, 16)
+
+        for i in other:
+            numother +=i
+
+        numother= int(numother, 16)
+
+        return print(hex(num + numother))
+
+    def __mul__(self, other):
+        num = ''
+        numother = ''
+        for i in self:
+            num += i
+        num = int(num, 16)
+
+        for i in other:
+            numother += i
+
+        numother = int(numother, 16)
+
+        return print(hex(num * numother))
+
+
+NUM1 = Hexdeque(input('Введите первое шестнадцатеричное число: '))
+NUM2 = Hexdeque(input('Введите второе шестнадцатеричное число: '))
+
+print(NUM1)
+print(NUM2)
+
+print(NUM2 + NUM1)
+print(NUM2 * NUM1)
