@@ -66,6 +66,5 @@ while (1):
 print(f'\nСредняя прибыль для всех компаний составила: {mid_profit}')
 print(f'Прибыль выше среднего у {len(company_plus)} компаний:')
 print(*company_plus)
-
 print(f'Прибыль ниже среднего у {len(company_minus)} компаний:')
 print(*company_minus)
