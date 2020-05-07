@@ -11,3 +11,23 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+import collections
+
+NUMBERS = collections.defaultdict(list)
+
+def decision():
+
+    for i in range(2):
+        j = input(f'Введите {i + 1}-е шестнадцатиричное число: ')
+        NUMBERS[i] = list(j)
+    number_1 = ''.join(NUMBERS[0])
+    number_2 = ''.join(NUMBERS[1])
+    decimal_numb = [int(''.join(n), 16) for n in NUMBERS.values()]
+    hex_numb = hex(sum(decimal_numb)).upper()
+    print(f"{number_1.upper()} + {number_2.upper()} = {hex_numb[2:]}")
+
+    decimal_numb = [int(''.join(n), 16) for n in NUMBERS.values()]
+    hex_numb = hex(decimal_numb[0] * decimal_numb[1]).upper()
+    print(f"{number_1.upper()} * {number_2.upper()} = {hex_numb[2:]}")
+
+decision()
