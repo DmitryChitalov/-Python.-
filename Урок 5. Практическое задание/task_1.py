@@ -25,3 +25,35 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+
+from collections import namedtuple
+
+company = namedtuple('company', ['q1', 'q2', 'q3', 'q4'])
+base_company = {}
+n = int(input("Введите количество предприятий для расчета прибыли: "))
+
+for i in range(n):
+    name = input(f'Введите № {i+1}-е предприятие: ')
+    prof_q1 = int(input('Прибыль за 1-й квартал: '))
+    prof_q2 = int(input('Прибыль за 2-й квартал: '))
+    prof_q3 = int(input('Прибыль за 3-й квартал: '))
+    prof_q4 = int(input('Прибыль за 4-й квартал: '))
+    base_company[name] = company(q1=prof_q1, q2=prof_q2, q3=prof_q3, q4=prof_q4)
+
+total_profit = ()
+for name, prof in base_company.items():
+    print(f'Средняя годовая прибыль предприятия {name}: {sum(prof)} руб')
+    total_profit += prof
+
+smm=(sum(total_profit)/len(base_company))
+print(f'Средняя прибыль за год для всех предприятий {smm} руб')
+
+for name, prof in base_company.items():
+    if sum(prof) > smm:
+        print(f'\nПредприятие  {name}  c прибылью {sum(prof)}руб  ВЫШЕ среднего значения {smm} руб')
+
+for name, prof in base_company.items():
+    if sum(prof) < smm:
+        print(f'Предприятие  {name}  с прибылью {sum(prof)}руб  НИЖЕ среднего значения {smm} руб')
+
