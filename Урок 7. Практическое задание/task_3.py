@@ -6,3 +6,29 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+
+from random import randint
+RANDOM_LIST = [randint(0, 100) for _ in range(1001)]
+
+
+def finder(arr):
+    """Находим медиану по сравнению количества чисел слева и справа"""
+    for i in arr:
+        left = 0
+        right = 0
+        center = 0
+        for j in arr:
+            if i is j:
+                center += 1
+            elif i < j:
+                right += 1
+            else:
+                left += 1
+        if abs(left - right) + 1 <= center:
+            return i
+
+
+print(f"Сгенерировался список случайных чисел:\n{RANDOM_LIST}\n"
+      f"При помощи функции, находим медиану: {finder(RANDOM_LIST)}\n"
+      f"Проверяем, что функция сработала верно с помощью встроенной:"
+      f" {sorted(RANDOM_LIST)[len(RANDOM_LIST)//2]}")
