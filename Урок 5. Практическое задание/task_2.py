@@ -28,7 +28,7 @@ class Hexdeque(collections.deque):
 
         numother= int(numother, 16)
 
-        return print(hex(num + numother))
+        return hex(num + numother)
 
     def __mul__(self, other):
         num = ''
@@ -42,7 +42,7 @@ class Hexdeque(collections.deque):
 
         numother = int(numother, 16)
 
-        return print(hex(num * numother))
+        return hex(num * numother)
 
 
 NUM1 = Hexdeque(input('Введите первое шестнадцатеричное число: '))
