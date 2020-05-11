@@ -7,8 +7,48 @@
 вариантов кода для одной и той же задачи.
 Результаты анализа вставьте в виде комментариев к коду.
 Также укажите в комментариях версию Python и разрядность вашей ОС.
-
-
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+from random import randint
+from memory_profiler import profile
+
+
+@profile
+def my_func_1():
+    my_list = [randint(1, 100) for i in range(20)]
+    print(f'В массиве: {my_list} Чаще всего встречается: {max(my_list, key=my_list.count)}')
+
+
+@profile
+def my_func_2():
+    my_list = [randint(1, 100) for i in range(20)]
+    num = my_list[0]
+    max_frq = 1
+    for i in range(len(my_list) - 1):
+        frq = 1
+        for k in range(i + 1, len(my_list)):
+            if my_list[i] == my_list[k]:
+                frq += 1
+        if frq > max_frq:
+            max_frq = frq
+            num = my_list[i]
+
+    if max_frq > 1:
+        print(max_frq, 'раз(а) встречается число', num)
+    else:
+        print('Все элементы уникальны')
+
+
+if __name__ == "__main__":
+    my_func_1()
+    my_func_2()
+
+'''
+В обоих случаях выделяется по 18,3 MiB памяти и дальнейший прирост затрачиваемой 
+памяти не наблюдается. Реализация одной и той же программы в разных вариациях 
+не приводит в выигрыше в затрачиваемых ресурсах, скорее всего из-за наличия
+генераторов в коде.
+Версия Python - 3.7.5
+Разрядность ОС - 64 битная
+'''
