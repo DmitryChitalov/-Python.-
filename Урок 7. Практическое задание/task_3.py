@@ -6,3 +6,27 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+import timeit
+import random
+
+
+m = int(input('Массив размером 2m + 1, где m (натуральное число) равно: '))
+len_arr = 2*m + 1
+A = [random.randint(-100, 100) for _ in range(len_arr)]
+
+def median(A):    # т.к. длина массива всегда нечетная,то
+    for i in A:
+        center = 0
+        for j in A:
+            if i < j:
+                center += 1
+        if len(A) == 2 * center + 1:
+            return i
+
+print(f'Исходный массив: {A}')
+print(f'Медиана массива: {median(A)}')
+print(f'Массив после сортировки: {sorted(A)}')
+
+print(timeit.timeit('median(A)', \
+    setup='from __main__ import median, A', number=1000))
+# m = 10: 0.019880099999999956
