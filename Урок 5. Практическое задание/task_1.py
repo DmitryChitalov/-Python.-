@@ -25,34 +25,3 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
-from collections import defaultdict
-
-# сколько команий
-COMPANY_CUANTYTY = int(input('Введите количество предприятий для расчета прибыли: \n'))
-COUNTER = COMPANY_CUANTYTY
-COMPANIES = defaultdict(list)
-
-# данные о предприятиях
-while COUNTER > 0:
-    COMPANY_NAME = input('Введите название предприятия: \n')
-    PROFIT_ORG = input('через пробел введите прибыль данного '
-                       'предприятия за каждый квартал(Всего 4 квартала): \n').split(' ')
-
-    for i in PROFIT_ORG:
-        COMPANIES[COMPANY_NAME].append(int(i))
-    COUNTER -= 1
-# средняя прибыль
-NAMES_ORG = list(COMPANIES.keys())
-COMOANY_SUM = 0
-for i in NAMES_ORG:
-    COMPANIES[i] = sum(COMPANIES[i])
-    COMOANY_SUM += COMPANIES[i]
-AVG_PROFIT = COMOANY_SUM / COMPANY_CUANTYTY
-# минимум и максимум
-MAX_PROFIT = [el[0] for el in COMPANIES.items() if AVG_PROFIT < el[1]]
-MIN_PROFIT = [el[0] for el in COMPANIES.items() if AVG_PROFIT > el[1]]
-
-# чего получилось
-print(f'Средняя годовая прибыль всех предприятий: {AVG_PROFIT}')
-print(f'Предприятия, с прибылью выше среднего значения: {", ".join(MAX_PROFIT)}')
-print(f'Предприятия, с прибылью выше среднего значения: {", ".join(MIN_PROFIT)}')
