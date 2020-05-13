@@ -6,3 +6,56 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+
+
+from random import randint
+from statistics import median  # для проверки
+
+
+def get_mediana(lst):
+    """
+    Поиск медианы без сортировки массива
+    :param lst: массив для поиска
+    :return: медиана
+    Поочередно проверяем каждый элемент массива
+    если остальные элементы делятся на две равные группы
+    (в одной находятся элементы, которые не меньше медианы, в другой – не больше медианы)
+    (количество запоминаем в cnt_left_group и cnt_right_group)
+    то этот элемент и есть медиана
+    но необходимо еще учесть вероятность дублей (cnt_double - минимум 1 - сама медиана)
+    схема расчета:
+    для каждого элемента пока не найдем медиану считаем три показателя и проверяем тождество
+    abs(cnt_left_group - cnt_right_group) < cnt_double
+    0 1 2 3 4 - медиана=2 (0,1)-([2])-(3,4) условие выполняется abs(2 - 2) < 1
+    1 1 1 3 4 - медиана=1 ()-(1,1,[1])-(3,4) условие выполняется abs(0 - 2) < 3
+    3 3 3 3 4 - медиана=3 ()-(3,3,[3],3)-(4) условие выполняется abs(0 - 1) < 4
+    3 4 4 4 4 - медиана=4 (3)-(4,[4],4, 4)-() условие выполняется abs(1 - 0) < 4
+    """
+    for mediana in lst:
+        cnt_left_group = 0
+        cnt_right_group = 0
+        cnt_double = 0
+        for elem in lst:
+            if mediana > elem:
+                cnt_left_group += 1
+            elif mediana < elem:
+                cnt_right_group += 1
+            else:  # mediana == elem:
+                cnt_double += 1
+        if abs(cnt_left_group - cnt_right_group) < cnt_double:
+            return mediana
+
+    return None  # Такая ситуация возможна например с массивом с четным количеством элементов
+
+
+ORIG_LIST = [randint(0, 9) for _ in range(9)]
+
+print('Исходный массив:', ORIG_LIST)
+
+print('Медиана:', get_mediana(ORIG_LIST), "(функция без сортировки)")
+
+MEDIANA = sorted(ORIG_LIST)[len(ORIG_LIST)//2]
+
+print('Медиана:', MEDIANA, "(использование сортировки)")
+
+print('Медиана:', median(ORIG_LIST), "(проверка)")
