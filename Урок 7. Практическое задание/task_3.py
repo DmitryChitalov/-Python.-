@@ -6,3 +6,15 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+import random
+import statistics
+
+# Если массив отсортирован
+m = int(input('Введите m: '))
+my_list = [random.randint(0, 100) for _ in range(2 * m + 1)]
+my_list_2 = sorted(my_list)
+print(f'{my_list}\n{my_list_2}, \nмедиана - {my_list_2[(2 * m + 1) // 2]}.', statistics.median(my_list))
+
+
+
+
