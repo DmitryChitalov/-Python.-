@@ -6,3 +6,17 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+from statistics import median
+from random import randint
+
+
+def my_median(is_list: list):
+    is_list = sorted(is_list)
+    return is_list[len(is_list) // 2]  # ф-ия возвращает только одно значение, т.к. массив с нечетным числом элементов
+
+
+m = int(input('Число: '))
+arr = [randint(0, 1000) for _ in range(2 * m + 1)]
+print(f'Исходный массив: {arr}')
+print(f'Через библиотеку statistics: {median(arr)}')
+print(f'Через свою функции: {my_median(arr)}')
