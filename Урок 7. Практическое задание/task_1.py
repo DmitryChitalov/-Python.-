@@ -9,3 +9,57 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+
+from random import randint
+from timeit import timeit
+
+
+m = int(input("Введите длину массива m = "))
+array = [randint(-100, 99) for _ in range(m)]
+print("Несортированный массив:", array, sep="\n\t")
+
+def func_1(array):
+    n = 1
+    while n < len(array):
+        for i in range(len(array)-n):
+            if array[i] < array[i+1]:
+                array[i], array[i+1] = array[i+1], array[i]
+        n += 1
+    return array
+
+def func_2(array):
+    n = 1
+    while n < len(array):
+        flag = 0
+        for i in range(len(array)-n):
+            if array[i] < array[i+1]:
+                array[i], array[i+1] = array[i+1], array[i]
+                flag = 1
+        if not flag:
+            break
+        n += 1
+    return array
+
+func_1(array)
+func_2(array)
+
+print("Cортированный по убыванию массив:", array, sep="\n\t")
+
+print(f'\nВремя сортировки массива из {m} символов функцией (func_1): ',
+      format(timeit("func_1(array)", setup="from __main__ import func_1, array", number=1000), '.3f'), 'сек')
+
+print(f'Время сортировки массива из {m} символов функцией (func_2): ',
+      format(timeit("func_2(array)", setup="from __main__ import func_2, array", number=1000), '.3f'), 'сек')
+
+
+# После оптимизации функции (func_1) в функцию (func_2) скорость выполнения задачи сокращается в несколько раз, это хорошо заметно на больших данных.
+# Применение оптимизации оправдано и необходимо.
+
+
+# 100
+# Время сортировки массива из 100 символов функцией (func_1):  0.400 сек
+# Время сортировки массива из 100 символов функцией (func_2):  0.007 сек
+
+# 1000
+# Время сортировки массива из 1000 символов функцией (func_1):  38.175 сек
+# Время сортировки массива из 1000 символов функцией (func_2):  0.082 сек
