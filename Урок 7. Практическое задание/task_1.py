@@ -9,3 +9,55 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+
+import random, timeit
+
+def bubble_sort(list):
+    n = 1
+    while n < len(list):
+        for i in range(len(list) - n):
+            if list[i] < list[i + 1]:
+                list[i], list[i + 1] = list[i + 1], list[i]
+        n += 1
+    return list
+
+def bubble_sort2(list):
+    n = 1
+    while n < len(list):
+        changes = False
+        for i in range(len(list) - n):
+            if list[i] < list[i + 1]:
+                list[i], list[i + 1] = list[i + 1], list[i]
+                changes = True
+        if changes == False:
+            break
+        n += 1
+    return list
+
+list = [random.randint(-100, 100) for _ in range(500)]
+print(list)
+print(timeit.timeit("bubble_sort(list)", setup="from __main__ import bubble_sort, list", number=1000))
+print(list)
+
+list = [random.randint(-100, 100) for _ in range(500)]
+print(list)
+print(timeit.timeit("bubble_sort2(list)", setup="from __main__ import bubble_sort2, list", number=1000))
+print(list)
+
+"""
+30.7383071
+0.18870769999999837
+Разница в производительности методов кажется огромной, но стоит обратить внимание на то, что это не так:
+Метод timeit запускает код 1000 раз. И в 999 случаях список уже отсортирован!
+Поэтому в первом случае алгоритм каждый раз сверяет весь список и это каждый раз съедает процессорное время,
+ а во втором - выполняет лишь один проход, видит, что всё ок и завершает цикл.
+Результаты для единичного прохода(number = 1) timeit это подтверждают:
+0.05626319999999999
+0.05424949999999999
+
+Из этого следует, что может быть также некорректно сравнивать разные методы сортировки 
+друг с другом через "множественный" timeit. Для того, чтобы обойти данную ошибку - 
+можно поместить генерацию списка внутрь тестируемой функции.
+
+Кстати тут же видно, что timeit выдает общее время выполнения тестирования,
+а не среднее для одного прохода."""

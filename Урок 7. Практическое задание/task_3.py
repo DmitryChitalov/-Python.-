@@ -6,3 +6,31 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+
+import random, numpy
+
+m = int(input('Введите m: '))
+list = [random.randint(-100, 100) for _ in range(2 * m + 1)]
+
+print(list)
+print(numpy.median(list))
+
+def selection_median(list, m):
+    for i in range(m):
+        list.remove(min(list))
+
+    return min(list)
+
+
+print(selection_median(list, m))
+
+list = [random.randint(-100, 100) for _ in range(2 * m + 1)]
+
+print(list)
+print(numpy.median(list))
+
+def sorted_median(list, m):
+    list = sorted(list)
+    return list[m]
+
+print(sorted_median(list, m))
