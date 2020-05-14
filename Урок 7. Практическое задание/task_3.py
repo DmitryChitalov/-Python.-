@@ -6,3 +6,27 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+from random import randint
+
+
+def shell_sort(array):
+    mark = len(array) // 2
+    while mark > 0:
+        for i in range(mark, len(array)):
+            k = array[i]
+            j = i
+            while j >= mark and array[j - mark] > k:
+                array[j] = array[j - mark]
+                j = j - mark
+            array[j] = k
+
+        mark = mark // 2
+
+
+print("Для формирования массива используем фомулу: 2m + 1")
+m = int(input('Введите значение "m": '))
+array = [randint(0, 100) for _ in range(2 * m + 1)]
+print(f"Изначальный массив: {array}")
+shell_sort(array)
+print(f"Отсортированный массив: {array}")
+print(f"Медиана: {array[m]} - элемент массива под номером {m+1} (если считать с 1)")

@@ -9,3 +9,53 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+import random
+from timeit import Timer
+
+def bubble_1(arr):
+    count = 1
+
+    while count < len(arr):
+        for i in range(len(arr) - count):
+            if arr[i] < arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+        count += 1
+    return arr
+
+
+def bubble_2(arr):
+    count = 1
+
+    while count < len(arr):
+        mark = True
+        for i in range(len(arr) - count):
+            if arr[i] < arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                mark += 1
+        if mark:
+            break
+        count += 1
+    return arr
+
+array = [random.randint(-100, 100) for _ in range(15)]
+array_2 = array
+
+print(f'Сгенерированный массив: {array}')
+bubble_1(array)
+print(f'Массив после сортировки по первому варианту: {array}')
+t1 = Timer(f"bubble_1({array})", "from __main__ import bubble_1")
+print("Время выполнение при первом варианте: ", t1.timeit(number=100))
+bubble_2(array_2)
+print(f'Массив после сортировки по второму варианту: {array_2}')
+t2 = Timer(f"bubble_2({array_2})", "from __main__ import bubble_2")
+print("Время выполнение при втором варианте: ", t2.timeit(number=100))
+'''
+Сгенерированный массив: [15, 34, 24, 91, -13, 36, -98, 71, 51, 40, -100, -87, -90, 59, -30]
+Массив после сортировки по первому варианту: [91, 71, 59, 51, 40, 36, 34, 24, 15, -13, -30, -87, -90, -98, -100]
+Время выполнение при первом варианте:  0.0019536809995770454
+Массив после сортировки по второму варианту: [91, 71, 59, 51, 40, 36, 34, 24, 15, -13, -30, -87, -90, -98, -100]
+Время выполнение при втором варианте:  0.00023917900034575723
+
+Вывод: если добавлем метку, что при проходе списка не соверщается ни одного перемещения,
+закнчивать сортировку, то время выполнения операции значительно сокращается.
+'''
