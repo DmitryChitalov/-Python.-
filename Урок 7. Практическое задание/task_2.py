@@ -8,3 +8,44 @@
 Исходный - [46.11436617832828, 41.62921998361278, 18.45859540989644, 12.128870723745806, 8.025098788570562]
 Отсортированный - [8.025098788570562, 12.128870723745806, 18.45859540989644, 41.62921998361278, 46.11436617832828]
 """
+from random import randint
+
+MAX_SIZE = int(input('Введите кол-во элементов списка: '))
+
+def merge_sort(array):
+
+    if len(array) < 2:
+        return array
+
+    mid = len(array) // 2
+
+    left_part = array[:mid]
+    right_part = array[mid:]
+
+    left_part = merge_sort(left_part)
+    right_part = merge_sort(right_part)
+
+    return merge_list(left_part, right_part)
+
+
+def merge_list(list_1, list_2):
+    result = []
+    i = 0
+    j = 0
+    while i < len(list_1) and j < len(list_2):
+        if list_1[i] <= list_2[j]:
+            result.append(list_1[i])
+            i += 1
+        else:
+            result.append(list_2[j])
+            j += 1
+
+    result += list_1[i:]
+    result += list_2[j:]
+    return result
+
+
+numbers = [randint(0, 50) for _ in range(MAX_SIZE)]
+
+print(numbers)
+print(merge_sort(numbers))
