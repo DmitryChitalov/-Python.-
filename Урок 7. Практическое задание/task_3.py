@@ -6,3 +6,17 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+import random
+
+def mediana(my_list):
+    h = len(my_list) // 2
+    my_list.sort()
+    if not len(my_list) % 2:
+        return (my_list[h - 1] + my_list[h]) / 2.0
+    return my_list[h]
+
+
+m = int(input("Введите натуральное число: "))
+my_list = [random.randint(0, 100) for _ in range(2 * m + 1)]
+print(my_list)
+print(mediana(my_list))
