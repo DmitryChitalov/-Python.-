@@ -49,3 +49,10 @@ list = [random.random()*50 for _ in range(leng)]
 print(list)
 print(timeit.timeit("merge_sort(list)", setup="from __main__ import merge_sort, list", number=1000))
 print(list)
+"""
+Результаты для различной длины сортируемого массива
+Для 10: 0.030791000000000235
+Для 100: 0.47399250000000004
+Для 1000: 6.558472599999999
+Для 10000: 89.9836561
+"""
