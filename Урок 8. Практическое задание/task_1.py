@@ -16,3 +16,27 @@
 
 Итог: 6 подстрок
 """
+import hashlib
+
+string = input("Введите строку из маленьких латинских букв: ")
+k = set()
+N = len(string)
+
+for i in range(N):
+    if i == 0:
+        N = len(string) - 1
+    else:
+        N = len(string)
+    for j in range(N, i, -1):
+        k.add(string[i:j])
+
+# печатем все и вся
+print(f'Колличество различных подстрок в строке {string} равно {len(k)}')
+print()
+print(*k)
+hash_k = [hashlib.sha1(x.encode('utf-8')).hexdigest() for x in k]
+# это не надо, но что бы было
+del k
+# наши хэши
+print(hash_k)
+
