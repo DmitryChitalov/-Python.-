@@ -16,3 +16,10 @@
 
 Итог: 6 подстрок
 """
+S = input("Введите строку из строчных латинских букв: ")
+print(f"Строка {S} имеет длину {len(S)} символов.")
+subs_set = set()
+for i in range(len(S)):
+    for j in range(len(S) - 1 if i == 0 else len(S), i, -1):
+        subs_set.add(hash(S[i:j]))
+print(f"Количество различных подстрок в строке {S}: {len(subs_set)}")
