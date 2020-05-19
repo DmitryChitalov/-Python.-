@@ -16,3 +16,16 @@
 
 Итог: 6 подстрок
 """
+
+
+line = input("Введите строку S: ")
+
+substring = set()
+for i in range(len(line)):
+    for j in range(len(line)-1 if i == 0 else len(line), i, -1):
+        substring.add(hash(line[i:j]))
+
+print(f'Строка \'{line}\' имеет длину {len(line)} сиволов.')
+print('Количество различных подстрок в этой строке:', len(substring))
+
+
