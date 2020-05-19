@@ -16,3 +16,20 @@
 
 Итог: 6 подстрок
 """
+
+import hashlib
+
+def string_hash(string):
+    result = set()
+    for i in range(len(string) + 1):
+        for el in range(i + 1, len(string) + 1):
+            hash_ = hashlib.sha1(string[i:el].encode('utf-8')).hexdigest()
+            result.add(hash_)
+
+    result.remove(hashlib.sha1(string.encode('utf-8')).hexdigest())
+    count = len(result)
+    return f'Итого: {count} подстрок'
+
+
+STRING = 'papap'
+print(string_hash(STRING))
