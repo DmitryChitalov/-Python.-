@@ -7,6 +7,7 @@
 который не рассматривался на уроках
 """
 import random
+import statistics
 
 m = int(input("Введите число m: "))
 n = 2 * m + 1
@@ -19,15 +20,27 @@ def median(arr):
     while k < n:
         arr_part_1 = []
         arr_part_2 = []
-        for i in arr:
-            if i > arr[k]:
-                arr_part_2.append(i)
-            else:
-                arr_part_1.append(i)
-        if len(arr_part_1) == (len(arr_part_2) + 1):
+        for i in range(n):
+            if arr[i] < arr[k]:
+                arr_part_1.append(arr[i])
+            elif arr[i] == arr[k] and k > i:
+                arr_part_1.append(arr[i])
+            elif arr[i] == arr[k] and k < i:
+                arr_part_2.append(arr[i])
+            elif arr[i] > arr[k]:
+                arr_part_2.append(arr[i])
+        if len(arr_part_1) == len(arr_part_2):
             return arr[k]
         k += 1
-    return
 
 
 print(f'Медиана списка: {median(array)}')
+
+print(f'Медиана списка (модуль статистика): {statistics.median(array)}')
+
+""" 
+Получилось сделать нахождение медианы без сортировки: просто раскладываем на два массива числа больше и меньше данного, 
+а потом сравниваем по длине. Похожий вариант потои увидела в решении №1 при разборе ДЗ. Добавила модуль статистики для
+проверки и переделала код - не всегда корректно срабатывало, есил число-медиана повторяется в списке.
+
+"""
