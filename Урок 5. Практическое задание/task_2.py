@@ -11,3 +11,20 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+import collections
+
+defdict = collections.defaultdict(list)
+
+for i in range(1, 3):
+    num = input('Enter number: ')
+    defdict[i] = list(num)
+
+print(defdict)
+
+nums = [int(''.join(i), 16) for i in defdict.values()]
+
+sum_nums = hex(sum(nums))
+print(f'Сумма равна: {list(sum_nums[2:])}')
+
+multi_nums = hex((nums[0] * nums[1]))
+print(f'Произведение равно: {list(multi_nums[2:])}')
