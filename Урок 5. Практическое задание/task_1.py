@@ -25,3 +25,36 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+from collections import namedtuple
+
+n = int(input("Введите количество предприятий для расчета прибыли: "))
+datas = namedtuple('Profits', 'company Q_1 Q_2 Q_3 Q_4')
+year_profits = {}
+
+for i in range(n):
+    Profits = datas(company = input("Введите название предприятия: "),
+                    Q_1 = int(input("Введите прибыль за первый квартал: ")),
+                    Q_2 = int(input("Введите прибыль за второй квартал: ")),
+                    Q_3 = int(input("Введите прибыль за третий квартал: ")),
+                    Q_4 = int(input("Введите прибыль за четвертый квартал: "))
+                                    )
+
+    year_profits[Profits.company] = (Profits.Q_1 + Profits.Q_2 + Profits.Q_3 + Profits.Q_4)
+
+global_aver = 0
+
+for value in year_profits.values():
+    global_aver += value
+
+global_aver /= n
+
+print(f"Общая среднегодовая прибыль равна: {global_aver}")
+
+for key, value in year_profits.items():
+    if value > global_aver:
+        print(f"У {key} прибыль выше среднего")
+    elif value < global_aver:
+        print(f"У {key} прибыль ниже среднего")
+    elif value == global_aver:
+        print(f"У {key} прибыль равна средней")

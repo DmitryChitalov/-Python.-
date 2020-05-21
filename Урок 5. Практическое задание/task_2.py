@@ -11,3 +11,16 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+
+import collections, functools
+numbers = collections.defaultdict(list)
+for num in range(2):
+    n = input(f"Введите {num + 1}-е шестнадцатиричное число: ")
+    numbers[f"{num + 1}-{n}"] = list(n)
+print(numbers)
+
+summa = sum([int(''.join(n), 16) for n in numbers.values()])
+print("Сумма: ", list('%X' % summa))
+
+multiplication = functools.reduce(lambda a, b: a * b, [int(''.join(n), 16) for n in numbers.values()])
+print("Произведение: ", list('%X' % multiplication))
