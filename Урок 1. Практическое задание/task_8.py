@@ -22,3 +22,5 @@ if year % 400 == 0 or year % 4 == 0 and year % 100 != 0 :
     print(f' {year} - високосный год')
 else:
     print(f' {year} - не високосный год')
+
+print(f'{year} - високосный год' if year % 400 == 0 or year % 4 == 0 and year % 100 != 0 else f' {year} - не високосный год')
