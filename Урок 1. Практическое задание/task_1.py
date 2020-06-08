@@ -13,3 +13,10 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+user_number = int(input('Введите трехзначное число: '))
+user_number_1 = user_number % 10
+user_number_2 = user_number // 10 % 10
+user_number_3 = user_number // 10 // 10 % 10
+print(f'Сумма введенных чисел  {user_number_1 + user_number_2 + user_number_3}')
+print(f'Произведение введенных чисел  {user_number_1 * user_number_2 * user_number_3}')
