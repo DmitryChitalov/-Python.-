@@ -20,8 +20,6 @@ import random
 class RandomLetter:
     def __init__(self):
         self.alphabet_symbols = 'abcdefghijklmnopqrstuvwxyz'
-        # self.start = start
-        # self.stop = stop
 
     def get_random_letter(self, start_symbol: str, stop_symbol: str):
         try:
@@ -58,13 +56,14 @@ def random_number(start, stop, int_num=True, float_nums=False):
         return ex
 
 
-# Test fo alphabet
-random_letter_instance = RandomLetter()
-random_letter = random_letter_instance.get_random_letter('B', 'O')
-print(random_letter)
+if __name__ == '__main__':
+    # Test fo alphabet
+    random_letter_instance = RandomLetter()
+    random_letter = random_letter_instance.get_random_letter('B', 'O')
+    print(random_letter)
 
-# test for random number
-# If you want to get float number do this -> float_num=True
-random_num_ = random_number(start=3, stop=76, float_nums=True)
-print(random_num_)
+    # test for random number
+    # If you want to get float number do this -> float_num=True
+    random_num_ = random_number(start=3, stop=76, float_nums=True)
+    print(random_num_)
 
