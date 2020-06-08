@@ -10,3 +10,11 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+print('Введите 2 буквы, а я сообщу на каком месте они стоят и сколько между ними букв')
+user_symbol_1 = ord(input('Введите 1 букву: '))
+user_symbol_2 = ord(input('Введите 2 букву: '))
+user_symbol_1 = user_symbol_1 - ord('a') + 1
+user_symbol_2 = user_symbol_2 - ord('a') + 1
+print(f'Позиция введнных букв {user_symbol_1} и {user_symbol_2}')
+print(f'Между ними {abs(user_symbol_2 - user_symbol_1 - 1)} букв')

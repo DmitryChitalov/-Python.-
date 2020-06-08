@@ -14,3 +14,20 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+from random import random
+
+user_number_1 = int(input('Введите нижнее число диапазона случайных чисел: '))
+user_number_2 = int(input('Введите верхнее число диапазона случайных чисел: '))
+random_number = int(random() * (user_number_2 - user_number_1)) + user_number_1
+print(random_number)
+
+user_float_number_1 = float(input('Введите нижнее число диапазона случайных чисел: '))
+user_float_number_2 = float(input('Введите верхнее число диапазона случайных чисел: '))
+random_float_number = random() * (user_float_number_2 - user_float_number_1) + user_float_number_1
+print(random_float_number)
+
+user_symbol_1 = ord(input('Введите нижнюю границу диапазона символов: '))
+user_symbol_2 = ord(input('Введите верхнюю границу диапазона символов: '))
+random_user_symbol = int(random() * (user_symbol_2 - user_symbol_1)) + user_symbol_1
+print(chr(random_user_symbol))
