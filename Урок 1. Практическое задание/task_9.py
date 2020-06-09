@@ -4,3 +4,19 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+a = float(input('a = '))
+b = float(input('b = '))
+c = float(input('c = '))
+
+if a == b or b == c or c == a:
+    print('Числа должны быть разные')
+else:
+    if a < b:
+        a, b = b, a
+
+    if b > c:
+        print(b)
+    elif c > a:
+        print(a)
+    else:
+        print(c)

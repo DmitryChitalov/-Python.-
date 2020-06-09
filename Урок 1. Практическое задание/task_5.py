@@ -10,3 +10,18 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+first_str = input('Введите первую букву [a..z]: ')
+second_str = input('Введите вторую букву [a..z]: ')
+if len(first_str) != 1 or len(second_str) != 1:
+    # Из-за пепа пришлось ввести доп elif хотя прекрасно все ложилось в один if
+    print('Надо ввести по одной букве')
+elif first_str == second_str:
+    print('Буквы должны быть разные')
+elif first_str < 'a' or first_str > 'z' or second_str < 'a' or second_str > 'z':
+    print('Буквы должны быть в диапазоне [a..z]')
+else:
+    print(
+        f'Буква "{first_str}" в алфавите занимает {ord(first_str) - ord("a") + 1} место,'
+        f' буква "{second_str}" занимает {ord(second_str) - ord("a") + 1} место '
+        f', кол-во бкув между ними {abs(ord(first_str) - ord(second_str)) - 1}')

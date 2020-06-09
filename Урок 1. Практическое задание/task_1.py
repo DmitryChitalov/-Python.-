@@ -13,3 +13,12 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+aNUM = int(input('Введите 3х значное натуральное число: '))
+first_digit = aNUM // 100
+second_digit = (aNUM - first_digit * 100) // 10
+third_digit = aNUM % 10
+print(
+    f'Сумма цифр числа {aNUM} составляет {first_digit + second_digit + third_digit}')
+print(
+    f'Произведение цифр числа {aNUM} составляет {first_digit * second_digit * third_digit}')

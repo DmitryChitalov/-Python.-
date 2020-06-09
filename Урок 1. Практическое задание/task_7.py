@@ -4,3 +4,20 @@
 составленного из этих отрезков. Если такой треугольник существует,
 то определить, является ли он разносторонним, равнобедренным или равносторонним.
 """
+try:
+    print('Укажите стороны треугольника')
+    side_a = abs(float(input('Введите длинну стороны а: ')))
+    side_b = abs(float(input('Введите длинну стороны b: ')))
+    side_c = abs(float(input('Введите длинну стороны c: ')))
+
+    if side_a + side_b < side_c or side_b + \
+            side_c < side_a or side_c + side_a < side_b:
+        print('Треугольник с такими сторонами невозможен')
+    elif side_a == side_b == side_c:
+        print('Треугольник равносторонний')
+    elif side_a == side_b or side_b == side_c or side_a == side_c:
+        print('Треугольник равнобедренный')
+    else:
+        print('Треугольник разносторонний')
+except ValueError:
+    print('Ошибка! Некорректные данные')

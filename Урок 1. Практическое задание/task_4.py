@@ -14,3 +14,27 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+import random
+
+left_border = input('левая граница: ')
+right_border = input('правая граница: ')
+try:
+    if left_border > right_border:
+        left_border, right_border = right_border, left_border
+
+    if len(left_border) == len(right_border) == 1:
+        print(chr(round(ord(left_border) + random.random()
+                        * (ord(right_border) - ord(left_border)))))
+    else:
+        print('Невозможно сопределить граници символьного диапазона')
+
+    left_border = float(left_border)
+    right_border = float(right_border)
+    print(
+        f'Целое случайное из диапазона '
+        f'{round(left_border + random.random() * (right_border - left_border))}')
+    print(
+        f'Вещественное случайное из диапазона '
+        f'{left_border + random.random() * (right_border - left_border)}')
+except ValueError:
+    print('Невозможно сопределить числовые граници диапазона')
