@@ -14,3 +14,16 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import randrange, random
+min_num = int(input('введите нижннюю границу'))
+max_num = int(input('введите верхнюю границу'))
+print('Случайное целое число в Вашем диапазоне = {}'.format(randrange(min_num,max_num)))
+min_num = int(input('введите нижннюю границу'))
+max_num = int(input('введите верхнюю границу'))
+print('Случайное вещественное число в Вашем диапазоне = {}'.format((random() * (max_num - min_num) + min_num)))
+print('для вывода букв от "a" до "z" использовать цифры от 0 до 27:')
+
+min_num = int(input('введите нижннюю границу'))
+max_num = int(input('введите верхнюю границу'))
+print('Случайный символ в Вашем диапазоне = {}'.format(chr(ord('a') + randrange(min_num,max_num) - 1)))
+
