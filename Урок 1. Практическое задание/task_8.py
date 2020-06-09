@@ -18,18 +18,19 @@
 """
 year = 2020
 
-result = print(f'год {year} обычный ') if year % 4 != 0 else print(f'год {year} високостный') if year % 100 != 0 else print(
-    f'год {year} високостный') if year % 400 == 0 else print(f'год {year} обычный')
+result = print(f'год {year} обычный ') if year % 4 != 0 \
+    else print(f'год {year} високостный') if year % 100 != 0 else print(
+    f'год {year} високостный')\
+    if year % 400 == 0 else print(f'год {year} обычный')
 # =========================================
-res_year = 2000
+res_year = 2020
 
 if res_year % 4 != 0:
     print(f'год {res_year} обычный')
+elif res_year % 100 != 0:
+    print(f'год {res_year} не обычный')
+elif res_year % 400 == 0:
+    print(f'год {res_year} не обычный')
 else:
-    if res_year % 100 != 0:
-        print(f'год {res_year} не обычный')
-    else:
-        if res_year % 400 == 0:
-            print(f'год {res_year} не обычный')
-        else:
-            print(f'год {res_year} обычный')
+    print(f'год {res_year} обычный')
+
