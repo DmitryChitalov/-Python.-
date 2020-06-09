@@ -1,4 +1,5 @@
 sdist/
+.idea/
 var/
 wheels/
 pip-wheel-metadata/
