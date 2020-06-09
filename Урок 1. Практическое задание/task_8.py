@@ -16,3 +16,10 @@
 Он просто позволяет протестировать условие в одной строке,
 заменяя многострочное if-else, делая код компактным.
 """
+
+year = int(input('Enter a number of year to determine is it a leap year or not: '))
+
+if year % 4 == 0 or (year % 100 != 0 and year % 400 == 0):
+    print("leap year")
+else:
+    print("usual year")
