@@ -8,3 +8,12 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+user_symbol = int(input('Введите номер буквы в диапазоне 1 - 26, а я скажу, что это за буква: '))
+result = chr(user_symbol + 96)
+print(result)
+
+# Еще вариант, возможно более верный
+
+result_new = chr(ord('a') + user_symbol - 1)
+print(result_new)
