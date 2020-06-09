@@ -8,3 +8,8 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+
+
+letter_number = int(input('Enter number of letter: '))
+x = (chr(letter_number))
+print(x)
