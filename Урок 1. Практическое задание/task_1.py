@@ -13,3 +13,16 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+try:
+    user_num = input('Введите трехзначное число: ')
+    if len(user_num) != 3:
+        raise ValueError
+    user_num = int(user_num)
+    a = user_num // 100
+    b = user_num // 10
+    c = user_num % 10
+    print(f'Сумма чисел: {a + b + c}')
+    print(f'Произведение чисел: {a * b * c}')
+except ValueError as not_num:
+    print("Вы ввели не верное число", not_num)
