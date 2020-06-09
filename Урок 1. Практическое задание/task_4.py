@@ -14,3 +14,18 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+import random
+import string as list_symbols
+
+
+start = int(input('Введите первое число: '))
+stop = int(input('Введите второе число: '))
+step = random.randrange(start, stop, 5)
+symbols_list = list(list_symbols.printable)
+
+
+integer = random.randrange(start, stop, step)
+float_number = random.randrange(start, stop, step) / step
+print(f'Случайное целое число: {integer}')
+print(f'Случайное вещественное число: {float_number}')
+print(f'Случайное символ: {symbols_list[integer+9]}')
