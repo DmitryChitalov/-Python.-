@@ -33,5 +33,3 @@ else:
         print(f'{text} {a}')
     else:
         print(f'{text} {b}')
-
-

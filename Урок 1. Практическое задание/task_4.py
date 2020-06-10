@@ -54,5 +54,3 @@ elif c > b:
 c = chr(c)
 
 print(c)
-
-
