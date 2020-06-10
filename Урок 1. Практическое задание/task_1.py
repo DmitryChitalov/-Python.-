@@ -13,3 +13,21 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+class OwnError(Exception):
+    def __init__(self, txt):
+        self.txt = txt
+
+try:
+    user_number = int(input("Введите, пожалуйста положительное трёхзначное число: "))
+    if user_number < 100 or user_number > 999:
+        raise OwnError("Число должно быть положительным и трёхзначным! Перезапустите программу и попробуйте ещё раз!")
+except ValueError:
+    print("Вы ввели не число! Перезапустите программу и попробуйте ещё раз!")
+except OwnError as error:
+    print(error)
+else:
+    print(f"Сумма цифр введенного числа: {(user_number // 100) + ((user_number // 10) % 10) + (user_number % 10)}")
+    print(f"Произведение цифр введенного числа: {(user_number // 100) * ((user_number // 10) % 10) * (user_number % 10)}")
+finally:
+    print("\033[1m\033[30m\033[47m {}\033[0m".format("Программа завершена!"))
