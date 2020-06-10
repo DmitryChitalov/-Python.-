@@ -13,3 +13,16 @@
 Подсказка: для получения отдельных цифр числа используйте арифм. операции
 и НЕ ИСПОЛЬЗУЙТЕ операции с массивами
 """
+
+NUM_USER = int(input('Введите трёхзначное число: '))
+
+NUM_1 = NUM_USER % 10
+NUM_2 = NUM_USER % 100 // 10
+NUM_3 = NUM_USER // 100
+
+SUM_OF_NUMBERS = NUM_1 + NUM_2 + NUM_3
+
+PRODUCT_OF_NUMBERS = NUM_1 * NUM_2 * NUM_3
+
+print(f'Сумма чисел из {NUM_USER} = {SUM_OF_NUMBERS}\n'
+      f'Произведение чисел из {NUM_USER} = {PRODUCT_OF_NUMBERS}')
