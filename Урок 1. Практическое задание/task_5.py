@@ -10,8 +10,15 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
-aaa = int(ord(input('enter a: ').lower())) - 96
-nnn = int(ord(input('enter n: ').lower())) - 96
-print(f'первая буква стоит на позиции № {aaa} '
-      f'вторая на № {nnn}')
-print(f'между ними находится {nnn - aaa} букв')
+aaa = int(ord(input('enter a: ').lower()))
+zzz = int(ord(input('enter n: ').lower())) - 1
+if aaa < zzz:
+    print(f'первая буква стоит на позиции № {aaa} '
+          f'вторая на № {zzz + 1}')
+    print(f'между ними находится {zzz - aaa} буквы')
+else:
+    print(f'первая буква стоит на позиции № {aaa} '
+          f'вторая на № {zzz + 1}')
+    print(f'между ними находится {(aaa-1) - (zzz + 1)} буквы')
+
+

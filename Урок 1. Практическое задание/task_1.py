@@ -50,3 +50,4 @@ summ = first_num+sec+third
 mult = first_num*sec*third
 print('сумма цифр трехзначного числа summ = %s' % summ)
 print('произведение цифр трехзначного числа mult = %s' % mult)
+

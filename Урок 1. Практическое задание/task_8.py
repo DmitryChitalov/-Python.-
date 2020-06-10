@@ -17,21 +17,21 @@
 заменяя многострочное if-else, делая код компактным.
 """
 # =================тернальный оператор =================/
-year = 2020
+year = 2060
 
 result = print(f'год {year} обычный ') if year % 4 != 0 \
     else print(f'год {year} високостный') if year % 100 != 0 else print(
     f'год {year} високостный')\
     if year % 400 == 0 else print(f'год {year} обычный')
 # =========================================
-res_year = 2020
+res_year = 1964
 
 if res_year % 4 != 0:
     print(f'год {res_year} обычный')
 elif res_year % 100 != 0:
-    print(f'год {res_year} не обычный')
+    print(f'год {res_year} високостный')
 elif res_year % 400 == 0:
-    print(f'год {res_year} не обычный')
+    print(f'год {res_year} високостный')
 else:
     print(f'год {res_year} обычный')
 
