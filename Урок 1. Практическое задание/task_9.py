@@ -13,12 +13,12 @@ if int_1 > int_2:
     if int_2 > int_3:
         print(f'Average number is {int_2}   marker 1')
     else:
-        print(f'Average number is {int_3}   marker 2')
+        print(f'Average number is {int_1}   marker 2')
 elif int_2 > int_1:
     if int_1 > int_3:
         print(f'Average number is {int_1}   marker 3')
     else:
-        print(f'Average number is {int_3}   marker 4')
+        print(f'Average number is {int_2}   marker 4')
 elif int_3 > int_1:
     if int_1 > int_2:
         print(f'Average number is {int_1}   marker 5')
@@ -35,7 +35,7 @@ elif int_2 > int_3:
     else:
         print(f'Average number is {int_1}   marker 10')
 
-
+# NOT COMPLETED TASK
 
 
 
