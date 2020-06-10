@@ -10,3 +10,20 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+a = input('Введите первую букву латинского алфавита:  ').lower()
+b = input('Введите вторую букву латинского алфавита:  ').lower()
+
+a, b = ord(a), ord(b)
+
+place_a = a - 96
+place_b = b - 96
+distance = 0
+if place_b > place_a:
+    distance = place_b - place_a - 1
+elif place_b < place_a:
+    distance = place_a - place_b - 1
+
+print(f'Позиция первой буквы в алфавите {place_a}\n'
+      f'Позиция второй буквы в алфавите {place_b}\n'
+      f'Расстояние между ними  {distance}')

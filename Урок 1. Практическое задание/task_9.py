@@ -4,3 +4,32 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+
+text = 'Средним является число: '
+a = int(input('Введите первое число: '))
+b = int(input('Введите второе число: '))
+c = int(input('Введите третье число: '))
+if a == b or b == c or a == c:
+    print('Числа не должны быть разные. Введите еще раз!')
+    a = int(input('Введите первое число: '))
+    b = int(input('Введите второе число: '))
+    c = int(input('Введите третье число: '))
+
+
+if a < b and a < c:
+    if b < c:
+        print(f'{text} {b}')
+    else:
+        print(f'{text} {c}')
+
+elif b < a and b < c:
+    if a < c:
+        print(f'{text} {a}')
+    else:
+        print(f'{text} {c}')
+
+else:
+    if a < b:
+        print(f'{text} {a}')
+    else:
+        print(f'{text} {b}')
