@@ -14,3 +14,27 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+# p.s. Задание сделано не полностью.
+
+from random import random
+
+START = int(input('Введите начала диапазона: '))
+FINISH = int(input('Введите конец диапазона: '))
+
+CHOICE = input('Чтобы вы хотели сделать с диапозоном: \n'
+               '1 = найти случайное целое число\n'
+               '2 = найти случайное вещественное число\n'
+               '3 = найти случайный символ из диапозона: ')
+
+if CHOICE == '1':
+    res = int(random() * (FINISH - START)) + START
+    print(f'Случайное целое число из диапозона = {res}')
+elif CHOICE == '2':
+    res = random() * (FINISH - START) + START
+    print(f'Случайное вещественное число из диапозона = {res}')
+elif CHOICE == '3':
+    res = ord(random() * (FINISH - START)) + START
+    print(f'Случайны символ из диапозона = {res}')
+else:
+    print('Выберите действие.')
