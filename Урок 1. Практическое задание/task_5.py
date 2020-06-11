@@ -10,3 +10,10 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+first_letter = ord(input('Введите первую букву ')) - 96
+second_letter = ord(input('Введите вторую букву ')) - 96
+print(f'Позиция первой буквы - {first_letter}\nПозиция второй буквы  - {second_letter}')
+if first_letter > second_letter:
+    print(f'{first_letter - second_letter - 1} букв между введеными буквами')
+else:
+    print(f'{second_letter - first_letter - 1} букв между введеными буквами')
