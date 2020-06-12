@@ -17,3 +17,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursive_ascii(left = 32, right = 127):
+    if left == right:
+        return f'{left} - {chr(left)}'
+    if left % 10 == 1:
+        return f'{left} - {chr(left)}\n{recursive_ascii(left + 1)}'
+    else:
+        return f'{left} - {chr(left)} {recursive_ascii(left + 1)}'
+
+
+print(recursive_ascii())

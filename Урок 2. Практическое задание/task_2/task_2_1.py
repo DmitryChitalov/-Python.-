@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+even_count = 0
+odd_count = 0
+try:
+    user_number = int(input('Введите число: '))
+    print(f'В числе {user_number} всего ', end='') # костыль чтобы не использовать еще одну переменную
+    while user_number != 0:
+        num = user_number % 10
+        user_number //= 10
+        if num % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+
+    print(f'{even_count + odd_count} цифр, '
+          f'из которых {even_count} чётных и {odd_count} нечётных')
+except ValueError:
+    print('Необходимо ввести целое число')

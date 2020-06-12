@@ -14,3 +14,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def recursive_reverse(number):
+    if number == 1:
+        return str(number % 10)
+    return f'{str(number % 10)}{recursive_reverse(number // 10)}'
+try:
+    num = int(input('Введите целое число: '))
+    print(recursive_reverse(num))
+except ValueError:
+    print('Необходимо ввести целое число')
