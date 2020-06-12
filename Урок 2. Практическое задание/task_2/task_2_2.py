@@ -15,3 +15,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def odd_even_recurs(user_input, even_number=0, odd_number=0):
+    if user_input == 0:
+        return print(f'Введенное число содержит {even_number} четных и {odd_number} нечетных чисел')
+    else:
+        check_number = user_input % 10
+        if check_number % 2 == 0:
+            even_number += 1
+        else:
+            odd_number += 1
+    user_input //= 10
+    return odd_even_recurs(user_input, even_number, odd_number)
+
+
+odd_even_recurs(int(input('Введите натуральное число: ')))

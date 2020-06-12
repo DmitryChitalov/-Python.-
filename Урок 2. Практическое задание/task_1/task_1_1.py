@@ -42,10 +42,9 @@ while user_input != '0':
             print('Вы ввели некорректное действие! Введите операцию (+, -, *, / или 0 для выхода)')
         elif user_input == '0':
             break
-        else    :
+        else:
             user_number = int(input('Введите первое число: '))
             user_number_2 = int(input('Введите второе число: '))
-
 
         if user_input == '+':
             print(f'Сумма чисел равна {user_number + user_number_2}')

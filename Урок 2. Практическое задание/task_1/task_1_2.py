@@ -34,6 +34,7 @@
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
 
+
 def calc_recurs():
     try:
         user_input = input('Введите операцию (+, -, *, / или 0 для выхода): ')
@@ -65,6 +66,5 @@ def calc_recurs():
         print('Деление на ноль не возможно!')
         return calc_recurs()
 
+
 calc_recurs()
-
-
