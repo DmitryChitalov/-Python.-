@@ -17,6 +17,5 @@ try:
     right_res = n * (n + 1) / 2
 
     print('Равенство доказано' if left_res == right_res else 'Равенство не доказано')
-except  ValueError:
+except ValueError:
     print('Необходимо ввести целое число')
-

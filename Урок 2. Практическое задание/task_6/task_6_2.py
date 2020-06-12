@@ -10,7 +10,7 @@
 from random import random
 
 
-def recursive_guess(num = False, answer_count = 1):
+def recursive_guess(num=False, answer_count=1):
     try:
         if not num:
             num = int(random() * 101)

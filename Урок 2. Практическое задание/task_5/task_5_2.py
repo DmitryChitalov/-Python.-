@@ -19,7 +19,7 @@
 """
 
 
-def recursive_ascii(left = 32, right = 127):
+def recursive_ascii(left=32, right=127):
     if left == right:
         return f'{left} - {chr(left)}'
     if left % 10 == 1:

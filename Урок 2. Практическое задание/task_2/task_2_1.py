@@ -16,7 +16,7 @@ even_count = 0
 odd_count = 0
 try:
     user_number = int(input('Введите число: '))
-    print(f'В числе {user_number} всего ', end='') # костыль чтобы не использовать еще одну переменную
+    print(f'В числе {user_number} всего ', end='')  # костыль чтобы не использовать еще одну переменную
     while user_number != 0:
         num = user_number % 10
         user_number //= 10

@@ -15,6 +15,7 @@
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
 
+
 def recursive_reverse(number):
     if number == 1:
         return str(number % 10)
