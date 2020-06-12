@@ -14,3 +14,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def mirror_number(user_input, new_number=0):
+    if user_input == 0:
+        return print(f'Число наооборот {new_number}')
+    else:
+        new_number = new_number * 10 + user_input % 10
+        user_input //= 10
+    return mirror_number(user_input, new_number)
+
+
+mirror_number(int(input('Введите натуральное число: ')))
