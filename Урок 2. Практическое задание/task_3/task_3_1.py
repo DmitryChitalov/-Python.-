@@ -12,3 +12,32 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+num = 1
+while num != 'stop':
+    num = input('Введите число или stop для завершения: ')
+    if num == 'stop':
+        print('Программа завершена!')
+        break
+    try:
+        num = int(num)
+        new_num = 0
+        if num < 10:
+            print(f'Перевернутое число: {num}')
+            continue
+        while True:
+            if new_num == 0:
+                new_num = num % 10
+            if num == 0:
+                new_num = '0' + str(new_num)  # Никак не могу поймать 0 что б он ставился первым перед числом. То есть 20 равнялось 02
+            elif num < 10:
+                break
+            else:
+                new_num = new_num * 10 + num // 10 % 10
+                num = num // 10
+
+        print(f'Перевернутое число: {new_num}')
+
+
+    except Exception as e:
+        print('Вы должны ввести натуральное число, или введите stop для выхода!')
+

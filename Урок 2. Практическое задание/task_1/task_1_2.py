@@ -33,3 +33,36 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calc():
+    lst = ['+', '-', '*', '/']
+    inp = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+    if inp == '0':
+        return print('Программа завершена!')
+    elif inp not in lst:
+        print('Введите корректную команду (+, -, *, / или 0 для выхода)')
+        return calc()
+
+    try:
+        num1 = float(input('Введите первое число: '))
+        num2 = float(input('Введите второе число: '))
+    except Exception as e:
+        print('Вы должны ввести число!')
+        return calc()
+
+    if inp == '/' and num2 == 0:
+        print('Деление на ноль невозможно!')
+    elif inp == '+':
+        print(f'Результат {num1} {inp} {num2} = {num1 + num2}')
+    elif inp == '-':
+        print(f'Результат {num1} {inp} {num2} = {num1 - num2}')
+    elif inp == "*":
+        print(f'Результат {num1} {inp} {num2} = {num1 * num2}')
+    elif inp == '/':
+        print(f'Результат {num1} {inp} {num2} = {num1 / num2}')
+
+    return calc()
+
+
+calc()
