@@ -60,3 +60,5 @@ while inp != 0:
         print(f'Результат {num1} {inp} {num2} = {num1 * num2}')
     elif inp == '/':
         print(f'Результат {num1} {inp} {num2} = {num1 / num2}')
+
+

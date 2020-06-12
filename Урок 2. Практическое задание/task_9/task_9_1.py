@@ -27,7 +27,6 @@ def recurs(num):
         return recurs(num // 10)
 
 
-
 while True:
     print('Для завершения программы введите 0')
     summ, local_summ = 0, 0

@@ -36,12 +36,8 @@ while num != 0:
                 else:
                     nechet += 1
                 break
-        print(f'В введенном числе всего {nechet + chet} цифр, из которых {nechet} чётных и {chet} нечётных')
+        print(
+            f'В введенном числе всего {nechet + chet} цифр, из которых {nechet} чётных и {chet} нечётных')
 
     except Exception as e:
         print('Вы должны ввести натуральное число, или введите 0 для выхода!')
-
-
-
-
-

@@ -47,5 +47,4 @@ def recurs():
 
         recurs1(num)
 
-
 recurs()
