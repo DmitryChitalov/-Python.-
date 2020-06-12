@@ -14,3 +14,42 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+new_num = 0
+
+
+def recurs():
+    num = input('Введите число или stop для завершения: ')
+    if num == 'stop':
+        return print('Программа завершена!')
+
+    try:
+        num = int(num)
+    except Exception as e:
+        print('Вы должны ввести натуральное число, или введите stop для выхода!')
+        return recurs()
+    if num < 10:
+        print(f'Перевернутое число: {num}')
+        return recurs()
+
+    def recurs1(num):
+        global new_num
+        if new_num == 0:
+            new_num = num % 10
+            return recurs1(num // 10)
+        if num == 0:
+            # Никак не могу поймать 0 что б он ставился первым перед числом. То
+            # есть 20 равнялось 02
+            new_num = '0' + str(new_num)
+
+        elif num < 10:
+            print(f'Перевернутое число: {new_num * 10 + num}')
+
+        else:
+            new_num = new_num * 10 + num // 10 % 10
+            num = num // 10
+            return recurs1(num)
+
+    recurs1(num)
+
+recurs()

@@ -7,3 +7,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+
+print('Игра началась! У вас 10 попыток. Введите 0 для выхода')
+target = round(random.uniform(0, 100))
+n = 10
+while True:
+    if n == 0:
+        print(f'Вы так и не отгадали! Загаданное число {target}')
+        break
+    try:
+        num = int(input('Введите число: '))
+    except Exception as e:
+        print('Вы должны ввести число!')
+        continue
+    if num == 0:
+        print(f'Программа завершена! Загаданное число {target}')
+        break
+    elif num == target:
+        print('Ура! Вы попали в точку')
+        break
+    elif num > target:
+        print(
+            f'Мимо! Введенное вами число больше цели! -- у Вас {n-1} попыток')
+    elif num < target:
+        print(
+            f'Мимо! Введенное вами число меньше цели! -- у Вас {n-1} попыток')
+    n -= 1

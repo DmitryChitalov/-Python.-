@@ -5,3 +5,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+n = 1
+while n != 0:
+    try:
+        n = int(input('Введите число для проверки: '))
+    except Exception as e:
+        print('Введите натуральное число!')
+        continue
+    if n == 0:
+        print('Программа завершена!')
+        break
+    a = 1
+    summ = 0
+    while a != n + 1:
+        summ += a
+        a += 1
+    summ2 = n * (n + 1) / 2
+    if summ == summ2:
+        print(
+            f'Равенство: 1+2+...+n = n(n+1)/2 верно для введенного числа {n} \n'
+            f'{summ} = {summ2}')
+    elif summ != summ2:
+        print(f'Вы нашли число при котором данное равенстова ошибочно\n'
+              f'{summ} не равно {summ2}!')
+
