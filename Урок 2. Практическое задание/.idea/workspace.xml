@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a93781cd-c7bb-43b6-aefc-2641225a7da3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/task_1/task_1_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_1/task_1_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_1/task_1_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_1/task_1_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_2/task_2_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_2/task_2_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_2/task_2_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_2/task_2_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
