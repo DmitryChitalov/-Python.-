@@ -1,5 +1,5 @@
 """
-2.	Посчитать четные и нечетные цифры введенного натурального числа.
+2.    Посчитать четные и нечетные цифры введенного натурального числа.
 Например, если введено число 34560, то у него 3 четные цифры
 (4, 6 и 0) и 2 нечетные (3 и 5).
 
@@ -15,3 +15,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursive_count(user_number, even_count=0, odd_count=0):
+    if user_number == 0:
+        print(f'Количество четных цифр = {even_count}, нечетных цифр = {odd_count}')
+        return
+    num = user_number % 10
+    if num % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+    return recursive_count(user_number//10, even_count, odd_count)
+
+
+try:
+    user_num = int(input('Введите целое число: '))
+    recursive_count(user_num)
+except ValueError:
+    print('Необходимо ввести целое число')

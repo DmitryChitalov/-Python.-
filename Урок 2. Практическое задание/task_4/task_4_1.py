@@ -8,3 +8,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    n = int(input('Введите количество элементов: '))
+    n_count = n
+    res_sum = 0
+    el = 1
+    while n > 0:
+        res_sum += el
+        el /= -2
+        n -= 1
+
+    print(f'Количество элементов - {n_count}, их сумма - {res_sum}')
+except ValueError:
+    print('Необходимо ввести целое число')

@@ -32,3 +32,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    operator = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+    if operator == '0':
+        break
+    elif operator != '+' and operator != '-' \
+            and operator != '*'and operator != '/':  # Проще было бы проверять вхождение в
+                                                     # список с допустимыми операторами
+        print('Неверная операция. Повторите ввод')
+        continue
+    try:
+        n1 = float(input('Введите первое число: '))
+        n2 = float(input('Введите второе число: '))
+        if operator == '+':
+            result = n1 + n2
+        elif operator == '-':
+            result = n1 - n2
+        elif operator == '*':
+            result = n1 * n2
+        else:
+            result = n1 / n2
+        print(f'Результат {n1} {operator} {n2} = {result}')
+    except ValueError:
+        print('Необходимо ввести числа')
+    except ZeroDivisionError:
+        print('Деление на ноль невозможно')

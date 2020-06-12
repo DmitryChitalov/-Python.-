@@ -5,3 +5,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    print('Программа, проверяющая равенство 1+2+...+n = n(n+1)/2')
+    n = int(input('Введите целое число: '))
+    left_res = 0
+
+    for i in range(1, n + 1):
+        left_res += i
+
+    right_res = n * (n + 1) / 2
+
+    print('Равенство доказано' if left_res == right_res else 'Равенство не доказано')
+except ValueError:
+    print('Необходимо ввести целое число')

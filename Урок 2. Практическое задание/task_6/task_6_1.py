@@ -7,3 +7,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import random
+
+
+try:
+    num = int(random() * 101)
+    answer_count = 0
+    while answer_count < 10:
+        answer_count += 1
+        print(f'Попытка номер {answer_count}')
+        user_num = int(input('Введите число: '))
+        if user_num > num:
+            print('Введенное число больше загаданного')
+        elif user_num < num:
+            print('Введенное число меньше загаданного')
+        else:
+            print('Вы угадали!')
+            break
+    else:
+        print(f'Вы не угадали, загаданное число - {num}')
+except ValueError:
+    print('Необходимо ввести целое число')

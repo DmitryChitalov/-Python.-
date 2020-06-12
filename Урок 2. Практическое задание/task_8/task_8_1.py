@@ -12,3 +12,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+try:
+    n_cnt = int(input('Введите сколько будет чисел: '))
+    n = int(input('Введите какую цифру считать: '))
+    res = 0
+    for i in range(1, n_cnt + 1):
+        user_number = int(input(f'Число {i}: '))
+        while user_number != 0:
+            if user_number % 10 == n:
+                res += 1
+            user_number //= 10
+
+    print(f'Было введено {res} цифр "{n}"')
+except ValueError:
+    print('Необходимо ввести число')
