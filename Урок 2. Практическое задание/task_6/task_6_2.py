@@ -23,7 +23,7 @@ def quest_number_func(quest_number, user_tries=1):
             print(f'Вы отгадали, правильный ответ {quest_number}')
             user_tries = 10
         user_tries += 1
-        quest_number_func(quest_number, user_tries)
+        return quest_number_func(quest_number, user_tries)
     except ValueError:
         print('Введите число от 1 до 100')
         quest_number_func(quest_number, user_tries)

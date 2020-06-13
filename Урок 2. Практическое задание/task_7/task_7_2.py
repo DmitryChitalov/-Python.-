@@ -17,7 +17,7 @@ def theorem(n, check_n, result=1):
         return print('Теорема доказана')
     result += n
     n -= 1
-    theorem(n, check_n, result)
+    return theorem(n, check_n, result)
 
 
 check_theorem(20)
