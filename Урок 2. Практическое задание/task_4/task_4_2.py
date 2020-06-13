@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def sum_n(n, number=1, result_number=0):
+    if n == 0:
+        return print(f'Сумма элементов {result_number}')
+    result_number += number
+    number /= -2
+    n -= 1
+    return sum_n(n, number, result_number)
+
+
+sum_n(int(input('Введите число: ')))
