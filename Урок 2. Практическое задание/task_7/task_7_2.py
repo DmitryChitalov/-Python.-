@@ -5,3 +5,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def check_theorem(n):
+    check_n_2 = n * (n + 1) / 2
+    theorem(n, check_n_2)
+
+
+def theorem(n, check_n, result=1):
+    if result == check_n:
+        return print('Теорема доказана')
+    result += n
+    n -= 1
+    theorem(n, check_n, result)
+
+
+check_theorem(20)
