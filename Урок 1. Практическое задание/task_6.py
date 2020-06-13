@@ -8,3 +8,8 @@
 
 Подсказка: используйте ф-ции chr() и ord()
 """
+numb_char = int(input('Введите номер буквы в алфавите:'))
+if 0 < numb_char < 27:
+    print(f'Это буква - {chr(96 + numb_char)}')
+else:
+    print(f'Буквы с номером {numb_char} не существует')

@@ -6,3 +6,17 @@
 Подсказка: это стандартные операции, которые осуществляются с помощью
 стандартных операторов. Попробуйте найти каких именно.
 """
+NUM_1 = 5
+NUM_2 = 6
+print(f'{bin(NUM_1)}')
+print(f'{bin(NUM_2)}')
+BIN_AND = NUM_1 & NUM_2
+print(f'Побитовый И чисел {NUM_1} и {NUM_2} = {BIN_AND}')
+BIN_OR = NUM_1 | NUM_2
+print(f'Побитовый Или чисел {NUM_1} и {NUM_2} = {BIN_OR}')
+BIN_NOT = ~NUM_1
+print(f'Побитовый НЕ числа {NUM_2} = {BIN_NOT}')
+LEFT_BIT_SHIFT = NUM_1 << 2
+RIGHT_BIT_SHIFT = NUM_1 >> 2
+print(f'Побитовый сдвиг вправо на 2 знака числа {NUM_1} = {RIGHT_BIT_SHIFT}')
+print(f'Побитовый сдвиг влево на 2 знака числа {NUM_1} = {LEFT_BIT_SHIFT}')
