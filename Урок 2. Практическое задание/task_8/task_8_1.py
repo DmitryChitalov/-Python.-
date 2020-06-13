@@ -12,3 +12,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+quantity_num = int(input('Сколько будет чисел?'))
+need_num = input('Какую цифру считать? ')
+
+
+count = 0
+for i in range(quantity_num):
+    number = input(f'Число {i + 1}: ')
+    for p in number:
+        if p == need_num:
+            count += 1
+
+print(f'Было введено {count} цифр {need_num}')
+
+
