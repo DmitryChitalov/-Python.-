@@ -17,3 +17,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def decode(i=32, counter=1):
+    if i == 128:
+        return
+    print(f'{i} - {chr(i)}', end='     ')
+    if counter % 10 == 0:
+        print()
+    i += 1
+    counter += 1
+    return decode(i, counter)
+
+
+decode()
