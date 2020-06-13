@@ -17,3 +17,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+i = 1
+for ind in range(32, 128):
+    if i % 10 != 0:
+        print(f'{ind}: {chr(ind)}', end=' ')
+    else:
+        print(f'{ind}: {chr(ind)}')
+    i += 1
+
