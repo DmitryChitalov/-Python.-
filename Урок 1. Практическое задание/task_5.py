@@ -10,3 +10,11 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+char_1 = 'z'
+char_2 = 'b'
+numb_1 = ord(char_1) - 96
+numb_2 = ord(char_2) - 96
+print(f'Буква {char_1} стоит на {numb_1} месте в алфавите')
+print(f'Буква {char_2} стоит на {numb_2} месте в алфавите')
+quantity_numb = numb_2 - numb_1 - 1 if numb_2 > numb_1 else numb_1 - numb_2 - 1
+print(f'Между буквами {char_1} и {char_2}: {quantity_numb} буквы')

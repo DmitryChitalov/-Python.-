@@ -14,3 +14,18 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+import random
+min_num = 3
+max_num = 10
+num_1 = int(random.random() * (max_num - min_num + 1)) + min_num
+print(f'Случайное целое число от {min_num} до {max_num}: {num_1}')
+
+min_num = 3.5
+max_num = 12.7
+num_2 = float(random.random() * (max_num - min_num)) + min_num
+print(f'Случайное вещественное число от {min_num} до {max_num}: {round(num_2,3)}')
+
+min_char = 'c'
+max_char = 'r'
+random_char = chr(int(random.random() * (ord(max_char) - ord(min_char) + 1)) + ord(min_char))
+print(f'Случайный символ от {min_char} до {max_char}: {random_char}')

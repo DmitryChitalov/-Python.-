@@ -4,3 +4,15 @@
 
 Подсказка: можно добавить проверку, что введены равные числа
 """
+num_1 = int(input('Введите 1-е число:'))
+num_2 = int(input('Введите 2-е число:'))
+num_3 = int(input('Введите 3-е число:'))
+if num_1 == num_2 or num_2 == num_3 or num_3 == num_1:
+    print('Необходимо ввести 3 разные числа')
+
+if num_2 < num_1 < num_3 or num_2 > num_1 > num_3:
+    print(f'{num_1} - среднее число')
+elif num_1 < num_2 < num_3 or num_1 > num_2 > num_3:
+    print(f'{num_2} - среднее число')
+elif num_1 < num_3 < num_2 or num_1 > num_3 > num_2:
+    print(f'{num_3} - среднее число')
