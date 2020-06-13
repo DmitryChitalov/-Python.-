@@ -14,3 +14,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+# ++++++++========================rec3
+qwe = 124245
+
+
+def rec3(numb):
+    if numb < 10:
+        return numb
+    else:
+        return str(numb % 10) + ' ' + str(rec3(numb // 10))
+
+
+print(rec3(qwe))
