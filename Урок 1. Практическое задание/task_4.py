@@ -14,3 +14,26 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+from random import random
+
+print('Задайте диапозон выбора целого числа')
+
+x = int(input('Введите 1-е число: '))
+y = int(input('Введите 2-е число: '))
+number = int(random() * (y - x) + 1) + x
+print(number)
+
+print('Задайте диапозон выбора вещественных чисел')
+
+x = float(input('Введите 1-е число: '))
+y = float(input('Введите 2-е число: '))
+number = random() * (y - x) + x
+print(round(number, 2))
+
+print('Задайте диапозон выбора символов')
+
+symbol_1 = ord(input('Введите 1-й символ: '))
+symbol_2 = ord(input('Введите 2-й символ: '))
+symbol_rand = int(random() * (symbol_2 - symbol_1 + 1)) + symbol_1
+print(chr(symbol_rand))
