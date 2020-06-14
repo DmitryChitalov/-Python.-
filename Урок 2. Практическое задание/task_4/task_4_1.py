@@ -8,3 +8,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+count = int(input('Укажите число "3": '))
+numm = 1
+summ = 0
+for item in range(count):
+    numm = numm / -2
+    summ += numm
+print(f'Final result is {numm}')

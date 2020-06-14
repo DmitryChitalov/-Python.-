@@ -14,3 +14,11 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+
+LEFT = int(input("Минимальная граница: "))
+RIGHT = int(input("Максимальная граница: "))
+NUMB = int(random() * (RIGHT - LEFT + 1)) + LEFT
+print(NUMB)
+
+# Не понял как это работает :c
