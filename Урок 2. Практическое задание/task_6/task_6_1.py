@@ -7,3 +7,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import random
+try_count = 0
+random_number = round(random()*100)
+while try_count != 10:
+    a = int(input('Введите число от 0 до 100: '))
+    if random_number > a:
+        print('Введеное число меньше загаданного')
+        try_count += 1
+    elif random_number < a:
+        print('Введеное число больше загаданного')
+        try_count += 1
+    elif random_number == a:
+        print('Поздравляю, вы угадали')
+        break
+    else:
+        print('Неверно введено число от 0 до 100')
+    print(f'Осталось {10 - try_count} попыток')
