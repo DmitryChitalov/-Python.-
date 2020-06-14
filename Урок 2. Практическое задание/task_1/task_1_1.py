@@ -33,32 +33,58 @@
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
 
-cont = True
-while cont:
-    try:
-        first_number = int(input("Enter first number: "))
-        second_number = int(input("Enter second number (it shouldn't be the zero!): "))
-        sign_operation = input("Enter the sigh for operation. '+', '-', '*', '/' or '0' to quit.:  ")
+# First solution
+# cont = True
+# while cont:
+#     try:
+#         first_number = int(input("Enter first number: "))
+#         second_number = int(input("Enter second number (it shouldn't be the zero!): "))
+#         sign_operation = input("Enter the sigh for operation. '+', '-', '*', '/' or '0' to quit.:  ")
+#
+#         while True:
+#             if sign_operation == '+':
+#                 print(first_number + second_number)
+#                 break
+#             elif sign_operation == '-':
+#                 print(first_number - second_number)
+#                 break
+#             elif sign_operation == '*':
+#                 print(first_number * second_number)
+#                 break
+#             elif sign_operation == '/':
+#                 print(first_number / second_number)
+#                 break
+#             elif sign_operation == '0':
+#                 cont = False
+#                 print('You entered a zero to quite. The calculation will be stopped')
+#                 break
+#             elif sign_operation not in ['0','+','-','*', '/']:
+#                 print('You entered a wrong symbol. Try again')
+#                 break
+#     except ZeroDivisionError:
+#         print("You are trying to divide by zero, it's wrong")
 
-        while True:
+# Second solution
+
+while True:
+    first_number = int(input("Enter first number: "))
+    second_number = int(input("Enter second number (it shouldn't be the zero!): "))
+    sign_operation = input("Enter the sigh for operation. '+', '-', '*', '/' or '0' to quit.:  ")
+
+    if sign_operation == '0':
+        print('You entered a zero to quite. The calculation will be stopped')
+        break
+    if sign_operation in {'+', '-', '*', '/'}:
+        try:
             if sign_operation == '+':
                 print(first_number + second_number)
-                break
             elif sign_operation == '-':
                 print(first_number - second_number)
-                break
             elif sign_operation == '*':
                 print(first_number * second_number)
-                break
             elif sign_operation == '/':
                 print(first_number / second_number)
-                break
-            elif sign_operation == '0':
-                cont = False
-                print('You entered a zero to quite. The calculation will be stopped')
-                break
-            elif sign_operation not in ['0','+','-','*', '/']:
-                print('You entered a wrong symbol. Try again')
-                break
-    except ZeroDivisionError:
-        print("You are trying to divide by zero, it's wrong")
+        except ZeroDivisionError:
+            print("You are trying to divide by zero, it's wrong")
+    else:
+        print('Wrong sign for operation. Try again')
