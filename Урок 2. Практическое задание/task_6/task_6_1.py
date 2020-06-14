@@ -7,3 +7,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+from random import randint
+
+answer = randint(0, 100)
+for _ in range(10):
+    user_answer = int(input('Введите число: '))
+    if user_answer != answer:
+        print('Вы ввели число больше' if user_answer > answer else 'Вы ввели число меньше')
+    else:
+        print('Вы угадали!')
+        break
+else:
+    print(answer)

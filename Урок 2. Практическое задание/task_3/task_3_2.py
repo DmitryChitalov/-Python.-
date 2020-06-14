@@ -14,3 +14,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+REVERSE_NUM = 0  # Как сделать переменную внутри функции без глобал?
+
+
+def reverse(input_num):
+    global REVERSE_NUM
+    if not input_num:
+        print(REVERSE_NUM)
+        return REVERSE_NUM
+    REVERSE_NUM = REVERSE_NUM * 10 + input_num % 10
+    reverse(input_num // 10)
+
+
+USER_INPUT = int(input('Введите число: '))
+
+reverse(USER_INPUT)

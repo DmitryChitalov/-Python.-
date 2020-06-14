@@ -8,3 +8,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+N = int(input('Введите n: '))
+
+
+def sequence(num, start=1):
+    if not num:
+        return 0
+    return start + sequence(num-1, start/-2)
+
+
+print(sequence(N))

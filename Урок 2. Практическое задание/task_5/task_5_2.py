@@ -17,3 +17,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def ascii_table(num):
+    if num == 32:
+        return f' {num:4} - {chr(num)}'
+    if (num - 2) % 10 == 0:
+        return f'{ascii_table(num - 1)}\n {num:4} - {chr(num)}'
+    return f'{ascii_table(num - 1)}{num:4} - {chr(num)}'
+
+
+print(ascii_table(127))

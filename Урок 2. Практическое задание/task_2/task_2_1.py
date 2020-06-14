@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+USER_NUM = int(input('Введите число: '))
+
+EVEN = 0
+UNEVEN = 0
+LAST_NUM = 0
+
+while USER_NUM:
+    last_num = USER_NUM % 10
+    if last_num % 2 == 0:
+        EVEN += 1
+    else:
+        UNEVEN += 1
+    USER_NUM = USER_NUM // 10
+
+print('Четные:', EVEN)
+print('Не четные:', UNEVEN)

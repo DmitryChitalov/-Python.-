@@ -12,3 +12,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+USER_INPUT = int(input('Введите число: '))
+
+REVERSE_NUM = 0
+
+while USER_INPUT:
+    REVERSE_NUM = REVERSE_NUM * 10 + USER_INPUT % 10
+    USER_INPUT = USER_INPUT // 10
+
+print(REVERSE_NUM)

@@ -17,3 +17,8 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+for char_num in range(32, 128):
+    if (char_num - 2) % 10 == 0:
+        print()
+    print(f'{char_num:4} - {chr(char_num)}', end=' ')

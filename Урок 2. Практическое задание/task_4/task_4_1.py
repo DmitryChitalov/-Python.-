@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+N = int(input('Введите n: '))
+Q = -0.5
+START = 1
+SUMM = 0
+
+while N:
+    N -= 1
+    SUMM += START
+    START *= Q
+
+print(SUMM)
