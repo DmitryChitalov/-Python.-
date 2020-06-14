@@ -12,3 +12,39 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+#Solution 1
+number = input('Enter you number: ')
+list_digits = list(map(int, str(number)))
+new = int
+new_list = []
+
+while len(list_digits) > 0:
+    new = list_digits[-1]
+    new_list.append(new)
+    list_digits.remove(new)
+print(int(''.join(map(str, new_list))))
+
+
+#Solution 2
+# BASE = 10
+# num = input('Enter you number: ')
+# result = 0
+# while num > 0:
+#     result = result * BASE + num % BASE
+#     num = num // BASE
+# print(result)
+
+
+#Solution 3 - will consume RAM
+# num = input('Enter you number: ')
+# result = ''
+# for i in num:
+#     result = i + result
+# print(result)
+
+
+#Solution 4 - without cylce
+# num = input('Enter you number: ')
+# result = num[::-1]
+# print(result)
