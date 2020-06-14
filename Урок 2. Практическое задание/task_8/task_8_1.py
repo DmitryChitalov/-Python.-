@@ -13,3 +13,15 @@
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
 
+amount = int(input('Сколько будет чисел?'))
+numm = input('Какую цифру считать? ')
+
+
+count = 0
+for i in range(amount):
+    number = input(f'Число {i + 1}: ')
+    for n in number:
+        if n == numm:
+            count += 1
+
+print(f'Было введено {count} цифр {numm}')

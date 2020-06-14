@@ -10,3 +10,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+a = int(input('Введи число: '))
+print('Первый цикл')
+for idx in range(a):
+    print(idx, end=' ')
+
+print()
+print('Второй цикл')
+for idy in range(1, a + 1):
+    print(idy, end=' ')
+
+
+print()
+print('Третий цикл')
+for idy in range(1, a):
+    print(idy, end=' ')
+print()
+print('Третий цикл')
+for idy in range(2, a + 1, 2):
+    print(idy, end=' ')
