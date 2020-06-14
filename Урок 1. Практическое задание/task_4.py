@@ -14,3 +14,23 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+
+print("Данная программа генерирует в указанных пользователем границах случайное целое число; случайное вещественное число и случайный символ.")
+border_int1 = int(input('Введите нижнюю границу для целого числа: '))
+border_int2 = int(input('Введите верхнюю границу для целого числа: '))
+border_float1 = float(input('Введите нижнюю границу для дробного числа: '))
+border_float2 = float(input('Введите верхнюю границу для дробного  числа: '))
+border_sym1 = ord(input('Введите первый символ алфавита, ограничивающий диапазон случайного символа: '))
+border_sym2 = ord(input('Введите второй символ алфавита, ограничивающий диапазон случайного символа: '))
+
+result_int = round(random() * (border_int2 - border_int1) + border_int1)
+print(f'Случайное целое число между числами {border_int1} и {border_int2}: {result_int}.')
+
+result_float = round((random() * (border_float2 - border_float1) + border_float1), 3)
+print(f'Случайное вещественное число между числами {border_float1} и {border_float2}: {result_float}.')
+
+border1 = border_sym1 - ord('a') + 1
+border2 = border_sym2 - ord('a') + 1
+result_symbol = round(random() * (border2 - border1) + border1)
+print(f'Случайный символ между буквами: {chr(ord("a") + int(result_symbol) -1)}.')
