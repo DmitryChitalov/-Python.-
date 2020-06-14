@@ -27,6 +27,3 @@ for i in range(first, last + 1):
     print(f'\t{i}->"{chr(i)}"', end='')
     if i % step == 1:
         print()
-
-
-
