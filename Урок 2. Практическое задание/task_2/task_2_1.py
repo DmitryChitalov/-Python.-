@@ -12,3 +12,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+#Solution 1
+num = input('enter a number:')
+even = 0
+odd = 0
+list_digits = list(map(int, str(num)))
+print(list_digits)
+
+for i in list_digits:
+    if i % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+print(f"There are {even} even digits and {odd} odd digits")
+
+
+#Solution 2
+# num = int(input('enter a number:'))
+# even = 0
+# odd = 0
+# while num > 0:
+#     if num % 2 == 0:
+#         even += 1
+#     else:
+#         odd += 1
+#     num = num // 10
+# print(f"There are {even} even digits and {odd} odd digits")
+
