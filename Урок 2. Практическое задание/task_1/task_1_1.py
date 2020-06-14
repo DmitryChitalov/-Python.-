@@ -32,3 +32,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+user_input = None
+while user_input != '0':
+    try:
+        user_input = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+        print(user_input)
+        if user_input != '+' and user_input != '-' and user_input != '*' \
+                and user_input != '/' and user_input != '0':
+            print('Вы ввели некорректное действие! Введите операцию (+, -, *, / или 0 для выхода)')
+        elif user_input == '0':
+            break
+        else:
+            user_number = int(input('Введите первое число: '))
+            user_number_2 = int(input('Введите второе число: '))
+
+        if user_input == '+':
+            print(f'Сумма чисел равна {user_number + user_number_2}')
+        elif user_input == '-':
+            print(f'Разность чисел равна {user_number - user_number_2}')
+        elif user_input == '*':
+            print(f'Произведение чисел равно {user_number * user_number_2}')
+        elif user_input == '/':
+            print(f'Частное чисел равно {user_number / user_number_2}')
+    except ValueError:
+        print('Введите пожалуйста корректные значения')
+    except ZeroDivisionError:
+        print('Деление на ноль не возможно!')

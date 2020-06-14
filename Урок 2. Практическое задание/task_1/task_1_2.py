@@ -33,3 +33,38 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calc_recurs():
+    try:
+        user_input = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+        if user_input == '0':
+            return print('By')
+        if user_input != '+' and user_input != '-' and user_input != '*' \
+                and user_input != '/' and user_input != '0':
+            print('Вы ввели некорректное действие! Введите операцию (+, -, *, / или 0 для выхода)')
+            return calc_recurs()
+        else:
+            user_number = int(input('Введите первое число: '))
+            user_number_2 = int(input('Введите второе число: '))
+            if user_input == '+':
+                print(f'Сумма чисел равна {user_number + user_number_2}')
+                return calc_recurs()
+            elif user_input == '-':
+                print(f'Разность чисел равна {user_number - user_number_2}')
+                return calc_recurs()
+            elif user_input == '*':
+                print(f'Произведение чисел равно {user_number * user_number_2}')
+                return calc_recurs()
+            elif user_input == '/':
+                print(f'Частное чисел равно {user_number / user_number_2}')
+                return calc_recurs()
+    except ValueError:
+        print('Проверьте корректность значений!')
+        return calc_recurs()
+    except ZeroDivisionError:
+        print('Деление на ноль не возможно!')
+        return calc_recurs()
+
+
+calc_recurs()

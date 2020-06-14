@@ -8,3 +8,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+n = int(input('Введите число: '))
+number = 1
+result_number = 0
+while n != 0:
+    result_number += number
+    number /= -2
+    n -= 1
+print(f'Сумма элементов {result_number}')
+

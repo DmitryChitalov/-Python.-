@@ -12,3 +12,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+user_input = int(input('Введите натуральное число: '))
+even_number = 0
+odd_number = 0
+while user_input:
+    check_number = user_input % 10
+    if check_number % 2 == 0:
+        even_number += 1
+    else:
+        odd_number += 1
+    user_input //= 10
+
+print(f'Введенное число содержит {even_number} четных и {odd_number} нечетных чисел')

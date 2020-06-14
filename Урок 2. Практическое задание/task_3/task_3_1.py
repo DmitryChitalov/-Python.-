@@ -12,3 +12,10 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+user_input = int(input('Введите число: '))
+new_number = 0
+while user_input > 0:
+    new_number = new_number * 10 + user_input % 10
+    user_input //= 10
+print(new_number)
