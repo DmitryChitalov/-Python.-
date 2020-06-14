@@ -17,3 +17,16 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+#Solution 1
+
+first = 32
+last = 127
+step = 10
+
+for i in range(first, last + 1):
+    print(f'\t{i}->"{chr(i)}"', end='')
+    if i % step == 1:
+        print()
+
+
+
