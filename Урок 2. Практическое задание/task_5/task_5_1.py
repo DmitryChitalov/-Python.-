@@ -17,7 +17,7 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
-#Solution 1
+# Solution 1
 
 first = 32
 last = 127
@@ -27,3 +27,21 @@ for i in range(first, last + 1):
     print(f'\t{i}->"{chr(i)}"', end='')
     if i % step == 1:
         print()
+
+
+# Solution from teacher
+
+def cycle_method(from_symbol, to_symbol, output_str=''):
+    for i in range(from_symbol, to_symbol):
+        if i <= LAST_ASCII_NUM:
+            output_str = f'{i} - {chr(i)}'
+    return output_str
+
+
+first_ascii_num = 32
+LAST_ASCII_NUM = 127
+STEP = 10
+
+print("This is a cycle representation: ")
+for i in range(first_ascii_num, LAST_ASCII_NUM + 1, STEP):
+    print(cycle_method(i, i + STEP))

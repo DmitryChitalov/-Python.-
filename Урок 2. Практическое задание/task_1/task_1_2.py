@@ -35,3 +35,41 @@
 """
 
 
+#  Solution from teacher
+
+def calc():
+    oper_type = input("Enter type of operation (+,-,*,/ or 0 to quit): ")
+    if oper_type == '0':
+        return "Exit"
+
+    else:
+        if oper_type in "+-*/":
+            try:
+                num_1 = int(input("Enter the first number: "))
+                num_2 = int(input("Enter the second number: "))
+
+                if oper_type == '+':
+                    res = num_1 + num_2
+                    print(f"You result is {res}")
+                    return calc()
+
+                if oper_type == '-':
+                    res = num_1 - num_2
+                    print(f"You result is {res}")
+                    return calc()
+
+                if oper_type == '*':
+                    res = num_1 * num_2
+                    print(f"You result is {res}")
+                    return calc()
+
+                if oper_type == '/':
+                    if oper_type != 0:
+                        res = num_1 / num_2
+                        print(f"You result is {res}")
+                    else:
+                        print("Dividing by zero is impossible. ")
+                    return calc()
+            except ValueError:
+                print("Wrong value. Try again")
+            return calc()

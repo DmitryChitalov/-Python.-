@@ -14,3 +14,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+# Solution from teacher
+
+def recur_method(numb, flip=0):
+    if numb == 0:
+        return flip
+    else:
+        flip = (flip * 10) + (numb % 10)
+        numb = numb // 10
+        return recur_method(numb, flip)
+try:
+    NUMB = int(input("Enter a number: "))
+    print(f"Inverted number is {recur_method(NUMB)}")
+except ValueError:
+    print("You entered a wrong value. Try again")
