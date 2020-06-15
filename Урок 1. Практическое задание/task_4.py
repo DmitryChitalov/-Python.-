@@ -14,3 +14,19 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+from random import random
+
+m1 = int(input("Нижняя граница : "))
+m2 = int(input("Верхняя граница : "))
+n = int(random() * (m2 - m1 + 1)) + m1
+print(n)
+
+m1 = float(input("Нижняя граница : "))
+m2 = float(input("Нижняя граница : "))
+n = random() * (m2 - m1) + m1
+print(round(n, 3))
+
+m1 = ord(input("Первая буква в диапазоне : "))
+m2 = ord(input("Последняя буква в диапазоне : "))
+n = int(random() * (m2 - m1 + 1)) + m1
+print(chr(n))
