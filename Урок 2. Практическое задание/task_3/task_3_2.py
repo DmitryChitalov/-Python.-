@@ -14,3 +14,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def inverse_num(num, num_reverse=''):
+    """Реверс числа
+
+    num - исходное число
+    num_reverse - перевёрнутое число
+    """
+    if num:
+        num_reverse += str(num % 10)
+        num //= 10
+        return inverse_num(num, num_reverse)
+    return int(num_reverse)
+
+
+try:
+    NUM = int(input("Введите число, которое требуется перевернуть: "))
+    if NUM < 0:
+        raise ValueError("Число должно быть положительным!")
+    print(f"Перевернутое число: {inverse_num(NUM)}")
+except ValueError as exception:
+    print(f"Вы ввели не натуральное число! Ошибка ввода данных: {exception}")

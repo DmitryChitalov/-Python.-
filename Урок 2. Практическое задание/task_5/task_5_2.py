@@ -17,3 +17,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def ascii_print(start, end, step):
+    """Вывод символов ASCII
+
+    start - начинать с символа под номером start
+    end - заканчивается символом под данным номером
+    step - количество выводимых символов в 1 строке
+    """
+    symbols = ""
+    for chr_num in range(start, start + step):
+        if chr_num > end:
+            break
+        symbols += f"{chr_num} - {chr(chr_num)} "
+    print(symbols)
+    if start < end:
+        ascii_print(start + step, end, step)
+
+
+ascii_print(32, 127, 10)

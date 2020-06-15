@@ -8,3 +8,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def sum_els(quantity, sum_el=0.0, start=1.0):
+    """Сумма n элементов ряда чисел
+    (для усложнения сперва делалась рекурсия, тут её быстрая переделка под цикл)
+
+    quantity - количество элементов
+    sum_el - сумма элементов
+    start - стартовая позиция
+    """
+    while True:
+        if quantity:
+            # return sum_els(quantity - 1, sum_el + start, start / -2)
+            quantity -= 1
+            sum_el += start
+            start /= -2
+            continue
+        return sum_el
+
+
+try:
+    NUM = int(input("Введите количество элементов: "))
+    if NUM < 0:
+        raise ValueError("Число должно быть положительным!")
+    print(f"Количество элементов - {NUM}, их сумма - {sum_els(NUM)}")
+except ValueError as exception:
+    print(f"Вы ввели не натуральное число! Ошибка ввода данных: {exception}")

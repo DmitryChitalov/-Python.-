@@ -33,3 +33,47 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calculate(operator='', num_1=0, num_2=0):
+    """Калькулятор
+
+    operator - символ операции
+    num_1 - первое число
+    num_2 - второе число
+    """
+    if not operator:
+        operator = input("Введите операцию (+, -, *, / или 0 для выхода)\n")
+    if operator not in '+-*/0':
+        print('Вы ввели неверный знак операции!')
+        return calculate()
+    if operator == '0':
+        return print('Выход из программы')
+
+    try:
+        if not num_1:
+            num_1 = int(input("Введите первое число: "))
+        if not num_2:
+            num_2 = int(input("Введите второе число: "))
+        if operator == '/' and num_2 == 0:
+            raise ZeroDivisionError
+    except ValueError:
+        print("Нужно вводить цифры!")
+        return calculate(operator) if not num_1 else calculate(operator, num_1)
+    except ZeroDivisionError:
+        print("На 0 делить нельзя!")
+        return calculate(operator, num_1)
+
+    if operator == '+':
+        print(f"Результат сложения: {num_1 + num_2}")
+    elif operator == '-':
+        print(f"Результат вычитания: {num_1 - num_2}")
+    elif operator == '*':
+        print(f"Результат умножения: {num_1 * num_2}")
+    elif operator == '/':
+        print(f"Результат деления: {num_1 / num_2}")
+
+    return calculate()
+
+
+calculate()

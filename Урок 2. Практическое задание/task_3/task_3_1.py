@@ -12,3 +12,28 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def inverse_num(num, num_reverse=''):
+    """Реверс числа
+    (для усложнения сперва делалась рекурсия, тут её быстрая переделка под цикл)
+
+    num - исходное число
+    num_reverse - перевёрнутое число
+    """
+    while True:
+        if num:
+            num_reverse += str(num % 10)
+            num //= 10
+            # return inverse_num(num, num_reverse)
+            continue
+        return int(num_reverse)
+
+
+try:
+    NUM = int(input("Введите число, которое требуется перевернуть: "))
+    if NUM < 0:
+        raise ValueError("Число должно быть положительным!")
+    print(f"Перевернутое число: {inverse_num(NUM)}")
+except ValueError as exception:
+    print(f"Вы ввели не натуральное число! Ошибка ввода данных: {exception}")
