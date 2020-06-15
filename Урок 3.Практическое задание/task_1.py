@@ -14,3 +14,16 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+a = [x for x in range(2, 100)]
+b = [x for x in range(2, 10)]
+# Создание списков с помощью цикла
+# for i in range(2, 100):
+#     a.append(i)
+# for j in range(2, 10):
+#     b.append(j)
+for cnt_b in b:
+    cnt = 0
+    for cnt_a in a:
+        if cnt_a % cnt_b == 0:
+            cnt += 1
+    print(f'В диапазоне 2-99: {cnt} чисел кратны {cnt_b}')
