@@ -11,3 +11,11 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+import random
+
+l = [random.randint(0, 9) for i in range(10)]
+print('Начальный  массив', l)
+ma = l.index(max(l))
+mi = l.index(min(l))
+l[ma], l[mi] = l[mi], l[ma]
+print('Измененный массив', l)
