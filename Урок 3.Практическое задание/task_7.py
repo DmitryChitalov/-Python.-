@@ -7,3 +7,25 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+from random import randint
+
+l = [randint(-50, 50) for _ in range(10)]
+min_el = l[0]
+cnt = 0
+second_el = 50
+for el in l:
+    if el == min_el:
+        cnt += 1
+    elif el < min_el:
+        min_el, second_el = el, min_el
+        cnt = 1
+    elif second_el > el > min_el:
+        second_el = el
+if cnt >= 2:
+    print(
+        f'Исходный массив: {l}\nНаименьший элемент: {min_el}, '
+        f'встречается в этом массиве {cnt} раз\n')
+else:
+    print(
+        f'Исходный массив: {l}\nНаименьший элемент: {min_el},\n'
+        f'Второй наименьший элемент: {second_el}')

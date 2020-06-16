@@ -11,3 +11,19 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+from random import randint
+l = [randint(-100, 100) for _ in range(10)]
+min_el = 0
+max_el = 0
+cnt = 0
+for el in l[1:]:
+    cnt += 1
+    if el < l[min_el]:
+        min_el = cnt
+    elif el > l[max_el]:
+        max_el = cnt
+
+print(f'Исходный список:   {l}, минимальный элемент - {l[min_el]}, '
+      f'максимальный элемент- {l[max_el]}')
+l[min_el], l[max_el] = l[max_el], l[min_el]
+print(f'Измененный список: {l}')

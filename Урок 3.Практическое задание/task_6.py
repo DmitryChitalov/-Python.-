@@ -13,3 +13,27 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+from random import randint
+try:
+    n = int(input('Введите количество элементов в массиве: '))
+    l = [randint(0, 100) for _ in range(n)]
+    max_el = 0
+    min_el = 0
+    for i in range(len(l)):
+        if l[i] > l[max_el]:
+            max_el = i
+        elif l[i] < l[min_el]:
+            min_el = i
+    if min_el > max_el:
+        right, left = min_el, max_el
+    else:
+        right, left = max_el, min_el
+    res = 0
+    for el in l[left + 1:right]:
+        res += el
+    print(f'Массив: {l}\nСумма элементов между минимальным ({l[min_el]}) и '
+          f'максимальным ({l[max_el]}) элементами: {res}' if res != 0 else
+          f'В массиве {l} между минимальным ({l[min_el]}) '
+          f'и максимальным ({l[max_el]}) элементом нет чисел')
+except ValueError:
+    print('Необходимо ввести целое число')
