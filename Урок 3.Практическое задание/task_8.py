@@ -36,3 +36,13 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+from random import randint
+
+result_matrix = []
+for i in range(5):
+    matrix = []
+    for j in range(4):
+        matrix.append(randint(0, 9))
+    matrix.append(sum(matrix))
+    result_matrix.append(matrix)
+print(*result_matrix, sep='\n')

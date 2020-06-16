@@ -13,3 +13,22 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+from random import randint
+
+a = [randint(-100, 100) for x in range(1, 10)]
+print(a)
+
+result = 0
+min_idx = 0
+max_idx = 0
+for i in range(1, len(a)):
+    if a[i] < a[min_idx]:
+        min_idx = i
+    elif a[i] > a[max_idx]:
+        max_idx = i
+if min_idx > max_idx:
+    min_idx, max_idx = max_idx, min_idx
+for i in range(min_idx + 1, max_idx):
+    result += a[i]
+print(result)
+print(a[min_idx], a[max_idx])

@@ -10,3 +10,9 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+from random import randint
+
+a = [randint(0, 100) for x in range(1, 10)]
+print(a)
+b = [x for x in range(0, len(a)) if a[x] % 2 == 0]
+print(b)
