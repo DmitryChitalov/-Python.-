@@ -32,3 +32,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+print('Введите 2 числа и операнд')
+
+ while True:
+     operand = input('Операнд (+, -, *, / или 0 для выхода): ')
+     if operand == '0':
+         print('Программа завершена')
+         break
+     elif operand != '+' and operand != '-' and operand != '*' and operand != '/':
+         print('Неккоректный ввод')
+         continue
+     try:
+         num_1 = int(input('Число 1: '))
+         num_2 = int(input('Число 2: '))
+         if operand == '+':
+             print(f'Результат: {num_1 + num_2}')
+         elif operand == '-':
+             print(f'Результат: {num_1 - num_2}')
+         elif operand == '*':
+             print(f'Результат: {num_1 * num_2}')
+         else:
+             try:
+                 print(f'Результат: {num_1 / num_2}')
+             except ZeroDivisionError:
+                 print('Деление на 0')
+     except Exception:
+         print('Неккоректный ввод')
