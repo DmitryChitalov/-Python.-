@@ -36,3 +36,27 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+
+def get_arr_sum(arr):
+    if len(arr) == 1:
+        return arr[0]
+    return arr[0] + get_arr_sum(arr[1:])
+
+
+matrix = list()
+raws, columns = 5, 4
+for _ in range(raws):
+    raw = [int(input()) for _ in range(columns)]
+    last_el = get_arr_sum(raw)
+    raw.append(last_el)
+    matrix.append(raw)
+
+print(*matrix, sep="\n")
+
+# output
+# [3, 3, 3, 3, 12]
+# [3, 3, 3, 3, 12]
+# [3, 3, 3, 3, 12]
+# [3, 3, 3, 3, 12]
+# [3, 3, 3, 3, 12]
