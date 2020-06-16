@@ -14,3 +14,13 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+dividend_gen = [i for i in range (2, 100)]
+divider_gen = [i for i in range (2, 10)]
+
+print('In the range of numbers from 2 to 99: ')
+for divider in divider_gen:
+    counter = 0
+    for dividend in dividend_gen:
+        if dividend % divider == 0:
+            counter += 1
+    print(f'{counter} multiples of {divider}')

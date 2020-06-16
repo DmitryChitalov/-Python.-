@@ -1,10 +1,7 @@
-"""
-4.	Найти сумму n элементов следующего ряда чисел: 1 -0.5 0.25 -0.125 ...
-Количество элементов (n) вводится с клавиатуры.
+def sum_of_el(cutter, current_num, tmp):
+    if cutter == 0:
+        return f'The sum of the specified number of elements is equal to: {tmp}'
+    else:
+        return sum_of_el(cutter - 1, current_num / -2, tmp + current_num)
 
-Пример:
-Введите количество элементов: 3
-Количество элементов - 3, их сумма - 0.75
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
-"""
+print(sum_of_el((int(input('Enter the number of items: '))), 1, 0))
