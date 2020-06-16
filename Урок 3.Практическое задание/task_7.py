@@ -7,3 +7,22 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+item_list = [28, -86, 44, -37, -7, -52, -19, -3, -15, -73]
+
+min_min_item = 0
+min_item = 0
+count = 0
+
+for ix, i in enumerate(item_list):
+    if i < min_min_item:
+        min_min_item = i
+        if min_min_item < min_item:
+            min_min_item, min_item = min_item, min_min_item
+
+for i in item_list:
+    if i == min_item:
+        count += 1
+
+print(f'Наименьший элемент: {min_item}, встречается в этом массиве {count} раз \nВторой наименьший '
+      f'эллемент {min_min_item}')
