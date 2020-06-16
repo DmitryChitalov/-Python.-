@@ -10,3 +10,18 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+from random import randint
+
+l = [randint(1, 100) for _ in range(10)]
+print(f'Исходный массив: {l}, результат: '
+      f'{[cnt for cnt, el in enumerate(l) if el % 2 == 0]}')
+
+# Вариант без использования встроенных функций
+l = [randint(1, 100) for _ in range(10)]
+l_res = []
+cnt = 0
+for el in l:
+    if el % 2 == 0:
+        l_res += [cnt]
+    cnt += 1
+print(f'Исходный массив: {l}, результат: {l_res}')

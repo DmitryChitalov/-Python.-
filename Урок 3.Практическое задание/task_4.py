@@ -3,3 +3,8 @@
 
 Подсказка: можно применить ф-цию max с параметром key
 """
+from random import randint
+l = [randint(0, 10) for _ in range(10)]
+
+print(f'В массиве {l} чаще всего встречается число - '
+      f'{max(l, key=l.count)}')

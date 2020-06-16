@@ -11,3 +11,26 @@
 [13, 12, 7, 15] минимальные значения по столбцам
 Максимальное среди них = 15
 """
+from random import randint
+line = int(input('Задайте количество строк в матрице: '))
+column = int(input('Задайте количество столбцов в матрице: '))
+m = []
+for _ in range(line):
+    l = []
+    for _ in range(column):
+        l += [randint(0, 50)]
+    m += [l]
+res = []
+max_el = 0
+for i in range(line):
+    print(m[i])
+    min_el = m[i][0]
+    for j in range(1, column):
+        if m[i][j] < min_el:
+            min_el = m[i][j]
+    res += [min_el]
+    if max_el < min_el:
+        max_el = min_el
+
+print(f'{res} минимальные значения по столбцам\n'
+      f'Максимальное среди них - {max_el}')

@@ -36,3 +36,24 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+from random import randint
+m = []
+
+# for i in range(1, 6):
+#     l = []
+#     print(f'{i}-я строка:')
+#     for _ in range(4):
+#         l += [int(input())]
+#     m += [l]
+
+for _ in range(5):
+    l = []
+    for _ in range(4):
+        l += [randint(0, 9)]
+    m += [l]
+
+for i in range(5):
+    s = 0
+    for j in range(4):
+        s += m[i][j]
+    print(m[i] + [s])
