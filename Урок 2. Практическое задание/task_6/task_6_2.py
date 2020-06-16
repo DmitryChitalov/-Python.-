@@ -7,3 +7,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import random
+
+
+def recur_method(count, numb):
+    print(f"Attempt № {count}")
+    answer = int(input("Enter a number from 0 to 100: "))
+    if count == 10 or answer == numb:
+        if answer == numb:
+            print("You are right!")
+        print(f"Guessed number was: {numb}")
+    else:
+        if numb > answer:
+            print(f"Guessed number is greater then {numb}")
+        else:
+            print(f"Guessed number is less then {numb}")
+        recur_method(count + 1, numb)
+
+
+recur_method(1, random.randint(0, 100))
