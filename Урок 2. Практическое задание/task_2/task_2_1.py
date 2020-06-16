@@ -12,3 +12,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+numbers = int(input('Введите многозначное число: '))
+print(f'Вы ввели число {numbers}')
+even = uneven = 0
+while numbers > 0:
+    if numbers % 2 == 0:
+        even += 1
+    else:
+        uneven += 1
+    numbers = numbers // 10
+print(f'Четных чисел:  {even}, Нечетных чисел: {uneven}')

@@ -7,3 +7,21 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import random
+print('У вас есть 10 попыток чтобы угадать случайное число')
+number = random.randint(0,100)
+count = 1
+while count <= 10:
+    print(f'Текущая попытка # {count}')
+    answer = int(input('Введите предположительное число: '))
+    if answer == number:
+        print('Поздравляем, вы угадали')
+        break
+    elif answer < number:
+        print('Число больше, чем вы указали')
+    else:
+        print('Число меньше чем вы указали')
+    count += 1
+else:
+    print('Вы проиграли, не угадав число')

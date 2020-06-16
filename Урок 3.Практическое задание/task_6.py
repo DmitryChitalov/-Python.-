@@ -13,3 +13,21 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+items_list = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+
+max_ix = 0
+min_ix = 0
+
+for ix, i in enumerate(items_list):
+    if i < items_list[min_ix]:
+        min_ix = ix
+    if i > items_list[max_ix]:
+        max_ix = ix
+
+if len(items_list[max_ix+1:min_ix]) < len(items_list[min_ix+1:max_ix]):
+    min_ix, max_ix = max_ix, min_ix
+new_list = sum(items_list[max_ix+1:min_ix])
+
+
+print(f'Сумма элементов между минимальным ({items_list[min_ix]}) и максимальным ({items_list[max_ix]}) эллементами: {new_list}')

@@ -36,3 +36,16 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+# for i in range(N):
+
+from random import randint
+rows = int(input('Задайте количество строк в матрице: '))
+columns = int(input('Задайте количество столбцов в матрице: '))
+matrix = [[randint(10, 100) for _ in range(columns)] for _ in range(rows)]
+for i in matrix:
+    i[-1] = sum(i[:-1])
+    print(i)
+# print(matrix)
+
+# print(sum(matrix[0:5]))

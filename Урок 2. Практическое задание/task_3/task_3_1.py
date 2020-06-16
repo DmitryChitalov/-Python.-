@@ -12,3 +12,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+numbers_1 = int(input('Укажите целое, многозначное число'))
+numbers_2 = 0
+print (f'Вы ввели число: {numbers_1}')
+
+while numbers_1 > 0:
+    number = numbers_1 % 10
+    numbers_1 = numbers_1 // 10
+    numbers_2 = numbers_2 * 10
+    numbers_2 = numbers_2 + number
+print(f'Обратное число введенному: {numbers_2}')
