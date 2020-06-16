@@ -14,3 +14,16 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+
+import random
+
+ a, b = map(int, input('Введитe диапазон для целых чисел через пробел: ').split())
+ c = round(random.random() * (b - a) + a)
+ print(c)
+
+ a, b = map(int, input('Введитe диапазон для вещественных чисел через пробел: ').split())
+ c = random.random() * (b - a) + a
+ print(c)
+
+ letter_one, letter_two = input('Введитe диапазон латинских букв через пробел: ').split()
+ letter_three = chr(random.randint(ord(letter_one), ord(letter_two)))
