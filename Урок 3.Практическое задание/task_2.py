@@ -24,11 +24,10 @@ final = []
 x = [num for num in range(len(initial) + 1) if num % 2 == 0]
 print(x)
 
-# y = list(filter(lambda num: num % 2 == 0, initial)) # using lambda function how to get even numbers
+# y = list(filter(lambda num: num % 2 == 0, initial)) # using lambda function - how to get even numbers
 # print(y)
 
 
-
-
-
-
+# В этой задаче есть вопросы:
+# 1. насколько оправдано использование index  в решении с циклами?
+# как при помощи lambda фунцкии сделать такое решение? Пробовал сам, но не получилось - при использовании if else выдает ошибки
