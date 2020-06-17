@@ -14,3 +14,13 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+first = 2
+last = 9
+
+for x in range(first, last + 1):
+    multiples = 0
+    for y in range(2, 100):
+        if y % x == 0:
+            multiples += 1
+    print(f"В диапазоне 2-99: {multiples} чисел кратны {x}")
