@@ -32,3 +32,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    OPERATION = input("Введите операцию (+, -, *, / или 0 для выхода):")
+    if OPERATION != "+" and OPERATION != '-' and OPERATION != '*' and OPERATION != '/' and OPERATION != '0':
+        print('Не верная операция, повторите ввод')
+        continue
+    elif OPERATION == "0":
+        break
+    else:
+        NUM_1 = float(input("Введите первое число:"))
+        while True:
+            NUM_2 = float(input("Введите второе число:"))
+            if NUM_2 == 0 and OPERATION == "/":
+                print('На 0 делить нельзя, введите другое число')
+            else:
+                break
+        if OPERATION == "+":
+            print(f'Результат {NUM_1} {OPERATION} {NUM_2} = {NUM_1 + NUM_2}')
+        elif OPERATION == "-":
+            print(f'Результат {NUM_1} {OPERATION} {NUM_2} = {NUM_1 - NUM_2}')
+        elif OPERATION == "*":
+            print(f'Результат {NUM_1} {OPERATION} {NUM_2} = {NUM_1 * NUM_2}')
+        elif OPERATION == "/":
+            print(f'Результат {NUM_1} {OPERATION} {NUM_2} = {NUM_1 / NUM_2}')
+

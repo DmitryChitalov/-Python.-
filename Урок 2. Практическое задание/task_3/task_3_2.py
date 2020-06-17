@@ -14,3 +14,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+try:
+    NUMBER = int(input('Введите натуральное число:'))
+except ValueError:
+    print('Это не похоже на натуральное число')
+    exit(1)
+
+
+def revers(number, n=1, result=''):
+    if n > number:
+        return result
+    numeral = number % (10 * n) // n
+    result = f'{result}{numeral}'
+    return revers(number, n * 10, result)
+
+
+print(f'Перевернутое число: {revers(NUMBER)}')

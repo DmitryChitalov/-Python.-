@@ -12,3 +12,26 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        NUMBER = int(input('Введите натуральное число:'))
+        break
+    except ValueError:
+        print('Это не похоже на натуральное число')
+
+N = 1
+EVEN = 0
+ODD = 0
+COUNT = 0
+
+while True:
+    NUMERAL = NUMBER % (10 * N) // N
+    if NUMERAL % 2 == 0:
+        EVEN += 1
+    else:
+        ODD += 1
+    COUNT += 1
+    N *= 10
+    if N > NUMBER:
+        break
+print(f'В числе {NUMBER} всего {COUNT} цифр, из которых {EVEN} чётных и {ODD} нечётных')

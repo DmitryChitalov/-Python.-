@@ -17,3 +17,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recur_ascii(el=1):
+    if el == 96:
+        return f'{el + 31} - {chr(el + 31)}'
+    if el % 10 == 0:
+        return f'{el + 31} - {chr(el + 31)}\n{recur_ascii(el + 1)}'
+    else:
+        return f'{el + 31} - {chr(el + 31)} {recur_ascii(el + 1)}'
+
+
+print(recur_ascii())

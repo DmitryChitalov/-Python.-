@@ -7,3 +7,24 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import random
+
+RANDOM_NUMBER = random.randint(0, 100)
+
+
+def recur_random_num(random_number, n=1):
+    if n > 10:
+        print(f'Вы так и не смогли отгадать число за 10 попыток. Правильный ответ - {RANDOM_NUMBER}')
+        return
+    user_number = int(input('Введите число от 1 до 100:'))
+    if user_number == random_number:
+        print(f'Вы выиграли c {n}-й попытки, компьютер действительно загадал число {RANDOM_NUMBER}')
+        return
+    elif user_number < random_number:
+        print('Введеное вами число меньше чем то что загадал компьютер')
+    else:
+        print('Введеное вами число больше чем то что загадал компьютер')
+    recur_random_num(random_number, n + 1)
+
+
+recur_random_num(RANDOM_NUMBER)

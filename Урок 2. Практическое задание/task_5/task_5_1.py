@@ -17,3 +17,8 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+for el in range(96):
+    if (el + 1) % 10 == 0:
+        print(f'{el + 32} - {chr(el + 32)}')
+    else:
+        print(f'{el + 32} - {chr(el + 32)}', end=' ')

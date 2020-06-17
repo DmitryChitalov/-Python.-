@@ -15,3 +15,28 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def even_odd(number, n=1, even=0, odd=0, count=0):
+    numeral = number % (10 * n) // n
+    if numeral % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+    count += 1
+    n *= 10
+    if n > number:
+        print(f'В числе {number} всего {count} цифр, из которых {even} чётных и {odd} нечётных')
+        return
+    even_odd(number,n,even,odd,count)
+
+
+def input_number():
+    try:
+        return int(input('Введите натуральное число:'))
+    except ValueError:
+        print('Это не похоже на натуральное число')
+        return input_number()
+
+
+even_odd(input_number())
