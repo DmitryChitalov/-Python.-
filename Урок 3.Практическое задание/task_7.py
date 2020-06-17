@@ -7,3 +7,24 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+list_a = [28, -86, 44, -37, -7, -52, -19, -3, -15, -73]
+MIN_EL = 0
+MIN_EL2 = 0
+
+for elem in list_a:
+    if elem <= MIN_EL:
+        MIN_EL = elem
+    if MIN_EL < MIN_EL2:
+        MIN_EL, MIN_EL2 = MIN_EL2, MIN_EL
+
+COUNT_MIN = 0
+for elem in list_a:
+    if elem == MIN_EL2:
+        COUNT_MIN += 1
+print(f'Исходный массив: {list_a}')
+if COUNT_MIN == 1:
+    print(f'Наименьший элемент: {MIN_EL2}, встречается в этом массиве {COUNT_MIN} раз')
+    print(f'Второй наименьший элемент: {MIN_EL}')
+else:
+    print(f'Наименьший элемент: {MIN_EL2}, встречается в этом массиве {COUNT_MIN} раз')

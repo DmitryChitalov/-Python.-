@@ -36,3 +36,14 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+from random import randint  # захардкодил, чтобы было проще проверять
+
+for idx in range(5):
+    list_a = []
+    for idy in range(4):
+        list_a.append(randint(1, 9))
+    SUM_STRING = 0
+    for idz in list_a:
+        SUM_STRING += idz
+    list_a.append(SUM_STRING)
+    print(list_a)

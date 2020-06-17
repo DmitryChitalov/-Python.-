@@ -10,3 +10,13 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+list_a = [8, 3, 15, 6, 4, 2]
+
+# первое решение
+print([idx for idx in range(len(list_a)) if list_a[idx] % 2 == 0])
+
+# второе решение
+print([num for num, idx in enumerate(list_a) if idx % 2 == 0])
+
+# решение в одну строку
+print([num for num, idx in enumerate([8, 3, 15, 6, 4, 2]) if idx % 2 == 0])

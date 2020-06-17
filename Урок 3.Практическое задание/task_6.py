@@ -13,3 +13,22 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+
+list_a = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+MIN_NUM = 1000  # условное значение, чтобы не использовать max
+MAX_NUM = 0
+for idx in list_a:
+    if idx > MAX_NUM:
+        MAX_NUM = idx
+    if idx < MIN_NUM:
+        MIN_NUM = idx
+
+MIN_IX = list_a.index(MIN_NUM)
+MAX_IX = list_a.index(MAX_NUM)
+
+SUM_INTERVAL = 0
+
+for item in list_a[MIN_IX + 1:MAX_IX] if list_a[MIN_IX:MAX_IX] else list_a[MAX_IX + 1:MIN_IX]:
+    SUM_INTERVAL += item
+
+print(f'Сумма элементов между минимальным ({MAX_NUM})  и максимальным ({MIN_NUM}) элементами: {SUM_INTERVAL}')
