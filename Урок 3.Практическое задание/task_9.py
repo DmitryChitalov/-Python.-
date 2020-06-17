@@ -39,4 +39,4 @@ for p in min_coll_lst:
     if max_from_min < p:
         max_from_min = p
 
-print(f'Максимальное среди них = {max_from_min}')
+print(f'Максимальное  среди них = {max_from_min}')

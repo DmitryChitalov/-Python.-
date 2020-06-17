@@ -17,5 +17,5 @@ for i in range(len(qwe)):
     if 0 > qwe[i] > qwe[max_min_ind]:
         max_min_ind = i
         max_min_el = qwe[i]
-print(f'Максимальный отрицательный элемент в данном массиве = '
+print(f'Максимальный  отрицательный элемент в данном массиве = '
       f'{max_min_el}, его индекс {max_min_ind}')

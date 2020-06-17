@@ -19,4 +19,4 @@ for i in range(len(qwe)):
     if count < ccc:
         count = ccc
         elem = qwe[i]
-print(f'число {elem} в массиве встречается чаще всего {count} раз')
+print(f'число {elem} в  массиве встречается чаще всего {count} раз')

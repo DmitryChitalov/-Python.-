@@ -51,7 +51,7 @@ print(qwe)
 for i in range(len(qwe)):
     for j in range(len(qwe[i])):
         print(f'{qwe[i][j]:4}', end=' ')
-    print(f' ==>{sum(inter):4}')
+    print(f'  ==>{sum(inter):4}')
     print()
 # # добавляем сумму к столбцам
 # print()

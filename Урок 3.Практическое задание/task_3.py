@@ -26,7 +26,7 @@ max_ind = qwe.index(ma)
 min_ind = qwe.index(mi)
 
 qwe[max_ind], qwe[min_ind] = qwe[min_ind], qwe[max_ind]
-print(f'В данном массиве чисел максимальное число  {ma}  стоит на '
+print(f'В данном  массиве чисел максимальное число  {ma}  стоит на '
       f'{min_ind}  позиции,'
       f' а минимальное число {mi}  стоит на  {max_ind}  позиции:  ')
 print(qwe)
