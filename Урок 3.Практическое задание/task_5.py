@@ -8,3 +8,17 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+base_list = [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
+
+
+def find_max_neg(base_list) -> list:
+    index = -1
+    for x in range(len(base_list)):
+        if base_list[x] and index == -1:
+            index = 1
+        elif 0 > base_list[x] > base_list[index]:
+            index = x
+    return [base_list[index], index]
+
+
+print(find_max_neg(base_list))
