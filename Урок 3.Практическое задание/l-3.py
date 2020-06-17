@@ -76,3 +76,33 @@ summ = 0
 for i in arr_sort:
     summ = summ + i
 print(f'sum = {summ}')
+
+
+# 7. В одномерном массиве целых чисел определить два наименьших элемента.
+# Они могут быть как равны между собой (оба являться минимальными), так и различаться.
+
+from random import random
+
+N = 20
+array = [0] * N
+for i in range(N):
+    array[i] = int(random() * 20)
+print(array)
+
+min_1 = array[0]
+min_2 = array[1]
+
+if min_2 < min_1:
+    min_1 = array[1]
+    min_2 = array[0]
+
+some = []
+for i in range(array[2], len(array)):
+    if array[i] < min_1:
+        min_2 = min_1
+        min_1 = array[i]
+    elif array[i] < min_2 and array[i] != min_1:
+        min_2 = array[i]
+some.append(min_1)
+some.append(min_2)
+print(f'two minimal numbres - {some}')
