@@ -12,3 +12,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMBER = int(input('Введите целое число: '))
+RESULT = 0
+CONS = 10
+
+while NUMBER > 0:
+    RESULT = RESULT * CONS + NUMBER % CONS
+    NUMBER = NUMBER // CONS
+print(f'Реверс вашего числа: {RESULT}')

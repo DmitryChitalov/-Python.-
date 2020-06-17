@@ -7,3 +7,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+import random
+
+NUMBER = random.randint(0, 100)
+print('Отгадай число от 0 до 100 за 10 попыток.')
+
+for el in range(1, 11):
+    answer = int(input(f'Попытка №_{el}: '))
+    if NUMBER < answer:
+        print('Число должно быть меньше.')
+    elif NUMBER > answer:
+        print('Число должно быть больше.')
+    else:
+        print(f'Число угадано с {el} попытки.')
+        break
+else:
+    print(f'Вы проиграли, это чсло было {NUMBER}')

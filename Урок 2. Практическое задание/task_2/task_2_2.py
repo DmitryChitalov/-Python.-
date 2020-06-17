@@ -15,3 +15,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def my_rec(num, even_num=0, odd_num=0):
+    if num == 0:
+        return even_num, odd_num
+    else:
+        el = num % 10
+        num = num // 10
+        if el % 2 == 0:
+            even_num += 1
+            return my_rec(num, even_num, odd_num)
+        else:
+            odd_num += 1
+            return my_rec(num, even_num, odd_num)
+
+
+NUMBER = int(input('Введите целое чичло: '))
+
+print(f'Количество четный и нечётных цифр = {my_rec(NUMBER)}')

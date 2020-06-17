@@ -12,3 +12,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMBER = int(input('Сколько будет чисел: '))
+DIGIT_NUMBER = int(input('Какую цифру считать: '))
+
+COUNT = 0
+CONS = 10
+
+for el in range(1, NUMBER + 1):
+    answer = int(input(f'Введите число {el}: '))
+    while answer > 0:
+        if answer % CONS == DIGIT_NUMBER:
+            COUNT += 1
+        answer //= CONS
+
+print(f'Было введено {COUNT} цифр {DIGIT_NUMBER}')
