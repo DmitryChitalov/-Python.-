@@ -14,3 +14,19 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+
+def num_of_multiples(multiples, before):
+    """ Кратность чисел
+
+    multiples - кратно этому числу
+    before - максимальное значение диапазона, т.е. кратные от входного в ф-ю multiples до before
+    """
+    nums = [num for num in range(2, 100) if num % multiples == 0]
+    print(f"В диапазоне 2-99: {len(nums)} чисел кратны {multiples}",
+          f"Это числа: {nums}", sep="\n", end="\n\n")
+    if multiples < 10:
+        return num_of_multiples(multiples + 1, before)
+
+
+num_of_multiples(2, 9)

@@ -10,3 +10,10 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+from random import randint
+
+MASSIVE = [randint(-100, 100) for el in range(randint(0, 20))]
+
+print(f"Исходный массив: {MASSIVE}, "
+      f"результат: {[MASSIVE.index(el) for el in MASSIVE if el % 2 == 0]}")

@@ -7,3 +7,21 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+from random import randint
+
+MASSIVE = [randint(-100, 100) for el in range(randint(0, 20))]
+print(f"Исходный массив: {MASSIVE}")
+if len(MASSIVE) > 0:
+    MIN_EL = MASSIVE.pop(MASSIVE.index(min(MASSIVE)))
+    print(f"Наименьший элемент: {MIN_EL}", end="")
+    if len(MASSIVE) > 0:
+        MIN_EL2 = min(MASSIVE)
+        if MIN_EL == MIN_EL2:
+            print(f", встречается в этом массиве 2 раза\n")
+        else:
+            print(f", встречается в этом массиве 1 раз\nВторой наименьший элемент: {MIN_EL2}")
+    else:
+        print("\nВторого элемента в массиве нет")
+else:
+    print("Это пустой массив")
