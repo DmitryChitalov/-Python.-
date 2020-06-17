@@ -10,3 +10,25 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+#  Solution with cycle
+# for num in initial:
+#     if num % 2 == 0:
+#         final.append(initial.index(num))
+#     else:
+#         continue
+# print(final)
+
+initial = [8, 3, 15, 6, 4, 2]
+final = []
+x = [num for num in range(len(initial) + 1) if num % 2 == 0]
+print(x)
+
+# y = list(filter(lambda num: num % 2 == 0, initial)) # using lambda function how to get even numbers
+# print(y)
+
+
+
+
+
+
