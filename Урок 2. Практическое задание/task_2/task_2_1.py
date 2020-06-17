@@ -12,3 +12,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMBER = int(input('Введите целое чичло: '))
+EVEN_NUMBER = 0
+ODD_NUMBER = 0
+
+while NUMBER > 0:
+    if NUMBER % 2 == 0:
+        EVEN_NUMBER += 1
+    else:
+        ODD_NUMBER += 1
+    NUMBER = NUMBER // 10
+print(f'В введённом числе\n'
+      f'количество чётных чисел = {EVEN_NUMBER}\n'
+      f'количество не чётных чисел = {ODD_NUMBER}')

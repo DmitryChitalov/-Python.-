@@ -17,3 +17,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+START = 32
+STOP = 127
+STEP = 10
+
+for el in range(START, STOP + 1):
+    print(f'{el} - {chr(el)}', end='')
+    if el % STEP == 1:
+        print()

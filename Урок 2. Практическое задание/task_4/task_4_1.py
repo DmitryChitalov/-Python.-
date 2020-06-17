@@ -8,3 +8,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+NUMBER = int(input('Введите целое число: '))
+
+ELEM = 1
+SUMM = 0
+
+for i in range(NUMBER):
+    SUMM += ELEM
+    ELEM /= -2
+print(f'Сумма элементов = {SUMM}')
