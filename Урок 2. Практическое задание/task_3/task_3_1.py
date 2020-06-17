@@ -12,3 +12,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+number = int(input('Введите любое число: '))
+total = 0
+
+while number > 0:
+    total = total * 10 + number % 10
+    number = number // 10
+
+print('Число наоборот: ', total)
+

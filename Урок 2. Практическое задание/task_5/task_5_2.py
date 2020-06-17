@@ -17,3 +17,8 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+def recurcion(i, begin = 32, end = 128):
+    if begin == end:
+        return i
+    else:
