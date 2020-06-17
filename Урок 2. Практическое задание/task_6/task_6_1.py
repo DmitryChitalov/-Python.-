@@ -7,3 +7,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+
+RANDOM_NUMBER = random.randint(0, 100)
+N = 0
+while True:
+    N += 1
+    if N > 10:
+        print(f'Вы так и не смогли отгадать число за 10 попыток. Правильный ответ - {RANDOM_NUMBER}')
+        break
+    USER_NUMBER = int(input('Введите число от 1 до 100:'))
+    if USER_NUMBER == RANDOM_NUMBER:
+        print(f'Вы выиграли c {N}-й попытки, компьютер действительно загадал число {RANDOM_NUMBER}')
+        break
+    elif USER_NUMBER < RANDOM_NUMBER:
+        print('Введеное вами число меньше чем то что загадал компьютер')
+    else:
+        print('Введеное вами число больше чем то что загадал компьютер')

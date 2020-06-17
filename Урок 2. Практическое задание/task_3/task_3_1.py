@@ -12,3 +12,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+while True:
+    try:
+        NUMBER = int(input('Введите натуральное число:'))
+        break
+    except ValueError:
+        print('Это не похоже на натуральное число')
+
+N = 1
+RES = ''
+while True:
+    NUMERAL = NUMBER % (10 * N) // N
+    N *= 10
+    RES = f'{RES}{NUMERAL}'
+    if N > NUMBER:
+        break
+print(f'Перевернутое число: {RES}')

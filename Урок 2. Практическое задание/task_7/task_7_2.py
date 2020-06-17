@@ -5,3 +5,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+N = 15
+
+
+def recur_theorem(n, el=1, sum_num=0):
+    if el > n:
+        return sum_num
+    sum_num += el
+    return recur_theorem(n, el + 1, sum_num)
+
+
+print(f'Сумма множества из {N} чисел = {recur_theorem(N)}')
+print(f'n(n+1)/2 = {(N * (N + 1)) / 2}')
