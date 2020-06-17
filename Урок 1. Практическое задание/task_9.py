@@ -7,13 +7,9 @@
 a = int(input('Введите первое число: '))
 b = int(input('Введите второе число: '))
 c = int(input('ведите третье число: '))
-if a > c and a < b:
+if c < a < b or b < a < c:
     print(f'Среднее число a - {a}')
-elif a < c and a > b:
-    print(f'Среднее число a - {a}')
-elif c > a and c < b:
-    print(f'Среднее число c - {c}')
-elif c < a and c > b:
-    print(f'Среднее число c - {c}')
+elif a < c < b or b < c < a:
+    print(f'Среднее число a - {c}')
 else:
     print(f'Среднее число b - {b}')

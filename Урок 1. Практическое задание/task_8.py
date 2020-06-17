@@ -18,20 +18,12 @@
 """
 
 user_year = int(input('Введите год, а скажу, високосный ли он: '))
-if user_year % 4 == 0 and user_year % 100 != 0 or user_year % 400 == 0:
+result = 'Это високосный год' if (user_year % 4 == 0 and user_year % 100 != 0) \
+                                 or user_year % 400 == 0 else 'обычный'
+print(f'Год - {result}')
+
+
+if (user_year % 400 == 0 or user_year % 4 == 0) and user_year % 100 != 0:
     print('Это високосный год')
-
-
-if user_year % 4 != 0:
-    print('Это бычный год')
-elif user_year % 100 == 0:
-    if user_year % 400 == 0:
-        print('Это високосный год')
-    else:
-        print('Это обычный год')
 else:
-    print('Это високосный год')
-
-
-
-
+    print('Это обычный год')

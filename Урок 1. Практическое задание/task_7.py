@@ -17,9 +17,5 @@ elif side_of_triangle_a == side_of_triangle_b == side_of_triangle_c:
     print('Это равносторонний треугольник')
 elif side_of_triangle_a != side_of_triangle_b != side_of_triangle_c:
     print('Это разносторонний треугольник')
-elif side_of_triangle_a == side_of_triangle_b and side_of_triangle_a != side_of_triangle_c \
-    or side_of_triangle_a == side_of_triangle_c and side_of_triangle_c != side_of_triangle_b \
-    or side_of_triangle_b == side_of_triangle_c and side_of_triangle_c != side_of_triangle_a:
+else:
     print('Это равнобедренный треугольник')
-
-
