@@ -25,4 +25,3 @@ print(f"Minimal number is: {initial_list[in_min]} index was {in_min}")
 print(f"Maximum number is: {initial_list[in_max]} index was {in_max}")
 initial_list[in_max], initial_list[in_min] = initial_list[in_min], initial_list[in_max]
 print(initial_list)
-
