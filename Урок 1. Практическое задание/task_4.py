@@ -14,3 +14,23 @@
 Функцию random() использовать можно
 Опирайтесь на пример к уроку
 """
+import random
+# ----------целое число -------
+print()
+down1 = int(input('введите нижнюю границу : '))
+up1 = int(input('введите верхнюю границу : '))
+print('генерим случайное целое число ')
+numb1 = int((random.random() * (up1 - down1)) + down1)
+print(numb1)
+# ----------вещественное число -------
+down = float(input('введите нижнюю границу : '))
+up = float(input('введите верхнюю границу : '))
+print('генерим случайное вещественное число ')
+numb = (random.random() * (up - down))+ down
+print(round(numb, 2))
+up_letter = int(ord(input('enter char a :')))
+down_letter = int(ord(input('enter char f :')))
+print(up_letter)  # 97
+print(down_letter)  # 102
+rand_char = int((random.random() * (down_letter - up_letter)) + 96)
+print(f'и это случайная буква  {chr(rand_char)} по номеру {rand_char}')

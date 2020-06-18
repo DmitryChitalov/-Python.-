@@ -12,3 +12,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+num = 123
+revers = ''
+while num > 0:
+    rem_num = num % 10
+    num //= 10
+    rem_num_str = str(rem_num)
+    revers += rem_num_str
+print(revers)
+
+
+
+

@@ -13,3 +13,27 @@
 Массив: [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
 Сумма элементов между минимальным (6)  и максимальным (88) элементами: 234
 """
+qqq = [88, 58, 50, 77, 49, 6, 42, 67, 14, 79]
+mi = qqq[3]
+ma = qqq[2]
+for i in range(len(qqq)):
+    if mi > qqq[i]:
+        mi = qqq[i]
+    if ma < qqq[i]:
+        ma = qqq[i]
+
+print(ma, mi)
+ima = qqq.index(ma)
+imi = qqq.index(mi)
+print(ima, imi)
+if imi > ima:
+    sss = 0
+    for ii in qqq[ima + 1:imi]:
+        sss += ii
+else:
+    sss = 0
+    for iii in qqq[imi + 1:ima]:
+        sss += iii
+
+print(f'Сумма элементов между минимальным ({mi})  '
+      f'и максимальным  ({ma}) элементами: {sss}')

@@ -8,3 +8,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+q_elem = int(input('Введите количество элементов: '))
+
+
+def rec4(n, rrr):
+    if n == 1:
+        return rrr
+    else:
+        return rrr + rec4(n - 1, rrr / -2)
+
+
+print(rec4(q_elem, 1))

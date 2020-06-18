@@ -8,3 +8,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+num_el = int(input('enter 3 '))
+summ = 0
+range_num = 1
+for i in range(3):
+    summ += range_num
+    range_num /= -2
+print(summ)
+
+

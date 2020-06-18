@@ -13,7 +13,8 @@
 Подсказка:
 Постарайтесь решить задачу двумя способами:
 1. Через цикл
-Вариант исполнения: в бесконечном цикле запрашивайте вид операции, например, +, - или *
+Вариант исполнения: в бесконечном цикле запрашивайте вид операции, например,
+ +, - или *
 Проверяйте вид операции и запускайте соответствующую команду
 Предусмотрите выход из бесконечного цикла
 2. Рекурсией.
@@ -32,3 +33,41 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+flag = True
+while flag:
+    try:
+        fir_num = int(input('Введите первое число:  '))
+        sec_num = int(input('Введите второе число:  '))
+
+        while True:
+            oper = input('Введите операцию (+, -, *, / или 0 для выхода):')
+            if oper == '0':
+                flag = False
+                print('до свидания')
+                break
+            if oper == '+':
+                res = fir_num + sec_num
+                print(res)
+                break
+            elif oper == '-':
+                res = fir_num - sec_num
+                print(res)
+                break
+            elif oper == '*':
+                res = fir_num * sec_num
+                print(res)
+                break
+            elif oper == '/':
+                res = fir_num / sec_num
+                print(res)
+                break
+            if oper != '+' or oper != '-' or oper != '*' or oper != '/' or oper != 0:
+                print(f'вы ввели {oper} введите корректные данные ')
+                continue
+    except ValueError:
+        print(f' введите цифру ')
+        continue
+    except ZeroDivisionError:
+        print('вы делите на ноль')
+        continue
