@@ -7,3 +7,18 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+import random
+
+
+def guess_number(true_answer, user_answer, count=0):
+    if true_answer > user_answer:
+        print("Ваше число меньше заданного")
+    elif true_answer < user_answer:
+        print('Ваше число больше загаданного!!!')
+    elif true_answer == user_answer:
+        print('Примите мои поздравления!!! ВЫ угадали!!!')
+        return 
+
+min_env = 0
+max_env = 100
+true_answer = random.randint(min_env, max_env)
