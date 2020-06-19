@@ -12,3 +12,73 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+"""
+Задание_7.	В одномерном массиве целых чисел определить два наименьших элемента.
+Они могут быть как равны между собой (оба являться минимальными), так и различаться.
+
+Пример:
+Исходный массив: [28, -86, 44, -37, -7, -52, -19, -3, -15, -73]
+Наименьший элемент: -86, встречается в этом массиве 1 раз
+Второй наименьший элемент: -73
+"""
+from random import randint
+import timeit
+
+
+def min_max(l):
+    min_el = l[0]
+    cnt = 0
+    second_el = 50
+    for el in l:
+        if el == min_el:
+            cnt += 1
+        elif el < min_el:
+            min_el, second_el = el, min_el
+            cnt = 1
+        elif second_el > el > min_el:
+            second_el = el
+    if cnt >= 2:
+        return f'Исходный массив: {l}\nНаименьший элемент: ' \
+               f'{min_el} встречается в этом массиве {cnt} раз\n'
+    else:
+        return f'Исходный массив: {l}\nНаименьший элемент: {min_el},\n' \
+               f'Второй наименьший элемент: {second_el}'
+
+
+my_list_10 = [randint(-50, 50) for _ in range(10)]
+my_list_100 = [randint(-50, 50) for _ in range(100)]
+my_list_1000 = [randint(-50, 50) for _ in range(1000)]
+print('Не оптимизированная функция')
+print(f'{timeit.timeit("min_max(my_list_10)", setup="from __main__ import min_max, my_list_10", number=1000)} - 10 элементов')
+print(f'{timeit.timeit("min_max(my_list_100)", setup="from __main__ import min_max, my_list_100", number=1000)} - 100 элементов')
+print(f'{timeit.timeit("min_max(my_list_1000)", setup="from __main__ import min_max, my_list_1000", number=1000)} - 1000 элементов')
+
+
+def min_max_optimized(l):
+    min_el = min(l)
+    cnt = l.count(min_el)
+    if cnt > 1:
+        return f'Исходный массив: {l}\nНаименьший элемент: ' \
+               f'{min_el} встречается в этом массиве {cnt} раз\n'
+    else:
+        s = set(l)
+        return f'Исходный массив: {l}\nНаименьший элемент: {min_el},\n' \
+               f'Второй наименьший элемент: {sorted(s)[1]}'
+print('Оптимизированная функция')
+print(f'{timeit.timeit("min_max_optimized(my_list_10)", setup="from __main__ import min_max_optimized, my_list_10", number=1000)} - 10 элементов')
+print(f'{timeit.timeit("min_max_optimized(my_list_100)", setup="from __main__ import min_max_optimized, my_list_100", number=1000)} - 100 элементов')
+print(f'{timeit.timeit("min_max_optimized(my_list_1000)", setup="from __main__ import min_max_optimized, my_list_1000", number=1000)} - 1000 элементов')
+
+# Аналитика:
+# При увеличении размера массива на порядок прямопропорционально увеличивается
+# на порядок время выполнения при неоптимизированном исполении:
+# 0.003061972000000003 - 10 элементов
+# 0.020813995999999998 - 100 эл.
+# 0.202655094 -  1000 эл.
+# После оптимизации и использования встроенных функций min, count, set, sorted
+# на минимальных массивах практически нет разницы по времени выполнения,
+# но чем массив больше, чем выше выигрыш по скорости,
+# потому что мы проходим весь список не через цикл, а встроенными быстрыми функциями
+# 0.0035254680000000316 - 10
+# 0.01321794599999998 - 100
+# 0.125324282 - 1000 эл.
