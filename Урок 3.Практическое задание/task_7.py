@@ -7,3 +7,20 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+NUM_LIST = [28, -86, 44, -37, -7, -52, -19, -3, -15, -73]
+MIN_NUM_1 = NUM_LIST[-1]
+MIN_NUM_2 = NUM_LIST[-1]
+for el in NUM_LIST:
+    if el < MIN_NUM_1:
+        MIN_NUM_2 = MIN_NUM_1
+        MIN_NUM_1 = el
+    elif MIN_NUM_1 < el < MIN_NUM_2:
+        MIN_NUM_2 = el
+    elif el == MIN_NUM_1:
+        MIN_NUM_2 = el
+
+if MIN_NUM_1 != MIN_NUM_2:
+    print(f'Наименьший элемент: {MIN_NUM_1}, встречается в этом массиве 1 раз \n'
+          f'Второй наименьший элемент:{MIN_NUM_2}')
+else:
+    print(f'Оба наименьших элемента в массиве это: {MIN_NUM_1}')
