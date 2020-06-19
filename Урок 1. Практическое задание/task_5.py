@@ -10,3 +10,17 @@
 В обоих случаях программа должна вывести корректный результат.
 В обоих случаях он 24, но никак не -24
 """
+
+letter_1 = input('Enter the first letter: ')
+letter_2 = input('Enter the second letter: ')
+
+num_let_1 = ord(letter_1)
+num_let_2 = ord(letter_2)
+
+print(num_let_1)
+print(num_let_2)
+
+if num_let_1 < num_let_2:
+    print(f'Между введенными буквами {letter_1} и {letter_2} находится {num_let_2 - num_let_1 - 1} букв')
+else:
+    print(f'Между введенными буквами {letter_1} и {letter_2} находится {num_let_1 - num_let_2 - 1} букв')
