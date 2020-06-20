@@ -21,10 +21,12 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+
+
+
 from random import randint
 import timeit
-
-
 def min_max(l):
     min_el = l[0]
     cnt = 0
@@ -63,7 +65,9 @@ def min_max_optimized(l):
     else:
         s = set(l)
         return f'Исходный массив: {l}\nНаименьший элемент: {min_el},\n' \
-               f'Второй наименьший элемент: {sorted(s)[1]}'
+               f'Второй наименьший элемент: {sorted(s)[1]}
+
+
 print('Оптимизированная функция min_max_optimized')
 print(f'{timeit.timeit("min_max_optimized(my_list_10)", setup="from __main__ import min_max_optimized, my_list_10", number=1000)} - 10 элементов')
 print(f'{timeit.timeit("min_max_optimized(my_list_100)", setup="from __main__ import min_max_optimized, my_list_100", number=1000)} - 100 элементов')
@@ -98,6 +102,7 @@ print(f'{timeit.timeit("min_max_optimized(my_list_1000)", setup="from __main__ i
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
 
+
 def num_counter(n, l):
     res = 0
     for el in l:
@@ -107,15 +112,29 @@ def num_counter(n, l):
             el //= 10
     return f'Было введено {res} цифр "{n}"'
 
+
 my_list_10 = [randint(0, 5000) for _ in range(10)]
 my_list_100 = [randint(0, 5000) for _ in range(100)]
 my_list_1000 = [randint(0, 5000) for _ in range(1000)]
 num = randint(0, 9)
 
 print('Не оптимизированная функция num_counter')
-print(timeit.timeit("num_counter(num, my_list_10)", setup='from __main__ import num_counter, num, my_list_10', number=1000))
-print(timeit.timeit("num_counter(num, my_list_100)", setup='from __main__ import num_counter, num, my_list_100', number=1000))
-print(timeit.timeit("num_counter(num, my_list_1000)", setup='from __main__ import num_counter, num, my_list_1000', number=1000))
+print(
+    timeit.timeit(
+        "num_counter(num, my_list_10)",
+        setup='from __main__ import num_counter, num, my_list_10',
+        number=1000))
+print(
+    timeit.timeit(
+        "num_counter(num, my_list_100)",
+        setup='from __main__ import num_counter, num, my_list_100',
+        number=1000))
+print(
+    timeit.timeit(
+        "num_counter(num, my_list_1000)",
+        setup='from __main__ import num_counter, num, my_list_1000',
+        number=1000))
+
 
 def num_counter_opt(n, l):
     res = 0
@@ -124,10 +143,23 @@ def num_counter_opt(n, l):
         res += str(el).count(n)
     return f'Было введено {res} цифр "{n}"'
 
+
 print('Оптимизированная функция num_counter_opt')
-print(timeit.timeit("num_counter_opt(num, my_list_10)", setup='from __main__ import num_counter_opt, num, my_list_10', number=1000))
-print(timeit.timeit("num_counter_opt(num, my_list_100)", setup='from __main__ import num_counter_opt, num, my_list_100', number=1000))
-print(timeit.timeit("num_counter_opt(num, my_list_1000)", setup='from __main__ import num_counter_opt, num, my_list_1000', number=1000))
+print(
+    timeit.timeit(
+        "num_counter_opt(num, my_list_10)",
+        setup='from __main__ import num_counter_opt, num, my_list_10',
+        number=1000))
+print(
+    timeit.timeit(
+        "num_counter_opt(num, my_list_100)",
+        setup='from __main__ import num_counter_opt, num, my_list_100',
+        number=1000))
+print(
+    timeit.timeit(
+        "num_counter_opt(num, my_list_1000)",
+        setup='from __main__ import num_counter_opt, num, my_list_1000',
+        number=1000))
 
 # Аналитика:
 # Для удобства вычисления был убран ручной ввод с клавиатуры.
@@ -146,35 +178,98 @@ print(timeit.timeit("num_counter_opt(num, my_list_1000)", setup='from __main__ i
 # print(timeit.timeit("num_counter(num, my_list)", setup='from __main__ import num_counter, num, my_list', number=1000))
 # print(timeit.timeit("num_counter_opt(num, my_list)", setup='from __main__ import num_counter_opt, num, my_list', number=1000))
 # 0.852849975  против 0.352844554, более чем в два раза, примечательно, что хоть и числа и увеличились на 3 порядка,
-# но время выполнения с использованием метода count - осталось практически тем же.
+# но время выполнения с использованием метода count - осталось практически
+# тем же.
 
 """
-3.    Сформировать из введенного числа обратное по порядку входящих в него
+3.	Сформировать из введенного числа обратное по порядку входящих в него
 цифр и вывести на экран. Например, если введено число 3486,
-то надо вывести число 6843.
+ то надо вывести число 6843.
 
 Подсказка:
-Используйте арифм операции для формирования числа, обратного введенному
+На каждом шаге вам нужно 'доставать' из числа очередную цифру
+Пока все числа не извлечены рекурсивные вызовы продолжаем
+Условие завершения рекурсии - все числа извлечены
 
 Пример:
-Введите число: 123
+Введите число, которое требуется перевернуть: 123
 Перевернутое число: 321
 
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
-"""
-
-try:
-    user_number = int(input('Введите целое число: '))
-    res = ''
-    while user_number != 0:
-        res += str(user_number % 10)
-        user_number //= 10
-    print(f'Перевернутое число: {res}')
-except ValueError:
-    print('Необходимо ввести целое число')
-
-
+ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
 
 
+def recursive_reverse(number):
+    if number == 0:
+        return str(number % 10)
+    return f'{str(number % 10)}{recursive_reverse(number // 10)}'
 
+
+num_100 = randint(10000, 1000000)
+num_1000 = randint(1000000, 10000000)
+num_10000 = randint(100000000, 10000000000000)
+
+print('Не оптимизированная функция recursive_reverse')
+print(
+    timeit.timeit(
+        "recursive_reverse(num_100)",
+        setup='from __main__ import recursive_reverse, num_100',
+        number=10000))
+print(
+    timeit.timeit(
+        "recursive_reverse(num_1000)",
+        setup='from __main__ import recursive_reverse, num_1000',
+        number=10000))
+print(
+    timeit.timeit(
+        "recursive_reverse(num_10000)",
+        setup='from __main__ import recursive_reverse, num_10000',
+        number=10000))
+
+
+def memoize(f):
+    cache = {}
+
+    def decorate(*args):
+        if args in cache:
+            return cache[args]
+        else:
+            cache[args] = f(*args)
+            return cache[args]
+    return decorate
+
+
+@memoize
+def recursive_reverse_mem(number):
+    if number == 0:
+        return ''
+    return f'{str(number % 10)}{recursive_reverse_mem(number // 10)}'
+
+
+print('Оптимизированная функция recursive_reverse_mem')
+print(
+    timeit.timeit(
+        'recursive_reverse_mem(num_100)',
+        setup='from __main__ import recursive_reverse_mem, num_100',
+        number=10000))
+print(
+    timeit.timeit(
+        'recursive_reverse_mem(num_1000)',
+        setup='from __main__ import recursive_reverse_mem, num_1000',
+        number=10000))
+print(
+    timeit.timeit(
+        'recursive_reverse_mem(num_10000)',
+        setup='from __main__ import recursive_reverse_mem, num_10000',
+        number=10000))
+
+# Аналитика:
+# Результаты без мемоизации с увеличением числа так же увеличиваются:
+# 0.025767833999999823
+# 0.030982598000000028
+# 0.057783144999999925
+# Используя мемоизацию скорость работы увеличилась на порядок и
+# получилось добиться практически равной скорости работы и на небольших числах, и на относительно больших:
+# 0.0022521520000000628
+# 0.0022160110000000177
+# 0.00229732699999996
