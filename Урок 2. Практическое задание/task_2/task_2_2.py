@@ -15,3 +15,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+number = int(input('Введите число больше 0: '))
+
+def recurcion(number, even = 0, odd = 0):
+
+    if number == 0:
+        return even, odd
+    else:
+        rec_number = number % 10
+
+        number = number // 10
+
+        if rec_number % 2 == 0:
+            even += 1
+            return recurcion(number, even, odd)
+        else:
+            odd += 1
+            return recurcion(number, even, odd)
+
+
+print(f'четных и нечетных равно: {recurcion(number)}')
+

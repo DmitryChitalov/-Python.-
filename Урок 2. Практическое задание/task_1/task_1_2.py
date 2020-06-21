@@ -33,3 +33,38 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+print('Вам требуется ввести сначало знак вычесления, затем числа с которыми треубется совершить действие. Ввод "0" '
+      'вместо знака прекратит работу программы')
+
+def calc():
+
+    sign = input('Введите знак +, -, * или /: ')
+
+    if sign == '0':
+        return 'Exit'
+    elif sign in ('+', '-', '*', '/'):
+        x = int(input('Введите число X: '))
+        y = int(input('Введите число Y: '))
+
+        if sign == '+':
+            print(x + y)
+            return calc()
+        elif sign == '-':
+            print(x - y)
+            return calc()
+        elif sign == '*':
+            print(x * y)
+            return calc()
+        else:
+            if y == 0:
+                print('Деление на 0 не возможно!')
+                return calc()
+            else:
+                print(x // y)
+                return calc()
+    else:
+        print('Введен не верный знак')
+        return calc()
+
+calc()

@@ -14,3 +14,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+number = int(input('Введите любое число: '))
+
+def recursion(number, total = 0):
+    if number == 0:
+        return total
+    else:
+        total = total * 10 + number % 10
+        number = number // 10
+        return recursion(number, total)
+
+print(f'Число наоборот: {recursion(number)}')

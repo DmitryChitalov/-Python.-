@@ -8,3 +8,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+number = int(input('Введите кол-во элементов: '))
+
+digit = 1
+total = 0
+
+while number > 0: """Можно сделать через range"""
+    total += digit
+    digit /= -2
+    number -= 1
+
+print(total)

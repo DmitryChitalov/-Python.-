@@ -7,3 +7,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+from random import random
+
+number = round(random() * 100)
+i = 1
+print(number)
+print('Загадано число, у вас есть 10 попыток, чтобы его отгадать')
+
+while i <= 10:
+    x = int(input(str(i) + " попытка: "))
+    if x > number:
+        print('Загаданное число меньше')
+    elif x < number:
+        print('Загаданное число больше')
+    else:
+        print('Вы угадали число с %d попытки! Поздравляю!' % (i))
+        break
+    i += 1
+else:
+    print('Вы проиграли, число попыток исчерпано :-( Загаданное число: ', number)
