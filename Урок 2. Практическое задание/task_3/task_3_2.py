@@ -14,3 +14,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def revert(num, new_num=""):
+    if num == 0:
+        return new_num
+    else:
+        new_num += str(num % 10)
+        num //= 10
+        return revert(num, new_num)
+
+
+print(revert(1337))
