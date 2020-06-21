@@ -25,3 +25,60 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+from collections import namedtuple, deque
+
+QUARTERS = 4
+COMPANY = namedtuple('Companies',
+                     ['name_comp', 'quarters', 'profit'])
+ALL_COMPANIES = set()
+
+NUM_COMPANIES = int(input('Введите количество компаний: '))
+
+total_profit = 0
+
+for i in range(1, NUM_COMPANIES + 1):
+    profit = 0
+    quarters = []
+    name_comp = input(f'Введите название {i} компании: ')
+
+    for j in range(QUARTERS):
+        quarters.append(int(input(f'Введите прибыль за {j + 1}-й квартал: ')))
+        profit += quarters[j]
+
+    comp = COMPANY(name_comp=name_comp,
+                   quarters=tuple(quarters),
+                   profit=profit)
+
+    ALL_COMPANIES.add(comp)
+    total_profit += profit
+
+average = total_profit / NUM_COMPANIES
+
+# 1 способ решения:
+print(f'\nСредняя прибыль за год для всех преприятий = {average}')
+
+print(f'\nКомпания, с прибылью выше среднего:')
+for comp in ALL_COMPANIES:
+    if comp.profit > average:
+        print(f'Компания "{comp.name_comp}" заработала {comp.profit}р.')
+
+print(f'\nКомпания, с прибылью ниже среднего:')
+for comp in ALL_COMPANIES:
+    if comp.profit < average:
+        print(f'Компания "{comp.name_comp}" заработала {comp.profit}р.')
+
+# 2 способ решения
+sort_comanies = deque([None])
+for comp in ALL_COMPANIES:
+    if comp.profit > average:
+        sort_comanies.append(comp)
+    elif comp.profit < average:
+        sort_comanies.appendleft(comp)
+
+text = 'меньше'
+for comp in sort_comanies:
+    if comp is None:
+        text = 'больше'
+    else:
+        print(f'\nКомпания {comp.name_comp} заработала {text}, чем средняя прибыль. А именно: {comp.profit}')
