@@ -10,3 +10,16 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+import random
+
+START_RANGE = 1
+END_RANGE = 10
+SIZE_RANGE = 6
+
+MY_LIST = [random.randint(START_RANGE, END_RANGE) for _ in range(SIZE_RANGE)]
+print(MY_LIST)
+
+RESULT = [i for i in range(len(MY_LIST)) if MY_LIST[i] % 2 == 0]
+print(f'Индексы чётных элементов: {RESULT}')
+
