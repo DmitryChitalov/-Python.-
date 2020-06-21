@@ -17,3 +17,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def table_code(a=32, b=''):
+    if a == 128:
+        return print(b)
+    elif (a - 22) % 10 == 0 and a != 32:
+        table_code(a+1, b + f' {a} - {chr(a)}\n')
+    else:
+        table_code(a + 1, b + f' {a} - {chr(a)}')
+
+table_code()
