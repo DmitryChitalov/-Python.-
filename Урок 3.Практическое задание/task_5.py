@@ -8,3 +8,23 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+
+from random import random
+
+quantity = 10
+list = []
+
+for i in range(quantity):
+    list.append(int(random() * 100) - 100)
+print('Базовый список: ', list)
+
+i = 0
+index = -1
+while i < quantity:
+    if list[i] < 0 and index == -1:
+        index = i
+    elif list[i] < 0 and list[i] > list[index]:
+        index = i
+    i += 1
+
+print('Максимальный отрицательный элемент в данном массиве =', list[index], 'его индекс', index)
