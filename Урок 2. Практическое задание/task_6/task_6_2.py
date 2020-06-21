@@ -10,15 +10,20 @@
 import random
 
 
-def guess_number(true_answer, user_answer, count=0):
-    if true_answer > user_answer:
-        print("Ваше число меньше заданного")
-    elif true_answer < user_answer:
-        print('Ваше число больше загаданного!!!')
-    elif true_answer == user_answer:
-        print('Примите мои поздравления!!! ВЫ угадали!!!')
-        return 
+def guess_answer(count, numb):
 
-min_env = 0
-max_env = 100
-true_answer = random.randint(min_env, max_env)
+    print(f"Попытка {count}")
+    answer = int(input("Введите число от 0 до 100: "))
+    if count == 10 or answer == numb:
+        if answer == numb:
+            print("Верно!")
+        print(f"Загаданное число: {numb}")
+    else:
+        if answer > numb:
+            print(f"Загаданное число меньше чем {numb}")
+        else:
+            print(f"Загаданное число больше чем {numb}")
+        guess_answer(count + 1, numb)
+
+
+guess_answer(1, random.randint(0, 100))

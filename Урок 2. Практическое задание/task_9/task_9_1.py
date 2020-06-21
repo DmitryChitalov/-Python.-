@@ -11,8 +11,7 @@
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
 
-
-def cycle_method(quant):
+def highest_sum(quant):
     """Цикл"""
     steps = 0
     max_sum = 0
@@ -27,13 +26,13 @@ def cycle_method(quant):
                 highest_numb = numb
             steps += 1
         except ValueError:
-            print("Вы вместо числа ввели строку (((. Исправьтесь")
+            print("Введено недопустимое значение")
 
     return f"Наибольшее число по сумме цифр: {highest_numb}, сумма его цифр: {max_sum}"
 
 
 try:
     QUANT = int(input("Введите количество чисел: "))
-    print(cycle_method(QUANT))
+    print(highest_sum(QUANT))
 except ValueError:
-    print("Вы вместо числа ввели строку (((. Исправьтесь")
+    print("Введено недопустимое значение")
