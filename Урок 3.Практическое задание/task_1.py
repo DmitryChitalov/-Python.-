@@ -14,3 +14,15 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+START_RANGE = 2
+END_RANGE = 99
+START_DIV = 2
+END_DIV = 9
+
+for i in range(START_DIV, END_DIV + 1):
+    step = 0
+    for j in range(START_RANGE, END_RANGE + 1):
+        if j % i == 0:
+            step += 1
+    print(f'В диапазоне от {START_RANGE} до {END_RANGE}: {step} чисел кратны {i}')
