@@ -112,3 +112,4 @@ print("test timer 5", timeit_5.timeit(number=100), 'ms')
 # test timer 4 0.0010122999997292936 ms
 # test timer 5 1.2420000530255493e-06 ms
 # ф-я с ф-ей max работает значительно медленнее
+#
