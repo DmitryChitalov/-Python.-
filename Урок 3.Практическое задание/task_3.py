@@ -11,3 +11,29 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+
+# вариант решения глупый, с использованием встроенных функций, я так понимаю нужно через циклы
+from random import randint
+
+a = [randint(-20, 20) for el in range(0, 5)]
+print(a)
+a_max = a.index(max(a))
+a_min = a.index(min(a))
+a[a_max], a[a_min] = a[a_min], a[a_max]
+print(a)
+print(f'Максимальное число на позиции {a.index(max(a))}, минимальное на {a.index(min(a))}')
+
+
+# без встроенных функций только так придумал, весь алгоритм не повторяю, думаю итак ясно
+maxim = a[0]
+i = 0
+while True:
+    if i == len(a):
+        break
+    elif maxim > a[i]:
+        maxim = maxim
+    else:
+        maxim = a[i]
+    i += 1
+
+print(maxim, max(a))
