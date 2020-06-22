@@ -36,3 +36,18 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+matrix = []
+
+for el in range(5):
+    a = []
+    t = 1
+    while t != 5:
+        a.append(int(input(f'Введите {t}й элемент {el+1}й строки: ')))
+        t += 1
+    a.append(sum(a))
+    matrix.append(a)
+
+for n in matrix:
+    print(n)
+
+# print(f"{matrix[0]}\n{matrix[1]}\n{matrix[2]}\n{matrix[3]}\n{matrix[4]}\n") -  думаю это такой себе вариант
