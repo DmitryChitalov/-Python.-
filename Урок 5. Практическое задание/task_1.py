@@ -25,3 +25,54 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+from collections import namedtuple, deque
+
+a = int(input('Введите количество предприятий для расчета прибыли: '))
+corp = namedtuple('Corp_case', 'name_corp one_qua two_qua three_qua four_qua')
+data_base = {}
+for i in range(a):
+    stat_corp = corp(name_corp=input('Введите название предприятия: '),
+                     one_qua=int(input('Введите прибыль за 1 квартал: ')),
+                     two_qua=int(input('Введите прибыль за 2 квартал: ')),
+                     three_qua=int(input('Введите прибыль за 3 квартал: ')),
+                     four_qua=int(input('Введите прибыль за 4 квартал: ')))
+    data_base[stat_corp.name_corp] = (stat_corp.one_qua + stat_corp.two_qua
+                                      + stat_corp.three_qua + stat_corp.four_qua) / 4
+print(data_base)
+average_profit = 0
+for i in data_base.values():
+    average_profit += i
+average_profit /= a
+print(f'Средняя годовая прибыль всех предприятий: {average_profit}')
+for x, y in data_base.items():
+    if y > average_profit:
+        print(f'Предприятие {x} имеет прибыль выше среднего')
+    else:
+        print(f'Предприятие {x} имеет прибыль ниже среднего')
+# Второй вариант
+a = int(input('Введите количество предприятий для расчета прибыли: '))
+corp = deque()
+data_base = {}
+for i in range(a):
+    corp = []
+    x = 0
+    names = input('Введите название предприятия: ')
+    corp.append(int(input('Введите прибыль за 1 квартал: ')))
+    corp.append(int(input('Введите прибыль за 2 квартал: ')))
+    corp.append(int(input('Введите прибыль за 3 квартал: ')))
+    corp.append(int(input('Введите прибыль за 4 квартал: ')))
+    print(corp)
+    for j in corp:
+        x += j
+    data_base[names] = x
+print(data_base)
+average_profit = 0
+for i in data_base.values():
+    average_profit += i
+average_profit /= a
+print(f'Средняя годовая прибыль всех предприятий: {average_profit}')
+for x, y in data_base.items():
+    if y > average_profit:
+        print(f'Предприятие {x} имеет прибыль выше среднего')
+    else:
+        print(f'Предприятие {x} имеет прибыль ниже среднего')
