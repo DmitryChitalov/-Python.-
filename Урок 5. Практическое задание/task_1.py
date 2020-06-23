@@ -53,9 +53,11 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+
+
+
 from collections import namedtuple
-
-
 def company_analysis():
     class QuarterError(
             Exception):  # Правильно ли создавать свое исключение внутри функции?
