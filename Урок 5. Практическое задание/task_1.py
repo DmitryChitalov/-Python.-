@@ -25,3 +25,30 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+import collections
+
+MyProfit = collections.namedtuple('MyProfit', 'I, II, III, IV, profit')
+MyFirm = collections.namedtuple('MyFirm', 'name, profit')
+
+firms_collection = []
+
+firms_count = int(input('Введите количество компаний: '))
+for i in range(firms_count):
+    a_name = input('Введите название компании: ')
+    is_repeat = True
+    a_profit_list = []
+    while is_repeat or len(a_profit_list) < 4:
+        try:
+            a_profit = input('Введите поквартальную прибыль за год через пробел: ')
+            a_profit_list = tuple(map(float, a_profit.split()[:4]))
+            is_repeat = False
+        except ValueError as err:
+            print(err, 'Повторите ввод...')
+            is_repeat = True
+    tmp = MyProfit(*a_profit_list[:4], sum(a_profit_list))
+    firms_collection.append(MyFirm(a_name, tmp))
+
+avg_sum = sum([i.profit.profit for i in firms_collection])/len(firms_collection)
+print(f'\nСредняя годовая прибыль всех предприятий: {avg_sum}')
+print(f'Предприятия, с прибылью выше среднего значения: {[i.name for i in firms_collection if i.profit.profit > avg_sum]}')
+print(f'Предприятия, с прибылью ниже среднего значения: {[i.name for i in firms_collection if i.profit.profit < avg_sum]}')
