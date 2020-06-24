@@ -12,3 +12,51 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+
+from timeit import Timer
+
+
+def erat():
+    n = 10  # Константная 1
+    numbers = [el for el in range(2, n+1)]  # Линейная n
+    for number in numbers:
+        if number != 0:
+            for candidate in range(2 * number, n+1, number):
+                numbers[candidate-2] = 0
+    #print(*list(filter(lambda x: x != 0, numbers)))
+    # Квадратичная n**2
+
+# Общая сложность O(n**2)
+
+
+
+def simple():
+    n = 10
+    a = [el for el in range(2, n)]  # Линейная n
+    b = []  # Константная 1
+    k = 0  # Константная 1
+    for i in a:
+        for j in range(2, i):
+            if i % j == 0:
+                k += 1
+        if k == 0:
+            b.append(i)
+        else:
+            k = 0
+    # Квадратичная
+
+
+
+t1 = Timer("erat()", "from __main__ import erat")
+print("Решето Эратосфена ", t1.timeit(number=1000), "milliseconds")
+t2 = Timer("simple()", "from __main__ import simple")
+print("без решета ", t2.timeit(number=1000), "milliseconds")
+
+"""
+С Решетом Эратофсена 0.39 при 10 значениях, 0.214 при 100 значениях, 1.75 при 1000 значений
+Без решета 0.038 при 10, 0.5 при 100, 36.4 при 1000 значениях.
+При опытах отключил print для наглядности, оказалось очень много ресурсов съедает.
+Несмотря на то что обе функции имеют квадратичную сложность Решето Эратосфена намного быстрее
+
+
+"""
