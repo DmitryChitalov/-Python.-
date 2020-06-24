@@ -12,3 +12,80 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+import timeit
+
+def function():
+    list_1 = [8, 3, 15, 6, 4, 2]
+    list_2 = []
+
+    for i in range(len(list_1)):
+        if list_1[i] % 2 == 0:
+            list_2.append(i)
+# T(n) = 2 + n**2
+# O(n**2)
+
+print(timeit.timeit('function()', setup= 'from __main__ import function'))
+# 1.4785298
+
+def new_function():
+    list_1 = [8, 3, 15, 6, 4, 2]
+
+    list_2 = [i for i, x in enumerate(list_1) if x % 2 == 0]
+
+# T(n) = 1 + n
+# O(n)
+
+print(timeit.timeit('new_function', setup= 'from __main__ import new_function'))
+# 0.014252800000000176
+
+# Через генератор, выполнение происходит быстрее, примерно, в 150 раз, чем через цикл. В случае цикла у нас идет
+# вхождение в цикл и выполнение функций range и len. В случае генератора, мы сразу в переменную использая одну функцию
+# записываем значение. Если я правильно понял, как производится оценка сложности, то в певом случае мы имеем
+# квадратичную сложность, во втором линейную.
+
+def while_metod():
+    number = 3254
+    even = 0
+    odd = 0
+
+    while number > 0:
+        if number % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+        number = number // 10
+
+
+print(timeit.timeit('while_metod()', setup= 'from __main__ import while_metod'))
+# 0.7111506
+# T(n) = 3 + 2n**2 + n
+# O(n**2)
+
+
+def recurcion_metod():
+    number = 3254
+
+    def recurcion(number, even = 0, odd = 0):
+
+        if number == 0:
+            return even, odd
+        else:
+            rec_number = number % 10
+
+            number = number // 10
+
+            if rec_number % 2 == 0:
+                even += 1
+                return recurcion(number, even, odd)
+            else:
+                odd += 1
+                return recurcion(number, even, odd)
+
+print(timeit.timeit('recurcion_metod()', setup= 'from __main__ import recurcion_metod'))
+# 0.3148702000000001
+# T(n) = 1 + 4n
+# O(n)
+
+# Через рекурсию выполнение функции проичходит в 2 раза быстрее. В первом случае мы работаем с циклом и идет вхождение
+# в цикл, во втором случае мы работаем с функцией которая возращает нам результат. Через цикл мы имеем квадратичную
+# сложность, через функцию линейную.
