@@ -1,14 +1,15 @@
-"""
-2.	Посчитать четные и нечетные цифры введенного натурального числа.
-Например, если введено число 34560, то у него 3 четные цифры
-(4, 6 и 0) и 2 нечетные (3 и 5).
+user_num = int(input('Enter the number: '))
+tmp_num = user_num
+even = 0
+not_even = 0
+while not tmp_num == 0:
+    tmp = tmp_num % 10
+    if tmp % 2 == 0:
+        even += 1
+    else:
+        not_even += 1
+    tmp_num = tmp_num // 10
 
-Подсказка:
-Для извлечения цифр числа используйте арифм. операции
 
-Пример:
-Введите натуральное число: 44
-В числе 44 всего 2 цифр, из которых 2 чётных и 0 нечётных
-
-ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
-"""
+print(f'A number {user_num} is made up of {even + not_even} '
+      f'numbers and has {even} even and {not_even} odd numbers.')
