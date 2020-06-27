@@ -27,7 +27,8 @@ def simple_numb_1(i):
                 break
         else:
             lst.append(el)
-    return lst[ii]
+            if len(lst) == ii:
+                return lst[ii - 1]
 
 
 print(simple_numb_1(ii))
