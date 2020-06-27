@@ -25,3 +25,42 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+
+import collections
+
+enterprise = collections.namedtuple('enterprise', ['x1', 'x2', 'x3', 'x4'])
+
+base_enterprise = {}
+
+count = int(input("Количество предприятий: "))
+
+for i in range(count):
+    name = input(str(i+1) + '-е предприятие: ')
+    profit_x1 = int(input('Введите прибыль предприятия за 1-й квартал: '))
+    profit_x2 = int(input('Введите прибыль предприятия за 2-й квартал: '))
+    profit_x3 = int(input('Введите прибыль предприятия за 3-й квартал: '))
+    profit_x4 = int(input('Введите прибыль предприятия за 4-й квартал: '))
+    base_enterprise[name] = enterprise(
+        x1=profit_x1,
+        x2=profit_x2,
+        x3=profit_x3,
+        x4=profit_x4
+    )
+
+total_profit = ()
+
+for name, profit in base_enterprise.items():
+    print(f'Прибыль предприятия {name}: составила за год - {sum(profit)}')
+    total_profit += profit
+
+avg_profit_total = sum(total_profit) / len(base_enterprise)
+print(f'Средняя прибыль за год для всех предприятий: {avg_profit_total}')
+
+
+for name, profit in base_enterprise.items():
+    if sum(profit) > avg_profit_total:
+        print(f'Предприятие у коготорого прибыль выше среднего: {name}. Прибыль - {sum(profit)}')
+
+for name, profit in base_enterprise.items():
+    if sum(profit) < avg_profit_total:
+        print(f'Предприятие у коготорого прибыль ниже среднего: {name}. Прибыль - {sum(profit)}')
