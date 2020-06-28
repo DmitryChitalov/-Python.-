@@ -36,3 +36,27 @@
 [3, 3, 3, 3, 12]
 [3, 3, 3, 3, 12]
 """
+
+
+
+
+#  Solution from teacher
+
+def task_8():
+    row_n = 5
+    col_n = 4
+    matrix = []
+    for i in range(row_n):
+        string = []
+        s = 0
+        print(f"{i+1}-я строка:")
+        for j in range(col_n):
+            n = int(input())
+            s += n
+            string.append(n)
+        string.append(s)
+        matrix.append(string)
+
+    for i in matrix:
+        print(i)
+task_8()
