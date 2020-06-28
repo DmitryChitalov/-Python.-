@@ -7,3 +7,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+from random import random
+
+r = rand_num = round(random() * 100)
+
+
+def random_number(b, c=10):
+    a = int(input('Попробуйте угадать число'))
+    if c == 0:
+        return print('Вы проиграли')
+    elif b > a:
+        print('Введеное число меньше загаданного')
+        random_number(b, c - 1)
+    elif b < a:
+        print('Введеное число больше загаданного')
+        random_number(b, c - 1)
+    elif b == a:
+        return print('Поздравляю, вы угадали')
+
+
+random_number(round(random() * 100))
