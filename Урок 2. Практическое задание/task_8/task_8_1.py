@@ -12,3 +12,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+def count_num(n, b):
+    count = 0
+    for i in range(1, n + 1):
+        try:
+            m = int(input(f"Число {str(i)}: "))
+            while m > 0:
+                if m % 10 == b:
+                    count += 1
+                m = m // 10
+        except ValueError:
+            print("л")
+    print(f"Было введено {count} цифр '{b}'")
+
+
+try:
+    N = int(input("Сколько будет чисел? - "))
+    B = int(input("Какую цифру считать? - "))
+    count_num(N, B)
+except ValueError:
+    print("Введено неверное значение! ")

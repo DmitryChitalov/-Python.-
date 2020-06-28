@@ -7,3 +7,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import random
+count_user = 0
+min_env = 0
+max_env = 100
+chislo = random.randint(min_env, max_env)
+while count_user <= 10:
+    user_otv = int(
+        input("Попробуйте угадать число которое загадал компьютер (от 0 до 100): "))
+    count_user += 1
+    if user_otv > chislo:
+        print("Ваше число больше загаданного!!!")
+    elif user_otv < chislo:
+        print("Ваше чилсо меньше загаданного!!!")
+    elif user_otv == chislo:
+        print(
+            f"Мои поздравления!!! Вы угадали загаданное число за {count_user} попыток!")
+        break
+
+print(chislo)

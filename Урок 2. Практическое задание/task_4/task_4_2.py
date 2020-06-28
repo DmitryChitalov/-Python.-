@@ -8,3 +8,17 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def mnozh(n, start=1, sum=0):
+    if n== 0:
+        return sum
+    else:
+        sum += start
+        start /= 2 * -1
+        n -=1
+        return mnozh(n,start,sum)
+
+
+print(mnozh(55))
+    

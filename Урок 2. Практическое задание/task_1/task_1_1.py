@@ -32,3 +32,26 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+type_op = None
+sign = set('+-*/')
+while True:
+    type_op = input("Введите операцию (+, -, *, / или 0 для выхода) : ")
+    if type_op == '0':
+        break
+    if type_op in sign:
+        env1 = int(input("Введите значение первой переменной : "))
+        env2 = int(input("Введите значение второй переменной : "))
+    if type_op == '+':
+        output = f"{env1} + {env2} = {env1 + env2}"
+    elif type_op == '-':
+        output = f"{env1} - {env2} = {env1 - env2}"
+    elif type_op == '*':
+        output = f"{env1} * {env2} = {env1 * env2}"
+    elif type_op == '/':
+        if env2 == 0:
+            output = 'Деление на 0 недопустимо'
+        else:
+            output = f"{env1} / {env2} = {env1 // env2}"
+    elif type_op == '0':
+        break
+    print(output)
