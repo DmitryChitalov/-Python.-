@@ -36,7 +36,6 @@ def ar_sieve(req_idx, lst):
                 lst.remove(sub_el)
         if n == req_idx:
             return main_el
-    # return lst
     return "No element found"
 
 
@@ -47,7 +46,7 @@ def list_generator():
         num += 1
 
 
-# @timer
+@timer
 def find_simple_num_3(req_idx):
     """НЕРЕШЕТО. Выигрывает в памяти, но не очень хорошо работает со временем"""
     simple_nums = list()
@@ -68,18 +67,20 @@ def find_simple_num_3(req_idx):
 if __name__ == '__main__':
 
     # Решето Эратосфена
-    # Сложность O(n^2)
+    # Сложность O(n^2) (Приблизительно такая сложность, точна сложность высчитывается по матем. формулам)
     # Среднее время при нахождении:
     #                               100го простого чилса:    0.44 сек
     #                               200го простого чилса:    1.30 сек
     #                               300го простого чилса:    4.04 сек
-    lst_ = [i for i in range(10**3*2)][2:]
-    print(timeit("ar_sieve(300, lst_)", setup="from __main__ import ar_sieve, lst_", number=100))
+    # lst_ = [i for i in range(10**4)][2:]
+    # print(timeit("ar_sieve(1000, lst_)", setup="from __main__ import ar_sieve, lst_", number=100))
+
+    find_simple_num_3(100)
 
     # НеРешето Эратосфена
-    # Сложность O(n*n!)
+    # Сложность O(n * n!) (Приблизительно такая сложность)
     # Среднее время при нахождении:
     #                               100го простого чилса:    2.50 сек
     #                               200го простого чилса:    12.30 сек
     #                               300го простого чилса:    27.44 сек
-    print(timeit("find_simple_num_3(300)", setup="from __main__ import find_simple_num_3", number=100))
+    # print(timeit("find_simple_num_3(300)", setup="from __main__ import find_simple_num_3", number=100))
