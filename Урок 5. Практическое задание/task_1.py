@@ -25,3 +25,49 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+import collections
+
+
+def company():
+    def_dict = collections.defaultdict(list)
+    total_profit = 0
+
+    while True:
+        try:
+            num_comp = int(input('Введиите количество предприятий:'))
+            break
+        except ValueError:
+            print('Введите пожайлуйста натуральное число')
+
+    for el in range(1, num_comp + 1):
+        name_comp = input(f'Введите название {el}-го предприятия :')
+        while True:
+            profit = input('Через пробел введите прибыль данного предприятия за каждый квартал(4 квартала):')
+            if profit.count(' ') == 3 and profit[-1].isdigit() and profit[0].isdigit():
+                if profit.replace(' ', '0').isdigit():
+                    break
+            print('Вы ввели что-то не то')
+        profit_list = list(map(int, profit.split(' ')))
+        def_dict[name_comp].append(profit_list)
+
+    for key in def_dict:
+        def_dict[key].append(sum(def_dict[key][0]))
+        total_profit += def_dict[key][1]
+    av_profit = total_profit / num_comp
+
+    print(f'Средняя годовая прибыль всех предприятий: {av_profit:.2f}')
+
+    less_av = []
+    more_av = []
+
+    for key in def_dict:
+        if def_dict[key][1] < av_profit:
+            less_av.append(key)
+        elif def_dict[key][1] > av_profit:
+            more_av.append(key)
+
+    print(f'Предприятия, с прибылью выше среднего значения: {", ".join(more_av)}')
+    print(f'Предприятия, с прибылью ниже среднего значения: {", ".join(less_av)}')
+
+
+company()
