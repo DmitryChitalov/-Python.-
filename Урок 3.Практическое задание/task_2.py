@@ -10,3 +10,24 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+
+
+def task_2_1(orig_lst):
+    """Вариант 1"""
+    new_lst = []
+    for elem in orig_lst:
+        if elem % 2 == 0:
+            new_lst.append(orig_lst.index(elem))
+    print(f"Исходный массив: {orig_lst}, результат: {new_lst}")
+
+
+def task_2_2(orig_lst):
+    """Вариант 2"""
+    print(
+        f"Исходный массив: {orig_lst}, результат: "
+        f"{[elem for elem in range(len(orig_lst)) if orig_lst[elem] % 2 == 0]}")
+
+
+ORIG_LIST = [8, 3, 15, 6, 4, 2]
+task_2_1(ORIG_LIST)
+task_2_2(ORIG_LIST)

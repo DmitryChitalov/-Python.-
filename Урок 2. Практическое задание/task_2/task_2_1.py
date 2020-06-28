@@ -12,3 +12,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+user_number = int(input('Введите натуральное число: '))
+count_even = 0
+count_odd = 0
+while user_number != 0:
+    if user_number % 10 % 2 == 0:
+        count_even += 1
+    else:
+        count_odd += 1
+    user_number = user_number // 10
+print(f"В числе {user_number} всего {count_odd+count_even} цифр, из которых {count_even} чётных и {count_odd} нечётных")

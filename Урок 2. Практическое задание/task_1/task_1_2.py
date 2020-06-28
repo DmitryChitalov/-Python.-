@@ -33,3 +33,41 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion():
+    """RECURSION"""
+    sign = set('+-*/')
+    type_op = input('Введите операцию (+, -, *, / или 0 для выхода) : ')
+    if type_op == '0':
+        return 0
+
+    if type_op in sign:
+        env1 = int(input("Введите значение первой переменной : "))
+        env2 = int(input("Введите значение второй переменной : "))
+        try:
+            if type_op == '+':
+                print(f'{env1} + {env2} = {env1 + env2}')
+                recursion()
+            elif type_op == '-':
+                print(f'{env1} - {env2} = {env1 - env2}')
+                recursion()
+            elif type_op == '*':
+                print(f"{env1} * {env2} = {env1 * env2}")
+                recursion()
+            elif type_op == '/':
+                if env2 == 0:
+                    print('Деление на 0 недопустимо !!!')
+                    recursion()
+                else:
+                    print(f"{env1} / {env2} = {env1 // env2}")
+                    recursion()
+        except ValueError:
+            print('Неверно указанные данные! Попробуйте снова : ')
+            recursion()
+    else:
+        print("Введены некорректные данные! Укажите корректное выражение : ")
+        recursion()
+
+
+recursion()

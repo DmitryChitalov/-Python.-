@@ -12,3 +12,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+
+num = int(input("Ввеедите число"))
+new_num = ""
+while True:
+    if num == 0:
+        break
+    else:
+        new_num += str(num % 10)
+        num //= 10
+print(new_num)
