@@ -8,3 +8,41 @@
 Исходный - [46.11436617832828, 41.62921998361278, 18.45859540989644, 12.128870723745806, 8.025098788570562]
 Отсортированный - [8.025098788570562, 12.128870723745806, 18.45859540989644, 41.62921998361278, 46.11436617832828]
 """
+from random import uniform
+
+
+def merge(l):
+    if len(l) > 1:
+        center = len(l) // 2
+        left = l[:center]
+        right = l[center:]
+
+        merge(left)
+        merge(right)
+
+        i, j, k = 0, 0, 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                l[k] = left[i]
+                i += 1
+            else:
+                l[k] = right[j]
+                j += 1
+            k += 1
+
+        while i < len(left):
+            l[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            l[k] = right[j]
+            j += 1
+            k += 1
+        return l
+
+
+n = int(input('Введите число элементов: '))
+l = [uniform(0, 50) for _ in range(n)]
+print(f'Исходный список - {l}')
+print(f'Отсортированный список - {merge(l)}')

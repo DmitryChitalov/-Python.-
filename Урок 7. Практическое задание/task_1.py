@@ -9,3 +9,43 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+from random import randint
+from timeit import timeit
+
+l = [randint(-100, 99) for _ in range(50)]
+def bubble_sort_f(l):
+    n = 1
+    print(l)
+    while n < len(l):
+        f = True
+        for i in range(len(l) - n):
+            if l[i] < l[i+1]:
+                l[i], l[i+1] = l[i+1], l[i]
+                if f:
+                    f = False
+        if f:
+            break
+        n += 1
+    print(l)
+
+def bubble_sort(l):
+    n = 1
+    print(l)
+    while n < len(l):
+        for i in range(len(l) - n):
+            if l[i] < l[i+1]:
+                l[i], l[i+1] = l[i+1], l[i]
+
+        n += 1
+    print(l)
+
+bubble_sort_f(l)
+
+# 0.299727651 с флагом
+# print(timeit('bubble_sort_f(l[::])', setup='from __main__ import bubble_sort_f, l', number=1000))
+# 0.294163213 без флага
+# print(timeit('bubble_sort(l[::])', setup='from __main__ import bubble_sort, l', number=1000))
+# без проверки сортировок незначительно быстрее, в связи с тем, что добавляется присвоение флага,
+# в рамках данной реализации выигрыш по времени незначительный, но если есть вероятность, что могут быть
+# использованы отсортированные массивы, то в этом есть смысл. Но если случайно формировать массив больше 50 элементов -
+# шансов, что он будет отсортирован почти нет, потому и пользы от оптимизации тоже нет.

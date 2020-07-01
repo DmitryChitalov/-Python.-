@@ -6,3 +6,46 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+from random import randint
+from statistics import median
+
+
+def median_list():
+    n = randint(10, 40)
+    if n % 2 == 0:
+        n += 1
+
+    l = [randint(0, 20) for _ in range(n)]
+    res = 0
+
+    for i in range(len(l)):
+        left = 0
+        right = 0
+        k = 0
+        for el in l[:i] + l[i + 1:]:
+            if l[i] == el:
+                k += 1
+            elif l[i] < el:
+                right += 1
+            elif l[i] > el:
+                left += 1
+            if left > n // 2 or right > n // 2:
+                break
+
+        if left == right:
+            res = l[i]
+            break
+        # Чтобы придумать такое условие, пришлось в цикле прогонять, искать где несостыковки, и подбирать условие,
+        # совпадающее со всеми вариантами ошибок
+        elif abs(left - right) <= k and k + left + right == n - 1:
+            res = l[i]
+            break
+    print(f'Список - {l}')
+    print(f'Результат - {res}')
+    print(
+        f'Для проверки: \nОтсортированный список - {sorted(l)}\nМедиана - {median(l)}')
+    # Уверен, что есть и более простой способ без сортировки, но придумал
+    # только такой.
+
+
+median_list()
