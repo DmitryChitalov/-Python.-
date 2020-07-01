@@ -9,3 +9,42 @@
 Подсказка: обратите внимание, сортируем не по возрастанию, как в примере,
 а по убыванию
 """
+
+import random
+
+
+def bubble_sort(array, reverse=False):
+    sign = int(reverse) * 2 - 1
+    n = 1
+
+    while n < len(array):
+        is_sort = True
+        for i in range(len(array) - n):
+            if array[i] * sign < array[i + 1] * sign:
+                array[i], array[i + 1] = array[i + 1], array[i]
+                is_sort = False
+
+        if is_sort:
+            break
+
+        n += 1
+        print(array)
+
+
+SIZE = 10
+LIMIT = 100
+data = [random.randrange(-LIMIT, LIMIT) for _ in range(SIZE)]
+
+print(data)
+bubble_sort(data, reverse=True)
+print(data)
+
+'''
+Применена оптимизация естественности поведения.
+На вход дан упорядоченный массив данных, и сортировать его не нужно.
+Работает данная оптимизация с помощью: 
+is_sort = True  # считается что массив отсортирован
+is_sort = False  # если были переставлены элементы, то массив считается не отсортированным
+if is_sort:  # в теле цикла проверили были ли изменения, прошли по всему массиву, если всё ок, ты выходим.
+break
+'''
