@@ -12,3 +12,72 @@
 ВНИМАНИЕ: ЗАДАНИЯ, В КОТОРЫХ БУДУТ ГОЛЫЕ ЦИФРЫ ЗАМЕРОВ (БЕЗ АНАЛИТИКИ)
 БУДУТ ПРИНИМАТЬСЯ С ОЦЕНКОЙ УДОВЛЕТВОРИТЕЛЬНО
 """
+from random import randint
+from memory_profiler import profile
+from sys import getrefcount
+
+
+@profile
+def task_3_6():
+    a = int(input('Введите количество элементов в массиве: '))
+    b = [randint(0, 100) for el in range(a)]
+    print(b)
+    c = b.index(max(b))
+    d = b.index(min(b))
+    if abs(c - d) == 1:
+        print(f'Между максимальным элементом {max(b)} c индексом {c} и минимальным {min(b)} с индексом {d} нет чисел')
+    elif c < d:
+        print(f'Сумма элементов между минимальным {min(b)} и максимальным {max(b)} элементами: {sum(b[c:d])}')
+    elif c > d:
+        print(f'Сумма элементов между минимальным {min(b)} и максимальным {max(b)} элементами: {sum(b[d:c])}')
+    print(getrefcount(b))
+    del b
+
+
+task_3_6()
+
+"""Line #    Mem usage    Increment   Line Contents
+================================================
+    20     16.2 MiB     16.2 MiB   @profile
+    21                             def task_3_6():
+    22     16.2 MiB      0.0 MiB           a = int(input('Введите количество элементов в массиве: '))
+    23     23.8 MiB      0.4 MiB           b = [randint(0, 100) for el in range(a)]
+    24     23.8 MiB      0.0 MiB           print(b)
+    25     23.8 MiB      0.0 MiB           c = b.index(max(b))
+    26     23.8 MiB      0.0 MiB           d = b.index(min(b))
+    27     23.8 MiB      0.0 MiB           if abs(c - d) == 1:
+    28                                         print(f'Между максимальным элементом {max(b)} c индексом {c} и 
+    минимальным {min(b)} с индексом {d} нет чисел')
+    29     23.8 MiB      0.0 MiB           elif c < d:
+    30                                         print(f'Сумма элементов между минимальным {min(b)} и 
+    максимальным {max(b)} элементами: {sum(b[c:d])}')
+    31     23.8 MiB      0.0 MiB           elif c > d:
+    32     23.8 MiB      0.0 MiB               print(f'Сумма элементов между минимальным {min(b)} и 
+    максимальным {max(b)} элементами: {sum(b[d:c])}')
+
+    По данным измерений видно, что большой инкремент памяти бы использован при генерации списка. Но для этого пришлось
+    использовать range = 10**6. Для оптимизации использования памяти нужно удалить значение b после использования кода
+    del b.
+
+    Line #    Mem usage    Increment   Line Contents
+================================================
+    20     16.2 MiB     16.2 MiB   @profile
+    21                             def task_3_6():
+    22     16.2 MiB      0.0 MiB           a = int(input('Введите количество элементов в массиве: '))
+    23     24.7 MiB      0.6 MiB           b = [randint(0, 100) for el in range(a)]
+    24     24.7 MiB      0.0 MiB           print(b)
+    25     24.7 MiB      0.0 MiB           c = b.index(max(b))
+    26     24.7 MiB      0.0 MiB           d = b.index(min(b))
+    27     24.7 MiB      0.0 MiB           if abs(c - d) == 1:
+    28                                         print(f'Между максимальным элементом {max(b)} c индексом {c} и
+     минимальным {min(b)} с индексом {d} нет чисел')
+    29     24.7 MiB      0.0 MiB           elif c < d:
+    30                                         print(f'Сумма элементов между минимальным {min(b)} и 
+    максимальным {max(b)} элементами: {sum(b[c:d])}')
+    31     24.7 MiB      0.0 MiB           elif c > d:
+    32     24.7 MiB      0.0 MiB               print(f'Сумма элементов между минимальным {min(b)} и
+     максимальным {max(b)} элементами: {sum(b[d:c])}')
+    33     17.1 MiB      0.0 MiB           del b
+
+после добавления del память вернулась к прежнему значению, не считая погрешности профайлера.
+    """
