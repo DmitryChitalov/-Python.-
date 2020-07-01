@@ -30,6 +30,7 @@ def timer(func):
 
 # @timer
 def ar_sieve(req_idx, lst):
+    """РЕШЕТО. Проигрывает в памяти, но не плохо работает по времени"""
     for n, main_el in enumerate(lst, 1):
         for sub_el in lst[n::]:
             if sub_el % main_el == 0:
