@@ -14,3 +14,39 @@
 В диапазоне 2-99: 12 чисел кратны 8
 В диапазоне 2-99: 11 чисел кратны 9
 """
+
+
+# first = 2
+# last = 9
+#
+# for x in range(first, last + 1):
+#     multiples = 0
+#     for y in range(2, 100):
+#         if y % x == 0:
+#             multiples += 1
+#     print(f"В диапазоне 2-99: {multiples} чисел кратны {x}")
+
+
+#  Solution from teacher
+
+def task_1_1():
+    lst_1 = list(range(2, 100))
+    lst_2 = list(range(2, 100))
+    for elem in lst_2:
+        numb = 0
+        for i in lst_1:
+            if i % elem == 0:
+                numb += 1
+        print(f"В диапазоне 2-99: {numb} чисел кратны {elem}")
+
+
+# task_1_1()
+# print()
+
+
+def task_1_2():
+    for i in range(2, 10):
+        new_list = [el for el in range(2, 100) if el % i == 0]
+        print(f"В диапазоне 2-99: {len(new_list)} чисел кратны {i}")
+task_1_2()
+print()

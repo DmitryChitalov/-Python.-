@@ -6,3 +6,12 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+import random
+
+m = random.randint(5, 10)
+print(m)
+
+original_array = [random.randint(-100, 100) for _ in range(2 * m + 1)]
+print(original_array)
+
+# Не законченное задание
