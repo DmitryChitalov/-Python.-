@@ -6,3 +6,27 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках
 """
+from random import randint
+import statistics
+m = int(input('Введите натуральное число'))
+a = [randint(0, 100) for el in range(2*m+1)]
+print(a)
+dif = {}
+for i in a:
+    g = 0
+    t = 0
+    for j in a:
+        if i < j:
+            g += 1
+        elif i > j:
+            t += 1
+    dif[abs(g-t)] = i
+print('Медиана по словарю', (dif[min(dif)]))
+print(statistics.median(a))
+
+
+
+
+
+
+
