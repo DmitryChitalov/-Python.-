@@ -10,3 +10,10 @@
 Пример:
 Исходный массив: [8, 3, 15, 6, 4, 2], результат: [0, 3, 4, 5]
 """
+default_arr = [2, 5, 8, 15, 13, 27, 28, 40, 54, 65, 78, 13]
+equals_arr = []
+
+for el in default_arr:
+    if el % 2 == 0:
+        equals_arr.append(default_arr.index(el) + 1)
+print(equals_arr)
