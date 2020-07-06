@@ -16,3 +16,16 @@
 
 Итог: 6 подстрок
 """
+
+import hashlib
+
+x = input('Введите строку, состоящую из маленьких латинских букв: ')
+
+sum_x = set()
+
+for i in range(len(x)):
+    for j in range(len(x), i, -1):
+        hash_x = hashlib.sha1(x[i:j].encode('utf-8')).hexdigest()
+        sum_x.add(hash_x)
+
+print(f'{len(sum_x) -1} подстрок в строке - {x}')
