@@ -17,3 +17,31 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def print_char_table(
+        char_number=32,
+        max_char_number=127,
+        col_count=10,
+        _char_start_number=None):
+    if char_number > max_char_number:
+        return
+    if _char_start_number is None:
+        _char_start_number = char_number
+        print(f'{char_number} - {chr(char_number)}', end='\t')
+    else:
+        print(
+            f'{char_number} - {chr(char_number)}',
+            end='\t' if (
+                char_number -
+                _char_start_number +
+                1) %
+            col_count != 0 else '\n')
+    print_char_table(
+        char_number + 1,
+        max_char_number,
+        col_count,
+        _char_start_number)
+
+
+print_char_table()

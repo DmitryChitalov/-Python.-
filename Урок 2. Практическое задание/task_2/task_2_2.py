@@ -15,3 +15,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def recursion(num):
+    return (num % 10 % 2 + recursion((num - num % 10) // 10)
+            ) if num > 0 else num % 10 % 2
+
+
+my_number = int(input('Введите натуральное число: '))
+odd_number_count = recursion(my_number)
+print(
+    f'Количество четных и нечетных цифр в числе равно: '
+    f'({len(str(my_number)) - odd_number_count}, {odd_number_count})')

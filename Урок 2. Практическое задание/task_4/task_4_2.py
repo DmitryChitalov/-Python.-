@@ -8,3 +8,11 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def row_sum(the_n):
+    return 0 if the_n == 0 else (
+        1 / 2 ** (the_n - 1)) * (1 if the_n % 2 == 1 else -1) + row_sum(the_n - 1)
+
+
+print(row_sum(int(input('Введите длинну ряда: '))))

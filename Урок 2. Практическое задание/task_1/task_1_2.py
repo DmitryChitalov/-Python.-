@@ -33,3 +33,23 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def calculator():
+    operation = input('Укажите операцию +-/* или 0 для выхода: ')
+    if operation == '0':
+        return
+    first_number = input('Укажите первое число: ')
+    second_number = input('Укажите второе число: ')
+    try:
+        float(first_number) + float(second_number) + ord(operation)
+        print('Результат: ', end='')
+        exec('print(' + first_number + operation + second_number + ')')
+        # ДА! EXEC - ЭТО НЕ БЕЗОПАСНО и можно сделать иньекцию, немного прикрыл
+    except Exception as err:
+        print(f'Ошибка! {err}')
+    finally:
+        calculator()
+
+
+calculator()

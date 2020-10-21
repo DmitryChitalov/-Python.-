@@ -14,3 +14,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def get_digits_sum(num, _lvl=0):
+    tmp = num % (10 ** (_lvl + 1))
+    tmp3 = int(tmp * 10 ** (len(str(num)) - 2 * _lvl - 1))
+    return (tmp3 + get_digits_sum(num - tmp, _lvl + 1)) if num > 0 else tmp3
+
+
+print(get_digits_sum(123456789))
