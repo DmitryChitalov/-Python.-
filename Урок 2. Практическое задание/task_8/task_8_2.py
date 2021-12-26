@@ -12,3 +12,25 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+GL_COUNT = 0
+
+
+def count_num(n, b):
+    global GL_COUNT
+    if n == 0:
+        return f"Было введено {GL_COUNT} цифр {b}"
+    m = int(input(f"Число: "))
+    while m > 0:
+        if m % 10 == b:
+            GL_COUNT += 1
+        m = m // 10
+
+    return count_num(n-1, b)
+
+
+try:
+    N = int(input("Сколько будет чисел? - "))
+    B = int(input("Какую цифру считать? - "))
+    print(count_num(N, B))
+except ValueError:
+    print("Вы вместо числа ввели строку (((. Исправьтесь")

@@ -17,3 +17,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+import string
+
+n = 32
+string_end = 0
+while n < 128:
+    print(f"{n} - {chr(n)}", sep='',end=' ')
+    string_end += 1
+    if string_end == 10:
+        string_end = 0
+        print()
+    n+=1

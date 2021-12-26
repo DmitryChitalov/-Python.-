@@ -8,3 +8,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+n = int(input(""))
+start = 1
+summ = 0
+while n != 0:
+    summ += start
+    start = start / 2 * -1
+    n -= 1
+
+print(summ)
