@@ -15,3 +15,37 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+chet = 0
+nechet = 0
+
+
+def recurs():
+    try:
+        num = int(input('Введите натуральное число: '))
+    except Exception as e:
+        print('Вы должны ввести натуральное число, или введите 0 для выхода!')
+        return recurs()
+
+    else:
+        def recurs1(num):
+            global chet
+            global nechet
+            if num // 10 != 0:
+                if num % 10 % 2 != 0:
+                    chet += 1
+                else:
+                    nechet += 1
+                return recurs1(num // 10)
+
+            elif num // 10 == 0:
+                if num % 2 != 0:
+                    chet += 1
+                else:
+                    nechet += 1
+            print(
+                f'В введенном числе всего {nechet + chet} цифр, из которых {nechet} чётных и {chet} нечётных')
+
+        recurs1(num)
+
+
+recurs()

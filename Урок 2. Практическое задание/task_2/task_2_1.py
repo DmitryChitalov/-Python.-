@@ -12,3 +12,36 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+num = 1
+while num != 0:
+    try:
+        num = int(input('Введите натуральное число: '))
+        if num == 0:
+            print('Программа завершена!')
+            break
+        chet = 0
+        nechet = 0
+        while num != 0:
+            if num // 10 != 0:
+                if num % 10 % 2 != 0:
+                    chet += 1
+                else:
+                    nechet += 1
+                num = num // 10
+                continue
+
+            elif num // 10 == 0:
+                if num % 2 != 0:
+                    chet += 1
+                else:
+                    nechet += 1
+                break
+        print(f'В введенном числе всего {nechet + chet} цифр, из которых {nechet} чётных и {chet} нечётных')
+
+    except Exception as e:
+        print('Вы должны ввести натуральное число, или введите 0 для выхода!')
+
+
+
+
+
